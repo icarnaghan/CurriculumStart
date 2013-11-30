@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\Kendo UI for ASP.NET MVC Q3 2013\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -166,11 +169,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Domain\CurriculumSegment.cs" />
-    <Compile Include="Models\Domain\Expedition.cs" />
+    <Compile Include="Models\Domain\Program.cs" />
     <Compile Include="Models\Domain\FinalProduct.cs" />
     <Compile Include="Models\Domain\MiniSemester.cs" />
-    <Compile Include="Models\Domain\FirstSixWeeks.cs" />
+    <Compile Include="Models\Domain\FswSemester.cs" />
     <Compile Include="Models\Domain\SpringExpedition.cs" />
     <Compile Include="Models\Domain\FallExpedition.cs" />
     <Compile Include="Models\Domain\GuidingQuestion.cs" />

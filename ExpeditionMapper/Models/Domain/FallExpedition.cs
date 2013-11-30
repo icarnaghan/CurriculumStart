@@ -2,7 +2,8 @@
 
 namespace ExpeditionMapper.Models.Domain
 {
-    public class FallExpedition : Expedition
+    public class FallExpedition : Program
     {
+        public ICollection<GuidingQuestion> GuidingQuestions { get; set; }
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace ExpeditionMapper.Models.Domain
 {
-    public class SpringExpedition : Expedition
+    public class SpringExpedition : Program
     {
-        public virtual ICollection<GuidingQuestion> GuidingQuestions{ get; set; }
+        public ICollection<GuidingQuestion> GuidingQuestions { get; set; }
     }
 }
