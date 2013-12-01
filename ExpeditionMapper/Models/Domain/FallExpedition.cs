@@ -1,9 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExpeditionMapper.Models.Domain
 {
     public class FallExpedition : Program
     {
-        public ICollection<GuidingQuestion> GuidingQuestions { get; set; }
+        public int BigIdeasId { get; set; }
+
+        [ForeignKey("BigIdeasId")]
+        public BigIdeasScience BigIdeasScience { get; set; }
+
     }
 }

@@ -162,13 +162,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FallExpeditionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProgramController.cs" />
     <Compile Include="DAL\ExpeditionContext.cs" />
     <Compile Include="DAL\ExpeditionInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Domain\BigIdeas.cs" />
+    <Compile Include="Models\Domain\BigIdeasScience.cs" />
+    <Compile Include="Models\Domain\BigIdeasSocialStudies.cs" />
+    <Compile Include="Models\Domain\GradeLevel.cs" />
     <Compile Include="Models\Domain\Program.cs" />
     <Compile Include="Models\Domain\FinalProduct.cs" />
     <Compile Include="Models\Domain\MiniSemester.cs" />
@@ -1323,6 +1329,16 @@
     <Content Include="Scripts\kendo\kendo.view.min.js.map" />
     <Content Include="Scripts\kendo\kendo.web.min.js.map" />
     <Content Include="Scripts\kendo\kendo.window.min.js.map" />
+    <Content Include="Views\Program\Create.cshtml" />
+    <Content Include="Views\Program\Delete.cshtml" />
+    <Content Include="Views\Program\Details.cshtml" />
+    <Content Include="Views\Program\Edit.cshtml" />
+    <Content Include="Views\Program\Index.cshtml" />
+    <Content Include="Views\FallExpedition\Create.cshtml" />
+    <Content Include="Views\FallExpedition\Delete.cshtml" />
+    <Content Include="Views\FallExpedition\Details.cshtml" />
+    <Content Include="Views\FallExpedition\Edit.cshtml" />
+    <Content Include="Views\FallExpedition\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
