@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
+using ExpeditionMapper.Models.Domain.LookUps;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
 
 namespace ExpeditionMapper.Controllers
 {
@@ -15,11 +18,57 @@ namespace ExpeditionMapper.Controllers
     {
         private ExpeditionContext db = new ExpeditionContext();
 
+
+        public ActionResult Expedition_Read([DataSourceRequest]DataSourceRequest request)
+        {
+            IQueryable<FallExpedition> programs = db.Programs.OfType<FallExpedition>();
+            DataSourceResult result = programs.ToDataSourceResult(request);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Expedition_Create([DataSourceRequest]DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<FallExpedition> expeditions)
+        {
+            // Will keep the inserted entitites here. Used to return the result later.
+            var entities = new List<FallExpedition>();
+            if (ModelState.IsValid)
+            {
+                
+                    foreach (var expedition in db.Programs.OfType<FallExpedition>())
+                    {
+                        // Create a new Expedition entity and set its properties from the posted FallExpedition Model
+                        var entity = new FallExpedition
+                        {
+                            Id = expedition.Id,
+                            Name = expedition.Name,
+                            Description = expedition.Description,
+                        };
+                        // Add the entity
+                        db.Programs.Add(entity);
+                        // Store the entity for later use
+                        entities.Add(entity);
+                    }
+                    // Insert the entities in the database
+                    db.SaveChanges();
+                
+            }
+            // Return the inserted entities. The grid needs the generated ID. Also return any validation errors.
+            return Json(entities.ToDataSourceResult(request, ModelState, expedition => new FallExpedition
+            {
+                Id = expedition.Id,
+                Name = expedition.Name,
+                Description = expedition.Description
+            }));
+        }
+
+
+
+        
         // GET: /FallExpedition/
         public ActionResult Index()
         {
             var programs = db.Programs.OfType<FallExpedition>().Include(f => f.GradeLevel).Include(f => f.BigIdeasScience);
-            return View(programs.ToList());
+            ViewBag.Expeditions = programs;
+            return View();
         }
 
         // GET: /FallExpedition/Details/5
@@ -41,7 +90,7 @@ namespace ExpeditionMapper.Controllers
         public ActionResult Create()
         {
             ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name");
-            ViewBag.BigIdeasId = new SelectList(db.BigIdeas, "Id", "Name");
+            ViewBag.BigIdeasId = new SelectList(db.BigIdeas.OfType<BigIdeasSocialStudies>(), "Id", "Name");
             return View();
         }
 
@@ -60,7 +109,7 @@ namespace ExpeditionMapper.Controllers
             }
 
             ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name", fallexpedition.GradeLevelId);
-            ViewBag.BigIdeasId = new SelectList(db.BigIdeas, "Id", "Name", fallexpedition.BigIdeasId);
+            ViewBag.BigIdeasId = new SelectList(db.BigIdeas.OfType<BigIdeasSocialStudies>(), "Id", "Name", fallexpedition.BigIdeasId);
             return View(fallexpedition);
         }
 

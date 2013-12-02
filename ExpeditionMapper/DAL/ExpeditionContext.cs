@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using ExpeditionMapper.Models.Domain;
+using ExpeditionMapper.Models.Domain.LookUps;
 
 namespace ExpeditionMapper.DAL
 {

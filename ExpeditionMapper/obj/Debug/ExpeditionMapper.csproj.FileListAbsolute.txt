@@ -68,3 +68,4 @@ C:\Users\Ian\Google Drive\Code\ExpeditionMapper\ExpeditionMapper\bin\ru-RU\Kendo
 C:\Users\Ian\Google Drive\Code\ExpeditionMapper\ExpeditionMapper\bin\sv-SE\Kendo.Mvc.resources.dll
 C:\Users\Ian\Google Drive\Code\ExpeditionMapper\ExpeditionMapper\bin\uk-UA\Kendo.Mvc.resources.dll
 C:\Users\Ian\Google Drive\Code\ExpeditionMapper\ExpeditionMapper\bin\zh-CN\Kendo.Mvc.resources.dll
+C:\Users\Ian\Google Drive\Code\ExpeditionMapper\ExpeditionMapper\obj\Debug\ExpeditionMapper.csprojResolveAssemblyReference.cache

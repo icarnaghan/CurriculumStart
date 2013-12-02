@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using ExpeditionMapper.Models.Domain;
+using ExpeditionMapper.Models.Domain.LookUps;
 
 namespace ExpeditionMapper.DAL
 {

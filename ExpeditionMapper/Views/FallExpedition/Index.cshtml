@@ -9,7 +9,41 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+
+@(Html.Kendo().Grid<ExpeditionMapper.Models.ViewModels.ExpeditionViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(expedition => expedition.Id).Width(100);
+          columns.Bound(expedition => expedition.Name);
+          columns.Bound(expedition => expedition.Description).Width(250);
+          columns.Command(commands =>
+          {
+              commands.Destroy(); // The "destroy" command removes data items
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create(); // The "create" command adds new data items
+          toolbar.Save(); // The "save" command saves the changed data items
+      })
+      .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+            .Batch(true) // Enable batch updates
+            .Model(model =>
+            {
+                model.Id(expedition => expedition.Id); // Specify the property which is the unique identifier of the model
+                model.Field(expedition => expedition.Id).Editable(false); // Make the ProductID property not editable
+            })
+            .Create(create => create.Action("Expedition_Create", "FallExpedition")) // Action method invoked when the user saves a new data item
+            .Read(read => read.Action("Expedition_Read", "FallExpedition"))  // Action method invoked when the grid needs data
+                .Update(update => update.Action("Expedition_Update", "FallExpedition"))  // Action method invoked when the user saves an updated data item
+                .Destroy(destroy => destroy.Action("Expedition_Destroy", "FallExpedition")) // Action method invoked when the user removes a data item
+      )
+      .Pageable()
+)
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.GradeLevel.Name)
@@ -54,4 +88,4 @@
     </tr>
 }
 
-</table>
+</table>*@
