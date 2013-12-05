@@ -14,9 +14,12 @@
       .Name("grid")
       .Columns(columns =>
       {
-          columns.Bound(expedition => expedition.Id).Width(100);
+          columns.Bound(expedition => expedition.Id);
+          columns.Bound(expedition => expedition.Year);
           columns.Bound(expedition => expedition.Name);
-          columns.Bound(expedition => expedition.Description).Width(250);
+          columns.Bound(expedition => expedition.Description);
+          columns.Bound(expedition => expedition.GradeLevelId);
+          columns.Bound(expedition => expedition.BigIdeasId);
           columns.Command(commands =>
           {
               commands.Destroy(); // The "destroy" command removes data items
@@ -38,8 +41,8 @@
             })
             .Create(create => create.Action("Expedition_Create", "FallExpedition")) // Action method invoked when the user saves a new data item
             .Read(read => read.Action("Expedition_Read", "FallExpedition"))  // Action method invoked when the grid needs data
-                .Update(update => update.Action("Expedition_Update", "FallExpedition"))  // Action method invoked when the user saves an updated data item
-                .Destroy(destroy => destroy.Action("Expedition_Destroy", "FallExpedition")) // Action method invoked when the user removes a data item
+            .Update(update => update.Action("Expedition_Update", "FallExpedition"))  // Action method invoked when the user saves an updated data item
+            .Destroy(destroy => destroy.Action("Expedition_Destroy", "FallExpedition")) // Action method invoked when the user removes a data item
       )
       .Pageable()
 )

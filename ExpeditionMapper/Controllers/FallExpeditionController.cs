@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
 using ExpeditionMapper.Models.Domain.LookUps;
+using ExpeditionMapper.Models.ViewModels;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 
@@ -18,58 +19,104 @@ namespace ExpeditionMapper.Controllers
     {
         private ExpeditionContext db = new ExpeditionContext();
 
-
-        public ActionResult Expedition_Read([DataSourceRequest]DataSourceRequest request)
+        // GET: /FallExpedition/
+        public ActionResult Index()
         {
-            IQueryable<FallExpedition> programs = db.Programs.OfType<FallExpedition>();
-            DataSourceResult result = programs.ToDataSourceResult(request);
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return View();
         }
 
+        public ActionResult Expedition_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            IQueryable<FallExpedition> programs = db.Programs.OfType<FallExpedition>();
+            return Json(programs.ToDataSourceResult(request));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Expedition_Create([DataSourceRequest]DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<FallExpedition> expeditions)
         {
             // Will keep the inserted entitites here. Used to return the result later.
             var entities = new List<FallExpedition>();
             if (ModelState.IsValid)
             {
-                
-                    foreach (var expedition in db.Programs.OfType<FallExpedition>())
+                foreach (var expedition in expeditions)
+                {
+                    // Create a new Expedition entity and set its properties from the posted FallExpedition Model
+                    var entity = new FallExpedition
                     {
-                        // Create a new Expedition entity and set its properties from the posted FallExpedition Model
-                        var entity = new FallExpedition
-                        {
-                            Id = expedition.Id,
-                            Name = expedition.Name,
-                            Description = expedition.Description,
-                        };
-                        // Add the entity
-                        db.Programs.Add(entity);
-                        // Store the entity for later use
-                        entities.Add(entity);
-                    }
-                    // Insert the entities in the database
-                    db.SaveChanges();
-                
+                        Id = expedition.Id,
+                        Year = expedition.Year,
+                        Name = expedition.Name,
+                        Description = expedition.Description,
+                        GradeLevelId = expedition.GradeLevelId,
+                        BigIdeasId = expedition.BigIdeasId
+                    };
+                    // Add the entity
+                    db.Programs.Add(entity);
+                    // Store the entity for later use
+                    entities.Add(entity);
+                }
+                // Insert the entities in the database
+                db.SaveChanges();
             }
             // Return the inserted entities. The grid needs the generated ID. Also return any validation errors.
-            return Json(entities.ToDataSourceResult(request, ModelState, expedition => new FallExpedition
+            return Json(entities.ToDataSourceResult(request, ModelState, expedition => new ExpeditionViewModel
             {
                 Id = expedition.Id,
+                Year = expedition.Year,
                 Name = expedition.Name,
-                Description = expedition.Description
+                Description = expedition.Description,
+                GradeLevelId = expedition.GradeLevelId,
+                BigIdeasId = expedition.BigIdeasId
+            }));
+        }
+
+
+        public ActionResult FallExpeditions_Update([DataSourceRequest]DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<ExpeditionViewModel> expeditions)
+        {
+            // Will keep the updated entitites here. Used to return the result later.
+            var entities = new List<FallExpedition>();
+            if (ModelState.IsValid)
+            {
+                foreach (var expedition in expeditions)
+                {
+                    // Create a new Product entity and set its properties from the posted ExpeditionViewModel
+                    var entity = new FallExpedition
+                    {
+                        Id = expedition.Id,
+                        Year = expedition.Year,
+                        Name = expedition.Name,
+                        Description = expedition.Description,
+                        GradeLevelId = expedition.GradeLevelId,
+                        BigIdeasId = expedition.BigIdeasId
+                    };
+                    // Store the entity for later use
+                    entities.Add(entity);
+                    // Attach the entity
+                    db.FallExpeditions.Attach(entity);
+                    // Change its state to Modified so Entity Framework can update the existing product instead of creating a new one
+                    db.Entry(entity).State = EntityState.Modified;
+                    // Or use ObjectStateManager if using a previous version of Entity Framework
+                    // northwind.ObjectStateManager.ChangeObjectState(entity, EntityState.Modified);
+                }
+                // Update the entities in the database
+                db.SaveChanges();
+            }
+            // Return the updated entities. Also return any validation errors.
+            return Json(entities.ToDataSourceResult(request, ModelState, expedition => new ExpeditionViewModel
+            {
+                Id = expedition.Id,
+                Year = expedition.Year,
+                Name = expedition.Name,
+                Description = expedition.Description,
+                GradeLevelId = expedition.GradeLevelId,
+                BigIdeasId = expedition.BigIdeasId
             }));
         }
 
 
 
-        
-        // GET: /FallExpedition/
-        public ActionResult Index()
-        {
-            var programs = db.Programs.OfType<FallExpedition>().Include(f => f.GradeLevel).Include(f => f.BigIdeasScience);
-            ViewBag.Expeditions = programs;
-            return View();
-        }
+
+
 
         // GET: /FallExpedition/Details/5
         public ActionResult Details(int? id)
@@ -99,7 +146,7 @@ namespace ExpeditionMapper.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Year,GradeLevelId,Name,Description,BigIdeasId")] FallExpedition fallexpedition)
+        public ActionResult Create([Bind(Include = "Id,Year,GradeLevelId,Name,Description,BigIdeasId")] FallExpedition fallexpedition)
         {
             if (ModelState.IsValid)
             {
@@ -135,7 +182,7 @@ namespace ExpeditionMapper.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Year,GradeLevelId,Name,Description,BigIdeasId")] FallExpedition fallexpedition)
+        public ActionResult Edit([Bind(Include = "Id,Year,GradeLevelId,Name,Description,BigIdeasId")] FallExpedition fallexpedition)
         {
             if (ModelState.IsValid)
             {
@@ -173,6 +220,7 @@ namespace ExpeditionMapper.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

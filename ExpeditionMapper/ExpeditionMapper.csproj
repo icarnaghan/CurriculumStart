@@ -40,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Kendo.Mvc">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\Kendo UI for ASP.NET MVC Q3 2013\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Telerik\Kendo UI for ASP.NET MVC Q3 2013\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
