@@ -10,13 +10,10 @@ namespace ExpeditionMapper.DAL
 	    {    
 	    }
 
-	    public DbSet<Program> Programs { get; set; }
+	    public DbSet<Expedition> Expeditions { get; set; }
 	    public DbSet<GuidingQuestion> GuidingQuestions { get; set; }
 	    public DbSet<FinalProduct> FinalProducts { get; set; }
         public DbSet<BigIdeas> BigIdeas { get; set; }
-
-        public System.Data.Entity.DbSet<ExpeditionMapper.Models.Domain.GradeLevel> GradeLevels { get; set; }
-
-        public System.Data.Entity.DbSet<ExpeditionMapper.Models.Domain.FallExpedition> FallExpeditions { get; set; }
+        public DbSet<GradeLevel> GradeLevels { get; set; }
 	}
 }

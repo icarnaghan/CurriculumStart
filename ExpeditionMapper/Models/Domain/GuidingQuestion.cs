@@ -6,9 +6,10 @@ namespace ExpeditionMapper.Models.Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int ProgramId { get; set; }
+        public int ExpeditionId { get; set; }
+        public bool DeleteGuidingQuestion { get; set; }
 
-        [ForeignKey("ProgramId")]
-        public virtual Program Program { get; set; }
+        [ForeignKey("ExpeditionId")]
+        public Expedition Expedition { get; set; }
     }
 }
