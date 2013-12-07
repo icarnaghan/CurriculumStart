@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/flatui/css")
+    @Styles.Render("~/bundles/flatui")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/kendo")
@@ -15,19 +15,23 @@
     <body>
         <div class="container body-content">
             <div class="row">
-                <div class="iconbar iconbar-horizontal iconbar-success pull-right">
-                    <ul>
-                        <li class="active"><a href="#fakelink" class="fui-user"></a></li>
-                        <li><a href="#fakelink" class="fui-calendar"></a></li>
-                        <li><a href="#fakelink" class="fui-chat"></a></li>
-                        <li><a href="#fakelink" class="fui-mail"></a></li>
-                        <li>
-                            <a href="#fakelink" class="fui-gear">
-                                <span class="iconbar-unread">1</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div> <!-- /iconbar -->
+                @if (Request.IsAuthenticated)
+                {
+                    <div class="iconbar iconbar-horizontal iconbar-success pull-right">
+                        <ul>
+                            <li class="active"><a href="/Account/Logoff" class="fui-user"></a></li>
+                            <li><a href="#fakelink" class="fui-calendar"></a></li>
+                            <li><a href="#fakelink" class="fui-chat"></a></li>
+                            <li><a href="#fakelink" class="fui-mail"></a></li>
+                            <li>
+                                <a href="/Account/Manage" class="fui-gear">
+                                    <span class="iconbar-unread"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /iconbar -->
+                }
                 <div class="col-md-6 pull-left">
                     <h3>Expedition Mapper</h3>
                     <p>Monarch Academy Curriculum Mapping</p>
