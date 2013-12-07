@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/flatui")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    @Styles.Render("~/Content/kendo/css")
+    
+</head>
+    <body>
+        <div class="container body-content">
+            <div class="row">
+                @if (Request.IsAuthenticated)
+                {
+                    <div class="iconbar iconbar-horizontal iconbar-success pull-right">
+                        <ul>
+                            <li class="active"><a href="/Account/Logoff" class="fui-user"></a></li>
+                            <li><a href="#fakelink" class="fui-calendar"></a></li>
+                            <li><a href="#fakelink" class="fui-chat"></a></li>
+                            <li><a href="#fakelink" class="fui-mail"></a></li>
+                            <li>
+                                <a href="/Account/Manage" class="fui-gear">
+                                    <span class="iconbar-unread"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /iconbar -->
+                }
+                <div class="col-md-6 pull-left">
+                    <h3>Expedition Mapper</h3>
+                    <p>Monarch Academy Curriculum Mapping</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="navbar navbar-inverse">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                @*@Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })*@
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li>@Html.ActionLink("My Curriculum", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+                @RenderBody()
+                <hr />
+                <footer>
+                    <div class="bottom-menu bottom-menu-inverse">
+                        <div class="container">
+                            <div class="row">
+                                
+
+                                <div class="col-md-7">
+                                    <ul class="bottom-links">
+                                        <li><a href="http://www.monarchcharter.org/">Monarch Academy</a></li>
+                                        <li><a href="http://elschools.org/">Expeditionary Learning</a></li>
+                                        <li class="active"><a href="http://www.corestandards.org/">Common Core</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <ul class="bottom-icons pull-right">
+                                        <li>Monarch Academy Online Curriculum Mapping</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- /bottom-menu-inverse -->
+                </footer>
+            </div>
+
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+</body>
+</html>

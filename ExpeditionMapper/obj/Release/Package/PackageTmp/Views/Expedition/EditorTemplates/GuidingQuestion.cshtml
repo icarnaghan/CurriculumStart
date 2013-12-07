@@ -1,0 +1,14 @@
+﻿@model ExpeditionMapper.Models.Domain.GuidingQuestion
+@using ExpeditionMapper.Models
+
+<div class="guidingQuestion">
+    <p>
+        <label>Guiding Question</label>
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.ExpeditionId)
+
+        @Html.TextBoxFor(x => x.Name)
+        @Html.HiddenFor(x => x.DeleteGuidingQuestion, new { @class = "mark-for-delete" })
+        @Html.RemoveLink("Remove", "div.guidingQuestion", "input.mark-for-delete")
+    </p>
+</div>

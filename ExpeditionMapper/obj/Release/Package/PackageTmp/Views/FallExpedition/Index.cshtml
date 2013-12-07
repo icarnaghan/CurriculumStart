@@ -1,0 +1,46 @@
+﻿@*@model IEnumerable<ExpeditionMapper.Models.Domain.FallExpedition>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@(Html.Kendo().Grid<ExpeditionMapper.Models.ViewModels.ExpeditionViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(expedition => expedition.Id);
+          columns.Bound(expedition => expedition.Year);
+          columns.Bound(expedition => expedition.Name);
+          columns.Bound(expedition => expedition.Description);
+          columns.Bound(expedition => expedition.GradeLevelId);
+          columns.Bound(expedition => expedition.BigIdeasId);
+          columns.Command(commands =>
+          {
+              commands.Edit(); // The "edit" command will edit and update data items
+              commands.Destroy(); // The "destroy" command removes data items
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create(); // The "create" command adds new data items
+          //toolbar.Save(); // The "save" command saves the changed data items
+      })
+        // .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
+          .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+              //.Batch(true) // Enable batch updates
+            .Model(model =>
+            {
+                model.Id(expedition => expedition.Id); // Specify the property which is the unique identifier of the model
+                model.Field(expedition => expedition.Id).Editable(false); // Make the ProductID property not editable
+            })
+            .Create(create => create.Action("Expedition_Create", "FallExpedition")) // Action method invoked when the user saves a new data item
+            .Read(read => read.Action("Expedition_Read", "FallExpedition"))  // Action method invoked when the grid needs data
+            .Update(update => update.Action("Expedition_Update", "FallExpedition"))  // Action method invoked when the user saves an updated data item
+            .Destroy(destroy => destroy.Action("Expedition_Destroy", "FallExpedition")) // Action method invoked when the user removes a data item
+      )
+      .Pageable()
+ )*@
