@@ -35,6 +35,9 @@ namespace ExpeditionMapper
                     "~/Content/kendo/kendo.common-bootstrap.min.css",
                     "~/Content/kendo/kendo.bootstrap.min.css"));
 
+            bundles.Add(new StyleBundle("~/Content/flatui").Include(
+                    "~/Content/flatui/flat-ui.css"));
+
             // Allow minified files in debug mode.
             bundles.IgnoreList.Clear();
         }
