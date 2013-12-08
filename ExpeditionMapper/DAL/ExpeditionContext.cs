@@ -12,8 +12,8 @@ namespace ExpeditionMapper.DAL
 
 	    public DbSet<Expedition> Expeditions { get; set; }
 	    public DbSet<GuidingQuestion> GuidingQuestions { get; set; }
-	    public DbSet<FinalProduct> FinalProducts { get; set; }
         public DbSet<BigIdeas> BigIdeas { get; set; }
         public DbSet<GradeLevel> GradeLevels { get; set; }
+	    public DbSet<ExpeditionHabit> ExpeditionHabits { get; set; }
 	}
 }

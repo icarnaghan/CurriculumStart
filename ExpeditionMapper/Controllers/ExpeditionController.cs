@@ -4,8 +4,6 @@ using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
-using Kendo.Mvc.Extensions;
-using Kendo.Mvc.UI;
 
 namespace ExpeditionMapper.Controllers
 {
@@ -20,14 +18,6 @@ namespace ExpeditionMapper.Controllers
             return View(expeditions.ToList());
         }
 
-        public ActionResult New()
-        {
-            var expedition = new Expedition();
-            expedition.GradeLevelId = 2;
-            expedition.CreateGuidingQuestions(1);
-            return View(expedition);
-        }
-
         [HttpPost]
         public ActionResult New(Expedition expedition)
         {
@@ -37,46 +27,6 @@ namespace ExpeditionMapper.Controllers
                 db.SaveChanges();
             }
             return Redirect("New");
-        }
-
-        // GET: /Expedition/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Expedition expedition = db.Expeditions.Find(id);
-            if (expedition == null)
-            {
-                return HttpNotFound();
-            }
-            return View(expedition);
-        }
-
-        // GET: /Expedition/Create
-        public ActionResult Create()
-        {
-            ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name");
-            return View();
-        }
-
-        // POST: /Expedition/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Year,GradeLevelId,Name,Description,KickOff,FinalProductName,FinalProductDescription,GuidingQuestions")] Expedition expedition)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Expeditions.Add(expedition);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name", expedition.GradeLevelId);
-            return View(expedition);
         }
 
         // GET: /Expedition/Edit/5
@@ -117,32 +67,6 @@ namespace ExpeditionMapper.Controllers
             }
             ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name", expedition.GradeLevelId);
             return View(expedition);
-        }
-
-        // GET: /Expedition/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Expedition expedition = db.Expeditions.Find(id);
-            if (expedition == null)
-            {
-                return HttpNotFound();
-            }
-            return View(expedition);
-        }
-
-        // POST: /Expedition/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Expedition expedition = db.Expeditions.Find(id);
-            db.Expeditions.Remove(expedition);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

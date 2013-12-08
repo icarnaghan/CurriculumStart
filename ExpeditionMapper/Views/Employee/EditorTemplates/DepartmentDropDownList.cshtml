@@ -1,0 +1,7 @@
+﻿@model string
+
+@(Html.Kendo().DropDownList()
+    .Name("Habit")  //Important, must match the column's name
+    .Value(Model)
+    .SelectedIndex(0)
+    .BindTo(new string[] { "IT", "Sales", "Finance" }))

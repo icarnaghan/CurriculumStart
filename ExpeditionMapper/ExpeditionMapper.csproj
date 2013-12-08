@@ -162,6 +162,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ExpeditionHabitController.cs" />
     <Compile Include="Controllers\GuidingQuestionController.cs" />
     <Compile Include="Controllers\ExpeditionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -175,11 +177,13 @@
     <Compile Include="Models\Domain\LookUps\BigIdeas.cs" />
     <Compile Include="Models\Domain\LookUps\BigIdeasScience.cs" />
     <Compile Include="Models\Domain\LookUps\BigIdeasSocialStudies.cs" />
-    <Compile Include="Models\Domain\GradeLevel.cs" />
-    <Compile Include="Models\Domain\FinalProduct.cs" />
+    <Compile Include="Models\Domain\LookUps\GradeLevel.cs" />
+    <Compile Include="Models\Domain\ExpeditionHabit.cs" />
     <Compile Include="Models\Domain\GuidingQuestion.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ViewModels\ExpeditionHabitViewModel.cs" />
     <Compile Include="Models\ViewModels\ExpeditionViewModel.cs" />
     <Compile Include="Models\ViewModels\GuidingQuestionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1471,6 +1475,12 @@
     <Content Include="Views\Expedition\Edit.cshtml" />
     <Content Include="Views\Expedition\Index.cshtml" />
     <Content Include="Views\Expedition\Partials\_GuidingQuestion.cshtml" />
+    <Content Include="Views\Expedition\Partials\_ExpeditionHabit.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\EditorTemplates\DepartmentDropDownList.cshtml" />
+    <Content Include="Views\Expedition\EditorTemplates\ExpeditionHabitDropDownList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

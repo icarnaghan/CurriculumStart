@@ -1,12 +1,13 @@
-﻿<h4><label>Guiding Questions</label></h4>
+﻿<h4><label>Habits</label></h4>
 
-@(Html.Kendo().Grid<ExpeditionMapper.Models.ViewModels.GuidingQuestionViewModel>
+@(Html.Kendo().Grid<ExpeditionMapper.Models.ViewModels.ExpeditionHabitViewModel>
     ()
-    .Name("grid")
+    .Name("grid2")
     .Columns(columns =>
     {
-        columns.Bound(g => g.Id);
-        columns.Bound(g => g.Name);
+        columns.Bound(h => h.Id);
+        columns.Bound(h => h.Habit).EditorTemplateName("ExpeditionHabitDropdownList");
+        columns.Bound(h => h.Rationale);
         columns.Command(commands =>
         {
             commands.Edit(); // The "edit" command will edit and update data items
@@ -28,10 +29,10 @@
         model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
         model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
     })
-            .Create(create => create.Action("GuidingQuestion_Create", "GuidingQuestion", new { ExpeditionId = "1" })) // Action method invoked when the user saves a new data item
-            .Read(read => read.Action("GuidingQuestion_Read", "GuidingQuestion", new { ExpeditionId = 1 }))  // Action method invoked when the grid needs data
-            .Update(update => update.Action("GuidingQuestion_Update", "GuidingQuestion", new { ExpeditionId = 1 }))  // Action method invoked when the user saves an updated data item
-            .Destroy(destroy => destroy.Action("GuidingQuestion_Destroy", "GuidingQuestion", new { ExpeditionId = 1 })) // Action method invoked when the user removes a data item
+        .Create(create => create.Action("ExpeditionHabit_Create", "ExpeditionHabit", new { ExpeditionId = 1 })) // Action method invoked when the user saves a new data item
+        .Read(read => read.Action("ExpeditionHabit_Read", "ExpeditionHabit", new { ExpeditionId = 1 }))  // Action method invoked when the grid needs data
+        .Update(update => update.Action("ExpeditionHabit_Update", "ExpeditionHabit", new { ExpeditionId = 1 }))  // Action method invoked when the user saves an updated data item
+        .Destroy(destroy => destroy.Action("ExpeditionHabit_Destroy", "ExpeditionHabit", new { ExpeditionId = 1 })) // Action method invoked when the user removes a data item
     )
     .Pageable()
 )

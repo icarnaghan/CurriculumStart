@@ -6,11 +6,6 @@ namespace ExpeditionMapper.Models.Domain
 {
     public class Expedition
     {
-        public Expedition()
-        {
-            this.GuidingQuestions = new HashSet<GuidingQuestion>();
-        }
-
         public int Id { get; set; }
         public int Year { get; set; }
         public int GradeLevelId { get; set; }
@@ -24,13 +19,6 @@ namespace ExpeditionMapper.Models.Domain
         public virtual GradeLevel GradeLevel { get; set; }
 
         public virtual ICollection<GuidingQuestion> GuidingQuestions { get; set; }
-
-        internal void CreateGuidingQuestions(int count = 1)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                GuidingQuestions.Add(new GuidingQuestion());
-            }
-        }
+        public virtual ICollection<ExpeditionHabit> ExpeditionHabits { get; set; }
     }
 }

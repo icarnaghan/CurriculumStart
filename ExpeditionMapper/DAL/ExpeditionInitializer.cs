@@ -79,6 +79,21 @@ namespace ExpeditionMapper.DAL
             bigIdeasSocialStudies.ForEach(g => context.BigIdeas.Add(g));
             context.SaveChanges();
 
+            var expedition = new Expedition
+            {
+                Id = 1,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Ancient Civilizations",
+                Description = "Summary Information",
+                KickOff = "Ancient Civilizations Summary information",
+                FinalProductName = "Civilizations of the early years",
+                FinalProductDescription =
+                    "Civilization or civilisation generally refers to state polities which combine these basic institutions: " +
+                    "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. "
+            };
+            context.Expeditions.Add(expedition);
+            context.SaveChanges();
         }
     }
 }
