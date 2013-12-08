@@ -162,7 +162,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\SocialStudiesBigIdeaController.cs" />
     <Compile Include="Controllers\ScienceBigIdeaController.cs" />
     <Compile Include="Controllers\ExpeditionHabitController.cs" />
@@ -1483,8 +1482,6 @@
     <Content Include="Views\Expedition\Partials\_ExpeditionHabit.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\EditorTemplates\DepartmentDropDownList.cshtml" />
     <Content Include="Views\Expedition\EditorTemplates\ExpeditionHabitDropDownList.cshtml" />
     <Content Include="Views\Expedition\Partials\_ScienceBigIdea.cshtml" />
     <Content Include="Views\Expedition\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
