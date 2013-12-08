@@ -6,42 +6,41 @@ using ExpeditionMapper.DAL;
 
 namespace ExpeditionMapper.Controllers
 {
-    public class ExpeditionController : Controller
+    public class CaseStudyController : Controller
     {
         private ExpeditionContext db = new ExpeditionContext();
 
-        // GET: /Expedition/Edit/5
+        // GET: /CaseStudy/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Expedition expedition = db.Expeditions.Find(id);
-            if (expedition == null)
+            CaseStudy casestudy = db.CaseStudies.Find(id);
+            if (casestudy == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name", expedition.GradeLevelId);
-            return View(expedition);
+            ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
+            return View(casestudy);
         }
 
-        // POST: /Expedition/Edit/5
+        // POST: /CaseStudy/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Year,GradeLevelId,Name,Description,KickOff,FinalProductName,FinalProductDescription,GuidingQuestions")] Expedition expedition)
+        public ActionResult Edit([Bind(Include="Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
         {
             if (ModelState.IsValid)
             {
-                expedition.GradeLevelId = 2;
-                db.Entry(expedition).State = EntityState.Modified;
+                db.Entry(casestudy).State = EntityState.Modified;
                 db.SaveChanges();
-                
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index","Home");
             }
-            return View(expedition);
+            ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
+            return View(casestudy);
         }
 
         protected override void Dispose(bool disposing)

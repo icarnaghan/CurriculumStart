@@ -20,5 +20,7 @@ namespace ExpeditionMapper.Models.Domain
 
         public virtual ICollection<GuidingQuestion> GuidingQuestions { get; set; }
         public virtual ICollection<ExpeditionHabit> ExpeditionHabits { get; set; }
+        public virtual ICollection<ScienceBigIdea> ScienceBigIdeas { get; set; }
+        public virtual ICollection<SocialStudiesBigIdea> SocialStudiesBigIdeas { get; set; }
     }
 }

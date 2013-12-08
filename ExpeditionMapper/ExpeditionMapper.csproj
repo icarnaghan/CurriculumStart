@@ -162,6 +162,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CaseStudyController.cs" />
+    <Compile Include="Controllers\FieldworkController.cs" />
     <Compile Include="Controllers\SocialStudiesBigIdeaController.cs" />
     <Compile Include="Controllers\ScienceBigIdeaController.cs" />
     <Compile Include="Controllers\ExpeditionHabitController.cs" />
@@ -174,12 +176,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Domain\CaseStudy.cs" />
     <Compile Include="Models\Domain\Expedition.cs" />
+    <Compile Include="Models\Domain\ServiceLearning.cs" />
+    <Compile Include="Models\Domain\Expert.cs" />
+    <Compile Include="Models\Domain\Fieldwork.cs" />
     <Compile Include="Models\Domain\SocialStudiesBigIdea.cs" />
     <Compile Include="Models\Domain\ScienceBigIdea.cs" />
-    <Compile Include="Models\Domain\LookUps\BigIdeas.cs" />
-    <Compile Include="Models\Domain\LookUps\BigIdeasScience.cs" />
-    <Compile Include="Models\Domain\LookUps\BigIdeasSocialStudies.cs" />
     <Compile Include="Models\Domain\LookUps\GradeLevel.cs" />
     <Compile Include="Models\Domain\ExpeditionHabit.cs" />
     <Compile Include="Models\Domain\GuidingQuestion.cs" />
@@ -188,6 +191,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\ExpeditionHabitViewModel.cs" />
     <Compile Include="Models\ViewModels\ExpeditionViewModel.cs" />
+    <Compile Include="Models\ViewModels\FieldworkViewModel.cs" />
     <Compile Include="Models\ViewModels\GuidingQuestionViewModel.cs" />
     <Compile Include="Models\ViewModels\SocialStudiesBigIdeaViewModel.cs" />
     <Compile Include="Models\ViewModels\ScienceBigIdeaViewModel.cs" />
@@ -1487,6 +1491,8 @@
     <Content Include="Views\Expedition\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
     <Content Include="Views\Expedition\Partials\_SocialStudiesBigIdea.cshtml" />
     <Content Include="Views\Expedition\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\CaseStudy\Edit.cshtml" />
+    <Content Include="Views\CaseStudy\Partials\_Fieldwork.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
