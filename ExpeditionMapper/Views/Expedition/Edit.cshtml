@@ -1,4 +1,5 @@
-﻿@model ExpeditionMapper.Models.Domain.Expedition
+﻿@using ExpeditionMapper.Models.ViewModels
+@model ExpeditionMapper.Models.Domain.Expedition
 
 @{
     ViewBag.Title = "Edit";
@@ -78,10 +79,15 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.GuidingQuestions)
         </div>
-        <div class="editor-field">
+        @*<div class="editor-field">
             @Html.EditorFor(model => model.GuidingQuestions)
             @Html.ValidationMessageFor(model => model.GuidingQuestions)
+        </div>*@
+        
+        <div id="guidingQuestions">
+            @Html.Partial("~/Views/Expedition/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel { ExpeditionId = Model.Id })
         </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -16,8 +16,5 @@ namespace ExpeditionMapper.Models.ViewModels
         public string KickOff { get; set; }
         public string FinalProductName { get; set; }
         public string FinalProductDescription { get; set; }
-
-        public virtual GradeLevel GradeLevel { get; set; }
-        public virtual ICollection<GuidingQuestion> GuidingQuestions { get; set; }
     }
 }

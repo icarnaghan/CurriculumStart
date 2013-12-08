@@ -1,14 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using ExpeditionMapper.Models.Domain;
 
-namespace ExpeditionMapper.Models.Domain
+namespace ExpeditionMapper.Models.ViewModels
 {
-    public class GuidingQuestion
+    public class GuidingQuestionViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int ExpeditionId { get; set; }
+        public bool DeleteGuidingQuestion { get; set; }
 
-        [ForeignKey("ExpeditionId")]
         public Expedition Expedition { get; set; }
     }
 }

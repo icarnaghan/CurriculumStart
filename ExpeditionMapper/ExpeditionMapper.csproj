@@ -162,8 +162,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GuidingQuestionController.cs" />
     <Compile Include="Controllers\ExpeditionController.cs" />
-    <Compile Include="Controllers\FallExpeditionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\ExpeditionContext.cs" />
     <Compile Include="DAL\ExpeditionInitializer.cs" />
@@ -181,6 +181,7 @@
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\ExpeditionViewModel.cs" />
+    <Compile Include="Models\ViewModels\GuidingQuestionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1467,15 +1468,9 @@
     <Content Include="Scripts\kendo\kendo.view.min.js.map" />
     <Content Include="Scripts\kendo\kendo.web.min.js.map" />
     <Content Include="Scripts\kendo\kendo.window.min.js.map" />
-    <Content Include="Views\FallExpedition\Index.cshtml" />
-    <Content Include="Views\Expedition\Create.cshtml" />
-    <Content Include="Views\Expedition\Delete.cshtml" />
-    <Content Include="Views\Expedition\Details.cshtml" />
     <Content Include="Views\Expedition\Edit.cshtml" />
     <Content Include="Views\Expedition\Index.cshtml" />
-    <Content Include="Views\Expedition\New.cshtml" />
-    <Content Include="Views\Expedition\EditorTemplates\Expedition.cshtml" />
-    <Content Include="Views\Expedition\EditorTemplates\GuidingQuestion.cshtml" />
+    <Content Include="Views\Expedition\Partials\_GuidingQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

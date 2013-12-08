@@ -20,17 +20,11 @@ namespace ExpeditionMapper.Controllers
             return View(expeditions.ToList());
         }
 
-        public ActionResult GuidingQuestions_Read([DataSourceRequest] DataSourceRequest request)
-        {
-            IQueryable<GuidingQuestion> guidingQuestions = db.GuidingQuestions;
-            return Json(guidingQuestions.ToDataSourceResult(request));
-        }
-
         public ActionResult New()
         {
             var expedition = new Expedition();
             expedition.GradeLevelId = 2;
-            expedition.CreateGuidingQuestions(2);
+            expedition.CreateGuidingQuestions(1);
             return View(expedition);
         }
 
@@ -39,14 +33,6 @@ namespace ExpeditionMapper.Controllers
         {
             if (ModelState.IsValid)
             {
-                foreach (GuidingQuestion guidingQuestion in expedition.GuidingQuestions.ToList())
-                {
-                    if (guidingQuestion.DeleteGuidingQuestion == true)
-                    {
-                        // Delete Phone Numbers which is marked to remove
-                        expedition.GuidingQuestions.Remove(guidingQuestion);
-                    }
-                }
                 db.Expeditions.Add(expedition);
                 db.SaveChanges();
             }
