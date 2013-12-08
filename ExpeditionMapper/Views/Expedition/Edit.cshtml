@@ -7,83 +7,43 @@
 
 <script src="~/Scripts/ExpeditionMapper.js"></script>
 
-<h2>Edit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
+   
     <div class="form-horizontal">
-        <h4>Expedition</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.Id)
+        <h3>Fall Expedition</h3>
+        <h4><label>Overview</label></h4>
+        <div class="well">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Year, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Year)
-                @Html.ValidationMessageFor(model => model.Year)
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control input-sm" })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Description, new { @class = "form-control input-sm" })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.KickOff, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.KickOff, new { @class = "form-control input-sm" })
+                    @Html.ValidationMessageFor(model => model.KickOff)
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GradeLevelId, "GradeLevelId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("GradeLevelId", String.Empty)
-                @Html.ValidationMessageFor(model => model.GradeLevelId)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name)
-                @Html.ValidationMessageFor(model => model.Name)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description)
-                @Html.ValidationMessageFor(model => model.Description)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.KickOff, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.KickOff)
-                @Html.ValidationMessageFor(model => model.KickOff)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FinalProductName, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FinalProductName)
-                @Html.ValidationMessageFor(model => model.FinalProductName)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FinalProductDescription, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FinalProductDescription)
-                @Html.ValidationMessageFor(model => model.FinalProductDescription)
-            </div>
-        </div>
-        
-        <div class="editor-label">
-            @Html.LabelFor(model => model.GuidingQuestions)
-        </div>
-        @*<div class="editor-field">
-            @Html.EditorFor(model => model.GuidingQuestions)
-            @Html.ValidationMessageFor(model => model.GuidingQuestions)
-        </div>*@
-        
+   
         <div id="guidingQuestions">
             @Html.Partial("~/Views/Expedition/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel { ExpeditionId = Model.Id })
         </div>
@@ -99,18 +59,39 @@
         <div id="socialStudiesBigIdeas">
             @Html.Partial("~/Views/Expedition/Partials/_SocialStudiesBigIdea.cshtml", new SocialStudiesBigIdeaViewModel { ExpeditionId = Model.Id })
         </div>
+        
+        <h4><label>Final Product</label></h4>
+        <div class="well">
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group">
+                @Html.LabelFor(model => model.FinalProductName, new { @class = "control-label col-md-2" })
+                <div class="col-md-12">
+                    @Html.TextBoxFor(model => model.FinalProductName, new { @class = "form-control input-sm" })
+                    @Html.ValidationMessageFor(model => model.FinalProductName)
+                </div>
             </div>
         </div>
-    </div>
-}
+            @(Html.Kendo().Editor()
+              .Name("FinalProductDescription")
+              .HtmlAttributes(new { style = "height:340px" })
+              .Value(@<text></text>)
+              .ImageBrowser(imageBrowser => imageBrowser
+                  .Image("~/Content/UserFiles/Images/{0}")
+                  .Read("Read", "ImageBrowser")
+                  .Create("Create", "ImageBrowser")
+                  .Destroy("Destroy", "ImageBrowser")
+                  .Upload("Upload", "ImageBrowser")
+                  .Thumbnail("Thumbnail", "ImageBrowser"))
+            )
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+            <div class="form-group">
+                <br />
+                <div class="col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

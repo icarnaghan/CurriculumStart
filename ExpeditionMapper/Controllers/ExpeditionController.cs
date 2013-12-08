@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.Models.Domain;
@@ -10,24 +9,6 @@ namespace ExpeditionMapper.Controllers
     public class ExpeditionController : Controller
     {
         private ExpeditionContext db = new ExpeditionContext();
-
-        // GET: /Expedition/
-        public ActionResult Index()
-        {
-            var expeditions = db.Expeditions.Include(e => e.GradeLevel).Include(e => e.GuidingQuestions);
-            return View(expeditions.ToList());
-        }
-
-        [HttpPost]
-        public ActionResult New(Expedition expedition)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Expeditions.Add(expedition);
-                db.SaveChanges();
-            }
-            return Redirect("New");
-        }
 
         // GET: /Expedition/Edit/5
         public ActionResult Edit(int? id)
@@ -54,10 +35,11 @@ namespace ExpeditionMapper.Controllers
         {
             if (ModelState.IsValid)
             {
+                expedition.GradeLevelId = 2;
                 db.Entry(expedition).State = EntityState.Modified;
                 db.SaveChanges();
                 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(expedition);
         }

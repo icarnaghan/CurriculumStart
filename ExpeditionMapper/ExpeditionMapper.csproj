@@ -1479,7 +1479,6 @@
     <Content Include="Scripts\kendo\kendo.web.min.js.map" />
     <Content Include="Scripts\kendo\kendo.window.min.js.map" />
     <Content Include="Views\Expedition\Edit.cshtml" />
-    <Content Include="Views\Expedition\Index.cshtml" />
     <Content Include="Views\Expedition\Partials\_GuidingQuestion.cshtml" />
     <Content Include="Views\Expedition\Partials\_ExpeditionHabit.cshtml">
       <SubType>Code</SubType>
