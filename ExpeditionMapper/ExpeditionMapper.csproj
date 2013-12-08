@@ -163,6 +163,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\SocialStudiesBigIdeaController.cs" />
+    <Compile Include="Controllers\ScienceBigIdeaController.cs" />
     <Compile Include="Controllers\ExpeditionHabitController.cs" />
     <Compile Include="Controllers\GuidingQuestionController.cs" />
     <Compile Include="Controllers\ExpeditionController.cs" />
@@ -174,6 +176,8 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Domain\Expedition.cs" />
+    <Compile Include="Models\Domain\SocialStudiesBigIdea.cs" />
+    <Compile Include="Models\Domain\ScienceBigIdea.cs" />
     <Compile Include="Models\Domain\LookUps\BigIdeas.cs" />
     <Compile Include="Models\Domain\LookUps\BigIdeasScience.cs" />
     <Compile Include="Models\Domain\LookUps\BigIdeasSocialStudies.cs" />
@@ -186,6 +190,8 @@
     <Compile Include="Models\ViewModels\ExpeditionHabitViewModel.cs" />
     <Compile Include="Models\ViewModels\ExpeditionViewModel.cs" />
     <Compile Include="Models\ViewModels\GuidingQuestionViewModel.cs" />
+    <Compile Include="Models\ViewModels\SocialStudiesBigIdeaViewModel.cs" />
+    <Compile Include="Models\ViewModels\ScienceBigIdeaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1481,6 +1487,10 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\EditorTemplates\DepartmentDropDownList.cshtml" />
     <Content Include="Views\Expedition\EditorTemplates\ExpeditionHabitDropDownList.cshtml" />
+    <Content Include="Views\Expedition\Partials\_ScienceBigIdea.cshtml" />
+    <Content Include="Views\Expedition\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\Expedition\Partials\_SocialStudiesBigIdea.cshtml" />
+    <Content Include="Views\Expedition\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

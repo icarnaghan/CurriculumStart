@@ -1,0 +1,24 @@
+﻿@model string
+
+@(Html.Kendo().DropDownList()
+    .Name("Idea")  //Important, must match the column's name
+    .Value(Model)
+    .SelectedIndex(0)
+    .BindTo(new string[] { "Select Science Big Idea", 
+        "Systems: A change in one part of a system can change the whole system.", 
+        "Systems: Systems can be used to predict patterns.", 
+        "Structure and Function: The physical characteristics of an organism directly impact its survival.",
+        "Structure and Function: When an environment changes, an organism must adapt, move, or die.",
+        "Structure and Function: Organisms need energy to survive.",
+        "Constancy and Change: Organisms have predictable patterns of change in growth and development.",
+        "Constancy and Change: New technologies can cause change, and change can lead to new technologies.",
+        "Constancy and Change: New technologies can cause change, and change can lead to new technologies.",
+        "Constancy and Change: Forces of nature continuously change the Earth.",
+        "Constancy and Change: Energy can change forms but cannot be created or destroyed.",
+        "Interdependence: Organisms depend on one another and on their environment.",
+        "Models: Models can be used to represent observable science phenomenon.",
+        "Models: Models can be used to test theories of science phenomenon that are not directly observable.",
+        "Models: Models involving hypothesized relationships and process can be used to find, articulate, and test theories.",
+        "Scale: Some things are so immense or minute that they are difficult to measure and understand.",
+        "Scale: The ways in which things work may change with changes to scale"
+    }))

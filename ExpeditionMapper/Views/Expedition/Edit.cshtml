@@ -91,6 +91,14 @@
         <div id="expeditionHabits">
             @Html.Partial("~/Views/Expedition/Partials/_ExpeditionHabit.cshtml", new ExpeditionHabitViewModel { ExpeditionId = Model.Id })
         </div>
+        
+        <div id="scienceBigIdeas">
+            @Html.Partial("~/Views/Expedition/Partials/_ScienceBigIdea.cshtml", new ScienceBigIdeaViewModel { ExpeditionId = Model.Id })
+        </div>
+
+        <div id="socialStudiesBigIdeas">
+            @Html.Partial("~/Views/Expedition/Partials/_SocialStudiesBigIdea.cshtml", new SocialStudiesBigIdeaViewModel { ExpeditionId = Model.Id })
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

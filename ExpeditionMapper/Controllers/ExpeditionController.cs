@@ -57,15 +57,8 @@ namespace ExpeditionMapper.Controllers
                 db.Entry(expedition).State = EntityState.Modified;
                 db.SaveChanges();
                 
-                foreach (var item in expedition.GuidingQuestions)
-                {
-                    db.Entry(item).State = EntityState.Modified;
-                    db.SaveChanges();
-                }
-                
                 return RedirectToAction("Index");
             }
-            ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name", expedition.GradeLevelId);
             return View(expedition);
         }
 
