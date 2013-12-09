@@ -62,3 +62,8 @@ input[type="checkbox"].input-validation-error {
 h3 a {
     color: #34495e;
 }
+
+.k-list-container {
+    position: relative !important;
+    left: 200px !important;
+}

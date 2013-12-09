@@ -6,24 +6,18 @@ using System.Web.Mvc;
 
 namespace ExpeditionMapper.Controllers
 {
-    [Authorize]
-    public class HomeController : Controller
+    public class BrowseController : Controller
     {
+        //
+        // GET: /Browse/
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Unavailable()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Support()
+        public ActionResult Results()
         {
             return View();
         }
-    }
+	}
 }
