@@ -210,3 +210,4 @@ C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper\bin\zh-CN\Kendo.Mvc.resource
 C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper\obj\Debug\ExpeditionMapper.dll
 C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper\obj\Debug\ExpeditionMapper.pdb
 C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper\obj\Debug\ExpeditionMapper.csprojResolveAssemblyReference.cache
+F:\Code\ASP.NET\ExpeditionMapper\ExpeditionMapper\obj\Debug\ExpeditionMapper.csprojResolveAssemblyReference.cache
