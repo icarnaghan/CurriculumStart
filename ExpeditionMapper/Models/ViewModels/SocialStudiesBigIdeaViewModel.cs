@@ -12,7 +12,5 @@ namespace ExpeditionMapper.Models.ViewModels
         public string Idea { get; set; }
         public string Rationale { get; set; }
         public int ExpeditionId { get; set; }
-
-        public Expedition Expedition { get; set; }
     }
 }

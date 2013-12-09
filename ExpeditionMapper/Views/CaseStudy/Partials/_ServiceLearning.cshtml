@@ -1,12 +1,13 @@
-﻿<h4><label>Fieldwork</label></h4>
+﻿<h4><label>Service Learning</label></h4>
 
-@(Html.Kendo().Grid<ExpeditionMapper.Models.ViewModels.FieldworkViewModel>
+@(Html.Kendo().Grid<ExpeditionMapper.Models.ViewModels.ServiceLearningViewModel>
     ()
-    .Name("grid")
+    .Name("grid3")
     .Columns(columns =>
     {
-        columns.Bound(f => f.Name);
-        columns.Bound(f => f.Description);
+
+        columns.Bound(s => s.Name);
+        columns.Bound(s => s.Description);
         columns.Command(commands =>
         {
             commands.Edit(); // The "edit" command will edit and update data items
@@ -28,10 +29,10 @@
         model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
         model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
     })
-                .Create(create => create.Action("Fieldwork_Create", "Fieldwork", new { CaseStudyId = 1 })) // Action method invoked when the user saves a new data item
-                .Read(read => read.Action("Fieldwork_Read", "Fieldwork", new { CaseStudyId = 1 }))  // Action method invoked when the grid needs data
-                .Update(update => update.Action("Fieldwork_Update", "Fieldwork", new { CaseStudyId = 1 }))  // Action method invoked when the user saves an updated data item
-                .Destroy(destroy => destroy.Action("Fieldwork_Destroy", "Fieldwork", new { CaseStudyId = 1 })) // Action method invoked when the user removes a data item
+                    .Create(create => create.Action("ServiceLearning_Create", "ServiceLearning", new { CaseStudyId = 1 })) // Action method invoked when the user saves a new data item
+                    .Read(read => read.Action("ServiceLearning_Read", "ServiceLearning", new { CaseStudyId = 1 }))  // Action method invoked when the grid needs data
+                    .Update(update => update.Action("ServiceLearning_Update", "ServiceLearning", new { CaseStudyId = 1 }))  // Action method invoked when the user saves an updated data item
+                    .Destroy(destroy => destroy.Action("ServiceLearning_Destroy", "ServiceLearning", new { CaseStudyId = 1 })) // Action method invoked when the user removes a data item
     )
     .Pageable()
 )

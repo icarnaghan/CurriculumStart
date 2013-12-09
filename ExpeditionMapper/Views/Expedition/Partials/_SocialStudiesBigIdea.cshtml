@@ -5,7 +5,6 @@
     .Name("grid4")
     .Columns(columns =>
     {
-        columns.Bound(b => b.Id);
         columns.Bound(b => b.Idea).EditorTemplateName("SocialStudiesBigIdeaDropdownList");
         columns.Bound(b => b.Rationale);
         columns.Command(commands =>

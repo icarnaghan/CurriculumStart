@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Net;
 using System.Web.Mvc;
+using System.Web.Routing;
 using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
 
@@ -35,9 +36,10 @@ namespace ExpeditionMapper.Controllers
         {
             if (ModelState.IsValid)
             {
+                casestudy.ExpeditionId = 1;
                 db.Entry(casestudy).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("Edit","Expedition", new {id = 1});
             }
             ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
             return View(casestudy);

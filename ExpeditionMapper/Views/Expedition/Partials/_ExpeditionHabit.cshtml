@@ -5,7 +5,6 @@
     .Name("grid2")
     .Columns(columns =>
     {
-        columns.Bound(h => h.Id);
         columns.Bound(h => h.Habit).EditorTemplateName("ExpeditionHabitDropdownList");
         columns.Bound(h => h.Rationale);
         columns.Command(commands =>

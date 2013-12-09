@@ -10,10 +10,18 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-   
+
+
     <div class="form-horizontal">
-        <h3>Fall Expedition</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="/Home">My Curriculum</a></li>
+                    <li class="active"><a href="#">Fall Expedition</a></li>
+                </ul>
+                <h3>Fall Expedition</h3>
+            </div>
+        </div>
         <h4><label>Overview</label></h4>
         <div class="well">
             @Html.ValidationSummary(true)
@@ -43,7 +51,7 @@
                 </div>
             </div>
         </div>
-   
+
         <div id="guidingQuestions">
             @Html.Partial("~/Views/Expedition/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel { ExpeditionId = Model.Id })
         </div>
@@ -51,7 +59,7 @@
         <div id="expeditionHabits">
             @Html.Partial("~/Views/Expedition/Partials/_ExpeditionHabit.cshtml", new ExpeditionHabitViewModel { ExpeditionId = Model.Id })
         </div>
-        
+
         <div id="scienceBigIdeas">
             @Html.Partial("~/Views/Expedition/Partials/_ScienceBigIdea.cshtml", new ScienceBigIdeaViewModel { ExpeditionId = Model.Id })
         </div>
@@ -59,7 +67,16 @@
         <div id="socialStudiesBigIdeas">
             @Html.Partial("~/Views/Expedition/Partials/_SocialStudiesBigIdea.cshtml", new SocialStudiesBigIdeaViewModel { ExpeditionId = Model.Id })
         </div>
-        
+        <h4><label>Case Studies</label></h4>
+        <div class="well col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="btn btn-primary btn-wide" href="/Casestudy/Edit/1">
+                        Ancient Greece
+                    </a>
+                </div>
+            </div>
+        </div>
         <h4><label>Final Product</label></h4>
         <div class="well">
 
@@ -69,9 +86,10 @@
                     @Html.TextBoxFor(model => model.FinalProductName, new { @class = "form-control input-sm" })
                     @Html.ValidationMessageFor(model => model.FinalProductName)
                 </div>
+
             </div>
         </div>
-            @(Html.Kendo().Editor()
+        @(Html.Kendo().Editor()
               .Name("FinalProductDescription")
               .HtmlAttributes(new { style = "height:340px" })
               .Value(@<text></text>)
@@ -82,15 +100,15 @@
                   .Destroy("Destroy", "ImageBrowser")
                   .Upload("Upload", "ImageBrowser")
                   .Thumbnail("Thumbnail", "ImageBrowser"))
-            )
+              )
 
-            <div class="form-group">
-                <br />
-                <div class="col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
+        <div class="form-group">
+            <br />
+            <div class="col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
+    </div>
 }
 
 @section Scripts {

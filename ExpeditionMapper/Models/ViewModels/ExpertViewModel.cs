@@ -1,8 +1,6 @@
-﻿using ExpeditionMapper.Models.Domain;
-
-namespace ExpeditionMapper.Models.ViewModels
+﻿namespace ExpeditionMapper.Models.ViewModels
 {
-    public class FieldworkViewModel
+    public class ExpertViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

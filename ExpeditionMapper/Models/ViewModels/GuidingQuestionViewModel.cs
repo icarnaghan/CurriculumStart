@@ -8,7 +8,5 @@ namespace ExpeditionMapper.Models.ViewModels
         public string Name { get; set; }
         public int ExpeditionId { get; set; }
         public bool DeleteGuidingQuestion { get; set; }
-
-        public Expedition Expedition { get; set; }
     }
 }
