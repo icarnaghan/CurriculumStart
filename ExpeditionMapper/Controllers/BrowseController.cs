@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ExpeditionMapper.Controllers
 {
-    public class BrowseController : Controller
+    public class BrowseController : BaseController
     {
         //
         // GET: /Browse/

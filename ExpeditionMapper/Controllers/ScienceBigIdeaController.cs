@@ -9,7 +9,7 @@ using Kendo.Mvc.UI;
 
 namespace ExpeditionMapper.Controllers
 {
-    public class ScienceBigIdeaController : Controller
+    public class ScienceBigIdeaController : BaseController
     {
         private ExpeditionContext db = new ExpeditionContext();
 

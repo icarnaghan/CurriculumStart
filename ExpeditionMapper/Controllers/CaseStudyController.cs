@@ -7,7 +7,7 @@ using ExpeditionMapper.DAL;
 
 namespace ExpeditionMapper.Controllers
 {
-    public class CaseStudyController : Controller
+    public class CaseStudyController : BaseController
     {
         private ExpeditionContext db = new ExpeditionContext();
 

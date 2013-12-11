@@ -10,7 +10,7 @@ using Kendo.Mvc.UI;
 
 namespace ExpeditionMapper.Controllers
 {
-    public class ExpeditionHabitController : Controller
+    public class ExpeditionHabitController : BaseController
     {
         private ExpeditionContext db = new ExpeditionContext();
 
