@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.Models.Domain;
@@ -22,6 +23,7 @@ namespace ExpeditionMapper.Controllers
             {
                 return HttpNotFound();
             }
+            expedition.CaseStudies = db.CaseStudies.Where(c => c.ExpeditionId == id).ToList();
             ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name", expedition.GradeLevelId);
             return View(expedition);
         }

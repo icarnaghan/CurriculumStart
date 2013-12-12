@@ -12,13 +12,12 @@
 {
     @Html.AntiForgeryToken()
 
-
     <div class="form-horizontal">
         <div class="row">
             <div class="col-md-12">
                 <ul class="breadcrumb">
                     <li><a href="/Home/Index">My Curriculum</a></li>
-                    <li class="active"><a href="#">Fall Expedition</a></li>
+                    <li class="active"><a href="#">Expedition</a></li>
                 </ul>
                 <h3>Fall Expedition</h3>
             </div>
@@ -71,14 +70,18 @@
         <h4><label>Case Studies</label></h4>
         <div class="well col-md-12">
             <div class="row">
-                <div class="col-md-3">
-                    <a class="btn btn-primary btn-wide" href="/Casestudy/Edit/1">
-                        Ancient Greece
-                    </a>
-                </div>
+                @foreach (var @item in Model.CaseStudies)
+                {
+                    <div class="col-md-3">
+                        <a style="float:left" class="btn btn-primary btn-wide" href="/CaseStudy/Edit/@item.Id">@item.Name
+                        </a>
+                    </div>
+                }
+            
             </div>
+            <p><a href="/CaseStudy/Create/@Model.Id">Add a New Case Study</a></p>
         </div>
-        <h4><label>Final Product</label></h4>
+        <h4><label>Final Product Name</label></h4>
         <div class="well">
 
             <div class="form-group">
@@ -90,6 +93,7 @@
 
             </div>
         </div>
+        <h4><label>Final Product Description</label></h4>
         @(Html.Kendo().Editor()
               .Name("FinalProductDescription")
               .HtmlAttributes(new { style = "height:340px" })

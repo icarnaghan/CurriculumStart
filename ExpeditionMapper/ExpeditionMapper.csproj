@@ -165,6 +165,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
     <Compile Include="Controllers\CaseStudyController.cs" />
+    <Compile Include="Controllers\CCController.cs" />
     <Compile Include="Controllers\ExpertController.cs" />
     <Compile Include="Controllers\ServiceLearningController.cs" />
     <Compile Include="Controllers\FieldworkController.cs" />
@@ -1504,6 +1505,11 @@
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Home\Unavailable.cshtml" />
     <Content Include="Views\CaseStudy\Create.cshtml" />
+    <Content Include="Views\CC\Create.cshtml" />
+    <Content Include="Views\CC\Delete.cshtml" />
+    <Content Include="Views\CC\Details.cshtml" />
+    <Content Include="Views\CC\Edit.cshtml" />
+    <Content Include="Views\CC\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
