@@ -11,6 +11,32 @@ namespace ExpeditionMapper.Controllers
     {
         private ExpeditionContext db = new ExpeditionContext();
 
+        // GET: /CS/Create
+        public ActionResult Create(int Id)
+        {
+            ViewBag.ExpeditionId = Id;
+            return View();
+        }
+
+        // POST: /CS/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
+        {
+            if (ModelState.IsValid)
+            {
+                db.CaseStudies.Add(casestudy);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "CaseStudy", new {casestudy.Id});
+            }
+
+            ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
+            return View(casestudy);
+        }
+
+        
         // GET: /CaseStudy/Edit/5
         public ActionResult Edit(int? id)
         {

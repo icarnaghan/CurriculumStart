@@ -30,7 +30,7 @@
         model.Field(g => g.CaseStudyId).DefaultValue(@ViewBag.CaseStudyId);
     })
                 .Create(create => create.Action("Fieldwork_Create", "Fieldwork")) // Action method invoked when the user saves a new data item
-                .Read(read => read.Action("Fieldwork_Read", "Fieldwork", new { CaseStudyId = 1 }))  // Action method invoked when the grid needs data
+                .Read(read => read.Action("Fieldwork_Read", "Fieldwork", new { caseStudyId = ViewBag.CaseStudyId }))  // Action method invoked when the grid needs data
                 .Update(update => update.Action("Fieldwork_Update", "Fieldwork"))  // Action method invoked when the user saves an updated data item
                 .Destroy(destroy => destroy.Action("Fieldwork_Destroy", "Fieldwork")) // Action method invoked when the user removes a data item
     )

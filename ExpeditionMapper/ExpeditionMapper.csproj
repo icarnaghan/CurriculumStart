@@ -1503,6 +1503,7 @@
     <Content Include="Views\Browse\Results.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Home\Unavailable.cshtml" />
+    <Content Include="Views\CaseStudy\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -40,6 +40,21 @@ namespace ExpeditionMapper.DAL
             context.Expeditions.Add(expedition);
             context.SaveChanges();
 
+            var expedition2 = new Expedition
+            {
+                Id = 2,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "",
+                Description = "",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition2);
+            context.SaveChanges();
+
             var caseStudy = new CaseStudy
             {
                 Id = 1,
