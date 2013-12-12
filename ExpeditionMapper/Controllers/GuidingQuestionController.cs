@@ -30,7 +30,7 @@ namespace ExpeditionMapper.Controllers
                 {
                     Id = guidingQuestion.Id,
                     Name = guidingQuestion.Name,
-                    ExpeditionId = 1
+                    ExpeditionId = guidingQuestion.ExpeditionId
                 };
                 // Add the entity
                 db.GuidingQuestions.Add(entity);
@@ -43,7 +43,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult GuidingQuestion_Update(int expeditionId, [DataSourceRequest]DataSourceRequest request, GuidingQuestionViewModel guidingQuestion)
+        public ActionResult GuidingQuestion_Update([DataSourceRequest]DataSourceRequest request, GuidingQuestionViewModel guidingQuestion)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +52,7 @@ namespace ExpeditionMapper.Controllers
                 {
                     Id = guidingQuestion.Id,
                     Name = guidingQuestion.Name,
-                    ExpeditionId = expeditionId
+                    ExpeditionId = guidingQuestion.ExpeditionId
                 };
                 // Attach the entity
                 db.GuidingQuestions.Attach(entity);
@@ -65,7 +65,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult GuidingQuestion_Destroy(int expeditionId, [DataSourceRequest]DataSourceRequest request, GuidingQuestionViewModel guidingQuestion)
+        public ActionResult GuidingQuestion_Destroy([DataSourceRequest]DataSourceRequest request, GuidingQuestionViewModel guidingQuestion)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace ExpeditionMapper.Controllers
                 {
                     Id = guidingQuestion.Id,
                     Name = guidingQuestion.Name,
-                    ExpeditionId = expeditionId
+                    ExpeditionId = guidingQuestion.ExpeditionId
                 };
                 // Attach the entity
                 db.GuidingQuestions.Attach(entity);

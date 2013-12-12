@@ -20,7 +20,7 @@ namespace ExpeditionMapper.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Expert_Create(int caseStudyId, [DataSourceRequest]DataSourceRequest request, ExpertViewModel expert)
+        public ActionResult Expert_Create([DataSourceRequest]DataSourceRequest request, ExpertViewModel expert)
         {
             if (ModelState.IsValid)
             {
@@ -30,7 +30,7 @@ namespace ExpeditionMapper.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = expert.CaseStudyId
                 };
                 // Add the entity
                 db.Experts.Add(entity);
@@ -43,7 +43,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { expert }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Expert_Update(int caseStudyId, [DataSourceRequest]DataSourceRequest request, ExpertViewModel expert)
+        public ActionResult Expert_Update([DataSourceRequest]DataSourceRequest request, ExpertViewModel expert)
         {
             if (ModelState.IsValid)
             {
@@ -53,7 +53,7 @@ namespace ExpeditionMapper.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = expert.CaseStudyId
                 };
                 // Attach the entity
                 db.Experts.Attach(entity);
@@ -66,7 +66,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { expert }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Expert_Destroy(int caseStudyId, [DataSourceRequest]DataSourceRequest request, ExpertViewModel expert)
+        public ActionResult Expert_Destroy([DataSourceRequest]DataSourceRequest request, ExpertViewModel expert)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +76,7 @@ namespace ExpeditionMapper.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = expert.CaseStudyId
                 };
                 // Attach the entity
                 db.Experts.Attach(entity);

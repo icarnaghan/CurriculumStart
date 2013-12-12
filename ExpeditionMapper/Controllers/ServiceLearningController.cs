@@ -21,7 +21,7 @@ namespace ExpeditionMapper.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult ServiceLearning_Create(int caseStudyId, [DataSourceRequest]DataSourceRequest request, ServiceLearningViewModel serviceLearning)
+        public ActionResult ServiceLearning_Create([DataSourceRequest]DataSourceRequest request, ServiceLearningViewModel serviceLearning)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,7 @@ namespace ExpeditionMapper.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = serviceLearning.CaseStudyId
                 };
                 // Add the entity
                 db.ServiceLearnings.Add(entity);
@@ -44,7 +44,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { serviceLearning }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult ServiceLearning_Update(int caseStudyId, [DataSourceRequest]DataSourceRequest request, ServiceLearningViewModel serviceLearning)
+        public ActionResult ServiceLearning_Update([DataSourceRequest]DataSourceRequest request, ServiceLearningViewModel serviceLearning)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace ExpeditionMapper.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = serviceLearning.CaseStudyId
                 };
                 // Attach the entity
                 db.ServiceLearnings.Attach(entity);
@@ -67,7 +67,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { serviceLearning }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult ServiceLearning_Destroy(int caseStudyId, [DataSourceRequest]DataSourceRequest request, ServiceLearningViewModel serviceLearning)
+        public ActionResult ServiceLearning_Destroy([DataSourceRequest]DataSourceRequest request, ServiceLearningViewModel serviceLearning)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace ExpeditionMapper.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = serviceLearning.CaseStudyId
                 };
 
                 // Attach the entity

@@ -21,7 +21,7 @@ namespace ExpeditionMapper.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Fieldwork_Create(int caseStudyId, [DataSourceRequest]DataSourceRequest request, FieldworkViewModel fieldwork)
+        public ActionResult Fieldwork_Create([DataSourceRequest]DataSourceRequest request, FieldworkViewModel fieldwork)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,7 @@ namespace ExpeditionMapper.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = fieldwork.CaseStudyId
                 };
                 // Add the entity
                 db.Fieldworks.Add(entity);
@@ -44,7 +44,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { fieldwork }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Fieldwork_Update(int caseStudyId, [DataSourceRequest]DataSourceRequest request, FieldworkViewModel fieldwork)
+        public ActionResult Fieldwork_Update([DataSourceRequest]DataSourceRequest request, FieldworkViewModel fieldwork)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace ExpeditionMapper.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = fieldwork.CaseStudyId
                 };
                 // Attach the entity
                 db.Fieldworks.Attach(entity);
@@ -67,7 +67,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { fieldwork }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Fieldwork_Destroy(int caseStudyId, [DataSourceRequest]DataSourceRequest request, FieldworkViewModel fieldwork)
+        public ActionResult Fieldwork_Destroy([DataSourceRequest]DataSourceRequest request, FieldworkViewModel fieldwork)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace ExpeditionMapper.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    CaseStudyId = 1
+                    CaseStudyId = fieldwork.CaseStudyId
                 };
                 // Attach the entity
                 db.Fieldworks.Attach(entity);

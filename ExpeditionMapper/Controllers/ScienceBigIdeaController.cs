@@ -20,7 +20,7 @@ namespace ExpeditionMapper.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult ScienceBigIdea_Create(int expeditionId, [DataSourceRequest]DataSourceRequest request, ScienceBigIdeaViewModel scienceBigIdea)
+        public ActionResult ScienceBigIdea_Create([DataSourceRequest]DataSourceRequest request, ScienceBigIdeaViewModel scienceBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -30,7 +30,7 @@ namespace ExpeditionMapper.Controllers
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,
                     Rationale = scienceBigIdea.Rationale,
-                    ExpeditionId = 1
+                    ExpeditionId = scienceBigIdea.ExpeditionId
                 };
                 // Add the entity
                 db.ScienceBigIdeases.Add(entity);
@@ -43,7 +43,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { scienceBigIdea }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult ScienceBigIdea_Update(int expeditionId, [DataSourceRequest]DataSourceRequest request, ScienceBigIdeaViewModel scienceBigIdea)
+        public ActionResult ScienceBigIdea_Update([DataSourceRequest]DataSourceRequest request, ScienceBigIdeaViewModel scienceBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -53,7 +53,7 @@ namespace ExpeditionMapper.Controllers
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,
                     Rationale = scienceBigIdea.Rationale,
-                    ExpeditionId = 1
+                    ExpeditionId = scienceBigIdea.ExpeditionId
                 };
                 // Attach the entity
                 db.ScienceBigIdeases.Attach(entity);
@@ -66,7 +66,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { scienceBigIdea }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult ScienceBigIdea_Destroy(int expeditionId, [DataSourceRequest]DataSourceRequest request, ScienceBigIdeaViewModel scienceBigIdea)
+        public ActionResult ScienceBigIdea_Destroy([DataSourceRequest]DataSourceRequest request, ScienceBigIdeaViewModel scienceBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +76,7 @@ namespace ExpeditionMapper.Controllers
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,
                     Rationale = scienceBigIdea.Rationale,
-                    ExpeditionId = 1
+                    ExpeditionId = scienceBigIdea.ExpeditionId
                 };
                 // Attach the entity
                 db.ScienceBigIdeases.Attach(entity);

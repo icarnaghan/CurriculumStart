@@ -22,16 +22,17 @@
     .Editable(editable => editable.Mode(GridEditMode.InLine))
     .DataSource(dataSource =>
     dataSource.Ajax()
-        //.Batch(true) // Enable batch updates
+       // .Batch(true) // Enable batch updates
     .Model(model =>
     {
         model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
         model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
+        model.Field(g => g.ExpeditionId).DefaultValue(@ViewBag.ExpeditionId);
     })
-        .Create(create => create.Action("ExpeditionHabit_Create", "ExpeditionHabit", new { ExpeditionId = 1 })) // Action method invoked when the user saves a new data item
-        .Read(read => read.Action("ExpeditionHabit_Read", "ExpeditionHabit", new { ExpeditionId = 1 }))  // Action method invoked when the grid needs data
-        .Update(update => update.Action("ExpeditionHabit_Update", "ExpeditionHabit", new { ExpeditionId = 1 }))  // Action method invoked when the user saves an updated data item
-        .Destroy(destroy => destroy.Action("ExpeditionHabit_Destroy", "ExpeditionHabit", new { ExpeditionId = 1 })) // Action method invoked when the user removes a data item
+        .Create(create => create.Action("ExpeditionHabit_Create", "ExpeditionHabit")) // Action method invoked when the user saves a new data item
+        .Read(read => read.Action("ExpeditionHabit_Read", "ExpeditionHabit", new { expeditionId = ViewBag.ExpeditionId }))  // Action method invoked when the grid needs data
+        .Update(update => update.Action("ExpeditionHabit_Update", "ExpeditionHabit"))  // Action method invoked when the user saves an updated data item
+        .Destroy(destroy => destroy.Action("ExpeditionHabit_Destroy", "ExpeditionHabit")) // Action method invoked when the user removes a data item
     )
     .Pageable()
 )

@@ -1,6 +1,5 @@
 ﻿using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
@@ -21,7 +20,7 @@ namespace ExpeditionMapper.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult ExpeditionHabit_Create(int expeditionId, [DataSourceRequest]DataSourceRequest request, ExpeditionHabitViewModel expeditionHabit)
+        public ActionResult ExpeditionHabit_Create([DataSourceRequest]DataSourceRequest request, ExpeditionHabitViewModel expeditionHabit)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +30,7 @@ namespace ExpeditionMapper.Controllers
                     Id = expeditionHabit.Id,
                     Habit = expeditionHabit.Habit,
                     Rationale = expeditionHabit.Rationale,
-                    ExpeditionId = 1
+                    ExpeditionId = expeditionHabit.ExpeditionId
                 };
                 // Add the entity
                 db.ExpeditionHabits.Add(entity);
@@ -44,7 +43,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { expeditionHabit }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Expeditionhabit_Update(int expeditionId, [DataSourceRequest]DataSourceRequest request, ExpeditionHabitViewModel expeditionHabit)
+        public ActionResult Expeditionhabit_Update([DataSourceRequest]DataSourceRequest request, ExpeditionHabitViewModel expeditionHabit)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +53,7 @@ namespace ExpeditionMapper.Controllers
                     Id = expeditionHabit.Id,
                     Habit = expeditionHabit.Habit,
                     Rationale = expeditionHabit.Rationale,
-                    ExpeditionId = 1
+                    ExpeditionId = expeditionHabit.ExpeditionId
                 };
                 // Attach the entity
                 db.ExpeditionHabits.Attach(entity);
@@ -67,7 +66,7 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] { expeditionHabit }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult ExpeditionHabig_Destroy(int expeditionId, [DataSourceRequest]DataSourceRequest request, ExpeditionHabitViewModel expeditionHabit)
+        public ActionResult ExpeditionHabit_Destroy(int expeditionId, [DataSourceRequest]DataSourceRequest request, ExpeditionHabitViewModel expeditionHabit)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +76,7 @@ namespace ExpeditionMapper.Controllers
                     Id = expeditionHabit.Id,
                     Habit = expeditionHabit.Habit,
                     Rationale = expeditionHabit.Rationale,
-                    ExpeditionId = 1
+                    ExpeditionId = expeditionHabit.ExpeditionId
                 };
                 // Attach the entity
                 db.ExpeditionHabits.Attach(entity);
