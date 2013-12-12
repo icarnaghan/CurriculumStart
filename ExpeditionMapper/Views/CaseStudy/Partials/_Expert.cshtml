@@ -29,10 +29,10 @@
         model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
         model.Field(g => g.CaseStudyId).DefaultValue(@ViewBag.CaseStudyId);    
     })
-            .Create(create => create.Action("Expert_Create", "Expert")) // Action method invoked when the user saves a new data item
-            .Read(read => read.Action("Expert_Read", "Expert", new { caseStudyId = ViewBag.CaseStudyId }))  // Action method invoked when the grid needs data
-            .Update(update => update.Action("Expert_Update", "Expert"))  // Action method invoked when the user saves an updated data item
-            .Destroy(destroy => destroy.Action("Expert_Destroy", "Expert")) // Action method invoked when the user removes a data item
+        .Create(create => create.Action("Expert_Create", "Expert")) // Action method invoked when the user saves a new data item
+        .Read(read => read.Action("Expert_Read", "Expert", new { caseStudyId = ViewBag.CaseStudyId }))  // Action method invoked when the grid needs data
+        .Update(update => update.Action("Expert_Update", "Expert"))  // Action method invoked when the user saves an updated data item
+        .Destroy(destroy => destroy.Action("Expert_Destroy", "Expert")) // Action method invoked when the user removes a data item
     )
     .Pageable()
 )

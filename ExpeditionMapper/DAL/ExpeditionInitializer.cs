@@ -24,6 +24,7 @@ namespace ExpeditionMapper.DAL
             grades.ForEach(g => context.GradeLevels.Add(g));
             context.SaveChanges();
 
+            // Fall
             var expedition = new Expedition
             {
                 Id = 1,
@@ -40,19 +41,244 @@ namespace ExpeditionMapper.DAL
             context.Expeditions.Add(expedition);
             context.SaveChanges();
 
+            // Spring
             var expedition2 = new Expedition
             {
                 Id = 2,
                 Year = 2013,
                 GradeLevelId = 2,
-                Name = "",
-                Description = "",
+                Name = "Spring Expedition",
+                Description = "TBD",
                 KickOff = "",
                 FinalProductName = "",
                 FinalProductDescription =
                     ""
             };
             context.Expeditions.Add(expedition2);
+            context.SaveChanges();
+
+            // FSW
+            var expedition3 = new Expedition
+            {
+                Id = 3,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "First Six Weeks",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition3);
+            context.SaveChanges();
+
+            // Mini
+            var expedition4 = new Expedition
+            {
+                Id = 4,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Mini-Semester - Fall",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition4);
+            context.SaveChanges();
+
+            // Subject
+            var expedition5 = new Expedition
+            {
+                Id = 5,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Art",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition5);
+            context.SaveChanges();
+
+            // Subject
+            var expedition6 = new Expedition
+            {
+                Id = 6,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Foreign Languages",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition6);
+            context.SaveChanges();
+
+            // Subject
+            var expedition7 = new Expedition
+            {
+                Id = 7,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Language Arts",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition7);
+            context.SaveChanges();
+
+            // Subject
+            var expedition8 = new Expedition
+            {
+                Id = 8,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Mathematics",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition8);
+            context.SaveChanges();
+
+            // Subject
+            var expedition9 = new Expedition
+            {
+                Id = 9,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Media",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition9);
+            context.SaveChanges();
+
+            // Subject
+            var expedition10 = new Expedition
+            {
+                Id = 10,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Music",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition10);
+            context.SaveChanges();
+
+            // Subject
+            var expedition11 = new Expedition
+            {
+                Id = 11,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Physical Education",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition11);
+            context.SaveChanges();
+
+            // Subject
+            var expedition12 = new Expedition
+            {
+                Id = 12,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Science",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition12);
+            context.SaveChanges();
+
+            // Subject
+            var expedition13 = new Expedition
+            {
+                Id = 13,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Social Skills",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition13);
+            context.SaveChanges();
+
+            // Subject
+            var expedition14 = new Expedition
+            {
+                Id = 14,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Social Studies",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition14);
+            context.SaveChanges();
+
+            // Subject
+            var expedition15 = new Expedition
+            {
+                Id = 15,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Technology",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition15);
+            context.SaveChanges();
+
+            // Subject
+            var expedition16 = new Expedition
+            {
+                Id = 16,
+                Year = 2013,
+                GradeLevelId = 2,
+                Name = "Second Grade Writing",
+                Description = "TBD",
+                KickOff = "",
+                FinalProductName = "",
+                FinalProductDescription =
+                    ""
+            };
+            context.Expeditions.Add(expedition16);
             context.SaveChanges();
 
             var caseStudy = new CaseStudy

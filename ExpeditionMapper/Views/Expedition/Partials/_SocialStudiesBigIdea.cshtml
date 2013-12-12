@@ -30,7 +30,7 @@
         model.Field(g => g.ExpeditionId).DefaultValue(@ViewBag.ExpeditionId);
     })
         .Create(create => create.Action("SocialStudiesBigIdea_Create", "SocialStudiesBigIdea")) // Action method invoked when the user saves a new data item
-        .Read(read => read.Action("SocialStudiesBigIdea_Read", "SocialStudiesBigIdea", new { ExpeditionId = 1 }))  // Action method invoked when the grid needs data
+        .Read(read => read.Action("SocialStudiesBigIdea_Read", "SocialStudiesBigIdea", new { expeditionId = ViewBag.ExpeditionId }))  // Action method invoked when the grid needs data
         .Update(update => update.Action("SocialStudiesBigIdea_Update", "SocialStudiesBigIdea"))  // Action method invoked when the user saves an updated data item
         .Destroy(destroy => destroy.Action("SocialStudiesBigIdea_Destroy", "SocialStudiesBigIdea")) // Action method invoked when the user removes a data item
     )
