@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <div class="row">
             <div class="col-md-12">
@@ -28,31 +28,31 @@
         <div class="well">
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Name, new {@class = "control-label col-md-2"})
                 <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control input-sm" })
+                    @Html.TextBoxFor(model => model.Name, new {@class = "form-control input-sm"})
                     @Html.ValidationMessageFor(model => model.Name)
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Description, new {@class = "control-label col-md-2"})
                 <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control input-sm" })
+                    @Html.TextAreaFor(model => model.Description, new {@class = "form-control input-sm"})
                     @Html.ValidationMessageFor(model => model.Description)
                 </div>
             </div>
         </div>
         <div id="fieldwork">
-            @Html.Partial("~/Views/CaseStudy/Partials/_Fieldwork.cshtml", new FieldworkViewModel { CaseStudyId = Model.Id })
+            @Html.Partial("~/Views/CaseStudy/Partials/_Fieldwork.cshtml", new FieldworkViewModel {CaseStudyId = Model.Id})
         </div>
 
         <div id="expert">
-            @Html.Partial("~/Views/CaseStudy/Partials/_Expert.cshtml", new ExpertViewModel { CaseStudyId = Model.Id })
+            @Html.Partial("~/Views/CaseStudy/Partials/_Expert.cshtml", new ExpertViewModel {CaseStudyId = Model.Id})
         </div>
 
         <div id="serviceLearning">
-            @Html.Partial("~/Views/CaseStudy/Partials/_ServiceLearning.cshtml", new ExpertViewModel { CaseStudyId = Model.Id })
+            @Html.Partial("~/Views/CaseStudy/Partials/_ServiceLearning.cshtml", new ExpertViewModel {CaseStudyId = Model.Id})
         </div>
         <br/>
         <div class="form-group">

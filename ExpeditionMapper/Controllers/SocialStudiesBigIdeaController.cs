@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
+using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.Models.ViewModels;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
@@ -11,16 +11,18 @@ namespace ExpeditionMapper.Controllers
 {
     public class SocialStudiesBigIdeaController : BaseController
     {
-        private ExpeditionContext db = new ExpeditionContext();
+        private readonly ExpeditionContext db = new ExpeditionContext();
 
         public ActionResult SocialStudiesBigIdea_Read(int expeditionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<SocialStudiesBigIdea> socialStudiesBigIdeas = db.SocialStudiesBigIdeas.Where(b => b.ExpeditionId == expeditionId);
+            IQueryable<SocialStudiesBigIdea> socialStudiesBigIdeas =
+                db.SocialStudiesBigIdeas.Where(b => b.ExpeditionId == expeditionId);
             return Json(socialStudiesBigIdeas.ToDataSourceResult(request));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult SocialStudiesBigIdea_Create([DataSourceRequest]DataSourceRequest request, SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
+        public ActionResult SocialStudiesBigIdea_Create([DataSourceRequest] DataSourceRequest request,
+            SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -40,10 +42,11 @@ namespace ExpeditionMapper.Controllers
                 socialStudiesBigIdea.Id = entity.Id;
             }
             // Return the inserted entities. The grid needs the generated ID. Also return any validation errors.
-            return Json(new[] { socialStudiesBigIdea }.ToDataSourceResult(request, ModelState));
+            return Json(new[] {socialStudiesBigIdea}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult SocialStudiesBigIdea_Update([DataSourceRequest]DataSourceRequest request, SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
+        public ActionResult SocialStudiesBigIdea_Update([DataSourceRequest] DataSourceRequest request,
+            SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -63,10 +66,11 @@ namespace ExpeditionMapper.Controllers
                 db.SaveChanges();
             }
             // Return the updated entities. Also return any validation errors.
-            return Json(new[] { socialStudiesBigIdea }.ToDataSourceResult(request, ModelState));
+            return Json(new[] {socialStudiesBigIdea}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult SocialStudiesBigIdea_Destroy([DataSourceRequest]DataSourceRequest request, SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
+        public ActionResult SocialStudiesBigIdea_Destroy([DataSourceRequest] DataSourceRequest request,
+            SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +90,7 @@ namespace ExpeditionMapper.Controllers
                 db.SaveChanges();
             }
             // Return the removed product. Also return any validation errors.
-            return Json(new[] { socialStudiesBigIdea }.ToDataSourceResult(request, ModelState));
+            return Json(new[] {socialStudiesBigIdea}.ToDataSourceResult(request, ModelState));
         }
     }
 }

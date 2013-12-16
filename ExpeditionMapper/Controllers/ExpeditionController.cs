@@ -2,14 +2,14 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
+using ExpeditionMapper.Models.Domain;
 
 namespace ExpeditionMapper.Controllers
 {
     public class ExpeditionController : BaseController
     {
-        private ExpeditionContext db = new ExpeditionContext();
+        private readonly ExpeditionContext db = new ExpeditionContext();
 
         // GET: /Expedition/Edit/5
         public ActionResult Edit(int? id)
@@ -33,14 +33,18 @@ namespace ExpeditionMapper.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Year,GradeLevelId,Name,Description,KickOff,FinalProductName,FinalProductDescription,GuidingQuestions")] Expedition expedition)
+        public ActionResult Edit(
+            [Bind(
+                Include =
+                    "Id,Year,GradeLevelId,Name,Description,KickOff,FinalProductName,FinalProductDescription,GuidingQuestions"
+                )] Expedition expedition)
         {
             if (ModelState.IsValid)
             {
                 expedition.GradeLevelId = 2;
                 db.Entry(expedition).State = EntityState.Modified;
                 db.SaveChanges();
-                
+
                 return RedirectToAction("Index", "Home");
             }
             return View(expedition);

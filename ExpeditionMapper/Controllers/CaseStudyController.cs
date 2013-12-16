@@ -1,14 +1,14 @@
 ﻿using System.Data.Entity;
 using System.Net;
 using System.Web.Mvc;
-using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
+using ExpeditionMapper.Models.Domain;
 
 namespace ExpeditionMapper.Controllers
 {
     public class CaseStudyController : BaseController
     {
-        private ExpeditionContext db = new ExpeditionContext();
+        private readonly ExpeditionContext db = new ExpeditionContext();
 
         // GET: /CS/Create
         public ActionResult Create(int Id)
@@ -35,7 +35,7 @@ namespace ExpeditionMapper.Controllers
             return View(casestudy);
         }
 
-        
+
         // GET: /CaseStudy/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -57,14 +57,14 @@ namespace ExpeditionMapper.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
+        public ActionResult Edit([Bind(Include = "Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
         {
             if (ModelState.IsValid)
             {
                 casestudy.ExpeditionId = 1;
                 db.Entry(casestudy).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Edit","Expedition", new {id = 1});
+                return RedirectToAction("Edit", "Expedition", new {id = 1});
             }
             ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
             return View(casestudy);

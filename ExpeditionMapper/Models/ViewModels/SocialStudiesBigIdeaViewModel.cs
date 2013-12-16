@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ExpeditionMapper.Models.Domain;
-
-namespace ExpeditionMapper.Models.ViewModels
+﻿namespace ExpeditionMapper.Models.ViewModels
 {
     public class SocialStudiesBigIdeaViewModel
     {

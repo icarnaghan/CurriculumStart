@@ -1,4 +1,5 @@
-﻿@using ExpeditionMapper.Models.ViewModels
+﻿@using ExpeditionMapper.Models.Domain
+@using ExpeditionMapper.Models.ViewModels
 @model ExpeditionMapper.Models.Domain.Expedition
 
 @{
@@ -6,7 +7,7 @@
     ViewBag.ExpeditionId = Model.Id;
 }
 
-<script src="~/Scripts/ExpeditionMapper.js"></script>
+<script src="~/Scripts/ExpeditionMapper.js"> </script>
 
 @using (Html.BeginForm())
 {
@@ -28,52 +29,52 @@
             @Html.HiddenFor(model => model.Id)
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Name, new {@class = "control-label col-md-2"})
                 <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control input-sm" })
+                    @Html.TextBoxFor(model => model.Name, new {@class = "form-control input-sm"})
                     @Html.ValidationMessageFor(model => model.Name)
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Description, new {@class = "control-label col-md-2"})
                 <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.Description, new { @class = "form-control input-sm" })
+                    @Html.TextBoxFor(model => model.Description, new {@class = "form-control input-sm"})
                     @Html.ValidationMessageFor(model => model.Description)
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.KickOff, new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.KickOff, new {@class = "control-label col-md-2"})
                 <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.KickOff, new { @class = "form-control input-sm" })
+                    @Html.TextAreaFor(model => model.KickOff, new {@class = "form-control input-sm"})
                     @Html.ValidationMessageFor(model => model.KickOff)
                 </div>
             </div>
         </div>
 
         <div id="guidingQuestions">
-            @Html.Partial("~/Views/Expedition/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel { ExpeditionId = Model.Id })
+            @Html.Partial("~/Views/Expedition/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel {ExpeditionId = Model.Id})
         </div>
 
         <div id="expeditionHabits">
-            @Html.Partial("~/Views/Expedition/Partials/_ExpeditionHabit.cshtml", new ExpeditionHabitViewModel { ExpeditionId = Model.Id })
+            @Html.Partial("~/Views/Expedition/Partials/_ExpeditionHabit.cshtml", new ExpeditionHabitViewModel {ExpeditionId = Model.Id})
         </div>
 
         <div id="scienceBigIdeas">
-            @Html.Partial("~/Views/Expedition/Partials/_ScienceBigIdea.cshtml", new ScienceBigIdeaViewModel { ExpeditionId = Model.Id })
+            @Html.Partial("~/Views/Expedition/Partials/_ScienceBigIdea.cshtml", new ScienceBigIdeaViewModel {ExpeditionId = Model.Id})
         </div>
 
         <div id="socialStudiesBigIdeas">
-            @Html.Partial("~/Views/Expedition/Partials/_SocialStudiesBigIdea.cshtml", new SocialStudiesBigIdeaViewModel { ExpeditionId = Model.Id })
+            @Html.Partial("~/Views/Expedition/Partials/_SocialStudiesBigIdea.cshtml", new SocialStudiesBigIdeaViewModel {ExpeditionId = Model.Id})
         </div>
         <h4><label>Case Studies</label></h4>
         <div class="well col-md-12">
             <div class="row">
-                @foreach (var @item in Model.CaseStudies)
+                @foreach (CaseStudy @item in Model.CaseStudies)
                 {
                     <div class="col-md-3">
-                        <a style="float:left" class="btn btn-primary btn-wide" href="/CaseStudy/Edit/@item.Id">@item.Name
+                        <a style="float: left" class="btn btn-primary btn-wide" href="/CaseStudy/Edit/@item.Id">@item.Name
                         </a>
                     </div>
                 }
@@ -85,9 +86,9 @@
         <div class="well">
 
             <div class="form-group">
-                @Html.LabelFor(model => model.FinalProductName, new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.FinalProductName, new {@class = "control-label col-md-2"})
                 <div class="col-md-12">
-                    @Html.TextBoxFor(model => model.FinalProductName, new { @class = "form-control input-sm" })
+                    @Html.TextBoxFor(model => model.FinalProductName, new {@class = "form-control input-sm"})
                     @Html.ValidationMessageFor(model => model.FinalProductName)
                 </div>
 
@@ -96,7 +97,7 @@
         <h4><label>Final Product Description</label></h4>
         @(Html.Kendo().Editor()
               .Name("FinalProductDescription")
-              .HtmlAttributes(new { style = "height:340px" })
+              .HtmlAttributes(new {style = "height:340px"})
               .Value(@<text></text>)
               .ImageBrowser(imageBrowser => imageBrowser
                   .Image("~/Content/UserFiles/Images/{0}")

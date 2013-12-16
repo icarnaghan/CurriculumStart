@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
+using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.Models.ViewModels;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
@@ -11,7 +11,7 @@ namespace ExpeditionMapper.Controllers
 {
     public class GuidingQuestionController : BaseController
     {
-        private ExpeditionContext db = new ExpeditionContext();
+        private readonly ExpeditionContext db = new ExpeditionContext();
 
         public ActionResult GuidingQuestion_Read(int expeditionId, [DataSourceRequest] DataSourceRequest request)
         {
@@ -20,7 +20,8 @@ namespace ExpeditionMapper.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult GuidingQuestion_Create(int expeditionId, [DataSourceRequest]DataSourceRequest request, GuidingQuestionViewModel guidingQuestion)
+        public ActionResult GuidingQuestion_Create(int expeditionId, [DataSourceRequest] DataSourceRequest request,
+            GuidingQuestionViewModel guidingQuestion)
         {
             if (ModelState.IsValid)
             {
@@ -39,10 +40,11 @@ namespace ExpeditionMapper.Controllers
                 guidingQuestion.Id = entity.Id;
             }
             // Return the inserted entities. The grid needs the generated ID. Also return any validation errors.
-            return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
+            return Json(new[] {guidingQuestion}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult GuidingQuestion_Update([DataSourceRequest]DataSourceRequest request, GuidingQuestionViewModel guidingQuestion)
+        public ActionResult GuidingQuestion_Update([DataSourceRequest] DataSourceRequest request,
+            GuidingQuestionViewModel guidingQuestion)
         {
             if (ModelState.IsValid)
             {
@@ -61,10 +63,11 @@ namespace ExpeditionMapper.Controllers
                 db.SaveChanges();
             }
             // Return the updated entities. Also return any validation errors.
-            return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
+            return Json(new[] {guidingQuestion}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult GuidingQuestion_Destroy([DataSourceRequest]DataSourceRequest request, GuidingQuestionViewModel guidingQuestion)
+        public ActionResult GuidingQuestion_Destroy([DataSourceRequest] DataSourceRequest request,
+            GuidingQuestionViewModel guidingQuestion)
         {
             if (ModelState.IsValid)
             {
@@ -83,8 +86,7 @@ namespace ExpeditionMapper.Controllers
                 db.SaveChanges();
             }
             // Return the removed product. Also return any validation errors.
-            return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
+            return Json(new[] {guidingQuestion}.ToDataSourceResult(request, ModelState));
         }
-
     }
 }

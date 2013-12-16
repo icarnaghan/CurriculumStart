@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
+using ExpeditionMapper.Models.Domain;
 
 namespace ExpeditionMapper.Controllers
 {
     public class CCController : Controller
     {
-        private ExpeditionContext db = new ExpeditionContext();
+        private readonly ExpeditionContext db = new ExpeditionContext();
 
         // GET: /CC/
         public ActionResult Index()
         {
-            var casestudies = db.CaseStudies.Include(c => c.Expedition);
+            IQueryable<CaseStudy> casestudies = db.CaseStudies.Include(c => c.Expedition);
             return View(casestudies.ToList());
         }
 
@@ -49,7 +45,7 @@ namespace ExpeditionMapper.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
+        public ActionResult Create([Bind(Include = "Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +79,7 @@ namespace ExpeditionMapper.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
+        public ActionResult Edit([Bind(Include = "Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
         {
             if (ModelState.IsValid)
             {

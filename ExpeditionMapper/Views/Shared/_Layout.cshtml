@@ -1,17 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/bundles/flatui")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/kendo")
-    @Styles.Render("~/Content/kendo/css")
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/bundles/flatui")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/kendo")
+        @Styles.Render("~/Content/kendo/css")
     
-</head>
+    </head>
     <body>
         <div class="container body-content">
             <div class="row">
@@ -61,34 +61,34 @@
                     </div>
                 </div>
             </div>
-                @RenderBody()
-                <hr />
-                <footer>
-                    <div class="bottom-menu bottom-menu-inverse">
-                        <div class="container">
-                            <div class="row">
+            @RenderBody()
+            <hr />
+            <footer>
+                <div class="bottom-menu bottom-menu-inverse">
+                    <div class="container">
+                        <div class="row">
                                 
 
-                                <div class="col-md-7">
-                                    <ul class="bottom-links">
-                                        <li><a href="http://www.monarchcharter.org/">Monarch Academy</a></li>
-                                        <li><a href="http://elschools.org/">Expeditionary Learning</a></li>
-                                        <li class="active"><a href="http://www.corestandards.org/">Common Core</a></li>
-                                    </ul>
-                                </div>
+                            <div class="col-md-7">
+                                <ul class="bottom-links">
+                                    <li><a href="http://www.monarchcharter.org/">Monarch Academy</a></li>
+                                    <li><a href="http://elschools.org/">Expeditionary Learning</a></li>
+                                    <li class="active"><a href="http://www.corestandards.org/">Common Core</a></li>
+                                </ul>
+                            </div>
 
-                                <div class="col-md-5">
-                                    <ul class="bottom-icons pull-right">
-                                        <li>Monarch Academy Online Curriculum Mapping</li>
-                                    </ul>
-                                </div>
+                            <div class="col-md-5">
+                                <ul class="bottom-icons pull-right">
+                                    <li>Monarch Academy Online Curriculum Mapping</li>
+                                </ul>
                             </div>
                         </div>
-                    </div> <!-- /bottom-menu-inverse -->
-                </footer>
-            </div>
+                    </div>
+                </div> <!-- /bottom-menu-inverse -->
+            </footer>
+        </div>
 
-            @Scripts.Render("~/bundles/bootstrap")
-            @RenderSection("scripts", required: false)
-</body>
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", false)
+    </body>
 </html>

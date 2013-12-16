@@ -18,7 +18,7 @@ namespace ExpeditionMapper.Models.Domain
         [ForeignKey("GradeLevelId")]
         public virtual GradeLevel GradeLevel { get; set; }
 
-        public virtual ICollection<CaseStudy> CaseStudies { get; set; } 
+        public virtual ICollection<CaseStudy> CaseStudies { get; set; }
         public virtual ICollection<GuidingQuestion> GuidingQuestions { get; set; }
         public virtual ICollection<ExpeditionHabit> ExpeditionHabits { get; set; }
         public virtual ICollection<ScienceBigIdea> ScienceBigIdeas { get; set; }

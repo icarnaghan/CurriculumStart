@@ -313,18 +313,56 @@ namespace ExpeditionMapper.DAL
 
             var serviceLearnings = new List<ServiceLearning>
             {
-                new ServiceLearning {Id = 1, CaseStudyId = 1, Name = "Natural Disasters", Description = "Studied the consequences of natural disasters"},
-                new ServiceLearning {Id = 1, CaseStudyId = 1, Name = "Health", Description = "Learned about the health consequences of poor nutrition"},
-                new ServiceLearning {Id = 1, CaseStudyId = 1, Name = "Wetlands", Description = "Investigated the biological complexity and diversity of wetlands"},
-                new ServiceLearning {Id = 1, CaseStudyId = 1, Name = "Non-Profit Organizations", Description = "Looked for ways to support struggling local non-profit organizations"},
+                new ServiceLearning
+                {
+                    Id = 1,
+                    CaseStudyId = 1,
+                    Name = "Natural Disasters",
+                    Description = "Studied the consequences of natural disasters"
+                },
+                new ServiceLearning
+                {
+                    Id = 1,
+                    CaseStudyId = 1,
+                    Name = "Health",
+                    Description = "Learned about the health consequences of poor nutrition"
+                },
+                new ServiceLearning
+                {
+                    Id = 1,
+                    CaseStudyId = 1,
+                    Name = "Wetlands",
+                    Description = "Investigated the biological complexity and diversity of wetlands"
+                },
+                new ServiceLearning
+                {
+                    Id = 1,
+                    CaseStudyId = 1,
+                    Name = "Non-Profit Organizations",
+                    Description = "Looked for ways to support struggling local non-profit organizations"
+                },
             };
             serviceLearnings.ForEach(g => context.ServiceLearnings.Add(g));
             context.SaveChanges();
 
             var expeditionHabits = new List<ExpeditionHabit>
             {
-                new ExpeditionHabit {Id = 1, ExpeditionId = 1, Rationale = "Synergy is achieved when two or more people work together to create something better than either could alone.", Habit = "Synergize"},
-                new ExpeditionHabit {Id = 1, ExpeditionId = 1, Rationale = "Creates a personal mission statement which will act as a road map and direct and guide decision-making.", Habit = "Begin With the End in Mind"},
+                new ExpeditionHabit
+                {
+                    Id = 1,
+                    ExpeditionId = 1,
+                    Rationale =
+                        "Synergy is achieved when two or more people work together to create something better than either could alone.",
+                    Habit = "Synergize"
+                },
+                new ExpeditionHabit
+                {
+                    Id = 1,
+                    ExpeditionId = 1,
+                    Rationale =
+                        "Creates a personal mission statement which will act as a road map and direct and guide decision-making.",
+                    Habit = "Begin With the End in Mind"
+                },
             };
             expeditionHabits.ForEach(g => context.ExpeditionHabits.Add(g));
             context.SaveChanges();
@@ -341,18 +379,55 @@ namespace ExpeditionMapper.DAL
 
             var scienceBigIdeas = new List<ScienceBigIdea>
             {
-                new ScienceBigIdea {Id = 1, ExpeditionId = 1, Rationale = "Promotes learning about environmental changes.", Idea = "Structure and Function: When an environment changes, an organism must adapt, move, or die."},
-                new ScienceBigIdea {Id = 1, ExpeditionId = 1, Rationale = "Learn about organisms.", Idea = "Interdependence: Organisms depend on one another and on their environment."},
-                new ScienceBigIdea {Id = 1, ExpeditionId = 1, Rationale = "Understanding size and scale.", Idea = "Scale: Some things are so immense or minute that they are difficult to measure and understand."},
+                new ScienceBigIdea
+                {
+                    Id = 1,
+                    ExpeditionId = 1,
+                    Rationale = "Promotes learning about environmental changes.",
+                    Idea = "Structure and Function: When an environment changes, an organism must adapt, move, or die."
+                },
+                new ScienceBigIdea
+                {
+                    Id = 1,
+                    ExpeditionId = 1,
+                    Rationale = "Learn about organisms.",
+                    Idea = "Interdependence: Organisms depend on one another and on their environment."
+                },
+                new ScienceBigIdea
+                {
+                    Id = 1,
+                    ExpeditionId = 1,
+                    Rationale = "Understanding size and scale.",
+                    Idea =
+                        "Scale: Some things are so immense or minute that they are difficult to measure and understand."
+                },
             };
             scienceBigIdeas.ForEach(g => context.ScienceBigIdeases.Add(g));
             context.SaveChanges();
 
             var socialStudiesBigIdeas = new List<SocialStudiesBigIdea>
             {
-                new SocialStudiesBigIdea {Id = 1, ExpeditionId = 1, Rationale = "Understand importance of migration.", Idea = "Geographic Relationships: People migrate for a variety of reasons."},
-                new SocialStudiesBigIdea {Id = 1, ExpeditionId = 1, Rationale = "Promote understanding of different cultures.", Idea = "Universals of Culture: Cultures are dynamic."},
-                new SocialStudiesBigIdea {Id = 1, ExpeditionId = 1, Rationale = "Raise awareness of regional change", Idea = "Geographic Relationships: Changes in regions have human implications."},
+                new SocialStudiesBigIdea
+                {
+                    Id = 1,
+                    ExpeditionId = 1,
+                    Rationale = "Understand importance of migration.",
+                    Idea = "Geographic Relationships: People migrate for a variety of reasons."
+                },
+                new SocialStudiesBigIdea
+                {
+                    Id = 1,
+                    ExpeditionId = 1,
+                    Rationale = "Promote understanding of different cultures.",
+                    Idea = "Universals of Culture: Cultures are dynamic."
+                },
+                new SocialStudiesBigIdea
+                {
+                    Id = 1,
+                    ExpeditionId = 1,
+                    Rationale = "Raise awareness of regional change",
+                    Idea = "Geographic Relationships: Changes in regions have human implications."
+                },
             };
             socialStudiesBigIdeas.ForEach(g => context.SocialStudiesBigIdeas.Add(g));
             context.SaveChanges();

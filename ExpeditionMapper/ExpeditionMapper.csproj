@@ -181,8 +181,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Domain\Assessment.cs" />
     <Compile Include="Models\Domain\CaseStudy.cs" />
     <Compile Include="Models\Domain\Expedition.cs" />
+    <Compile Include="Models\Domain\ShortTermTarget.cs" />
+    <Compile Include="Models\Domain\LongTermTarget.cs" />
     <Compile Include="Models\Domain\ServiceLearning.cs" />
     <Compile Include="Models\Domain\Expert.cs" />
     <Compile Include="Models\Domain\Fieldwork.cs" />
@@ -191,6 +194,7 @@
     <Compile Include="Models\Domain\LookUps\GradeLevel.cs" />
     <Compile Include="Models\Domain\ExpeditionHabit.cs" />
     <Compile Include="Models\Domain\GuidingQuestion.cs" />
+    <Compile Include="Models\Domain\Standard.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -1505,11 +1509,6 @@
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Home\Unavailable.cshtml" />
     <Content Include="Views\CaseStudy\Create.cshtml" />
-    <Content Include="Views\CC\Create.cshtml" />
-    <Content Include="Views\CC\Delete.cshtml" />
-    <Content Include="Views\CC\Details.cshtml" />
-    <Content Include="Views\CC\Edit.cshtml" />
-    <Content Include="Views\CC\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

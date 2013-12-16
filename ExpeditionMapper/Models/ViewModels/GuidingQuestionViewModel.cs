@@ -1,6 +1,4 @@
-﻿using ExpeditionMapper.Models.Domain;
-
-namespace ExpeditionMapper.Models.ViewModels
+﻿namespace ExpeditionMapper.Models.ViewModels
 {
     public class GuidingQuestionViewModel
     {

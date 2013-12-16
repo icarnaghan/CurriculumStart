@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using ExpeditionMapper.Models.Domain.LookUps;
-
-namespace ExpeditionMapper.Models.Domain
+﻿namespace ExpeditionMapper.Models.Domain
 {
     public class CaseStudy
     {

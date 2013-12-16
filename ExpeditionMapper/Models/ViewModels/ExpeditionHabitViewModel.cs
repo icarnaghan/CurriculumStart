@@ -1,7 +1,4 @@
-﻿using ExpeditionMapper.Models.Domain;
-using ExpeditionMapper.Models.Domain.LookUps;
-
-namespace ExpeditionMapper.Models.ViewModels
+﻿namespace ExpeditionMapper.Models.ViewModels
 {
     public class ExpeditionHabitViewModel
     {

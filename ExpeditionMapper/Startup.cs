@@ -1,7 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using ExpeditionMapper;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(ExpeditionMapper.Startup))]
+[assembly: OwinStartup(typeof (Startup))]
+
 namespace ExpeditionMapper
 {
     public partial class Startup

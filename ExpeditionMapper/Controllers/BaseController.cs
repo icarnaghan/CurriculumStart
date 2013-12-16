@@ -5,5 +5,5 @@ namespace ExpeditionMapper.Controllers
     [Authorize]
     public class BaseController : Controller
     {
-	}
+    }
 }
