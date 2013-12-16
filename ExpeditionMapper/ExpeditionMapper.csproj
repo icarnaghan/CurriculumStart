@@ -175,6 +175,7 @@
     <Compile Include="Controllers\GuidingQuestionController.cs" />
     <Compile Include="Controllers\ExpeditionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StandardTargetAssessmentController.cs" />
     <Compile Include="DAL\ExpeditionContext.cs" />
     <Compile Include="DAL\ExpeditionInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -1510,6 +1511,12 @@
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Home\Unavailable.cshtml" />
     <Content Include="Views\CaseStudy\Create.cshtml" />
+    <Content Include="Views\StandardTargetAssessment\Create.cshtml" />
+    <Content Include="Views\StandardTargetAssessment\Delete.cshtml" />
+    <Content Include="Views\StandardTargetAssessment\Details.cshtml" />
+    <Content Include="Views\StandardTargetAssessment\Edit.cshtml" />
+    <Content Include="Views\StandardTargetAssessment\Index.cshtml" />
+    <Content Include="Views\StandardTargetAssessment\EditorTemplates\Standard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

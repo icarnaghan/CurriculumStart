@@ -1,0 +1,10 @@
+﻿@model string
+
+@(Html.Kendo().MultiSelect()
+        .Name("Standard")
+        .Placeholder("Select standards...")
+        .BindTo(new List<string>() {
+            "Standard 1",
+            "Standard 2"
+        })
+)
