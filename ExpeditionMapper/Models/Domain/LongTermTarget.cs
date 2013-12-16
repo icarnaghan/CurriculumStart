@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int CaseStudyId { get; set; }
+        public int StandardTargetAssessmentId { get; set; }
 
-        public CaseStudy CaseStudy { get; set; }
+        public virtual StandardTargetAssessment StandardTargetAssessment { get; set; }
     }
 }

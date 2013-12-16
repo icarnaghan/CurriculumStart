@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace ExpeditionMapper.Models.Domain
+﻿namespace ExpeditionMapper.Models.Domain
 {
     public class ServiceLearning
     {
@@ -9,7 +7,6 @@ namespace ExpeditionMapper.Models.Domain
         public string Description { get; set; }
         public int CaseStudyId { get; set; }
 
-        [ForeignKey("CaseStudyId")]
-        public CaseStudy CaseStudy { get; set; }
+        public virtual CaseStudy CaseStudy { get; set; }
     }
 }

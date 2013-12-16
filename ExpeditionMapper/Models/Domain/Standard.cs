@@ -6,8 +6,8 @@
         public string Category { get; set; }
         public string SubCategory { get; set; }
         public string Description { get; set; }
-        public int CaseStudyId { get; set; }
+        public int StandardTargetAssessmentId { get; set; }
 
-        public CaseStudy CaseStudy { get; set; }
+        public virtual StandardTargetAssessment StandardTargetAssessment { get; set; }
     }
 }

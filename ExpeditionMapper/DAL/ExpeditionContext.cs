@@ -20,5 +20,10 @@ namespace ExpeditionMapper.DAL
         public DbSet<Fieldwork> Fieldworks { get; set; }
         public DbSet<Expert> Experts { get; set; }
         public DbSet<ServiceLearning> ServiceLearnings { get; set; }
+        public DbSet<Standard> Standards { get; set; }
+        public DbSet<ShortTermTarget> ShortTermTargets { get; set; }
+        public DbSet<LongTermTarget> LongTermTargets { get; set; }
+        public DbSet<Assessment> Assessments { get; set; }
+        public DbSet<StandardTargetAssessment> StandardsTargetsAssessments { get; set; }
     }
 }

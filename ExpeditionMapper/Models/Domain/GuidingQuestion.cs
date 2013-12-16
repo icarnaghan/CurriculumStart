@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace ExpeditionMapper.Models.Domain
+﻿namespace ExpeditionMapper.Models.Domain
 {
     public class GuidingQuestion
     {
@@ -8,7 +6,6 @@ namespace ExpeditionMapper.Models.Domain
         public string Name { get; set; }
         public int ExpeditionId { get; set; }
 
-        [ForeignKey("ExpeditionId")]
-        public Expedition Expedition { get; set; }
+        public virtual Expedition Expedition { get; set; }
     }
 }

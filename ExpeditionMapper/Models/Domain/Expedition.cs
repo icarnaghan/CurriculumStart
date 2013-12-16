@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using ExpeditionMapper.Models.Domain.LookUps;
 
 namespace ExpeditionMapper.Models.Domain
@@ -15,9 +14,7 @@ namespace ExpeditionMapper.Models.Domain
         public string FinalProductName { get; set; }
         public string FinalProductDescription { get; set; }
 
-        [ForeignKey("GradeLevelId")]
         public virtual GradeLevel GradeLevel { get; set; }
-
         public virtual ICollection<CaseStudy> CaseStudies { get; set; }
         public virtual ICollection<GuidingQuestion> GuidingQuestions { get; set; }
         public virtual ICollection<ExpeditionHabit> ExpeditionHabits { get; set; }
