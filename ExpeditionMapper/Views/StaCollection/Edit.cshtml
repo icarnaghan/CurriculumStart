@@ -18,13 +18,22 @@
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
-
         
         <div id="standard">
             @Html.Partial("~/Views/StaCollection/Partials/_Standard.cshtml", new StandardViewModel { StaCollectionId = Model.Id })
         </div>
 
-        
+        <div id="long-term-target">
+            @Html.Partial("~/Views/StaCollection/Partials/_LongTermTarget.cshtml", new LongTermTargetViewModel { StaCollectionId = Model.Id })
+        </div>
+
+        <div id="short-term-target">
+            @Html.Partial("~/Views/StaCollection/Partials/_ShortTermTarget.cshtml", new ShortTermTargetViewModel { StaCollectionId = Model.Id })
+        </div>
+
+        <div id="assessment">
+            @Html.Partial("~/Views/StaCollection/Partials/_Assessment.cshtml", new AssessmentViewModel { StaCollectionId = Model.Id })
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

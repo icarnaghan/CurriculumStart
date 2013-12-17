@@ -32,7 +32,7 @@
               .Create(create => create.Action("LongTermTarget_Create", "LongTermTarget")) // Action method invoked when the user saves a new data item
               .Read(read => read.Action("LongTermTarget_Read", "LongTermTarget", new { staCollectionId = ViewBag.StaCollectionId })) // Action method invoked when the grid needs data
               .Update(update => update.Action("LongTermTarget_Update", "LongTermTarget")) // Action method invoked when the user saves an updated data item
-              .Destroy(destroy => destroy.Action("LongTermTarget_Delete", "LongTermTarget")) // Action method invoked when the user removes a data item
+              .Destroy(destroy => destroy.Action("LongTermTarget_Destroy", "LongTermTarget")) // Action method invoked when the user removes a data item
       )
       .Pageable()
       )
