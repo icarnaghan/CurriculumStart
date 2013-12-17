@@ -165,6 +165,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
     <Compile Include="Controllers\CaseStudyController.cs" />
+    <Compile Include="Controllers\STAAController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
     <Compile Include="Controllers\ExpertController.cs" />
     <Compile Include="Controllers\ServiceLearningController.cs" />
@@ -200,12 +201,15 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ViewModels\AssessmentViewModel.cs" />
     <Compile Include="Models\ViewModels\ExpeditionHabitViewModel.cs" />
     <Compile Include="Models\ViewModels\ExpeditionViewModel.cs" />
     <Compile Include="Models\ViewModels\ExpertViewModel.cs" />
     <Compile Include="Models\ViewModels\FieldworkViewModel.cs" />
     <Compile Include="Models\ViewModels\GuidingQuestionViewModel.cs" />
+    <Compile Include="Models\ViewModels\LongTermTargetViewModel.cs" />
     <Compile Include="Models\ViewModels\ServiceLearningViewModel.cs" />
+    <Compile Include="Models\ViewModels\ShortTermTargetViewModel.cs" />
     <Compile Include="Models\ViewModels\SocialStudiesBigIdeaViewModel.cs" />
     <Compile Include="Models\ViewModels\ScienceBigIdeaViewModel.cs" />
     <Compile Include="Models\ViewModels\StandardViewModel.cs" />
@@ -1519,6 +1523,12 @@
     <Content Include="Views\StaCollection\Index.cshtml" />
     <Content Include="Views\StaCollection\Partials\_Standard.cshtml" />
     <Content Include="Views\StaCollection\EditorTemplates\StandardDropDownList.cshtml" />
+    <Content Include="Views\StaCollection\Partials\_LongTermTargets.cshtml" />
+    <Content Include="Views\STAA\Create.cshtml" />
+    <Content Include="Views\STAA\Delete.cshtml" />
+    <Content Include="Views\STAA\Details.cshtml" />
+    <Content Include="Views\STAA\Edit.cshtml" />
+    <Content Include="Views\STAA\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

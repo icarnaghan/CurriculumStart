@@ -43,52 +43,50 @@ namespace ExpeditionMapper.Controllers
             return Json(new[] {standard}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Expeditionhabit_Update([DataSourceRequest] DataSourceRequest request,
-            ExpeditionHabitViewModel expeditionHabit)
+        public ActionResult Standard_Update([DataSourceRequest] DataSourceRequest request,
+            StandardViewModel standard)
         {
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ExpeditionViewModel
-                var entity = new ExpeditionHabit
+                var entity = new Standard
                 {
-                    Id = expeditionHabit.Id,
-                    Habit = expeditionHabit.Habit,
-                    Rationale = expeditionHabit.Rationale,
-                    ExpeditionId = expeditionHabit.ExpeditionId
+                    Id = standard.Id,
+                    Name = standard.Name,
+                    StaCollectionId = standard.StaCollectionId
                 };
                 // Attach the entity
-                db.ExpeditionHabits.Attach(entity);
+                db.Standards.Attach(entity);
                 // Change its state to Modified so Entity Framework can update the existing product instead of creating a new one
                 db.Entry(entity).State = EntityState.Modified;
                 // Update the entity in the database
                 db.SaveChanges();
             }
             // Return the updated entities. Also return any validation errors.
-            return Json(new[] {expeditionHabit}.ToDataSourceResult(request, ModelState));
+            return Json(new[] {standard}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult ExpeditionHabit_Destroy(int expeditionId, [DataSourceRequest] DataSourceRequest request,
-            ExpeditionHabitViewModel expeditionHabit)
+        public ActionResult Standard_Destroy([DataSourceRequest] DataSourceRequest request,
+            StandardViewModel standard)
         {
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new ExpeditionHabit
+                var entity = new Standard
                 {
-                    Id = expeditionHabit.Id,
-                    Habit = expeditionHabit.Habit,
-                    Rationale = expeditionHabit.Rationale,
-                    ExpeditionId = expeditionHabit.ExpeditionId
+                    Id = standard.Id,
+                    Name = standard.Name,
+                    StaCollectionId = standard.StaCollectionId
                 };
                 // Attach the entity
-                db.ExpeditionHabits.Attach(entity);
+                db.Standards.Attach(entity);
                 // Delete the entity
-                db.ExpeditionHabits.Remove(entity);
+                db.Standards.Remove(entity);
                 // Delete the entity in the database
                 db.SaveChanges();
             }
             // Return the removed product. Also return any validation errors.
-            return Json(new[] {expeditionHabit}.ToDataSourceResult(request, ModelState));
+            return Json(new[] {standard}.ToDataSourceResult(request, ModelState));
         }
     }
 }

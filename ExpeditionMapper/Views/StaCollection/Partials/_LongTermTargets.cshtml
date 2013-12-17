@@ -1,12 +1,12 @@
 ﻿@using ExpeditionMapper.Models.ViewModels
-<h4><label>Standards</label></h4>
+<h4><label>Long Term Targets</label></h4>
 
-@(Html.Kendo().Grid<StandardViewModel>
+@(Html.Kendo().Grid<LongTermTargetViewModel>
       ()
-      .Name("grid1")
+      .Name("grid2")
       .Columns(columns =>
       {
-          columns.Bound(s => s.Name).EditorTemplateName("StandardDropdownList");
+          columns.Bound(s => s.Name);
           columns.Command(commands =>
           {
               commands.Edit(); // The "edit" command will edit and update data items
@@ -29,10 +29,10 @@
                   model.Field(s => s.Id).Editable(false); // Make the ProductID property not editable
                   model.Field(s => s.StaCollectionId).DefaultValue(@ViewBag.StaCollectionId);
               })
-              .Create(create => create.Action("Standard_Create", "Standard")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("Standard_Read", "Standard", new {staCollectionId = ViewBag.StaCollectionId})) // Action method invoked when the grid needs data
-              .Update(update => update.Action("Standard_Update", "Standard")) // Action method invoked when the user saves an updated data item
-              .Destroy(destroy => destroy.Action("Standard_Destroy", "Standard")) // Action method invoked when the user removes a data item
+              .Create(create => create.Action("LongTermTarget_Create", "LongTermTarget")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("LongTermTarget_Read", "LongTermTarget", new { staCollectionId = ViewBag.StaCollectionId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("LongTermTarget_Update", "LongTermTarget")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("LongTermTarget_Delete", "LongTermTarget")) // Action method invoked when the user removes a data item
       )
       .Pageable()
       )

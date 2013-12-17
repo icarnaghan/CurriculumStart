@@ -11,28 +11,40 @@ using ExpeditionMapper.DAL;
 
 namespace ExpeditionMapper.Controllers
 {
-    public class StaCollectionController : Controller
+    public class STAAController : Controller
     {
         private ExpeditionContext db = new ExpeditionContext();
 
+        // GET: /STAA/
         public ActionResult Index()
         {
-            var stacollections = db.StaCollections
-                .Include(s => s.Standards)
-                .Include(s => s.LongTermTargets)
-                .Include(s => s.ShortTermTargets)
-                .Include(s => s.Assessments);
+            var stacollections = db.StaCollections.Include(s => s.CaseStudy);
             return View(stacollections.ToList());
         }
 
-        // GET: /StaCollection/Create
-        public ActionResult Create(int id)
+        // GET: /STAA/Details/5
+        public ActionResult Details(int? id)
         {
-            ViewBag.CaseStudyId = id;
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            StaCollection stacollection = db.StaCollections.Find(id);
+            if (stacollection == null)
+            {
+                return HttpNotFound();
+            }
+            return View(stacollection);
+        }
+
+        // GET: /STAA/Create
+        public ActionResult Create()
+        {
+            ViewBag.CaseStudyId = new SelectList(db.CaseStudies, "Id", "Name");
             return View();
         }
 
-        // POST: /StaCollection/Create
+        // POST: /STAA/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -43,14 +55,14 @@ namespace ExpeditionMapper.Controllers
             {
                 db.StaCollections.Add(stacollection);
                 db.SaveChanges();
-                return RedirectToAction("Edit", "CaseStudy", new { id=stacollection.CaseStudyId });
+                return RedirectToAction("Index");
             }
 
             ViewBag.CaseStudyId = new SelectList(db.CaseStudies, "Id", "Name", stacollection.CaseStudyId);
             return View(stacollection);
         }
 
-        // GET: /StaCollection/Edit/5
+        // GET: /STAA/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -66,7 +78,7 @@ namespace ExpeditionMapper.Controllers
             return View(stacollection);
         }
 
-        // POST: /StaCollection/Edit/5
+        // POST: /STAA/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -83,7 +95,7 @@ namespace ExpeditionMapper.Controllers
             return View(stacollection);
         }
 
-        // GET: /StaCollection/Delete/5
+        // GET: /STAA/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -98,7 +110,7 @@ namespace ExpeditionMapper.Controllers
             return View(stacollection);
         }
 
-        // POST: /StaCollection/Delete/5
+        // POST: /STAA/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

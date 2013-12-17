@@ -1,0 +1,26 @@
+﻿@model ExpeditionMapper.Models.Domain.StaCollection
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StaCollection</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseStudy.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseStudy.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
