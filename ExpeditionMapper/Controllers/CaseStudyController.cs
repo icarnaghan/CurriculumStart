@@ -53,7 +53,7 @@ namespace ExpeditionMapper.Controllers
             }
             ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
 
-            List<StaGrid> staGrid = db.StaGrid.ToList();
+            List<StaGrid> staGrid = db.StaGrid.Where(s => s.CaseStudyId == id).ToList();
 
             ViewBag.staGrid = staGrid;
 
@@ -69,7 +69,6 @@ namespace ExpeditionMapper.Controllers
         {
             if (ModelState.IsValid)
             {
-                casestudy.ExpeditionId = 1;
                 db.Entry(casestudy).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Edit", "Expedition", new {id = casestudy.ExpeditionId});

@@ -16,18 +16,6 @@ namespace ExpeditionMapper.Controllers
     {
         private ExpeditionContext db = new ExpeditionContext();
 
-        public ActionResult Index()
-        {
-            var stacollections = db.StaCollections
-                .Include(s => s.Standards)
-                .Include(s => s.LongTermTargets)
-                .Include(s => s.ShortTermTargets)
-                .Include(s => s.Assessments);
-            return View(stacollections.ToList());
-
-            
-        }
-
         // GET: /StaCollection/Create
         public ActionResult Create(int id)
         {
