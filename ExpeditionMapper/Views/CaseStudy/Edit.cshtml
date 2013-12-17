@@ -21,12 +21,39 @@
                 <h3>@Model.Name</h3>
             </div>
         </div>
-        
+        <h4><label>Standards Targets Assessments</label></h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>Standards</td>
+                    <td>Long Term Targets</td>
+                    <td>Short Term Targets</td>
+                    <td>Assessments</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.StaGrid)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Standards</td>
+                        <td>@item.LongTermTargets</td>
+                        <td>@item.ShortTermTargets</td>
+                        <td>@item.Assessments</td>
+                        <td><a href="/StaCollection/Edit/@item.StaCollectionId">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="/StaCollection/Create/@Model.Id">Add new set of Standards, Targets and Assessments</a>
+        <hr />
         <h4><label>Overview</label></h4>
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.ExpeditionId)
         <div class="well">
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Name, new {@class = "control-label col-md-2"})
                 <div class="col-md-10">

@@ -4,16 +4,14 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.Hidden("ExpeditionId", (int) ViewBag.ExpeditionId)
 
     <div class="form-horizontal">
-        <h4>CaseStudy</h4>
+        <h4>Create Case Study</h4>
+        <p>Click the create button to continue.</p>
         <hr />
         @Html.ValidationSummary(true)
 

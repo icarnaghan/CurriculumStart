@@ -25,5 +25,6 @@ namespace ExpeditionMapper.DAL
         public DbSet <LongTermTarget> LongTermTargets { get; set; }
         public DbSet <ShortTermTarget> ShortTermTargets { get; set; }
         public DbSet <Assessment> Assessments { get; set; }
+        public DbSet <StaGrid> StaGrid { get; set; }
     }
 }

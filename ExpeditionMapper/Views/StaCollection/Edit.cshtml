@@ -18,6 +18,7 @@
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.CaseStudyId)
         
         <div id="standard">
             @Html.Partial("~/Views/StaCollection/Partials/_Standard.cshtml", new StandardViewModel { StaCollectionId = Model.Id })

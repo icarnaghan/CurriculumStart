@@ -1,8 +1,11 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.DAL;
 using ExpeditionMapper.Models.Domain;
+using ExpeditionMapper.Models.ViewModels;
 
 namespace ExpeditionMapper.Controllers
 {
@@ -49,6 +52,11 @@ namespace ExpeditionMapper.Controllers
                 return HttpNotFound();
             }
             ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
+
+            List<StaGrid> staGrid = db.StaGrid.ToList();
+
+            ViewBag.staGrid = staGrid;
+
             return View(casestudy);
         }
 
@@ -64,7 +72,7 @@ namespace ExpeditionMapper.Controllers
                 casestudy.ExpeditionId = 1;
                 db.Entry(casestudy).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Edit", "Expedition", new {id = 1});
+                return RedirectToAction("Edit", "Expedition", new {id = casestudy.ExpeditionId});
             }
             ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
             return View(casestudy);

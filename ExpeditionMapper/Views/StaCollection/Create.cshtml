@@ -4,8 +4,6 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
 
 @using (Html.BeginForm()) 
 {
@@ -13,7 +11,8 @@
     @Html.Hidden("CaseStudyId", (int) ViewBag.CaseStudyId)
     
     <div class="form-horizontal">
-        <h4>StaCollection</h4>
+        <h4>Create STA</h4>
+        <p>Click the create button to continue.</p>
         <hr />
         @Html.ValidationSummary(true)
 

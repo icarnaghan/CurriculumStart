@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using ExpeditionMapper.Models.Domain;
 using ExpeditionMapper.DAL;
 
@@ -23,6 +24,8 @@ namespace ExpeditionMapper.Controllers
                 .Include(s => s.ShortTermTargets)
                 .Include(s => s.Assessments);
             return View(stacollections.ToList());
+
+            
         }
 
         // GET: /StaCollection/Create
@@ -43,7 +46,7 @@ namespace ExpeditionMapper.Controllers
             {
                 db.StaCollections.Add(stacollection);
                 db.SaveChanges();
-                return RedirectToAction("Edit", "CaseStudy", new { id=stacollection.CaseStudyId });
+                return RedirectToAction("Edit", "StaCollection", new { id=stacollection.Id });
             }
 
             ViewBag.CaseStudyId = new SelectList(db.CaseStudies, "Id", "Name", stacollection.CaseStudyId);
@@ -62,7 +65,7 @@ namespace ExpeditionMapper.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CaseStudyId = new SelectList(db.CaseStudies, "Id", "Name", stacollection.CaseStudyId);
+
             return View(stacollection);
         }
 
@@ -73,14 +76,7 @@ namespace ExpeditionMapper.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="Id,CaseStudyId")] StaCollection stacollection)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(stacollection).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.CaseStudyId = new SelectList(db.CaseStudies, "Id", "Name", stacollection.CaseStudyId);
-            return View(stacollection);
+            return RedirectToAction("Edit", "CaseStudy", new {id = stacollection.CaseStudyId});
         }
 
         // GET: /StaCollection/Delete/5
