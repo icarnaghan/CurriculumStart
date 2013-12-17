@@ -1,0 +1,38 @@
+﻿@using ExpeditionMapper.Models.ViewModels
+<h4><label>Habits</label></h4>
+
+@(Html.Kendo().Grid<StandardViewModel>
+      ()
+      .Name("grid2")
+      .Columns(columns =>
+      {
+          columns.Bound(s => s.Description).EditorTemplateName("StandardMultiSelect");
+          columns.Command(commands =>
+          {
+              commands.Edit(); // The "edit" command will edit and update data items
+              commands.Destroy(); // The "destroy" command removes data items
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create(); // The "create" command adds new data items
+          //toolbar.Save(); // The "save" command saves the changed data items
+      })
+      // .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+              // .Batch(true) // Enable batch updates
+              .Model(model =>
+              {
+                  model.Id(s => s.Id); // Specify the property which is the unique identifier of the model
+                  model.Field(s => s.Id).Editable(false); // Make the ProductID property not editable
+                  model.Field(s => s.StandardTargetAssessmentId).DefaultValue(@ViewBag.StandardTargetAssessmentId);
+              })
+              .Create(create => create.Action("StaStandard_Create", "StaStandard")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("StaStandard_Read", "StaStandard", new { standardTargetAssessmentId = ViewBag.StandardTargetAssessmentId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("StanStandard_Update", "StaStandard")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("StanStandard_Destroy", "StaStandard")) // Action method invoked when the user removes a data item
+      )
+      .Pageable()
+      )
