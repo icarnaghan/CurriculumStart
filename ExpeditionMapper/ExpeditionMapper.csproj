@@ -195,6 +195,7 @@
     <Compile Include="Models\Domain\ExpeditionHabit.cs" />
     <Compile Include="Models\Domain\GuidingQuestion.cs" />
     <Compile Include="Models\Domain\Standard.cs" />
+    <Compile Include="Models\Domain\StaCollection.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\IdentityModels.cs" />

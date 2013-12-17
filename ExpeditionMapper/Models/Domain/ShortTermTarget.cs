@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int CaseStudyId { get; set; }
+        public int StaCollectionId { get; set; }
 
-        public CaseStudy CaseStudy { get; set; }
+        public StaCollection StaCollection { get; set; }
     }
 }
