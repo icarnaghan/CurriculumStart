@@ -1,4 +1,6 @@
-﻿namespace ExpeditionMapper.Models.Domain
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ExpeditionMapper.Models.Domain
 {
     public class Fieldwork
     {
@@ -7,6 +9,7 @@
         public string Description { get; set; }
         public int CaseStudyId { get; set; }
 
-        public virtual CaseStudy CaseStudy { get; set; }
+        [ForeignKey("CaseStudyId")]
+        public CaseStudy CaseStudy { get; set; }
     }
 }
