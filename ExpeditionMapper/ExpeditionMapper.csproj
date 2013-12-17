@@ -165,7 +165,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
     <Compile Include="Controllers\CaseStudyController.cs" />
-    <Compile Include="Controllers\CCController.cs" />
+    <Compile Include="Controllers\StandardController.cs" />
     <Compile Include="Controllers\ExpertController.cs" />
     <Compile Include="Controllers\ServiceLearningController.cs" />
     <Compile Include="Controllers\FieldworkController.cs" />
@@ -175,6 +175,7 @@
     <Compile Include="Controllers\GuidingQuestionController.cs" />
     <Compile Include="Controllers\ExpeditionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StaCollectionController.cs" />
     <Compile Include="DAL\ExpeditionContext.cs" />
     <Compile Include="DAL\ExpeditionInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -207,6 +208,7 @@
     <Compile Include="Models\ViewModels\ServiceLearningViewModel.cs" />
     <Compile Include="Models\ViewModels\SocialStudiesBigIdeaViewModel.cs" />
     <Compile Include="Models\ViewModels\ScienceBigIdeaViewModel.cs" />
+    <Compile Include="Models\ViewModels\StandardViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1510,6 +1512,13 @@
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Home\Unavailable.cshtml" />
     <Content Include="Views\CaseStudy\Create.cshtml" />
+    <Content Include="Views\StaCollection\Create.cshtml" />
+    <Content Include="Views\StaCollection\Delete.cshtml" />
+    <Content Include="Views\StaCollection\Details.cshtml" />
+    <Content Include="Views\StaCollection\Edit.cshtml" />
+    <Content Include="Views\StaCollection\Index.cshtml" />
+    <Content Include="Views\StaCollection\Partials\_Standard.cshtml" />
+    <Content Include="Views\StaCollection\EditorTemplates\StandardDropDownList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
