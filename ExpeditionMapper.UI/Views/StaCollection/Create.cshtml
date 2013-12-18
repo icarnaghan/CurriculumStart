@@ -1,0 +1,34 @@
+﻿@model ExpeditionMapper.Models.Domain.StaCollection
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("CaseStudyId", (int) ViewBag.CaseStudyId)
+
+    <div class="form-horizontal">
+        <h4>Create STA</h4>
+        <p>Click the create button to continue.</p>
+        <hr />
+        @Html.ValidationSummary(true)
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

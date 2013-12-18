@@ -1,0 +1,7 @@
+﻿@model string
+
+@(Html.Kendo().DropDownList()
+      .Name("Name") //Important, must match the column's name
+      .Value(Model)
+      .SelectedIndex(0)
+      .BindTo(new[] {"Select Standard", "Standard 1", "Standard 2", "Standard 3"}))

@@ -1,0 +1,92 @@
+﻿@using ExpeditionMapper.Models.ViewModels
+@using ExpeditionMapper.UI.Models
+@model ExpeditionMapper.BE.Domain.CaseStudy
+
+@{
+    ViewBag.Title = "Edit";
+    ViewBag.CaseStudyId = Model.Id;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="/Home/Index">My Curriculum</a></li>
+                    <li><a href="/Expedition/Edit/@Model.ExpeditionId">Expedition</a></li>
+                    <li class="active"><a href="#">@Model.Name</a></li>
+                </ul>
+                <h3>@Model.Name</h3>
+            </div>
+        </div>
+        <h4><label>Standards Targets Assessments</label></h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>Standards</td>
+                    <td>Long Term Targets</td>
+                    <td>Short Term Targets</td>
+                    <td>Assessments</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (dynamic item in ViewBag.StaGrid)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Standards</td>
+                        <td>@item.LongTermTargets</td>
+                        <td>@item.ShortTermTargets</td>
+                        <td>@item.Assessments</td>
+                        <td><a href="/StaCollection/Edit/@item.StaCollectionId">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="/StaCollection/Create/@Model.Id">Add new set of Standards, Targets and Assessments</a>
+        <hr />
+        <h4><label>Overview</label></h4>
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.ExpeditionId)
+        <div class="well">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Name, new {@class = "form-control input-sm"})
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Description, new {@class = "form-control input-sm"})
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+            </div>
+        </div>
+        <div id="fieldwork">
+            @Html.Partial("~/Views/CaseStudy/Partials/_Fieldwork.cshtml", new FieldworkViewModel {CaseStudyId = Model.Id})
+        </div>
+
+        <div id="expert">
+            @Html.Partial("~/Views/CaseStudy/Partials/_Expert.cshtml", new ExpertViewModel {CaseStudyId = Model.Id})
+        </div>
+
+        <div id="serviceLearning">
+            @Html.Partial("~/Views/CaseStudy/Partials/_ServiceLearning.cshtml", new ExpertViewModel {CaseStudyId = Model.Id})
+        </div>
+        <br/>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

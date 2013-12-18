@@ -1,0 +1,40 @@
+﻿@using ExpeditionMapper.Models.ViewModels
+@using ExpeditionMapper.UI.Models
+<h4><label>Assessments</label></h4>
+
+@(Html.Kendo().Grid<AssessmentViewModel>
+      ()
+      .Name("grid4")
+      .Columns(columns =>
+      {
+          columns.Bound(s => s.Name);
+          columns.Bound(s => s.Description);
+          columns.Command(commands =>
+          {
+              commands.Edit(); // The "edit" command will edit and update data items
+              commands.Destroy(); // The "destroy" command removes data items
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create(); // The "create" command adds new data items
+          //toolbar.Save(); // The "save" command saves the changed data items
+      })
+      // .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+              // .Batch(true) // Enable batch updates
+              .Model(model =>
+              {
+                  model.Id(s => s.Id); // Specify the property which is the unique identifier of the model
+                  model.Field(s => s.Id).Editable(false); // Make the ProductID property not editable
+                  model.Field(s => s.StaCollectionId).DefaultValue(@ViewBag.StaCollectionId);
+              })
+              .Create(create => create.Action("Assessment_Create", "Assessment")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("Assessment_Read", "Assessment", new {staCollectionId = ViewBag.StaCollectionId})) // Action method invoked when the grid needs data
+              .Update(update => update.Action("Assessment_Update", "Assessment")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("Assessment_Destroy", "Assessment")) // Action method invoked when the user removes a data item
+      )
+      .Pageable()
+      )
