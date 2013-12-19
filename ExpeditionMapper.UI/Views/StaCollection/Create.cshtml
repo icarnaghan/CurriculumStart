@@ -1,4 +1,4 @@
-﻿@model ExpeditionMapper.Models.Domain.StaCollection
+﻿@model ExpeditionMapper.BE.Domain.StaCollection
 
 @{
     ViewBag.Title = "Create";
@@ -24,10 +24,7 @@
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<a href="~/Views/StaCollection/Create.cshtml">~/Views/StaCollection/Create.cshtml</a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
