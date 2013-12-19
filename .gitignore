@@ -1,3 +1,15 @@
 /ExpeditionMapper/bin
 
 /ExpeditionMapper/obj
+
+/ExpeditionMapper.v12.suo
+/ExpeditionMapper.UI/ExpeditionMapper.UI.csproj.user
+
+/ExpeditionMapper.UI/bin
+/ExpeditionMapper.UI/obj
+
+/ExpeditionMapper.DAL/bin
+/ExpeditionMapper.DAL/obj
+
+/ExpeditionMapper.BE/obj
+/ExpeditionMapper.BE/bin
