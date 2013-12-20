@@ -2,6 +2,7 @@ using System;
 using ExpeditionMapper.DAL;
 using ExpeditionMapper.DAL.Interfaces;
 using ExpeditionMapper.DAL.Repositories;
+using ExpeditionMapper.UI.Controllers;
 using Microsoft.Practices.Unity;
 
 namespace ExpeditionMapper.UI.App_Start
@@ -42,6 +43,9 @@ namespace ExpeditionMapper.UI.App_Start
 
             container.RegisterType<IExpeditionRepository, ExpeditionRepository>();
             container.RegisterType<ICaseStudyRepository, CaseStudyRepository>();
+
+            // Needed for account controller - http://stackoverflow.com/questions/20023065/how-to-add-mvc-5-authentication-to-unity-ioc
+            container.RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }

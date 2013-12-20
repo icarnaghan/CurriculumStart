@@ -2,7 +2,6 @@
 using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL;
 using ExpeditionMapper.DAL.Interfaces;
 
 namespace ExpeditionMapper.UI.Controllers
@@ -21,30 +20,21 @@ namespace ExpeditionMapper.UI.Controllers
         // GET: /Expedition/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             var expedition = _expeditionRepository.Find(id);
-            if (expedition == null)
-            {
-                return HttpNotFound();
-            }
+            
+            if (expedition == null) return HttpNotFound();
+            
             expedition.CaseStudies = _caseStudyRepository.GetAllByExpedition(id).ToList();
+            
             return View(expedition);
         }
 
         // POST: /Expedition/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(
-            [Bind(
-                Include =
-                    "Id,Year,GradeLevelId,Name,Description,KickOff,FinalProductName,FinalProductDescription,GuidingQuestions"
-                )] Expedition expedition)
+        public ActionResult Edit(Expedition expedition)
         {
             if (ModelState.IsValid)
             {

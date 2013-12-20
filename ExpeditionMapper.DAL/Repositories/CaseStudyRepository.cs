@@ -5,6 +5,7 @@ using System.Linq;
 using ExpeditionMapper.BE.Domain;
 using ExpeditionMapper.DAL.Interfaces;
 using ExpeditionMapper.DAL.Provider;
+using ExpeditionMapper.Models.Domain;
 
 namespace ExpeditionMapper.DAL.Repositories
 {
@@ -20,6 +21,11 @@ namespace ExpeditionMapper.DAL.Repositories
         public IEnumerable<CaseStudy> GetAllByExpedition(int? id)
         {
             return db.CaseStudies.ToList();
+        }
+
+        public IEnumerable<StaGrid> GetStaGrids(int? id)
+        {
+            return db.StaGrid.Where(s => s.CaseStudyId == id).ToList();
         }
 
         public CaseStudy Find(int? id)

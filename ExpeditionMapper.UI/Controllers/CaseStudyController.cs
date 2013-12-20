@@ -1,17 +1,21 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL.Provider;
+using ExpeditionMapper.DAL.Interfaces;
 using ExpeditionMapper.Models.Domain;
 
 namespace ExpeditionMapper.UI.Controllers
 {
     public class CaseStudyController : BaseController
     {
-        private readonly ExpeditionContext db = new ExpeditionContext();
+        private readonly ICaseStudyRepository _caseStudyRepository;
+
+        public CaseStudyController(ICaseStudyRepository caseStudyRepository)
+        {
+            _caseStudyRepository = caseStudyRepository;
+        }
 
         // GET: /CS/Create
         public ActionResult Create(int Id)
@@ -20,21 +24,18 @@ namespace ExpeditionMapper.UI.Controllers
             return View();
         }
 
-        // POST: /CS/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: /CaseStudy/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
+        public ActionResult Create(CaseStudy casestudy)
         {
             if (ModelState.IsValid)
             {
-                db.CaseStudies.Add(casestudy);
-                db.SaveChanges();
+                _caseStudyRepository.InsertorUpdate(casestudy);
+                _caseStudyRepository.Save();
                 return RedirectToAction("Edit", "CaseStudy", new {casestudy.Id});
             }
 
-            ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
             return View(casestudy);
         }
 
@@ -42,18 +43,16 @@ namespace ExpeditionMapper.UI.Controllers
         // GET: /CaseStudy/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            CaseStudy casestudy = db.CaseStudies.Find(id);
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var casestudy = _caseStudyRepository.Find(id);
+            
             if (casestudy == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
 
-            List<StaGrid> staGrid = db.StaGrid.Where(s => s.CaseStudyId == id).ToList();
+            List<StaGrid> staGrid = _caseStudyRepository.GetStaGrids(id).ToList();
 
             ViewBag.staGrid = staGrid;
 
@@ -61,19 +60,16 @@ namespace ExpeditionMapper.UI.Controllers
         }
 
         // POST: /CaseStudy/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ExpeditionId,Name,Description")] CaseStudy casestudy)
+        public ActionResult Edit(CaseStudy casestudy)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(casestudy).State = EntityState.Modified;
-                db.SaveChanges();
+                _caseStudyRepository.InsertorUpdate(casestudy);
+                _caseStudyRepository.Save();
                 return RedirectToAction("Edit", "Expedition", new {id = casestudy.ExpeditionId});
             }
-            ViewBag.ExpeditionId = new SelectList(db.Expeditions, "Id", "Name", casestudy.ExpeditionId);
             return View(casestudy);
         }
 
@@ -81,7 +77,7 @@ namespace ExpeditionMapper.UI.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _caseStudyRepository.Dispose();
             }
             base.Dispose(disposing);
         }

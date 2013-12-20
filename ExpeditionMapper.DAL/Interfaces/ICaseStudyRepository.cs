@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ExpeditionMapper.BE.Domain;
+using ExpeditionMapper.Models.Domain;
 
 namespace ExpeditionMapper.DAL.Interfaces
 {
@@ -8,6 +9,7 @@ namespace ExpeditionMapper.DAL.Interfaces
     {
         IEnumerable<CaseStudy> GetAll();
         IEnumerable<CaseStudy> GetAllByExpedition(int? id);
+        IEnumerable<StaGrid> GetStaGrids(int? id);
         void InsertorUpdate(CaseStudy caseStudy);
         CaseStudy Find(int? id);
         bool Delete(int id);
