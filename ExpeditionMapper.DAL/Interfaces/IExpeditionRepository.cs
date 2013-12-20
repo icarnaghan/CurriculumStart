@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using ExpeditionMapper.BE.Domain;
 
-namespace ExpeditionMapper.DAL
+namespace ExpeditionMapper.DAL.Interfaces
 {
     public interface IExpeditionRepository : IDisposable
     {

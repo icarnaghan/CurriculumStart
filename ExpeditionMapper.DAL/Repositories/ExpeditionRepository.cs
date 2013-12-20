@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using ExpeditionMapper.BE.Domain;
+using ExpeditionMapper.DAL.Interfaces;
+using ExpeditionMapper.DAL.Provider;
 
-namespace ExpeditionMapper.DAL
+namespace ExpeditionMapper.DAL.Repositories
 {
     public class ExpeditionRepository : IExpeditionRepository
     {

@@ -1,7 +1,8 @@
 using System;
 using ExpeditionMapper.DAL;
+using ExpeditionMapper.DAL.Interfaces;
+using ExpeditionMapper.DAL.Repositories;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 
 namespace ExpeditionMapper.UI.App_Start
 {

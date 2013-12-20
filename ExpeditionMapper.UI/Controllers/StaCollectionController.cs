@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL;
+using ExpeditionMapper.DAL.Provider;
 
 namespace ExpeditionMapper.UI.Controllers
 {

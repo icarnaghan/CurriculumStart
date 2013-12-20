@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL;
+using ExpeditionMapper.DAL.Provider;
 using ExpeditionMapper.Models.Domain;
 
 namespace ExpeditionMapper.UI.Controllers

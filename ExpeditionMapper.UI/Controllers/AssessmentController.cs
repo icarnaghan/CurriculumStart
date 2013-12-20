@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL;
+using ExpeditionMapper.DAL.Provider;
 using ExpeditionMapper.UI.Models;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;

@@ -67,12 +67,12 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExpeditionContext.cs" />
-    <Compile Include="ExpeditionInitializer.cs" />
-    <Compile Include="CaseStudyRepository.cs" />
-    <Compile Include="ExpeditionRepository.cs" />
-    <Compile Include="ICaseStudyRepository.cs" />
-    <Compile Include="IExpeditionRepository.cs" />
+    <Compile Include="Provider\ExpeditionContext.cs" />
+    <Compile Include="Provider\ExpeditionInitializer.cs" />
+    <Compile Include="Repositories\CaseStudyRepository.cs" />
+    <Compile Include="Repositories\ExpeditionRepository.cs" />
+    <Compile Include="Interfaces\ICaseStudyRepository.cs" />
+    <Compile Include="Interfaces\IExpeditionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

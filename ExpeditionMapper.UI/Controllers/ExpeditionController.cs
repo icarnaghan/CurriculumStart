@@ -3,6 +3,7 @@ using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.BE.Domain;
 using ExpeditionMapper.DAL;
+using ExpeditionMapper.DAL.Interfaces;
 
 namespace ExpeditionMapper.UI.Controllers
 {
