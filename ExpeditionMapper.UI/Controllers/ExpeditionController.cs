@@ -1,5 +1,4 @@
-﻿using System.Data.Entity;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ExpeditionMapper.BE.Domain;
@@ -9,7 +8,14 @@ namespace ExpeditionMapper.UI.Controllers
 {
     public class ExpeditionController : BaseController
     {
-        private readonly ExpeditionContext db = new ExpeditionContext();
+        private readonly IExpeditionRepository _expeditionRepository;
+        private readonly ICaseStudyRepository _caseStudyRepository;
+
+        public ExpeditionController(IExpeditionRepository expeditionRepository, ICaseStudyRepository caseStudyRepository)
+        {
+            _expeditionRepository = expeditionRepository;
+            _caseStudyRepository = caseStudyRepository;
+        }
 
         // GET: /Expedition/Edit/5
         public ActionResult Edit(int? id)
@@ -18,13 +24,13 @@ namespace ExpeditionMapper.UI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Expedition expedition = db.Expeditions.Find(id);
+
+            var expedition = _expeditionRepository.Find(id);
             if (expedition == null)
             {
                 return HttpNotFound();
             }
-            expedition.CaseStudies = db.CaseStudies.Where(c => c.ExpeditionId == id).ToList();
-            ViewBag.GradeLevelId = new SelectList(db.GradeLevels, "Id", "Name", expedition.GradeLevelId);
+            expedition.CaseStudies = _caseStudyRepository.GetAllByExpedition(id).ToList();
             return View(expedition);
         }
 
@@ -42,8 +48,8 @@ namespace ExpeditionMapper.UI.Controllers
             if (ModelState.IsValid)
             {
                 expedition.GradeLevelId = 2;
-                db.Entry(expedition).State = EntityState.Modified;
-                db.SaveChanges();
+                _expeditionRepository.InsertorUpdate(expedition);
+                _expeditionRepository.Save();
 
                 return RedirectToAction("Index", "Home");
             }
@@ -54,7 +60,7 @@ namespace ExpeditionMapper.UI.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _expeditionRepository.Dispose();
             }
             base.Dispose(disposing);
         }

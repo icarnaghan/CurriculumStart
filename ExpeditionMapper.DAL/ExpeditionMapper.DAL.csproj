@@ -69,6 +69,10 @@
   <ItemGroup>
     <Compile Include="ExpeditionContext.cs" />
     <Compile Include="ExpeditionInitializer.cs" />
+    <Compile Include="CaseStudyRepository.cs" />
+    <Compile Include="ExpeditionRepository.cs" />
+    <Compile Include="ICaseStudyRepository.cs" />
+    <Compile Include="IExpeditionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
