@@ -23,16 +23,16 @@ namespace ExpeditionMapper.UI.App_Start
                 "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
-                "~/Scripts/kendo/kendo.all.min.js",
-                "~/Scripts/kendo/kendo.aspnetmvc.min.js"));
+                "~/Scripts/kendo/2014.1.318/kendo.all.min.js",
+                "~/Scripts/kendo/2014.1.318/kendo.aspnetmvc.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
-                "~/Content/kendo/kendo.common.min.css",
-                "~/Content/kendo/kendo.silver.min.css"));
+                "~/Content/kendo/2014.1.318/kendo.common.min.css",
+                "~/Content/kendo/2014.1.318/kendo.silver.min.css"));
 
             bundles.Add(new StyleBundle("~/bundles/flatui").Include(
                 "~/Content/flatui/css/flat-ui.css"));

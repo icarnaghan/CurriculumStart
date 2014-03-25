@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpeditionMapper.BE", "Expe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpeditionMapper.DAL", "ExpeditionMapper.DAL\ExpeditionMapper.DAL.csproj", "{F4F0E122-29B3-44B2-8074-C08345CB2C96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpeditionMapper.Tests", "ExpeditionMapper.Test.Tests\ExpeditionMapper.Tests.csproj", "{0F99C42E-0FDD-4909-B136-54E9DA7C6E08}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{F4F0E122-29B3-44B2-8074-C08345CB2C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4F0E122-29B3-44B2-8074-C08345CB2C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4F0E122-29B3-44B2-8074-C08345CB2C96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F99C42E-0FDD-4909-B136-54E9DA7C6E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F99C42E-0FDD-4909-B136-54E9DA7C6E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F99C42E-0FDD-4909-B136-54E9DA7C6E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F99C42E-0FDD-4909-B136-54E9DA7C6E08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
