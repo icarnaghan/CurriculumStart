@@ -28,14 +28,19 @@ namespace ExpeditionMapper.UI.App_Start
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
-                "~/Content/site.css"));
+                "~/Content/site.css",
+                "~/Content/melon/main.css",
+                "~/Content/melon/plugins.css", 
+                "~/Content/melon/responsive.css", 
+                "~/Content/melon/icons.css",
+                "~/Content/melon/fontawesome/font-awesome.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
                 "~/Content/kendo/2014.1.318/kendo.common.min.css",
                 "~/Content/kendo/2014.1.318/kendo.silver.min.css"));
 
-            bundles.Add(new StyleBundle("~/bundles/flatui").Include(
-                "~/Content/flatui/css/flat-ui.css"));
+            //bundles.Add(new StyleBundle("~/bundles/flatui").Include(
+            //    "~/Content/flatui/css/flat-ui.css"));
 
             // Allow minified files in debug mode.
             bundles.IgnoreList.Clear();
