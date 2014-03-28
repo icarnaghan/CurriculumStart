@@ -1589,6 +1589,11 @@
     <Content Include="Scripts\plugins\datatables\colvis\ColVis.min.js.gz" />
     <Content Include="Scripts\plugins\datatables\tabletools\TableTools.min.js.gz" />
     <Content Include="Scripts\plugins\select2\select2_locale_en.js.template" />
+    <Content Include="Views\Expedition\Overview.cshtml" />
+    <Content Include="Views\Expedition\GuidingQuestions.cshtml" />
+    <Content Include="Views\Expedition\Habits.cshtml" />
+    <Content Include="Views\Expedition\ScienceBigIdeas.cshtml" />
+    <Content Include="Views\Expedition\SocialStudiesBigIdeas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

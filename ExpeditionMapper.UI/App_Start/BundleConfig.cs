@@ -37,7 +37,7 @@ namespace ExpeditionMapper.UI.App_Start
 
             bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
                 "~/Content/kendo/2014.1.318/kendo.common.min.css",
-                "~/Content/kendo/2014.1.318/kendo.silver.min.css"));
+                "~/Content/kendo/2014.1.318/kendo.metro.min.css"));
 
             //bundles.Add(new StyleBundle("~/bundles/flatui").Include(
             //    "~/Content/flatui/css/flat-ui.css"));

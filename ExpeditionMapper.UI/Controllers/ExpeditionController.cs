@@ -47,6 +47,68 @@ namespace ExpeditionMapper.UI.Controllers
             return View(expedition);
         }
 
+        // GET: /Expedition/Overview/5
+        public ActionResult Overview(int? id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var expedition = _expeditionRepository.Find(id);
+            if (expedition == null) return HttpNotFound();
+
+            ViewBag.Title = expedition.Name;
+            ViewBag.Semester = "Fall";
+            return View(expedition);
+        }
+
+        // POST: /Expedition/Overview/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Overview(Expedition expedition)
+        {
+            if (ModelState.IsValid)
+            {
+                expedition.GradeLevelId = 2;
+                _expeditionRepository.InsertorUpdate(expedition);
+                _expeditionRepository.Save();
+            }
+            return View(expedition);
+        }
+
+        // GET: /Expedition/GuidingQuestions/5
+        public ActionResult GuidingQuestions(int? id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var expedition = _expeditionRepository.Find(id);
+            if (expedition == null) return HttpNotFound();
+            return View(expedition);
+        }
+
+        // GET: /Expedition/Habits/5
+        public ActionResult Habits(int? id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var expedition = _expeditionRepository.Find(id);
+            if (expedition == null) return HttpNotFound();
+            return View(expedition);
+        }
+
+        // GET: /Expedition/ScienceBigIdeas/5
+        public ActionResult ScienceBigIdeas(int? id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var expedition = _expeditionRepository.Find(id);
+            if (expedition == null) return HttpNotFound();
+            return View(expedition);
+        }
+
+        // GET: /Expedition/SocialStudiesBigIdeas/5
+        public ActionResult SocialStudiesBigIdeas(int? id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var expedition = _expeditionRepository.Find(id);
+            if (expedition == null) return HttpNotFound();
+            return View(expedition);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
