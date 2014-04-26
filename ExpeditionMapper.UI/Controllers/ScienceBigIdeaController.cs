@@ -1,17 +1,17 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL.Provider;
-using ExpeditionMapper.UI.Models;
+using FlexMapper.BE.Domain;
+using FlexMapper.DAL.Provider;
+using FlexMapper.UI.Models;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 
-namespace ExpeditionMapper.UI.Controllers
+namespace FlexMapper.UI.Controllers
 {
     public class ScienceBigIdeaController : BaseController
     {
-        private readonly ExpeditionContext db = new ExpeditionContext();
+        private readonly FlexMapperContext db = new FlexMapperContext();
 
         public ActionResult ScienceBigIdea_Read(int expeditionId, [DataSourceRequest] DataSourceRequest request)
         {

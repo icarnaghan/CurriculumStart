@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.Models.Domain;
+using FlexMapper.BE.Domain;
 
-namespace ExpeditionMapper.DAL.Interfaces
+namespace FlexMapper.DAL.Interfaces
 {
     public interface ICaseStudyRepository : IDisposable
     {

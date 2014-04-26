@@ -1,11 +1,10 @@
 using System;
-using ExpeditionMapper.DAL;
-using ExpeditionMapper.DAL.Interfaces;
-using ExpeditionMapper.DAL.Repositories;
-using ExpeditionMapper.UI.Controllers;
+using FlexMapper.UI.Controllers;
+using FlexMapper.DAL.Interfaces;
+using FlexMapper.DAL.Repositories;
 using Microsoft.Practices.Unity;
 
-namespace ExpeditionMapper.UI.App_Start
+namespace FlexMapper.UI
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.
@@ -41,7 +40,7 @@ namespace ExpeditionMapper.UI.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
 
-            container.RegisterType<IExpeditionRepository, ExpeditionRepository>();
+            container.RegisterType<ISectionRepository, SectionRepository>();
             container.RegisterType<ICaseStudyRepository, CaseStudyRepository>();
 
             // Needed for account controller - http://stackoverflow.com/questions/20023065/how-to-add-mvc-5-authentication-to-unity-ioc

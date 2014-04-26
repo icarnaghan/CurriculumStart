@@ -2,11 +2,10 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL.Interfaces;
-using ExpeditionMapper.Models.Domain;
+using FlexMapper.BE.Domain;
+using FlexMapper.DAL.Interfaces;
 
-namespace ExpeditionMapper.UI.Controllers
+namespace FlexMapper.UI.Controllers
 {
     public class CaseStudyController : BaseController
     {
@@ -68,7 +67,7 @@ namespace ExpeditionMapper.UI.Controllers
             {
                 _caseStudyRepository.InsertorUpdate(casestudy);
                 _caseStudyRepository.Save();
-                return RedirectToAction("Edit", "Expedition", new {id = casestudy.ExpeditionId});
+                return RedirectToAction("Edit", "Expedition", new {id = casestudy.SectionId});
             }
             return View(casestudy);
         }

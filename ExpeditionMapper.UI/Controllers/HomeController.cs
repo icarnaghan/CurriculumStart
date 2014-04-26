@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace ExpeditionMapper.UI.Controllers
+namespace FlexMapper.UI.Controllers
 {
     public class HomeController : BaseController
     {

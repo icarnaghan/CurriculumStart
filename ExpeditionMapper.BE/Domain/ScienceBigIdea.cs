@@ -1,4 +1,4 @@
-﻿namespace ExpeditionMapper.BE.Domain
+﻿namespace FlexMapper.BE.Domain
 {
     public class ScienceBigIdea
     {
@@ -7,6 +7,6 @@
         public string Rationale { get; set; }
         public int ExpeditionId { get; set; }
 
-        public Expedition Expedition { get; set; }
+        public Section Expedition { get; set; }
     }
 }

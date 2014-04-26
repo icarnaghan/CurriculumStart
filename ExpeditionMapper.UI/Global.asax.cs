@@ -2,9 +2,8 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using ExpeditionMapper.UI.App_Start;
 
-namespace ExpeditionMapper.UI
+namespace FlexMapper.UI
 {
     public class MvcApplication : HttpApplication
     {

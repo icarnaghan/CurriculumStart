@@ -3,7 +3,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 
-namespace ExpeditionMapper.UI
+namespace FlexMapper.UI
 {
     public partial class Startup
     {

@@ -1,4 +1,4 @@
-﻿namespace ExpeditionMapper.UI.Models
+﻿namespace FlexMapper.UI.Models
 {
     public class SocialStudiesBigIdeaViewModel
     {

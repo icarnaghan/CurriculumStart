@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL.Interfaces;
-using ExpeditionMapper.DAL.Provider;
-using ExpeditionMapper.Models.Domain;
+using FlexMapper.BE.Domain;
+using FlexMapper.DAL.Interfaces;
+using FlexMapper.DAL.Provider;
 
-namespace ExpeditionMapper.DAL.Repositories
+namespace FlexMapper.DAL.Repositories
 {
     public class CaseStudyRepository : ICaseStudyRepository
     {
-        private ExpeditionContext db = new ExpeditionContext();
+        private FlexMapperContext db = new FlexMapperContext();
 
         public IEnumerable<CaseStudy> GetAll()
         {

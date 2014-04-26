@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using ExpeditionMapper.Models.Domain;
 
-namespace ExpeditionMapper.BE.Domain
+namespace FlexMapper.BE.Domain
 {
     public class StaCollection
     {

@@ -36,3 +36,63 @@ input[type="checkbox"].input-validation-error { border: 0 none; }
 .bottom-menu { padding: 20px 0 20px !important; }
 
 h3 a { color: #34495e; }
+
+/* Sub Menu */
+ul.sub-menu {
+  display: none;
+  list-style: none;
+  clear: both;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #fff;
+}
+ul.sub-menu a {
+  font-weight: normal;
+  padding: 12px 15px 12px 20px;
+  text-transform: none;
+}
+ul.sub-menu a:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+ul.sub-menu a:active {
+  background: #ebebeb;
+}
+ul.sub-menu li.current {
+  background: #f9f9f9;
+}
+ul.sub-menu li:first-child > a {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset;
+}
+ul.sub-menu ul.sub-menu {
+  margin: 5px;
+  margin-right: 0;
+  margin-left: 40px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+ul.sub-menu ul.sub-menu > li {
+  border-left: 1px solid #d1d1d1;
+  border-bottom: none;
+}
+ul.sub-menu ul.sub-menu > li a {
+  font-size: 12px;
+  color: #6f6f6f;
+  padding: 7px 15px;
+}
+ul.sub-menu ul.sub-menu > li a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+ul.sub-menu ul.sub-menu > li a:active {
+  background: #ebebeb;
+}
+ul.sub-menu ul.sub-menu li:first-child > a {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}

@@ -1,9 +1,9 @@
-﻿using ExpeditionMapper.UI;
+﻿using FlexMapper.UI;
 using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace ExpeditionMapper.UI
+namespace FlexMapper.UI
 {
     public partial class Startup
     {

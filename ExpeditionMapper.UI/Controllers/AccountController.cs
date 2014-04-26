@@ -3,13 +3,13 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using ExpeditionMapper.UI.Models;
+using FlexMapper.UI.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
-namespace ExpeditionMapper.UI.Controllers
+namespace FlexMapper.UI.Controllers
 {
     [Authorize]
     public class AccountController : BaseController

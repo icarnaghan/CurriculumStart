@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace ExpeditionMapper.UI.App_Start
+namespace FlexMapper.UI
 {
     public class RouteConfig
     {

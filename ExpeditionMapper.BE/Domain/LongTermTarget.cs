@@ -1,6 +1,4 @@
-﻿using ExpeditionMapper.BE.Domain;
-
-namespace ExpeditionMapper.Models.Domain
+﻿namespace FlexMapper.BE.Domain
 {
     public class LongTermTarget
     {

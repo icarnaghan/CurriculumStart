@@ -1,13 +1,13 @@
 ﻿using System.Net;
 using System.Web.Mvc;
-using ExpeditionMapper.BE.Domain;
-using ExpeditionMapper.DAL.Provider;
+using FlexMapper.BE.Domain;
+using FlexMapper.DAL.Provider;
 
-namespace ExpeditionMapper.UI.Controllers
+namespace FlexMapper.UI.Controllers
 {
     public class StaCollectionController : Controller
     {
-        private readonly ExpeditionContext db = new ExpeditionContext();
+        private readonly FlexMapperContext db = new FlexMapperContext();
 
         // GET: /StaCollection/Create
         public ActionResult Create(int id)

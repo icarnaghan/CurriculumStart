@@ -1,4 +1,4 @@
-﻿namespace ExpeditionMapper.BE.Domain
+﻿namespace FlexMapper.BE.Domain
 {
     public class Standard
     {

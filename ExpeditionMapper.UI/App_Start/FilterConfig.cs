@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace ExpeditionMapper.UI.App_Start
+namespace FlexMapper.UI
 {
     public class FilterConfig
     {

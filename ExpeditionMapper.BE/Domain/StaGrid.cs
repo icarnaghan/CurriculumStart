@@ -1,4 +1,4 @@
-﻿namespace ExpeditionMapper.Models.Domain
+﻿namespace FlexMapper.BE.Domain
 {
     public class StaGrid
     {

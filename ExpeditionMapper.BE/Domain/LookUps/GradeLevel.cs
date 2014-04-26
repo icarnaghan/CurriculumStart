@@ -1,4 +1,4 @@
-﻿namespace ExpeditionMapper.BE.Domain.LookUps
+﻿namespace FlexMapper.BE.Domain.LookUps
 {
     public class GradeLevel
     {

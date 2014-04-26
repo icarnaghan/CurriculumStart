@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ExpeditionMapper.BE.Domain
+namespace FlexMapper.BE.Domain
 {
     public class GuidingQuestion
     {
@@ -9,6 +9,6 @@ namespace ExpeditionMapper.BE.Domain
         public int ExpeditionId { get; set; }
 
         [ForeignKey("ExpeditionId")]
-        public Expedition Expedition { get; set; }
+        public Section Expedition { get; set; }
     }
 }
