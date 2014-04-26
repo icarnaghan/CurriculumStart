@@ -1,0 +1,23 @@
+﻿@using FlexMapper.UI.Models
+@model FlexMapper.BE.Domain.Section
+
+@{
+    ViewBag.Title = "Guiding Questions";
+    ViewBag.ExpeditionId = Model.Id;
+}
+
+<script src="~/Scripts/FlexMapper.js"> </script>
+
+<div class="form-horizontal">
+    <div class="well">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+
+        <div id="guidingQuestions">
+            @Html.Partial("~/Views/Expedition/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel { ExpeditionId = Model.Id })
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

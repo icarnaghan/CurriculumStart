@@ -1,0 +1,40 @@
+﻿@using FlexMapper.UI.Models
+@using FlexMapper.UI.Models
+<h4><label>Service Learning</label></h4>
+
+@(Html.Kendo().Grid<ServiceLearningViewModel>
+      ()
+      .Name("grid3")
+      .Columns(columns =>
+      {
+          columns.Bound(s => s.Name);
+          columns.Bound(s => s.Description);
+          columns.Command(commands =>
+          {
+              commands.Edit(); // The "edit" command will edit and update data items
+              commands.Destroy(); // The "destroy" command removes data items
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create(); // The "create" command adds new data items
+          //toolbar.Save(); // The "save" command saves the changed data items
+      })
+      // .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+              //.Batch(true) // Enable batch updates
+              .Model(model =>
+              {
+                  model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
+                  model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
+                  model.Field(g => g.CaseStudyId).DefaultValue(@ViewBag.CaseStudyId);
+              })
+              .Create(create => create.Action("ServiceLearning_Create", "ServiceLearning")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("ServiceLearning_Read", "ServiceLearning", new {caseStudyId = ViewBag.CaseStudyId})) // Action method invoked when the grid needs data
+              .Update(update => update.Action("ServiceLearning_Update", "ServiceLearning")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("ServiceLearning_Destroy", "ServiceLearning")) // Action method invoked when the user removes a data item
+      )
+      .Pageable()
+      )

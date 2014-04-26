@@ -1,1 +1,0 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="FlexMapper.UI.MvcApplication" Language="C#" %>

@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-md-3" style="font-size: 14px;">
+        <div class="well">
+            <p><label>Keywords</label></p>
+            <input type="text" class="form-control input-sm" placeholder="Enter Search Keywords ..." />
+            <hr />
+            <p><label>Class Details</label></p>
+            <label>Grade Levels</label>
+            @(Html.Kendo().MultiSelect()
+                  .Name("required")
+                  .Placeholder("Select Grade level...")
+                  .BindTo(new List<string>
+                  {
+                      "Kindergarten",
+                      "First Grade",
+                      "Second Grade",
+                      "Third Grade",
+                      "Forth Grade",
+                      "Fifth Grade",
+                      "Sixth Grade"
+                  })
+                  )
+            <label>Expeditions</label>
+            @(Html.Kendo().MultiSelect()
+                  .Name("optional")
+                  .Placeholder("Select Expedition Area...")
+                  .BindTo(new List<string>
+                  {
+                      "Ancient Civilizations",
+                      "Staircases",
+                      "Car Safety - The Physics of Car Crashes",
+                      "Life in a Vernal Pool",
+                      "Farms and Fool Learning Expedition",
+                      "The Human Face of Human Rights",
+                      "Tools and Their Uses",
+                  })
+                  )
+            <hr />
+            <p><label>Common Core</label></p>
+            <label for="optional">Mathematics</label>
+            @(Html.Kendo().MultiSelect()
+                  .Name("optional2")
+                  .Placeholder("Select Expedition Area...")
+                  .BindTo(new List<string>
+                  {
+                      "CCSS.Math.Content.2.OA.A.1",
+                      "CCSS.Math.Content.2.OA.B.2",
+                      "CCSS.Math.Content.2.OA.C.3",
+                      "CCSS.Math.Content.2.OA.C.4",
+                      "CCSS.Math.Content.2.NBT.A.1",
+                      "CCSS.Math.Content.2.NBT.A.2",
+                      "CCSS.Math.Content.2.NBT.A.3",
+                      "CCSS.Math.Content.2.NBT.A.4",
+                      "CCSS.Math.Content.2.NBT.B.5",
+                      "CCSS.Math.Content.2.NBT.B.6",
+                      "CCSS.Math.Content.2.NBT.B.7",
+                      "CCSS.Math.Content.2.NBT.B.8",
+                      "CCSS.Math.Content.2.NBT.B.9"
+                  })
+                  )
+            <label for="optional">English Language Arts</label>
+            @(Html.Kendo().MultiSelect()
+                  .Name("optional3")
+                  .Placeholder("Select Expedition Area...")
+                  .BindTo(new List<string>
+                  {
+                      "CCSS.ELA-Literacy.RL.2.2",
+                      "CCSS.ELA-Literacy.RL.2.3",
+                      "CCSS.ELA-Literacy.RL.2.4",
+                      "CCSS.ELA-Literacy.RL.2.5",
+                      "CCSS.ELA-Literacy.RL.2.6",
+                      "CCSS.ELA-Literacy.RL.2.7",
+                      "CCSS.ELA-Literacy.RL.2.9",
+                      "CCSS.ELA-Literacy.RL.2.10",
+                      "CCSS.ELA-Literacy.RI.2.1",
+                      "CCSS.ELA-Literacy.RI.2.2",
+                      "CCSS.ELA-Literacy.RI.2.3",
+                      "CCSS.ELA-Literacy.RI.2.4",
+                      "CCSS.ELA-Literacy.RI.2.5",
+                      "CCSS.ELA-Literacy.RI.2.6",
+                      "CCSS.ELA-Literacy.RI.2.7",
+                      "CCSS.ELA-Literacy.RI.2.8",
+                      "CCSS.ELA-Literacy.RI.2.9",
+                      "CCSS.ELA-Literacy.RI.2.10"
+                  })
+                  )
+            <a class="k-button" href="/Browse/Results" id="get">Search</a>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <p>Search Results</p>
+    </div>
+</div>
+<style scoped>
+    .demo-section {
+        height: 200px;
+        padding: 30px;
+        width: 350px;
+    }
+
+    .demo-section h2 { font-weight: normal; }
+
+    .demo-section label {
+        display: inline-block;
+        margin: 15px 0 5px 0;
+    }
+
+    .demo-section select { width: 350px; }
+
+    #get {
+        float: right;
+        margin: 25px auto 0;
+    }
+</style>
