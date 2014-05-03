@@ -1,11 +1,11 @@
 using System.Linq;
 using System.Web.Mvc;
-using FlexMapper.UI;
+using Mapper21.UI;
 using Microsoft.Practices.Unity.Mvc;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(UnityWebActivator), "Start")]
 
-namespace FlexMapper.UI
+namespace Mapper21.UI
 {
     /// <summary>Provides the bootstrapping for integrating Unity with ASP.NET MVC.</summary>
     public static class UnityWebActivator

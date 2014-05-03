@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace FlexMapper.UI.Controllers
+namespace Mapper21.UI.Controllers
 {
     public class BrowseController : BaseController
     {

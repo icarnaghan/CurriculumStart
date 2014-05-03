@@ -3,13 +3,13 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using FlexMapper.UI.Models;
+using Mapper21.UI.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
-namespace FlexMapper.UI.Controllers
+namespace Mapper21.UI.Controllers
 {
     [Authorize]
     public class AccountController : BaseController

@@ -1,20 +1,21 @@
 ﻿using System.Data.Entity;
-using FlexMapper.BE.Domain;
-using FlexMapper.BE.Domain.LookUps;
+using Mapper21.BE.Domain;
+using Mapper21.BE.Domain.LookUps;
 
-namespace FlexMapper.DAL.Provider
+namespace Mapper21.DAL.Provider
 {
-    public class FlexMapperContext : DbContext
+    public class Mapper21Context : DbContext
     {
-        public FlexMapperContext() : base("FlexMapperContext")
+        public Mapper21Context() : base("Mapper21Context")
         {
         }
 
-        public DbSet<Section> Expeditions { get; set; }
+        public DbSet<Section> Sections { get; set; }
+        public DbSet<SectionType> SectionTypes { get; set; }
         public DbSet<CaseStudy> CaseStudies { get; set; }
         public DbSet<GuidingQuestion> GuidingQuestions { get; set; }
         public DbSet<GradeLevel> GradeLevels { get; set; }
-        public DbSet<Habit> ExpeditionHabits { get; set; }
+        public DbSet<Habit> Habits { get; set; }
         public DbSet<ScienceBigIdea> ScienceBigIdeases { get; set; }
         public DbSet<SocialStudiesBigIdea> SocialStudiesBigIdeas { get; set; }
         public DbSet<Fieldwork> Fieldworks { get; set; }

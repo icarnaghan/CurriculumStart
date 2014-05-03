@@ -1,6 +1,5 @@
-﻿
-@using FlexMapper.UI.Models
-@model FlexMapper.BE.Domain.CaseStudy
+﻿@using Mapper21.UI.Models
+@model Mapper21.BE.Domain.CaseStudy
 
 @{
     ViewBag.Title = "Edit";
@@ -16,7 +15,7 @@
             <div class="col-md-12">
                 <ul class="breadcrumb">
                     <li><a href="/Home/Index">My Curriculum</a></li>
-                    <li><a href="/Expedition/Edit/@Model.ExpeditionId">Expedition</a></li>
+                    <li><a href="/Section/Edit/@Model.SectionId">Expedition</a></li>
                     <li class="active"><a href="#">@Model.Name</a></li>
                 </ul>
                 <h3>@Model.Name</h3>
@@ -53,7 +52,7 @@
         <h4><label>Overview</label></h4>
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
-        @Html.HiddenFor(model => model.ExpeditionId)
+        @Html.HiddenFor(model => model.SectionId)
         <div class="well">
             <div class="form-group">
                 @Html.LabelFor(model => model.Name, new {@class = "control-label col-md-2"})

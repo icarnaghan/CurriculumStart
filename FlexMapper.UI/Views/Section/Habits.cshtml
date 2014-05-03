@@ -1,9 +1,9 @@
-﻿@using FlexMapper.UI.Models
-@model FlexMapper.BE.Domain.Section
+﻿@using Mapper21.UI.Models
+@model Mapper21.BE.Domain.Section
 
 @{
     ViewBag.Title = "Guiding Questions";
-    ViewBag.ExpeditionId = Model.Id;
+    ViewBag.SectionId = Model.Id;
 }
 
 <script src="~/Scripts/FlexMapper.js"> </script>
@@ -14,7 +14,7 @@
         @Html.HiddenFor(model => model.Id)
 
         <div id="guidingQuestions">
-            @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel { ExpeditionId = Model.Id })
+            @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel { SectionId = Model.Id })
         </div>
     </div>
 </div>

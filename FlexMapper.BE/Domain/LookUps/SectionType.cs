@@ -1,4 +1,4 @@
-﻿namespace FlexMapper.BE.Domain.LookUps
+﻿namespace Mapper21.BE.Domain.LookUps
 {
     public class SectionType
     {

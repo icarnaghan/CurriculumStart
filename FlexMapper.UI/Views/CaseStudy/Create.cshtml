@@ -1,4 +1,4 @@
-﻿@model FlexMapper.BE.Domain.CaseStudy
+﻿@model Mapper21.BE.Domain.CaseStudy
 
 @{
     ViewBag.Title = "Create";
@@ -7,7 +7,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    @Html.Hidden("ExpeditionId", (int) ViewBag.ExpeditionId)
+    @Html.Hidden("SectionId", (int) ViewBag.SectionId)
 
     <div class="form-horizontal">
         <h4>Create Case Study</h4>

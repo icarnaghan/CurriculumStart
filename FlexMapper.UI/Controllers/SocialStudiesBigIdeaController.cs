@@ -1,22 +1,22 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using FlexMapper.BE.Domain;
-using FlexMapper.DAL.Provider;
-using FlexMapper.UI.Models;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Mapper21.BE.Domain;
+using Mapper21.DAL.Provider;
+using Mapper21.UI.Models;
 
-namespace FlexMapper.UI.Controllers
+namespace Mapper21.UI.Controllers
 {
     public class SocialStudiesBigIdeaController : BaseController
     {
-        private readonly FlexMapperContext db = new FlexMapperContext();
+        private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult SocialStudiesBigIdea_Read(int expeditionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult SocialStudiesBigIdea_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SocialStudiesBigIdea> socialStudiesBigIdeas =
-                db.SocialStudiesBigIdeas.Where(b => b.ExpeditionId == expeditionId);
+                db.SocialStudiesBigIdeas.Where(b => b.SectionId == sectionId);
             return Json(socialStudiesBigIdeas.ToDataSourceResult(request));
         }
 
@@ -26,13 +26,13 @@ namespace FlexMapper.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Create a new Expedition entity and set its properties from the posted FallExpedition Model
+                // Create a new Section entity and set its properties from the posted Section Model
                 var entity = new SocialStudiesBigIdea
                 {
                     Id = socialStudiesBigIdea.Id,
                     Idea = socialStudiesBigIdea.Idea,
                     Rationale = socialStudiesBigIdea.Rationale,
-                    ExpeditionId = socialStudiesBigIdea.ExpeditionId
+                    SectionId = socialStudiesBigIdea.SectionId
                 };
                 // Add the entity
                 db.SocialStudiesBigIdeas.Add(entity);
@@ -50,13 +50,13 @@ namespace FlexMapper.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Create a new Product entity and set its properties from the posted ExpeditionViewModel
+                // Create a new Product entity and set its properties from the posted Section Model
                 var entity = new SocialStudiesBigIdea
                 {
                     Id = socialStudiesBigIdea.Id,
                     Idea = socialStudiesBigIdea.Idea,
                     Rationale = socialStudiesBigIdea.Rationale,
-                    ExpeditionId = socialStudiesBigIdea.ExpeditionId
+                    SectionId = socialStudiesBigIdea.SectionId
                 };
                 // Attach the entity
                 db.SocialStudiesBigIdeas.Attach(entity);
@@ -80,7 +80,7 @@ namespace FlexMapper.UI.Controllers
                     Id = socialStudiesBigIdea.Id,
                     Idea = socialStudiesBigIdea.Idea,
                     Rationale = socialStudiesBigIdea.Rationale,
-                    ExpeditionId = socialStudiesBigIdea.ExpeditionId
+                    SectionId = socialStudiesBigIdea.SectionId
                 };
                 // Attach the entity
                 db.SocialStudiesBigIdeas.Attach(entity);

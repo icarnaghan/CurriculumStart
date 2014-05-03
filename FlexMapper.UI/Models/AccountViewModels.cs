@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FlexMapper.UI.Models
+namespace Mapper21.UI.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

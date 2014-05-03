@@ -1,0 +1,11 @@
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\bin\Mapper21.DAL.dll
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\bin\Mapper21.DAL.pdb
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\bin\EntityFramework.dll
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\bin\EntityFramework.SqlServer.dll
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\bin\Mapper21.BE.dll
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\bin\Mapper21.BE.pdb
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\bin\EntityFramework.xml
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\bin\EntityFramework.SqlServer.xml
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\obj\Debug\Mapper21.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\obj\Debug\Mapper21.DAL.dll
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.DAL\obj\Debug\Mapper21.DAL.pdb

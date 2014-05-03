@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace FlexMapper.UI
+namespace Mapper21.UI
 {
     public class BundleConfig
     {

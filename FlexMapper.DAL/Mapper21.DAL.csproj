@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F80F2B22-AECF-48A8-B547-7BC1DB343C4C}</ProjectGuid>
+    <ProjectGuid>{F4F0E122-29B3-44B2-8074-C08345CB2C96}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FlexMapper.BE</RootNamespace>
-    <AssemblyName>FlexMapper.BE</AssemblyName>
+    <RootNamespace>Mapper21.DAL</RootNamespace>
+    <AssemblyName>Mapper21.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -38,6 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -57,24 +64,22 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Assessment.cs" />
-    <Compile Include="Domain\CaseStudy.cs" />
-    <Compile Include="Domain\Section.cs" />
-    <Compile Include="Domain\Habit.cs" />
-    <Compile Include="Domain\Expert.cs" />
-    <Compile Include="Domain\Fieldwork.cs" />
-    <Compile Include="Domain\GuidingQuestion.cs" />
-    <Compile Include="Domain\LongTermTarget.cs" />
-    <Compile Include="Domain\LookUps\SectionType.cs" />
-    <Compile Include="Domain\LookUps\GradeLevel.cs" />
-    <Compile Include="Domain\ScienceBigIdea.cs" />
-    <Compile Include="Domain\ServiceLearning.cs" />
-    <Compile Include="Domain\ShortTermTarget.cs" />
-    <Compile Include="Domain\SocialStudiesBigIdea.cs" />
-    <Compile Include="Domain\StaCollection.cs" />
-    <Compile Include="Domain\StaGrid.cs" />
-    <Compile Include="Domain\Standard.cs" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Provider\FlexMapperContext.cs" />
+    <Compile Include="Provider\FlexMapperInitializer.cs" />
+    <Compile Include="Repositories\CaseStudyRepository.cs" />
+    <Compile Include="Repositories\SectionRepository.cs" />
+    <Compile Include="Interfaces\ICaseStudyRepository.cs" />
+    <Compile Include="Interfaces\ISectionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlexMapper.BE\Mapper21.BE.csproj">
+      <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
+      <Name>Mapper21.BE</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -89,9 +94,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50600</DevelopmentServerPort>
+          <DevelopmentServerPort>50601</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50600/</IISUrl>
+          <IISUrl>http://localhost:50601/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -1,13 +1,13 @@
 ﻿using System.Net;
 using System.Web.Mvc;
-using FlexMapper.BE.Domain;
-using FlexMapper.DAL.Provider;
+using Mapper21.BE.Domain;
+using Mapper21.DAL.Provider;
 
-namespace FlexMapper.UI.Controllers
+namespace Mapper21.UI.Controllers
 {
     public class StaCollectionController : Controller
     {
-        private readonly FlexMapperContext db = new FlexMapperContext();
+        private readonly Mapper21Context db = new Mapper21Context();
 
         // GET: /StaCollection/Create
         public ActionResult Create(int id)

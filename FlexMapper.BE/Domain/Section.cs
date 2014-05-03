@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using FlexMapper.BE.Domain.LookUps;
+using Mapper21.BE.Domain.LookUps;
 
-namespace FlexMapper.BE.Domain
+namespace Mapper21.BE.Domain
 {
     public class Section
     {

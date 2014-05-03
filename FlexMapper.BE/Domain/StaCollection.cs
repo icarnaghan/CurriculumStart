@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FlexMapper.BE.Domain
+namespace Mapper21.BE.Domain
 {
     public class StaCollection
     {

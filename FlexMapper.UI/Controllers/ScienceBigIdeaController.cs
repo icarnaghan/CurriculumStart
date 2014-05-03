@@ -1,21 +1,21 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-using FlexMapper.BE.Domain;
-using FlexMapper.DAL.Provider;
-using FlexMapper.UI.Models;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Mapper21.BE.Domain;
+using Mapper21.DAL.Provider;
+using Mapper21.UI.Models;
 
-namespace FlexMapper.UI.Controllers
+namespace Mapper21.UI.Controllers
 {
     public class ScienceBigIdeaController : BaseController
     {
-        private readonly FlexMapperContext db = new FlexMapperContext();
+        private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult ScienceBigIdea_Read(int expeditionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult ScienceBigIdea_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<ScienceBigIdea> scienceBigIdeas = db.ScienceBigIdeases.Where(b => b.ExpeditionId == expeditionId);
+            IQueryable<ScienceBigIdea> scienceBigIdeas = db.ScienceBigIdeases.Where(b => b.SectionId == sectionId);
             return Json(scienceBigIdeas.ToDataSourceResult(request));
         }
 
@@ -25,13 +25,13 @@ namespace FlexMapper.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Create a new Expedition entity and set its properties from the posted FallExpedition Model
+                // Create a new Section entity and set its properties from the posted Section Model
                 var entity = new ScienceBigIdea
                 {
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,
                     Rationale = scienceBigIdea.Rationale,
-                    ExpeditionId = scienceBigIdea.ExpeditionId
+                    SectionId = scienceBigIdea.SectionId
                 };
                 // Add the entity
                 db.ScienceBigIdeases.Add(entity);
@@ -49,13 +49,13 @@ namespace FlexMapper.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Create a new Product entity and set its properties from the posted ExpeditionViewModel
+                // Create a new Product entity and set its properties from the posted Section Model
                 var entity = new ScienceBigIdea
                 {
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,
                     Rationale = scienceBigIdea.Rationale,
-                    ExpeditionId = scienceBigIdea.ExpeditionId
+                    SectionId = scienceBigIdea.SectionId
                 };
                 // Attach the entity
                 db.ScienceBigIdeases.Attach(entity);
@@ -79,7 +79,7 @@ namespace FlexMapper.UI.Controllers
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,
                     Rationale = scienceBigIdea.Rationale,
-                    ExpeditionId = scienceBigIdea.ExpeditionId
+                    SectionId = scienceBigIdea.SectionId
                 };
                 // Attach the entity
                 db.ScienceBigIdeases.Attach(entity);

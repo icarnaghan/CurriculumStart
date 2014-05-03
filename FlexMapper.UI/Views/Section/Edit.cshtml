@@ -1,10 +1,10 @@
-﻿@using FlexMapper.BE.Domain
-@using FlexMapper.UI.Models
-@model FlexMapper.BE.Domain.Section
+﻿@using Mapper21.BE.Domain
+@using Mapper21.UI.Models
+@model Section
 
 @{
     ViewBag.Title = "Edit";
-    ViewBag.ExpeditionId = Model.Id;
+    ViewBag.SectionId = Model.Id;
 }
 
 <script src="~/Scripts/FlexMapper.js"> </script>
@@ -54,19 +54,19 @@
         </div>
 
         <div id="guidingQuestions">
-            @Html.Partial("~/Views/Expedition/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel {ExpeditionId = Model.Id})
+            @Html.Partial("~/Views/Section/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel { SectionId = Model.Id })
         </div>
 
-        <div id="expeditionHabits">
-            @Html.Partial("~/Views/Expedition/Partials/_ExpeditionHabit.cshtml", new HabitViewModel {ExpeditionId = Model.Id})
+        <div id="habits">
+            @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel { SectionId = Model.Id })
         </div>
 
         <div id="scienceBigIdeas">
-            @Html.Partial("~/Views/Expedition/Partials/_ScienceBigIdea.cshtml", new ScienceBigIdeaViewModel {ExpeditionId = Model.Id})
+            @Html.Partial("~/Views/Section/Partials/_ScienceBigIdea.cshtml", new ScienceBigIdeaViewModel { SectionId = Model.Id })
         </div>
 
         <div id="socialStudiesBigIdeas">
-            @Html.Partial("~/Views/Expedition/Partials/_SocialStudiesBigIdea.cshtml", new SocialStudiesBigIdeaViewModel {ExpeditionId = Model.Id})
+            @Html.Partial("~/Views/Section/Partials/_SocialStudiesBigIdea.cshtml", new SocialStudiesBigIdeaViewModel { SectionId = Model.Id })
         </div>
         <h4><label>Case Studies</label></h4>
         <div class="well col-md-12">

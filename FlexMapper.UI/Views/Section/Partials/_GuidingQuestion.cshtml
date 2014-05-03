@@ -1,4 +1,4 @@
-﻿@using ExpeditionMapper.UI.Models
+﻿@using Mapper21.UI.Models
 <h4><label>Guiding Questions</label></h4>
 
 @(Html.Kendo().Grid<GuidingQuestionViewModel>
@@ -27,10 +27,10 @@
               {
                   model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
                   model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
-                  model.Field(g => g.ExpeditionId).DefaultValue(@ViewBag.ExpeditionId);
+                  model.Field(g => g.SectionId).DefaultValue(@ViewBag.SectionId);
               })
               .Create(create => create.Action("GuidingQuestion_Create", "GuidingQuestion")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("GuidingQuestion_Read", "GuidingQuestion", new {expeditionId = ViewBag.ExpeditionId})) // Action method invoked when the grid needs data
+              .Read(read => read.Action("GuidingQuestion_Read", "GuidingQuestion", new {sectionId = ViewBag.SectionId})) // Action method invoked when the grid needs data
               .Update(update => update.Action("GuidingQuestion_Update", "GuidingQuestion")) // Action method invoked when the user saves an updated data item
               .Destroy(destroy => destroy.Action("GuidingQuestion_Destroy", "GuidingQuestion")) // Action method invoked when the user removes a data item
       )

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace FlexMapper.UI
+namespace Mapper21.UI
 {
     public class FilterConfig
     {

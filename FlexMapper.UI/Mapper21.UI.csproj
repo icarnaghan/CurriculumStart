@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FlexMapper.UI</RootNamespace>
-    <AssemblyName>FlexMapper.UI</AssemblyName>
+    <RootNamespace>Mapper21.UI</RootNamespace>
+    <AssemblyName>Mapper21.UI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -200,11 +200,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\NavigationViewModel.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\AssessmentViewModel.cs" />
     <Compile Include="Models\HabitViewModel.cs" />
-    <Compile Include="Models\ExpeditionViewModel.cs" />
+    <Compile Include="Models\SectionViewModel.cs" />
     <Compile Include="Models\ExpertViewModel.cs" />
     <Compile Include="Models\FieldworkViewModel.cs" />
     <Compile Include="Models\GuidingQuestionViewModel.cs" />
@@ -2007,10 +2008,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Section\Edit.cshtml" />
     <Content Include="Views\Section\Partials\_GuidingQuestion.cshtml" />
-    <Content Include="Views\Section\Partials\_ExpeditionHabit.cshtml">
+    <Content Include="Views\Section\Partials\_Habit.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\Section\EditorTemplates\ExpeditionHabitDropDownList.cshtml" />
+    <Content Include="Views\Section\EditorTemplates\HabitDropDownList.cshtml" />
     <Content Include="Views\Section\Partials\_ScienceBigIdea.cshtml" />
     <Content Include="Views\Section\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
     <Content Include="Views\Section\Partials\_SocialStudiesBigIdea.cshtml" />
@@ -2149,6 +2150,7 @@
     <Content Include="Views\Section\ScienceBigIdeas.cshtml" />
     <Content Include="Views\Section\SocialStudiesBigIdeas.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_TeacherNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2162,13 +2164,13 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExpeditionMapper.BE\FlexMapper.BE.csproj">
+    <ProjectReference Include="..\FlexMapper.BE\Mapper21.BE.csproj">
       <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
-      <Name>FlexMapper.BE</Name>
+      <Name>Mapper21.BE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExpeditionMapper.DAL\FlexMapper.DAL.csproj">
+    <ProjectReference Include="..\FlexMapper.DAL\Mapper21.DAL.csproj">
       <Project>{f4f0e122-29b3-44b2-8074-c08345cb2c96}</Project>
-      <Name>FlexMapper.DAL</Name>
+      <Name>Mapper21.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

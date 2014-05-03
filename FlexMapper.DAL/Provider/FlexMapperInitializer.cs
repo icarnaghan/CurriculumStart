@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using FlexMapper.BE.Domain;
-using FlexMapper.BE.Domain.LookUps;
+using Mapper21.BE.Domain;
+using Mapper21.BE.Domain.LookUps;
 
-namespace FlexMapper.DAL.Provider
+namespace Mapper21.DAL.Provider
 {
-    public class FlexMapperInitializer : DropCreateDatabaseIfModelChanges<FlexMapperContext>
+    public class Mapper21Initializer : DropCreateDatabaseIfModelChanges<Mapper21Context>
     {
-        protected override void Seed(FlexMapperContext context)
+        protected override void Seed(Mapper21Context context)
         {
             var grades = new List<GradeLevel>
             {
@@ -24,10 +24,22 @@ namespace FlexMapper.DAL.Provider
             grades.ForEach(g => context.GradeLevels.Add(g));
             context.SaveChanges();
 
+            var sectionTypes = new List<SectionType>
+            {
+                new SectionType {Id = 1, Name = "FirstSixWeeks"},
+                new SectionType {Id = 2, Name = "FallExpedition"},
+                new SectionType {Id = 3, Name = "WinterTerm"},
+                new SectionType {Id = 4, Name = "SpringExpedition"},
+                new SectionType {Id = 5, Name = "Strand"}
+            };
+            sectionTypes.ForEach(s => context.SectionTypes.Add(s));
+            context.SaveChanges();
+
             // Fall
-            var expedition = new Section
+            var section = new Section
             {
                 Id = 1,
+                SectionTypeId = 2,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Ancient Civilizations",
@@ -38,13 +50,14 @@ namespace FlexMapper.DAL.Provider
                     "Civilization or civilisation generally refers to state polities which combine these basic institutions: " +
                     "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. "
             };
-            context.Expeditions.Add(expedition);
+            context.Sections.Add(section);
             context.SaveChanges();
 
             // Spring
-            var expedition2 = new Section
+            var section2 = new Section
             {
                 Id = 2,
+                SectionTypeId = 4,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Spring Expedition",
@@ -54,13 +67,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition2);
+            context.Sections.Add(section2);
             context.SaveChanges();
 
             // FSW
-            var expedition3 = new Section
+            var section3 = new Section
             {
                 Id = 3,
+                SectionTypeId = 1,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "First Six Weeks",
@@ -70,13 +84,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition3);
+            context.Sections.Add(section3);
             context.SaveChanges();
 
             // Mini
-            var expedition4 = new Section
+            var section4 = new Section
             {
                 Id = 4,
+                SectionTypeId = 3,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Mini-Semester - Fall",
@@ -86,13 +101,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition4);
+            context.Sections.Add(section4);
             context.SaveChanges();
 
             // Subject
-            var expedition5 = new Section
+            var section5 = new Section
             {
                 Id = 5,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Art",
@@ -102,13 +118,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition5);
+            context.Sections.Add(section5);
             context.SaveChanges();
 
             // Subject
-            var expedition6 = new Section
+            var section6 = new Section
             {
                 Id = 6,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Foreign Languages",
@@ -118,13 +135,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition6);
+            context.Sections.Add(section6);
             context.SaveChanges();
 
             // Subject
-            var expedition7 = new Section
+            var section7 = new Section
             {
                 Id = 7,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Language Arts",
@@ -134,13 +152,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition7);
+            context.Sections.Add(section7);
             context.SaveChanges();
 
             // Subject
-            var expedition8 = new Section
+            var section8 = new Section
             {
                 Id = 8,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Mathematics",
@@ -150,13 +169,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition8);
+            context.Sections.Add(section8);
             context.SaveChanges();
 
             // Subject
-            var expedition9 = new Section
+            var section9 = new Section
             {
                 Id = 9,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Media",
@@ -166,13 +186,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition9);
+            context.Sections.Add(section9);
             context.SaveChanges();
 
             // Subject
-            var expedition10 = new Section
+            var section10 = new Section
             {
                 Id = 10,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Music",
@@ -182,13 +203,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition10);
+            context.Sections.Add(section10);
             context.SaveChanges();
 
             // Subject
-            var expedition11 = new Section
+            var section11 = new Section
             {
                 Id = 11,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Physical Education",
@@ -198,13 +220,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition11);
+            context.Sections.Add(section11);
             context.SaveChanges();
 
             // Subject
-            var expedition12 = new Section
+            var section12 = new Section
             {
                 Id = 12,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Science",
@@ -214,13 +237,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition12);
+            context.Sections.Add(section12);
             context.SaveChanges();
 
             // Subject
-            var expedition13 = new Section
+            var section13 = new Section
             {
                 Id = 13,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Social Skills",
@@ -230,13 +254,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition13);
+            context.Sections.Add(section13);
             context.SaveChanges();
 
             // Subject
-            var expedition14 = new Section
+            var section14 = new Section
             {
                 Id = 14,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Social Studies",
@@ -246,13 +271,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition14);
+            context.Sections.Add(section14);
             context.SaveChanges();
 
             // Subject
-            var expedition15 = new Section
+            var section15 = new Section
             {
                 Id = 15,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Technology",
@@ -262,13 +288,14 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition15);
+            context.Sections.Add(section15);
             context.SaveChanges();
 
             // Subject
-            var expedition16 = new Section
+            var section16 = new Section
             {
                 Id = 16,
+                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Writing",
@@ -278,7 +305,7 @@ namespace FlexMapper.DAL.Provider
                 FinalProductDescription =
                     ""
             };
-            context.Expeditions.Add(expedition16);
+            context.Sections.Add(section16);
             context.SaveChanges();
 
             var caseStudy = new CaseStudy
@@ -350,7 +377,7 @@ namespace FlexMapper.DAL.Provider
                 new Habit
                 {
                     Id = 1,
-                    ExpeditionId = 1,
+                    SectionId = 1,
                     Rationale =
                         "Synergy is achieved when two or more people work together to create something better than either could alone.",
                     Description = "Synergize"
@@ -358,21 +385,21 @@ namespace FlexMapper.DAL.Provider
                 new Habit
                 {
                     Id = 1,
-                    ExpeditionId = 1,
+                    SectionId = 1,
                     Rationale =
                         "Creates a personal mission statement which will act as a road map and direct and guide decision-making.",
                     Description = "Begin With the End in Mind"
                 },
             };
-            expeditionHabits.ForEach(g => context.ExpeditionHabits.Add(g));
+            expeditionHabits.ForEach(g => context.Habits.Add(g));
             context.SaveChanges();
 
             var guidingQuestions = new List<GuidingQuestion>
             {
-                new GuidingQuestion {Id = 1, ExpeditionId = 1, Name = "Who will survive? or, What is waste?"},
-                new GuidingQuestion {Id = 1, ExpeditionId = 1, Name = "Where do waves come from?"},
-                new GuidingQuestion {Id = 1, ExpeditionId = 1, Name = "What is health?"},
-                new GuidingQuestion {Id = 1, ExpeditionId = 1, Name = "When are laws fair?"},
+                new GuidingQuestion {Id = 1, SectionId = 1, Name = "Who will survive? or, What is waste?"},
+                new GuidingQuestion {Id = 1, SectionId = 1, Name = "Where do waves come from?"},
+                new GuidingQuestion {Id = 1, SectionId = 1, Name = "What is health?"},
+                new GuidingQuestion {Id = 1, SectionId = 1, Name = "When are laws fair?"},
             };
             guidingQuestions.ForEach(g => context.GuidingQuestions.Add(g));
             context.SaveChanges();
@@ -382,21 +409,21 @@ namespace FlexMapper.DAL.Provider
                 new ScienceBigIdea
                 {
                     Id = 1,
-                    ExpeditionId = 1,
+                    SectionId = 1,
                     Rationale = "Promotes learning about environmental changes.",
                     Idea = "Structure and Function: When an environment changes, an organism must adapt, move, or die."
                 },
                 new ScienceBigIdea
                 {
                     Id = 1,
-                    ExpeditionId = 1,
+                    SectionId = 1,
                     Rationale = "Learn about organisms.",
                     Idea = "Interdependence: Organisms depend on one another and on their environment."
                 },
                 new ScienceBigIdea
                 {
                     Id = 1,
-                    ExpeditionId = 1,
+                    SectionId = 1,
                     Rationale = "Understanding size and scale.",
                     Idea =
                         "Scale: Some things are so immense or minute that they are difficult to measure and understand."
@@ -410,21 +437,21 @@ namespace FlexMapper.DAL.Provider
                 new SocialStudiesBigIdea
                 {
                     Id = 1,
-                    ExpeditionId = 1,
+                    SectionId = 1,
                     Rationale = "Understand importance of migration.",
                     Idea = "Geographic Relationships: People migrate for a variety of reasons."
                 },
                 new SocialStudiesBigIdea
                 {
                     Id = 1,
-                    ExpeditionId = 1,
+                    SectionId = 1,
                     Rationale = "Promote understanding of different cultures.",
                     Idea = "Universals of Culture: Cultures are dynamic."
                 },
                 new SocialStudiesBigIdea
                 {
                     Id = 1,
-                    ExpeditionId = 1,
+                    SectionId = 1,
                     Rationale = "Raise awareness of regional change",
                     Idea = "Geographic Relationships: Changes in regions have human implications."
                 },

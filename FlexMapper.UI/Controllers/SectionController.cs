@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using FlexMapper.BE.Domain;
-using FlexMapper.DAL.Interfaces;
+using Mapper21.BE.Domain;
+using Mapper21.DAL.Interfaces;
 
-namespace FlexMapper.UI.Controllers
+namespace Mapper21.UI.Controllers
 {
     public class SectionController : BaseController
     {
@@ -26,7 +26,7 @@ namespace FlexMapper.UI.Controllers
             
             if (section == null) return HttpNotFound();
             
-            section.CaseStudies = _caseStudyRepository.GetAllByExpedition(id).ToList();
+            section.CaseStudies = _caseStudyRepository.GetAllBySection(id).ToList();
             
             return View(section);
         }

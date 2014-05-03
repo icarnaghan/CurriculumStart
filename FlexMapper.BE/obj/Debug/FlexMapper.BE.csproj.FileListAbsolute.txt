@@ -1,5 +1,5 @@
-C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper.BE\bin\FlexMapper.BE.dll
-C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper.BE\bin\FlexMapper.BE.pdb
-C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper.BE\obj\Debug\FlexMapper.BE.csprojResolveAssemblyReference.cache
-C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper.BE\obj\Debug\FlexMapper.BE.dll
-C:\Users\Ian\Code\ExpeditionMapper\ExpeditionMapper.BE\obj\Debug\FlexMapper.BE.pdb
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\bin\FlexMapper.BE.dll
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\bin\FlexMapper.BE.pdb
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\obj\Debug\FlexMapper.BE.dll
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\obj\Debug\FlexMapper.BE.pdb
+C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\obj\Debug\FlexMapper.BE.csprojResolveAssemblyReference.cache

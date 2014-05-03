@@ -1,4 +1,4 @@
-﻿namespace FlexMapper.BE.Domain
+﻿namespace Mapper21.BE.Domain
 {
     public class ShortTermTarget
     {

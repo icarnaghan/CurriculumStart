@@ -1,9 +1,9 @@
-﻿using FlexMapper.UI;
+﻿using Mapper21.UI;
 using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace FlexMapper.UI
+namespace Mapper21.UI
 {
     public partial class Startup
     {

@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using FlexMapper.BE.Domain;
-using FlexMapper.DAL.Interfaces;
-using FlexMapper.DAL.Provider;
+using Mapper21.BE.Domain;
+using Mapper21.DAL.Interfaces;
+using Mapper21.DAL.Provider;
 
-namespace FlexMapper.DAL.Repositories
+namespace Mapper21.DAL.Repositories
 {
     public class CaseStudyRepository : ICaseStudyRepository
     {
-        private FlexMapperContext db = new FlexMapperContext();
+        private Mapper21Context db = new Mapper21Context();
 
         public IEnumerable<CaseStudy> GetAll()
         {
             return db.CaseStudies.ToList();
         }
 
-        public IEnumerable<CaseStudy> GetAllByExpedition(int? id)
+        public IEnumerable<CaseStudy> GetAllBySection(int? id)
         {
             return db.CaseStudies.ToList();
         }

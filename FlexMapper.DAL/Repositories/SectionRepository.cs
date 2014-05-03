@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using FlexMapper.BE.Domain;
-using FlexMapper.DAL.Interfaces;
-using FlexMapper.DAL.Provider;
+using Mapper21.BE.Domain;
+using Mapper21.DAL.Interfaces;
+using Mapper21.DAL.Provider;
 
-namespace FlexMapper.DAL.Repositories
+namespace Mapper21.DAL.Repositories
 {
     public class SectionRepository : ISectionRepository
     {
-        private FlexMapperContext db = new FlexMapperContext();
+        private Mapper21Context db = new Mapper21Context();
 
         public IEnumerable<Section> GetAll()
         {
-            return db.Expeditions.ToList();
+            return db.Sections.ToList();
         }
 
         public Section Find(int? id)
         {
-            return db.Expeditions.Find(id);
+            return db.Sections.Find(id);
         }
 
         public bool Delete(int id)
         {
             try
             {
-                Section expedition = Find(id);
-                db.Expeditions.Remove(expedition);
+                Section section = Find(id);
+                db.Sections.Remove(section);
                 Save();
                 return true;
             }
@@ -37,17 +37,17 @@ namespace FlexMapper.DAL.Repositories
             }
         }
 
-        public void InsertorUpdate(Section expedition)
+        public void InsertorUpdate(Section section)
         {
-            if (expedition.Id == default(int))
+            if (section.Id == default(int))
             {
                 // New entity
-                db.Expeditions.Add(expedition);
+                db.Sections.Add(section);
             }
             else
             {
                 // Existing entity
-                db.Entry(expedition).State = EntityState.Modified;
+                db.Entry(section).State = EntityState.Modified;
             }
         }
 

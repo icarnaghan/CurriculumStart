@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using FlexMapper.BE.Domain;
-using FlexMapper.DAL.Interfaces;
+using Mapper21.BE.Domain;
+using Mapper21.DAL.Interfaces;
 
-namespace FlexMapper.UI.Controllers
+namespace Mapper21.UI.Controllers
 {
     public class CaseStudyController : BaseController
     {
@@ -19,7 +19,7 @@ namespace FlexMapper.UI.Controllers
         // GET: /CS/Create
         public ActionResult Create(int Id)
         {
-            ViewBag.ExpeditionId = Id;
+            ViewBag.SectionId = Id;
             return View();
         }
 
@@ -67,7 +67,7 @@ namespace FlexMapper.UI.Controllers
             {
                 _caseStudyRepository.InsertorUpdate(casestudy);
                 _caseStudyRepository.Save();
-                return RedirectToAction("Edit", "Expedition", new {id = casestudy.SectionId});
+                return RedirectToAction("Edit", "Section", new {id = casestudy.SectionId});
             }
             return View(casestudy);
         }

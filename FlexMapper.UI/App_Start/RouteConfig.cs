@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace FlexMapper.UI
+namespace Mapper21.UI
 {
     public class RouteConfig
     {

@@ -1,10 +1,10 @@
 using System;
-using FlexMapper.UI.Controllers;
-using FlexMapper.DAL.Interfaces;
-using FlexMapper.DAL.Repositories;
+using Mapper21.DAL.Interfaces;
+using Mapper21.DAL.Repositories;
+using Mapper21.UI.Controllers;
 using Microsoft.Practices.Unity;
 
-namespace FlexMapper.UI
+namespace Mapper21.UI
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using FlexMapper.BE.Domain;
+using Mapper21.BE.Domain;
 
-namespace FlexMapper.DAL.Interfaces
+namespace Mapper21.DAL.Interfaces
 {
     public interface ICaseStudyRepository : IDisposable
     {
         IEnumerable<CaseStudy> GetAll();
-        IEnumerable<CaseStudy> GetAllByExpedition(int? id);
+        IEnumerable<CaseStudy> GetAllBySection(int? id);
         IEnumerable<StaGrid> GetStaGrids(int? id);
         void InsertorUpdate(CaseStudy caseStudy);
         CaseStudy Find(int? id);
