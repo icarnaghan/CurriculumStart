@@ -1,4 +1,0 @@
-C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\bin\Mapper21.BE.dll
-C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\bin\Mapper21.BE.pdb
-C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\obj\Debug\Mapper21.BE.dll
-C:\Users\Ian\Code\ExpeditionMapper\FlexMapper.BE\obj\Debug\Mapper21.BE.pdb

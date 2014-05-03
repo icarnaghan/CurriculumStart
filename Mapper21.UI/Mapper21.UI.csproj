@@ -2164,11 +2164,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FlexMapper.BE\Mapper21.BE.csproj">
+    <ProjectReference Include="..\Mapper21.BE\Mapper21.BE.csproj">
       <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
       <Name>Mapper21.BE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FlexMapper.DAL\Mapper21.DAL.csproj">
+    <ProjectReference Include="..\Mapper21.DAL\Mapper21.DAL.csproj">
       <Project>{f4f0e122-29b3-44b2-8074-c08345cb2c96}</Project>
       <Name>Mapper21.DAL</Name>
     </ProjectReference>

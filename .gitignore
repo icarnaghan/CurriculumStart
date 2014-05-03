@@ -21,3 +21,19 @@
 /*.suo
 
 /*.suo
+
+/Mapper21.BE/bin
+
+/Mapper21.BE/obj
+
+/Mapper21.DAL/bin
+
+/Mapper21.DAL/obj
+
+/Mapper21.Test/bin
+
+/Mapper21.Test/obj
+
+/Mapper21.UI/bin
+
+/Mapper21.UI/obj
