@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.UI", "FlexMapper.UI\Mapper21.UI.csproj", "{EEE4C528-961E-4A13-A554-BB1A031641CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.UI", "Mapper21.UI\Mapper21.UI.csproj", "{EEE4C528-961E-4A13-A554-BB1A031641CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.BE", "FlexMapper.BE\Mapper21.BE.csproj", "{F80F2B22-AECF-48A8-B547-7BC1DB343C4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.BE", "Mapper21.BE\Mapper21.BE.csproj", "{F80F2B22-AECF-48A8-B547-7BC1DB343C4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.DAL", "FlexMapper.DAL\Mapper21.DAL.csproj", "{F4F0E122-29B3-44B2-8074-C08345CB2C96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.DAL", "Mapper21.DAL\Mapper21.DAL.csproj", "{F4F0E122-29B3-44B2-8074-C08345CB2C96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
