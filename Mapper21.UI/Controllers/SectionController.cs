@@ -17,24 +17,29 @@ namespace Mapper21.UI.Controllers
             _caseStudyRepository = caseStudyRepository;
         }
 
-        // GET: /Section/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: /Section/CaseStudy/
+        public ActionResult CaseStudy(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
             var section = _sectionRepository.Find(id);
-            
             if (section == null) return HttpNotFound();
-            
             section.CaseStudies = _caseStudyRepository.GetAllBySection(id).ToList();
-            
             return View(section);
         }
 
-        // POST: /Section/Edit/5
+        // GET: /Section/FinalProduct/5
+        public ActionResult FinalProduct(int? id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.Find(id);
+            if (section == null) return HttpNotFound();
+            return View(section);
+        }
+
+        // POST: /Section/FinalProduct/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Section section)
+        public ActionResult FinalProduct(Section section)
         {
             if (ModelState.IsValid)
             {

@@ -54,7 +54,7 @@ namespace Mapper21.UI
 
             bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
                 "~/Content/kendo/2014.1.318/kendo.common.min.css",
-                "~/Content/kendo/2014.1.318/kendo.metro.min.css"));
+                "~/Content/kendo/2014.1.318/kendo.bootstrap.min.css"));
 
             // Allow minified files in debug mode.
             bundles.IgnoreList.Clear();
