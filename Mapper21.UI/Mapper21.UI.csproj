@@ -789,6 +789,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\coloricons-sprite.png" />
     <Content Include="Scripts\AdminLTE\AdminLTE\app.js" />
     <Content Include="Scripts\AdminLTE\AdminLTE\dashboard.js" />
     <Content Include="Scripts\AdminLTE\bootstrap.js" />
@@ -1984,6 +1985,9 @@
     <Content Include="Views\Section\CaseStudy.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Shared\_TeacherNavigation.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2151,10 +2155,10 @@
     <Content Include="Views\Section\ScienceBigIdeas.cshtml" />
     <Content Include="Views\Section\SocialStudiesBigIdeas.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_TeacherNavigation.cshtml" />
     <Content Include="Views\Section\FinalProduct.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Shared\_Attachments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

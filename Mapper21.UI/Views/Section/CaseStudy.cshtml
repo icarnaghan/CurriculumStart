@@ -13,45 +13,49 @@
 {
     @Html.AntiForgeryToken()
 
-   
-    <div class="box box-primary">
-        <div class="box-header">
-            <i class="fa fa-edit"></i>
-            <h3 class="box-title">Case Studies</h3>
-        </div>
-        <div class="box-body">
-            <div class="row">
-                @foreach (CaseStudy @item in Model.CaseStudies)
-                {
-                <div class="col-md-4">
-                    <!-- Primary box -->
-                    <div class="box box-solid box-primary">
-                        <div class="box-header" data-toggle="tooltip" title="" data-original-title="Header tooltip">
-                            <h3 class="box-title"><a style="color:#fff;"href="/CaseStudy/Edit/@item.Id">@item.Name</a></h3>
-                            <div class="box-tools pull-right">
-                                <button class="btn btn-primary btn-xs" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                <button class="btn btn-primary btn-xs" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
+    <div class="col-md-9">
+        <div class="box box-primary">
+            <div class="box-header">
+                <i class="fa fa-edit"></i>
+                <h3 class="box-title">Case Studies</h3>
+            </div>
+            <div class="box-body">
+                <div class="row">
+                    @foreach (CaseStudy @item in Model.CaseStudies)
+                    {
+                        <div class="col-md-4">
+                            <!-- Primary box -->
+                            <div class="box box-solid box-primary">
+                                <div class="box-header" data-toggle="tooltip" title="" data-original-title="Header tooltip">
+                                    <h3 class="box-title"><a style="color: #fff;" href="/CaseStudy/Edit/@item.Id">@item.Name</a></h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-primary btn-xs" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button class="btn btn-primary btn-xs" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                </div><!-- /.box-body -->
+                                <div class="box-footer">
+                                    <a href="/CaseStudy/Edit/@item.Id">Edit @item.Name Case Study</a>
+                                </div><!-- /.box-footer-->
+                            </div><!-- /.box -->
                         </div>
-                        <div class="box-body">
-                            <p>
-                                @item.Description
-                            </p>
-                        </div><!-- /.box-body -->
-                        <div class="box-footer">
-                            <a href="/CaseStudy/Edit/@item.Id">Edit @item.Name Case Study</a>
-                        </div><!-- /.box-footer-->
-                    </div><!-- /.box -->
+                    }
                 </div>
-                }
+            </div>
+            <div class="box-footer">
+                <a class="btn btn-primary" href="/CaseStudy/Create/@Model.Id">Add a New Case Study</a>
             </div>
         </div>
-        <div class="box-footer">
-            <a class="btn btn-primary" href="/CaseStudy/Create/@Model.Id">Add a New Case Study</a>
-        </div>
+        
     </div>
 }
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    <div class="col-md-3">
+        @RenderPage("~/Views/Shared/_Attachments.cshtml");
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

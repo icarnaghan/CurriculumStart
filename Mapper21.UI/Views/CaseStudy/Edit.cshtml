@@ -25,23 +25,36 @@
                 @Html.HiddenFor(model => model.SectionId)
                 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Name, new { @class = "control-label" })
                         <div class="col-md-12">
-                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Name)
-                        </div>
+                        @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Description, new { @class = "control-label" })
-                        <div class="col-md-12">
-                            @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Description)
+                        <div class="form-group">
+                            <div class="col-md-12">
+                              <label for="Description">Description</label>
+                              @(Html.Kendo().Editor()
+                              .Name("Description")
+                              .HtmlAttributes(new { style = "height:340px" })
+                              .Value(@<text></text>)
+                              .ImageBrowser(imageBrowser => imageBrowser
+                              .Image("~/Content/UserFiles/Images/{0}")
+                              .Read("Read", "ImageBrowser")
+                              .Create("Create", "ImageBrowser")
+                              .Destroy("Destroy", "ImageBrowser")
+                              .Upload("Upload", "ImageBrowser")
+                              .Thumbnail("Thumbnail", "ImageBrowser"))
+                                )
+                            </div>
                         </div>
+
                     </div>
                 <div class="form-group">
                     <div class="col-md-12">
-                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <input type="submit" value="Update Case Study Overview" class="btn btn-primary" />
                     </div>
                 </div>
             }
