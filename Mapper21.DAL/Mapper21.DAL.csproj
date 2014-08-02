@@ -67,8 +67,12 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201408020111335_InitialCreate.cs" />
+    <Compile Include="Migrations\201408020111335_InitialCreate.Designer.cs">
+      <DependentUpon>201408020111335_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Provider\FlexMapperContext.cs" />
-    <Compile Include="Provider\FlexMapperInitializer.cs" />
     <Compile Include="Repositories\CaseStudyRepository.cs" />
     <Compile Include="Repositories\SectionRepository.cs" />
     <Compile Include="Interfaces\ICaseStudyRepository.cs" />
@@ -80,6 +84,11 @@
       <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
       <Name>Mapper21.BE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201408020111335_InitialCreate.resx">
+      <DependentUpon>201408020111335_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
