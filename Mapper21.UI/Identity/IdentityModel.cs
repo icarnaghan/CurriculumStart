@@ -7,9 +7,5 @@ namespace Mapper21.UI.Identity
     public class ApplicationUser : IdentityUser
     {
         public string Email { get; set; }
-        public int GradeLevelId { get; set; }
-
-        [ForeignKey("GradeLevelId")]
-        public GradeLevel GradeLevel { get; set; }
     }
 }
