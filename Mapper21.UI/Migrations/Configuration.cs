@@ -27,51 +27,59 @@ namespace Mapper21.UI.Migrations
                 manager.Create(role);
             }
 
-            if (!context.Roles.Any(r => r.Name == "FirstGrade"))
+            if (!context.Roles.Any(r => r.Name == "First Grade"))
             {
                 var store = new RoleStore<IdentityRole>(context);
                 var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "FirstGrade" };
+                var role = new IdentityRole { Name = "First Grade" };
                 manager.Create(role);
             }
 
-            if (!context.Roles.Any(r => r.Name == "SecondGrade"))
+            if (!context.Roles.Any(r => r.Name == "Second Grade"))
             {
                 var store = new RoleStore<IdentityRole>(context);
                 var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "SecondGrade" };
+                var role = new IdentityRole { Name = "Second Grade" };
                 manager.Create(role);
             }
 
-            if (!context.Roles.Any(r => r.Name == "ThirdGrade"))
+            if (!context.Roles.Any(r => r.Name == "Third Grade"))
             {
                 var store = new RoleStore<IdentityRole>(context);
                 var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "ThirdGrade" };
+                var role = new IdentityRole { Name = "Third Grade" };
                 manager.Create(role);
             }
 
-            if (!context.Roles.Any(r => r.Name == "FourthGrade"))
+            if (!context.Roles.Any(r => r.Name == "Fourth Grade"))
             {
                 var store = new RoleStore<IdentityRole>(context);
                 var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "FourthGrade" };
+                var role = new IdentityRole { Name = "Fourth Grade" };
                 manager.Create(role);
             }
 
-            if (!context.Roles.Any(r => r.Name == "FifthGrade"))
+            if (!context.Roles.Any(r => r.Name == "Fifth Grade"))
             {
                 var store = new RoleStore<IdentityRole>(context);
                 var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "FifthGrade" };
+                var role = new IdentityRole { Name = "Fifth Grade" };
                 manager.Create(role);
             }
 
-            if (!context.Roles.Any(r => r.Name == "SixthGrade"))
+            if (!context.Roles.Any(r => r.Name == "Sixth Grade"))
             {
                 var store = new RoleStore<IdentityRole>(context);
                 var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "SixthGrade" };
+                var role = new IdentityRole { Name = "Sixth Grade" };
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Admin" };
                 manager.Create(role);
             }
 
@@ -103,7 +111,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "firstgrade" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "FirstGrade");
+                manager.AddToRole(user.Id, "First Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "secondgrade"))
@@ -113,7 +121,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "secondgrade" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "SecondGrade");
+                manager.AddToRole(user.Id, "Second Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "thirdgrade"))
@@ -123,7 +131,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "thirdgrade" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "ThirdGrade");
+                manager.AddToRole(user.Id, "Third Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "forthgrade"))
@@ -133,7 +141,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "fourthgrade" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "FourthGrade");
+                manager.AddToRole(user.Id, "Fourth Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "fifthgrade"))
@@ -143,7 +151,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "fifthgrade" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "FifthGrade");
+                manager.AddToRole(user.Id, "Fifth Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "sixthgrade"))
@@ -153,7 +161,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "sixthgrade" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "SixthGrade");
+                manager.AddToRole(user.Id, "Sixth Grade");
             }
         }
     }

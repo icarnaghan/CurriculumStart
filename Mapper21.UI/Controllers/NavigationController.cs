@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Web.Mvc;
-using FlexMapper.BE.Domain;
-using FlexMapper.DAL.Interfaces;
+﻿using System.Web.Mvc;
+using Mapper21.BE.Domain;
+using Mapper21.BE.Domain.LookUps;
+using Mapper21.DAL.Interfaces;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Mapper21.UI.Config;
 
-namespace FlexMapper.UI.Controllers
+namespace Mapper21.UI.Controllers
 {
     public class NavigationController : BaseController
     {
         private readonly ISectionRepository _sectionRepository;
         private readonly ICaseStudyRepository _caseStudyRepository;
+        readonly string _currentYear = SiteConfig.CurrentYear;
 
         public NavigationController(ISectionRepository sectionRepository, ICaseStudyRepository caseStudyRepository)
         {
@@ -18,44 +19,53 @@ namespace FlexMapper.UI.Controllers
             _caseStudyRepository = caseStudyRepository;
         }
 
-    private IList<Level> Atlas( )
-    {
-        IList<Folder> continents = new List<Folder>( );
-
-        foreach ( var continent in this._continentRepository.All )
+        public ActionResult FirstSixWeeks()
         {
-            var continentFolder = new Folder
-            {
-                Id = continent.Id ,
-                Name = continent.Name ,
-                Type = "continent"
-            };
+            var sectionId = 0;
+            var gradeLevelId = CurrentGradeLevel();
+            sectionId = _sectionRepository.GetByGrade(gradeLevelId, 1, _currentYear).Id;
 
-            foreach ( var country in continent.Countries )
-            {
-                var countryFolder = new Folder
-                {
-                    Id = country.Id ,
-                    Name = country.Name ,
-                    Type = "country"
-                };
+            return RedirectToAction("Overview", "Section", new { id = sectionId });
+        }
 
-                foreach ( var city in country.Cities )
-                {
-                    var cityFolder = new Folder
-                    {
-                        Id = city.Id ,
-                        Name = city.Name ,
-                        Type = "city"
-                    };
+        public ActionResult FallExpedition()
+        {
+            var sectionId = 0;
+            var gradeLevelId = CurrentGradeLevel();
+            sectionId = _sectionRepository.GetByGrade(gradeLevelId, 2, _currentYear).Id;
 
-                    countryFolder.Subfolders.Add( cityFolder );
-                }
+            return RedirectToAction("Overview", "Section", new { id = sectionId });
+        }
 
-                continentFolder.Subfolders.Add( countryFolder );
-            }
+        public ActionResult MiniMester()
+        {
+            var sectionId = 0;
+            var gradeLevelId = CurrentGradeLevel();
+            sectionId = _sectionRepository.GetByGrade(gradeLevelId, 3, _currentYear).Id;
 
-            continents.Add( continentFolder );
+            return RedirectToAction("Overview", "Section", new { id = sectionId });
+        }
+
+        public ActionResult SpringExpedition()
+        {
+            var sectionId = 0;
+            var gradeLevelId = CurrentGradeLevel();
+            sectionId = _sectionRepository.GetByGrade(gradeLevelId, 4, _currentYear).Id;
+
+            return RedirectToAction("Overview", "Section", new { id = sectionId });
+        }
+
+        public int CurrentGradeLevel()
+        {
+            var gradeLevelId = 0;
+            if (User.IsInRole("Kindergarten")) gradeLevelId = 1;
+            if (User.IsInRole("First Grade")) gradeLevelId = 2;
+            if (User.IsInRole("Second Grade")) gradeLevelId = 3;
+            if (User.IsInRole("Third Grade")) gradeLevelId = 4;
+            if (User.IsInRole("Fourth Grade")) gradeLevelId = 5;
+            if (User.IsInRole("Fifth Grade")) gradeLevelId = 6;
+            if (User.IsInRole("Sixth Grade")) gradeLevelId = 7;
+            return gradeLevelId;
         }
 
         protected override void Dispose(bool disposing)

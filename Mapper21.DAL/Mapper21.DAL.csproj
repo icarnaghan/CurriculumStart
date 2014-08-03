@@ -72,7 +72,7 @@
       <DependentUpon>201408020111335_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Provider\FlexMapperContext.cs" />
+    <Compile Include="Provider\Mapper21Context.cs" />
     <Compile Include="Repositories\CaseStudyRepository.cs" />
     <Compile Include="Repositories\SectionRepository.cs" />
     <Compile Include="Interfaces\ICaseStudyRepository.cs" />
