@@ -30,7 +30,7 @@ namespace Mapper21.UI.Controllers
                 return RedirectToAction("Edit", "StaCollection", new {id = stacollection.Id});
             }
 
-            ViewBag.CaseStudyId = new SelectList(db.CaseStudies, "Id", "Name", stacollection.CaseStudyId);
+            ViewBag.CaseStudyId = new SelectList(db.SubSections, "Id", "Name", stacollection.SubSectionId);
             return View(stacollection);
         }
 
@@ -57,7 +57,7 @@ namespace Mapper21.UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,CaseStudyId")] StaCollection stacollection)
         {
-            return RedirectToAction("Edit", "CaseStudy", new {id = stacollection.CaseStudyId});
+            return RedirectToAction("Edit", "CaseStudy", new {id = stacollection.SubSectionId});
         }
 
         // GET: /StaCollection/Delete/5

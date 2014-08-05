@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult Expert_Read(int caseStudyId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<Expert> expert = db.Experts.Where(f => f.CaseStudyId == caseStudyId);
+            IQueryable<Expert> expert = db.Experts.Where(f => f.SubSectionId == caseStudyId);
             return Json(expert.ToDataSourceResult(request));
         }
 
@@ -30,7 +30,7 @@ namespace Mapper21.UI.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    CaseStudyId = expert.CaseStudyId
+                    SubSectionId = expert.CaseStudyId
                 };
                 // Add the entity
                 db.Experts.Add(entity);
@@ -53,7 +53,7 @@ namespace Mapper21.UI.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    CaseStudyId = expert.CaseStudyId
+                    SubSectionId = expert.CaseStudyId
                 };
                 // Attach the entity
                 db.Experts.Attach(entity);
@@ -76,7 +76,7 @@ namespace Mapper21.UI.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    CaseStudyId = expert.CaseStudyId
+                    SubSectionId = expert.CaseStudyId
                 };
                 // Attach the entity
                 db.Experts.Attach(entity);

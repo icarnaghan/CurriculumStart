@@ -12,14 +12,14 @@ namespace Mapper21.DAL.Repositories
     {
         private Mapper21Context db = new Mapper21Context();
 
-        public IEnumerable<CaseStudy> GetAll()
+        public IEnumerable<SubSection> GetAll()
         {
-            return db.CaseStudies.ToList();
+            return db.SubSections.ToList();
         }
 
-        public IEnumerable<CaseStudy> GetAllBySection(int? id)
+        public IEnumerable<SubSection> GetAllBySection(int? id)
         {
-            return db.CaseStudies.ToList();
+            return db.SubSections.ToList();
         }
 
         public IEnumerable<StaGrid> GetStaGrids(int? id)
@@ -27,17 +27,17 @@ namespace Mapper21.DAL.Repositories
             return db.StaGrid.Where(s => s.CaseStudyId == id).ToList();
         }
 
-        public CaseStudy Find(int? id)
+        public SubSection Find(int? id)
         {
-            return db.CaseStudies.Find(id);
+            return db.SubSections.Find(id);
         }
 
         public bool Delete(int id)
         {
             try
             {
-                CaseStudy caseStudy = Find(id);
-                db.CaseStudies.Remove(caseStudy);
+                SubSection caseStudy = Find(id);
+                db.SubSections.Remove(caseStudy);
                 Save();
                 return true;
             }
@@ -47,12 +47,12 @@ namespace Mapper21.DAL.Repositories
             }
         }
 
-        public void InsertorUpdate(CaseStudy caseStudy)
+        public void InsertorUpdate(SubSection caseStudy)
         {
             if (caseStudy.Id == default(int))
             {
                 // New entity
-                db.CaseStudies.Add(caseStudy);
+                db.SubSections.Add(caseStudy);
             }
             else
             {

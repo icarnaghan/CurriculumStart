@@ -26,7 +26,7 @@ namespace Mapper21.UI.Controllers
         // POST: /CaseStudy/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CaseStudy casestudy)
+        public ActionResult Create(SubSection casestudy)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +61,7 @@ namespace Mapper21.UI.Controllers
         // POST: /CaseStudy/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(CaseStudy casestudy)
+        public ActionResult Edit(SubSection casestudy)
         {
             if (ModelState.IsValid)
             {

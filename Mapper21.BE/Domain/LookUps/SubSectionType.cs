@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Mapper21.BE.Domain.LookUps
 {
-    public class SectionType
+    public class SubSectionType
     {
         public int Id { get; set; }
         public string Name { get; set; }

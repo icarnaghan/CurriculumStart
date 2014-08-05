@@ -58,14 +58,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Assessment.cs" />
-    <Compile Include="Domain\CaseStudy.cs" />
+    <Compile Include="Domain\LookUps\SectionType.cs" />
+    <Compile Include="Domain\LookUps\SubSectionType.cs" />
+    <Compile Include="Domain\SubSection.cs" />
     <Compile Include="Domain\Section.cs" />
     <Compile Include="Domain\Habit.cs" />
     <Compile Include="Domain\Expert.cs" />
     <Compile Include="Domain\Fieldwork.cs" />
     <Compile Include="Domain\GuidingQuestion.cs" />
     <Compile Include="Domain\LongTermTarget.cs" />
-    <Compile Include="Domain\LookUps\SectionType.cs" />
     <Compile Include="Domain\LookUps\GradeLevel.cs" />
     <Compile Include="Domain\ScienceBigIdea.cs" />
     <Compile Include="Domain\ServiceLearning.cs" />

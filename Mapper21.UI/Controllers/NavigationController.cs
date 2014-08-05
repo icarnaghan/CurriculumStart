@@ -23,7 +23,7 @@ namespace Mapper21.UI.Controllers
         {
             var sectionId = 0;
             var gradeLevelId = CurrentGradeLevel();
-            sectionId = _sectionRepository.GetByGrade(gradeLevelId, 1, _currentYear).Id;
+            sectionId = _sectionRepository.GetFirstSixWeeksByGrade(gradeLevelId, _currentYear).Id;
 
             return RedirectToAction("Overview", "Section", new { id = sectionId });
         }
@@ -32,7 +32,7 @@ namespace Mapper21.UI.Controllers
         {
             var sectionId = 0;
             var gradeLevelId = CurrentGradeLevel();
-            sectionId = _sectionRepository.GetByGrade(gradeLevelId, 2, _currentYear).Id;
+            sectionId = _sectionRepository.GetFallExpeditionByGrade(gradeLevelId, _currentYear).Id;
 
             return RedirectToAction("Overview", "Section", new { id = sectionId });
         }
@@ -41,7 +41,7 @@ namespace Mapper21.UI.Controllers
         {
             var sectionId = 0;
             var gradeLevelId = CurrentGradeLevel();
-            sectionId = _sectionRepository.GetByGrade(gradeLevelId, 3, _currentYear).Id;
+            sectionId = _sectionRepository.GetMiniMesterByGrade(gradeLevelId, _currentYear).Id;
 
             return RedirectToAction("Overview", "Section", new { id = sectionId });
         }
@@ -50,7 +50,7 @@ namespace Mapper21.UI.Controllers
         {
             var sectionId = 0;
             var gradeLevelId = CurrentGradeLevel();
-            sectionId = _sectionRepository.GetByGrade(gradeLevelId, 4, _currentYear).Id;
+            sectionId = _sectionRepository.GetSpringExpeditionByGrade(gradeLevelId, _currentYear).Id;
 
             return RedirectToAction("Overview", "Section", new { id = sectionId });
         }

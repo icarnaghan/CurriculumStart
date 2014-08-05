@@ -6,11 +6,11 @@ namespace Mapper21.DAL.Interfaces
 {
     public interface ICaseStudyRepository : IDisposable
     {
-        IEnumerable<CaseStudy> GetAll();
-        IEnumerable<CaseStudy> GetAllBySection(int? id);
+        IEnumerable<SubSection> GetAll();
+        IEnumerable<SubSection> GetAllBySection(int? id);
         IEnumerable<StaGrid> GetStaGrids(int? id);
-        void InsertorUpdate(CaseStudy caseStudy);
-        CaseStudy Find(int? id);
+        void InsertorUpdate(SubSection caseStudy);
+        SubSection Find(int? id);
         bool Delete(int id);
         void Save();
     }

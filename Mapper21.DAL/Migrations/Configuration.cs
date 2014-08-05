@@ -35,20 +35,28 @@ namespace Mapper21.DAL.Migrations
 
             var sectionTypes = new List<SectionType>
             {
-                new SectionType {Id = 1, Name = "FirstSixWeeks"},
-                new SectionType {Id = 2, Name = "FallExpedition"},
-                new SectionType {Id = 3, Name = "WinterTerm"},
-                new SectionType {Id = 4, Name = "SpringExpedition"},
-                new SectionType {Id = 5, Name = "Strand"}
+                new SectionType {Id = 1, Name = "First Six Weeks"},
+                new SectionType {Id = 2, Name = "Fall Expedition"},
+                new SectionType {Id = 3, Name = "Mini Mester"},
+                new SectionType {Id = 4, Name = "Spring Expedition"},
+                new SectionType {Id = 5, Name = "Strand"},
             };
             sectionTypes.ForEach(s => context.SectionTypes.Add(s));
+            context.SaveChanges();
+
+            var subSectionTypes = new List<SubSectionType>
+            {
+                new SubSectionType {Id = 1, Name = "Week"},
+                new SubSectionType {Id = 1, Name = "Case Study"},
+                new SubSectionType {Id = 1, Name = "Unit"},
+            };
+            subSectionTypes.ForEach(s => context.SubSectionTypes.Add(s));
             context.SaveChanges();
 
             // Fall
             var section = new Section
             {
                 Id = 1,
-                SectionTypeId = 2,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Ancient Civilizations",
@@ -57,7 +65,8 @@ namespace Mapper21.DAL.Migrations
                 FinalProductName = "Civilizations of the early years",
                 FinalProductDescription =
                     "Civilization or civilisation generally refers to state polities which combine these basic institutions: " +
-                    "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. "
+                    "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. ",
+                SectionTypeId = 2
             };
             context.Sections.Add(section);
             context.SaveChanges();
@@ -66,7 +75,6 @@ namespace Mapper21.DAL.Migrations
             var section2 = new Section
             {
                 Id = 2,
-                SectionTypeId = 4,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Spring Expedition",
@@ -74,7 +82,8 @@ namespace Mapper21.DAL.Migrations
                 KickOff = "",
                 FinalProductName = "",
                 FinalProductDescription =
-                    ""
+                    "",
+                SectionTypeId = 4
             };
             context.Sections.Add(section2);
             context.SaveChanges();
@@ -83,15 +92,11 @@ namespace Mapper21.DAL.Migrations
             var section3 = new Section
             {
                 Id = 3,
-                SectionTypeId = 1,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "First Six Weeks",
                 Description = "TBD",
-                KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 1
             };
             context.Sections.Add(section3);
             context.SaveChanges();
@@ -100,7 +105,6 @@ namespace Mapper21.DAL.Migrations
             var section4 = new Section
             {
                 Id = 4,
-                SectionTypeId = 3,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Mini-Semester - Fall",
@@ -108,7 +112,8 @@ namespace Mapper21.DAL.Migrations
                 KickOff = "",
                 FinalProductName = "",
                 FinalProductDescription =
-                    ""
+                    "",
+                SectionTypeId = 3
             };
             context.Sections.Add(section4);
             context.SaveChanges();
@@ -117,15 +122,12 @@ namespace Mapper21.DAL.Migrations
             var section5 = new Section
             {
                 Id = 5,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Art",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section5);
             context.SaveChanges();
@@ -134,15 +136,12 @@ namespace Mapper21.DAL.Migrations
             var section6 = new Section
             {
                 Id = 6,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Foreign Languages",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section6);
             context.SaveChanges();
@@ -151,15 +150,12 @@ namespace Mapper21.DAL.Migrations
             var section7 = new Section
             {
                 Id = 7,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Language Arts",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section7);
             context.SaveChanges();
@@ -168,15 +164,12 @@ namespace Mapper21.DAL.Migrations
             var section8 = new Section
             {
                 Id = 8,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Mathematics",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section8);
             context.SaveChanges();
@@ -185,15 +178,12 @@ namespace Mapper21.DAL.Migrations
             var section9 = new Section
             {
                 Id = 9,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Media",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section9);
             context.SaveChanges();
@@ -202,15 +192,12 @@ namespace Mapper21.DAL.Migrations
             var section10 = new Section
             {
                 Id = 10,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Music",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section10);
             context.SaveChanges();
@@ -219,15 +206,12 @@ namespace Mapper21.DAL.Migrations
             var section11 = new Section
             {
                 Id = 11,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Physical Education",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section11);
             context.SaveChanges();
@@ -236,15 +220,12 @@ namespace Mapper21.DAL.Migrations
             var section12 = new Section
             {
                 Id = 12,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Science",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section12);
             context.SaveChanges();
@@ -253,15 +234,12 @@ namespace Mapper21.DAL.Migrations
             var section13 = new Section
             {
                 Id = 13,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Social Skills",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section13);
             context.SaveChanges();
@@ -270,15 +248,12 @@ namespace Mapper21.DAL.Migrations
             var section14 = new Section
             {
                 Id = 14,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Social Studies",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section14);
             context.SaveChanges();
@@ -287,15 +262,12 @@ namespace Mapper21.DAL.Migrations
             var section15 = new Section
             {
                 Id = 15,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Technology",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section15);
             context.SaveChanges();
@@ -304,45 +276,43 @@ namespace Mapper21.DAL.Migrations
             var section16 = new Section
             {
                 Id = 16,
-                SectionTypeId = 5,
                 Year = 2013,
                 GradeLevelId = 2,
                 Name = "Second Grade Writing",
                 Description = "TBD",
                 KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    ""
+                SectionTypeId = 5
             };
             context.Sections.Add(section16);
             context.SaveChanges();
 
-            var caseStudy = new CaseStudy
+            var caseStudy = new SubSection
             {
                 Id = 1,
                 SectionId = 1,
                 Name = "Ancient Greece",
                 Description =
-                    "The ancient Greece case study encompasses several tasks associated with ancient civilizations."
+                    "The ancient Greece case study encompasses several tasks associated with ancient civilizations.",
+                SubSectionTypeId = 2
             };
-            context.CaseStudies.Add(caseStudy);
+            context.SubSections.Add(caseStudy);
             context.SaveChanges();
 
             var experts = new List<Expert>
             {
-                new Expert {Id = 1, CaseStudyId = 1, Name = "Tom Baker", Description = "Field Architect"},
-                new Expert {Id = 1, CaseStudyId = 1, Name = "Steven Smith", Description = "Historical Professional"},
-                new Expert {Id = 1, CaseStudyId = 1, Name = "Janet Fayhe", Description = "Interpreter"},
-                new Expert {Id = 1, CaseStudyId = 1, Name = "Chris Appleson", Description = "Biologist"},
-                new Expert {Id = 1, CaseStudyId = 1, Name = "Susan Johnson", Description = "Archaeologist"}
+                new Expert {Id = 1, SubSectionId = 1, Name = "Tom Baker", Description = "Field Architect"},
+                new Expert {Id = 1, SubSectionId = 1, Name = "Steven Smith", Description = "Historical Professional"},
+                new Expert {Id = 1, SubSectionId = 1, Name = "Janet Fayhe", Description = "Interpreter"},
+                new Expert {Id = 1, SubSectionId = 1, Name = "Chris Appleson", Description = "Biologist"},
+                new Expert {Id = 1, SubSectionId = 1, Name = "Susan Johnson", Description = "Archaeologist"}
             };
             experts.ForEach(g => context.Experts.Add(g));
             context.SaveChanges();
 
             var fieldworks = new List<Fieldwork>
             {
-                new Fieldwork {Id = 1, CaseStudyId = 1, Name = "Anarundel Park Visit ", Description = "Exploratory"},
-                new Fieldwork {Id = 1, CaseStudyId = 1, Name = "Baltimore Aquarium", Description = "Scientific"},
+                new Fieldwork {Id = 1, SubSectionId = 1, Name = "Anarundel Park Visit ", Description = "Exploratory"},
+                new Fieldwork {Id = 1, SubSectionId = 1, Name = "Baltimore Aquarium", Description = "Scientific"},
             };
             fieldworks.ForEach(g => context.Fieldworks.Add(g));
             context.SaveChanges();
@@ -352,28 +322,28 @@ namespace Mapper21.DAL.Migrations
                 new ServiceLearning
                 {
                     Id = 1,
-                    CaseStudyId = 1,
+                    SubSectionId = 1,
                     Name = "Natural Disasters",
                     Description = "Studied the consequences of natural disasters"
                 },
                 new ServiceLearning
                 {
                     Id = 1,
-                    CaseStudyId = 1,
+                    SubSectionId = 1,
                     Name = "Health",
                     Description = "Learned about the health consequences of poor nutrition"
                 },
                 new ServiceLearning
                 {
                     Id = 1,
-                    CaseStudyId = 1,
+                    SubSectionId = 1,
                     Name = "Wetlands",
                     Description = "Investigated the biological complexity and diversity of wetlands"
                 },
                 new ServiceLearning
                 {
                     Id = 1,
-                    CaseStudyId = 1,
+                    SubSectionId = 1,
                     Name = "Non-Profit Organizations",
                     Description = "Looked for ways to support struggling local non-profit organizations"
                 },

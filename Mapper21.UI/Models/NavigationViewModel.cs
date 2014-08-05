@@ -8,6 +8,6 @@ namespace Mapper21.UI.Models
         public int? SelectedSectionId { get; set; }
         public int? SelectedCaseStudyId { get; set; }
         public IEnumerable<Section> Sections { get; set; }
-        public IEnumerable<CaseStudy> CaseStudies { get; set; }
+        public IEnumerable<SubSection> CaseStudies { get; set; }
     }
 }

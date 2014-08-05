@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult ServiceLearning_Read(int caseStudyId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<ServiceLearning> serviceLearning = db.ServiceLearnings.Where(f => f.CaseStudyId == caseStudyId);
+            IQueryable<ServiceLearning> serviceLearning = db.ServiceLearnings.Where(f => f.SubSectionId == caseStudyId);
             return Json(serviceLearning.ToDataSourceResult(request));
         }
 
@@ -31,7 +31,7 @@ namespace Mapper21.UI.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    CaseStudyId = serviceLearning.CaseStudyId
+                    SubSectionId = serviceLearning.CaseStudyId
                 };
                 // Add the entity
                 db.ServiceLearnings.Add(entity);
@@ -55,7 +55,7 @@ namespace Mapper21.UI.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    CaseStudyId = serviceLearning.CaseStudyId
+                    SubSectionId = serviceLearning.CaseStudyId
                 };
                 // Attach the entity
                 db.ServiceLearnings.Attach(entity);
@@ -79,7 +79,7 @@ namespace Mapper21.UI.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    CaseStudyId = serviceLearning.CaseStudyId
+                    SubSectionId = serviceLearning.CaseStudyId
                 };
 
                 // Attach the entity

@@ -7,7 +7,11 @@ namespace Mapper21.DAL.Interfaces
     public interface ISectionRepository : IDisposable
     {
         IEnumerable<Section> GetAll();
-        Section GetByGrade(int id, int type, string year);
+        Section GetSectionByGrade(int id, string year);
+        Section GetFirstSixWeeksByGrade(int id, string year);
+        Section GetFallExpeditionByGrade(int id, string year);
+        Section GetMiniMesterByGrade(int id, string year);
+        Section GetSpringExpeditionByGrade(int id, string year);
         void InsertorUpdate(Section section);
         Section Find(int? id);
         bool Delete(int id);

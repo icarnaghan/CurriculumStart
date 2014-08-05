@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult Fieldwork_Read(int caseStudyId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<Fieldwork> fieldwork = db.Fieldworks.Where(f => f.CaseStudyId == caseStudyId);
+            IQueryable<Fieldwork> fieldwork = db.Fieldworks.Where(f => f.SubSectionId == caseStudyId);
             return Json(fieldwork.ToDataSourceResult(request));
         }
 
@@ -30,7 +30,7 @@ namespace Mapper21.UI.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    CaseStudyId = fieldwork.CaseStudyId
+                    SubSectionId = fieldwork.CaseStudyId
                 };
                 // Add the entity
                 db.Fieldworks.Add(entity);
@@ -53,7 +53,7 @@ namespace Mapper21.UI.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    CaseStudyId = fieldwork.CaseStudyId
+                    SubSectionId = fieldwork.CaseStudyId
                 };
                 // Attach the entity
                 db.Fieldworks.Attach(entity);
@@ -77,7 +77,7 @@ namespace Mapper21.UI.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    CaseStudyId = fieldwork.CaseStudyId
+                    SubSectionId = fieldwork.CaseStudyId
                 };
                 // Attach the entity
                 db.Fieldworks.Attach(entity);

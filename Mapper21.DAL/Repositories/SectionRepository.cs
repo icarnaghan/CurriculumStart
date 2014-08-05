@@ -17,10 +17,34 @@ namespace Mapper21.DAL.Repositories
             return db.Sections.ToList();
         }
 
-        public Section GetByGrade(int id, int type, string year)
+        public Section GetSectionByGrade(int id, string year)
         {
             int currentYear = int.Parse(year);
-            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.SectionTypeId == type && s.Year == currentYear);
+            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear);
+        }
+
+        public Section GetFirstSixWeeksByGrade(int id, string year)
+        {
+            int currentYear = int.Parse(year);
+            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 1);
+        }
+
+        public Section GetFallExpeditionByGrade(int id, string year)
+        {
+            int currentYear = int.Parse(year);
+            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 2);
+        }
+
+        public Section GetMiniMesterByGrade(int id, string year)
+        {
+            int currentYear = int.Parse(year);
+            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 3);
+        }
+
+        public Section GetSpringExpeditionByGrade(int id, string year)
+        {
+            int currentYear = int.Parse(year);
+            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 4);
         }
 
         public Section Find(int? id)

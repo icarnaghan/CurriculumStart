@@ -11,8 +11,9 @@ namespace Mapper21.DAL.Provider
         }
 
         public DbSet<Section> Sections { get; set; }
+        public DbSet<SubSection> SubSections { get; set; }
         public DbSet<SectionType> SectionTypes { get; set; }
-        public DbSet<CaseStudy> CaseStudies { get; set; }
+        public DbSet<SubSectionType> SubSectionTypes { get; set; }
         public DbSet<GuidingQuestion> GuidingQuestions { get; set; }
         public DbSet<GradeLevel> GradeLevels { get; set; }
         public DbSet<Habit> Habits { get; set; }
