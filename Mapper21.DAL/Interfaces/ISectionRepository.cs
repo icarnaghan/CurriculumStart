@@ -12,6 +12,7 @@ namespace Mapper21.DAL.Interfaces
         Section GetFallExpeditionByGrade(int id, string year);
         Section GetMiniMesterByGrade(int id, string year);
         Section GetSpringExpeditionByGrade(int id, string year);
+        Section GetSubjectAreaByGrade(int id, string year, int subjectAreaId);
         void InsertorUpdate(Section section);
         Section Find(int? id);
         bool Delete(int id);

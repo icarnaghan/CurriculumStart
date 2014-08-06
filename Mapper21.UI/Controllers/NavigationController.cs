@@ -55,6 +55,34 @@ namespace Mapper21.UI.Controllers
             return RedirectToAction("Overview", "Section", new { id = sectionId });
         }
 
+        public ActionResult SubjectArea(string id)
+        {
+            var sectionId = 0;
+            var gradeLevelId = CurrentGradeLevel();
+            var subjectAreaId = CurrentSubjectArea(id);
+            sectionId = _sectionRepository.GetSubjectAreaByGrade(gradeLevelId, _currentYear, subjectAreaId).Id;
+
+            return RedirectToAction("Overview", "Section", new { id = sectionId });
+        }
+
+        public int CurrentSubjectArea(string subjectArea)
+        {
+            var subjectAreaId = 0;
+            if (subjectArea == "Art") subjectAreaId = 1;
+            if (subjectArea == "ForeignLanguages") subjectAreaId = 2;
+            if (subjectArea == "LanguageArts") subjectAreaId = 3;
+            if (subjectArea == "Mathematics") subjectAreaId = 4;
+            if (subjectArea == "Media") subjectAreaId = 5;
+            if (subjectArea == "Music") subjectAreaId = 6;
+            if (subjectArea == "PhysicalEducation") subjectAreaId = 7;
+            if (subjectArea == "Science") subjectAreaId = 8;
+            if (subjectArea == "SocialSkills") subjectAreaId = 9;
+            if (subjectArea == "SocialStudies") subjectAreaId = 10;
+            if (subjectArea == "Technology") subjectAreaId = 11;
+            if (subjectArea == "Writing") subjectAreaId = 12;
+            return subjectAreaId;
+        }
+
         public int CurrentGradeLevel()
         {
             var gradeLevelId = 0;

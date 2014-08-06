@@ -17,8 +17,8 @@ namespace Mapper21.UI.Controllers
             _caseStudyRepository = caseStudyRepository;
         }
 
-        // GET: /Section/CaseStudy/
-        public ActionResult CaseStudy(int? id)
+        // GET: /Section/CaseStudy/5
+        public ActionResult SubSection(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var section = _sectionRepository.Find(id);
@@ -43,7 +43,6 @@ namespace Mapper21.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                section.GradeLevelId = 2;
                 _sectionRepository.InsertorUpdate(section);
                 _sectionRepository.Save();
 
@@ -60,7 +59,6 @@ namespace Mapper21.UI.Controllers
             if (section == null) return HttpNotFound();
 
             ViewBag.Title = section.Name;
-            ViewBag.Semester = "Fall";
             return View(section);
         }
 
@@ -71,7 +69,6 @@ namespace Mapper21.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                section.GradeLevelId = 2;
                 _sectionRepository.InsertorUpdate(section);
                 _sectionRepository.Save();
             }

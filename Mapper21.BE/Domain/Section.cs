@@ -10,6 +10,7 @@ namespace Mapper21.BE.Domain
         public int Year { get; set; }
         public int GradeLevelId { get; set; }
         public int SectionTypeId { get; set; }
+        public int? SubjectAreaId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string KickOff { get; set; }
@@ -21,6 +22,9 @@ namespace Mapper21.BE.Domain
 
         [ForeignKey("SectionTypeId")]
         public virtual SectionType SectionType { get; set; }
+
+        [ForeignKey("SubjectAreaId")]
+        public virtual SubjectArea SubjectArea { get; set; }
 
         public virtual ICollection<SubSection> SubSections { get; set; }
         public virtual ICollection<GuidingQuestion> GuidingQuestions { get; set; }

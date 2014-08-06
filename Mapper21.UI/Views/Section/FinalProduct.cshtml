@@ -18,6 +18,10 @@
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.GradeLevelId)
+                @Html.HiddenFor(model => model.SectionTypeId)
+                @Html.HiddenFor(model => model.Year)
                 <div class="box-body">
                     <div class="form-group">
                         <div class="col-md-12">

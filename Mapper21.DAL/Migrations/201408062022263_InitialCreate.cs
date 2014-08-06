@@ -91,6 +91,7 @@ namespace Mapper21.DAL.Migrations
                         Year = c.Int(nullable: false),
                         GradeLevelId = c.Int(nullable: false),
                         SectionTypeId = c.Int(nullable: false),
+                        SubjectAreaId = c.Int(),
                         Name = c.String(),
                         Description = c.String(),
                         KickOff = c.String(),
@@ -100,8 +101,10 @@ namespace Mapper21.DAL.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.GradeLevels", t => t.GradeLevelId, cascadeDelete: true)
                 .ForeignKey("dbo.SectionTypes", t => t.SectionTypeId, cascadeDelete: true)
+                .ForeignKey("dbo.SubjectAreas", t => t.SubjectAreaId)
                 .Index(t => t.GradeLevelId)
-                .Index(t => t.SectionTypeId);
+                .Index(t => t.SectionTypeId)
+                .Index(t => t.SubjectAreaId);
             
             CreateTable(
                 "dbo.Habits",
@@ -171,6 +174,15 @@ namespace Mapper21.DAL.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Sections", t => t.SectionId, cascadeDelete: true)
                 .Index(t => t.SectionId);
+            
+            CreateTable(
+                "dbo.SubjectAreas",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.SubSectionTypes",
@@ -244,6 +256,7 @@ namespace Mapper21.DAL.Migrations
             DropForeignKey("dbo.StaCollections", "SubSectionId", "dbo.SubSections");
             DropForeignKey("dbo.SubSections", "SubSectionTypeId", "dbo.SubSectionTypes");
             DropForeignKey("dbo.SubSections", "SectionId", "dbo.Sections");
+            DropForeignKey("dbo.Sections", "SubjectAreaId", "dbo.SubjectAreas");
             DropForeignKey("dbo.SocialStudiesBigIdeas", "SectionId", "dbo.Sections");
             DropForeignKey("dbo.Sections", "SectionTypeId", "dbo.SectionTypes");
             DropForeignKey("dbo.ScienceBigIdeas", "SectionId", "dbo.Sections");
@@ -260,6 +273,7 @@ namespace Mapper21.DAL.Migrations
             DropIndex("dbo.StaCollections", new[] { "SubSectionId" });
             DropIndex("dbo.SubSections", new[] { "SubSectionTypeId" });
             DropIndex("dbo.SubSections", new[] { "SectionId" });
+            DropIndex("dbo.Sections", new[] { "SubjectAreaId" });
             DropIndex("dbo.SocialStudiesBigIdeas", new[] { "SectionId" });
             DropIndex("dbo.Sections", new[] { "SectionTypeId" });
             DropIndex("dbo.ScienceBigIdeas", new[] { "SectionId" });
@@ -275,6 +289,7 @@ namespace Mapper21.DAL.Migrations
             DropTable("dbo.Fieldworks");
             DropTable("dbo.Experts");
             DropTable("dbo.SubSectionTypes");
+            DropTable("dbo.SubjectAreas");
             DropTable("dbo.SocialStudiesBigIdeas");
             DropTable("dbo.SectionTypes");
             DropTable("dbo.ScienceBigIdeas");

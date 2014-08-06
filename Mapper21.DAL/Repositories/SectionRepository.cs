@@ -47,6 +47,13 @@ namespace Mapper21.DAL.Repositories
             return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 4);
         }
 
+        public Section GetSubjectAreaByGrade(int id, string year, int subjectAreaId)
+        {
+            int currentYear = int.Parse(year);
+            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SubjectAreaId == subjectAreaId);
+        }
+
+
         public Section Find(int? id)
         {
             return db.Sections.Find(id);

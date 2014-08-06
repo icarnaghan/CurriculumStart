@@ -20,6 +20,9 @@
                 <div class="box-body">
                     @Html.ValidationSummary(true)
                     @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.GradeLevelId)
+                    @Html.HiddenFor(model => model.SectionTypeId)
+                    @Html.HiddenFor(model => model.Year)
 
                     <div class="form-group">
                         <div class="col-md-12">
@@ -49,7 +52,7 @@
                 <div class="box-footer">
                     <div class="form-group">
                         <div class="col-md-10">
-                            <a class="btn btn-primary" style="margin-bottom:0px;" href="~/Section/GuidingQuestions/1">Update Expedition Overview</a>
+                            <input type="submit" value="Save" class="btn btn-primary" />
                         </div>
                     </div>
                 </div>

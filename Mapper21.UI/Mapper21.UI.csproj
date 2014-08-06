@@ -1986,7 +1986,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Section\CaseStudy.cshtml">
+    <Content Include="Views\Section\SubSection.cshtml">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Shared\_TeacherNavigation.cshtml">
@@ -2025,15 +2025,15 @@
     <Content Include="Views\Section\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
     <Content Include="Views\Section\Partials\_SocialStudiesBigIdea.cshtml" />
     <Content Include="Views\Section\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
-    <Content Include="Views\CaseStudy\Edit.cshtml" />
-    <Content Include="Views\CaseStudy\Partials\_Fieldwork.cshtml" />
-    <Content Include="Views\CaseStudy\Partials\_Expert.cshtml" />
-    <Content Include="Views\CaseStudy\Partials\_ServiceLearning.cshtml" />
+    <Content Include="Views\SubSection\Edit.cshtml" />
+    <Content Include="Views\SubSection\Partials\_Fieldwork.cshtml" />
+    <Content Include="Views\SubSection\Partials\_Expert.cshtml" />
+    <Content Include="Views\SubSection\Partials\_ServiceLearning.cshtml" />
     <Content Include="Views\Browse\Index.cshtml" />
     <Content Include="Views\Browse\Results.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Home\Unavailable.cshtml" />
-    <Content Include="Views\CaseStudy\Create.cshtml" />
+    <Content Include="Views\SubSection\Create.cshtml" />
     <Content Include="Views\StaCollection\Create.cshtml" />
     <Content Include="Views\StaCollection\Edit.cshtml" />
     <Content Include="Views\StaCollection\Partials\_Standard.cshtml" />
