@@ -182,9 +182,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
-    <Compile Include="Controllers\CaseStudyController.cs" />
+    <Compile Include="Controllers\SubSectionController.cs" />
     <Compile Include="Controllers\AssessmentController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\FallExpeditionController.cs" />
+    <Compile Include="Controllers\MiniMesterController.cs" />
+    <Compile Include="Controllers\StrandController.cs" />
+    <Compile Include="Controllers\SpringExpeditionController.cs" />
+    <Compile Include="Controllers\FirstSixWeeksController.cs" />
     <Compile Include="Controllers\ShortTermTargetController.cs" />
     <Compile Include="Controllers\LongTermTargetController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
@@ -195,7 +200,6 @@
     <Compile Include="Controllers\ScienceBigIdeaController.cs" />
     <Compile Include="Controllers\HabitController.cs" />
     <Compile Include="Controllers\GuidingQuestionController.cs" />
-    <Compile Include="Controllers\SectionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StaCollectionController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1986,9 +1990,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Section\SubSection.cshtml">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="Views\Shared\_TeacherNavigation.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -2016,15 +2017,6 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Section\Partials\_GuidingQuestion.cshtml" />
-    <Content Include="Views\Section\Partials\_Habit.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\Section\EditorTemplates\HabitDropDownList.cshtml" />
-    <Content Include="Views\Section\Partials\_ScienceBigIdea.cshtml" />
-    <Content Include="Views\Section\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
-    <Content Include="Views\Section\Partials\_SocialStudiesBigIdea.cshtml" />
-    <Content Include="Views\Section\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
     <Content Include="Views\SubSection\Edit.cshtml" />
     <Content Include="Views\SubSection\Partials\_Fieldwork.cshtml" />
     <Content Include="Views\SubSection\Partials\_Expert.cshtml" />
@@ -2153,16 +2145,73 @@
     <Content Include="Scripts\plugins\datatables\colvis\ColVis.min.js.gz" />
     <Content Include="Scripts\plugins\datatables\tabletools\TableTools.min.js.gz" />
     <Content Include="Scripts\plugins\select2\select2_locale_en.js.template" />
-    <Content Include="Views\Section\Overview.cshtml" />
-    <Content Include="Views\Section\GuidingQuestions.cshtml" />
-    <Content Include="Views\Section\Habits.cshtml" />
-    <Content Include="Views\Section\ScienceBigIdeas.cshtml" />
-    <Content Include="Views\Section\SocialStudiesBigIdeas.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Section\FinalProduct.cshtml">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="Views\Shared\_Attachments.cshtml" />
+    <Content Include="Views\FirstSixWeeks\EditorTemplates\HabitDropDownList.cshtml" />
+    <Content Include="Views\FirstSixWeeks\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\FirstSixWeeks\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\FirstSixWeeks\GuidingQuestions.cshtml" />
+    <Content Include="Views\FirstSixWeeks\Habits.cshtml" />
+    <Content Include="Views\FirstSixWeeks\Overview.cshtml" />
+    <Content Include="Views\FirstSixWeeks\Partials\_GuidingQuestion.cshtml" />
+    <Content Include="Views\FirstSixWeeks\Partials\_Habit.cshtml" />
+    <Content Include="Views\FirstSixWeeks\Week.cshtml" />
+    <Content Include="Views\FallExpedition\EditorTemplates\HabitDropDownList.cshtml" />
+    <Content Include="Views\FallExpedition\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\FallExpedition\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\FallExpedition\FinalProduct.cshtml" />
+    <Content Include="Views\FallExpedition\GuidingQuestions.cshtml" />
+    <Content Include="Views\FallExpedition\Habits.cshtml" />
+    <Content Include="Views\FallExpedition\Overview.cshtml" />
+    <Content Include="Views\FallExpedition\Partials\_GuidingQuestion.cshtml" />
+    <Content Include="Views\FallExpedition\Partials\_Habit.cshtml" />
+    <Content Include="Views\FallExpedition\Partials\_ScienceBigIdea.cshtml" />
+    <Content Include="Views\FallExpedition\Partials\_SocialStudiesBigIdea.cshtml" />
+    <Content Include="Views\FallExpedition\ScienceBigIdeas.cshtml" />
+    <Content Include="Views\FallExpedition\SocialStudiesBigIdeas.cshtml" />
+    <Content Include="Views\FallExpedition\CaseStudy.cshtml" />
+    <Content Include="Views\MiniMester\CaseStudy.cshtml" />
+    <Content Include="Views\MiniMester\EditorTemplates\HabitDropDownList.cshtml" />
+    <Content Include="Views\MiniMester\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\MiniMester\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\MiniMester\FinalProduct.cshtml" />
+    <Content Include="Views\MiniMester\GuidingQuestions.cshtml" />
+    <Content Include="Views\MiniMester\Habits.cshtml" />
+    <Content Include="Views\MiniMester\Overview.cshtml" />
+    <Content Include="Views\MiniMester\Partials\_GuidingQuestion.cshtml" />
+    <Content Include="Views\MiniMester\Partials\_Habit.cshtml" />
+    <Content Include="Views\MiniMester\Partials\_ScienceBigIdea.cshtml" />
+    <Content Include="Views\MiniMester\Partials\_SocialStudiesBigIdea.cshtml" />
+    <Content Include="Views\MiniMester\ScienceBigIdeas.cshtml" />
+    <Content Include="Views\MiniMester\SocialStudiesBigIdeas.cshtml" />
+    <Content Include="Views\SpringExpedition\CaseStudy.cshtml" />
+    <Content Include="Views\SpringExpedition\EditorTemplates\HabitDropDownList.cshtml" />
+    <Content Include="Views\SpringExpedition\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\SpringExpedition\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\SpringExpedition\FinalProduct.cshtml" />
+    <Content Include="Views\SpringExpedition\GuidingQuestions.cshtml" />
+    <Content Include="Views\SpringExpedition\Habits.cshtml" />
+    <Content Include="Views\SpringExpedition\Overview.cshtml" />
+    <Content Include="Views\SpringExpedition\Partials\_GuidingQuestion.cshtml" />
+    <Content Include="Views\SpringExpedition\Partials\_Habit.cshtml" />
+    <Content Include="Views\SpringExpedition\Partials\_ScienceBigIdea.cshtml" />
+    <Content Include="Views\SpringExpedition\Partials\_SocialStudiesBigIdea.cshtml" />
+    <Content Include="Views\SpringExpedition\ScienceBigIdeas.cshtml" />
+    <Content Include="Views\SpringExpedition\SocialStudiesBigIdeas.cshtml" />
+    <Content Include="Views\Strand\Unit.cshtml" />
+    <Content Include="Views\Strand\EditorTemplates\HabitDropDownList.cshtml" />
+    <Content Include="Views\Strand\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\Strand\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\Strand\FinalProduct.cshtml" />
+    <Content Include="Views\Strand\GuidingQuestions.cshtml" />
+    <Content Include="Views\Strand\Habits.cshtml" />
+    <Content Include="Views\Strand\Overview.cshtml" />
+    <Content Include="Views\Strand\Partials\_GuidingQuestion.cshtml" />
+    <Content Include="Views\Strand\Partials\_Habit.cshtml" />
+    <Content Include="Views\Strand\Partials\_ScienceBigIdea.cshtml" />
+    <Content Include="Views\Strand\Partials\_SocialStudiesBigIdea.cshtml" />
+    <Content Include="Views\Strand\ScienceBigIdeas.cshtml" />
+    <Content Include="Views\Strand\SocialStudiesBigIdeas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

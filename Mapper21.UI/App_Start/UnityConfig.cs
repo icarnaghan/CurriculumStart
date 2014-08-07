@@ -41,7 +41,7 @@ namespace Mapper21.UI
             // container.RegisterType<IProductRepository, ProductRepository>();
 
             container.RegisterType<ISectionRepository, SectionRepository>();
-            container.RegisterType<ICaseStudyRepository, CaseStudyRepository>();
+            container.RegisterType<ISubSectionRepository, SubSectionRepository>();
 
             // Needed for account controller - http://stackoverflow.com/questions/20023065/how-to-add-mvc-5-authentication-to-unity-ioc
             container.RegisterType<AccountController>(new InjectionConstructor());

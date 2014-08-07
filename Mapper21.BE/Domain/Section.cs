@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Mapper21.BE.Domain.LookUps;
 
@@ -16,6 +17,10 @@ namespace Mapper21.BE.Domain
         public string KickOff { get; set; }
         public string FinalProductName { get; set; }
         public string FinalProductDescription { get; set; }
+        public int? LastUpdatedBy { get; set; }
+        public DateTime? LastUpdatedAt { get; set; }
+        public int? SubmittedBy { get; set; }
+        public DateTime? SubmittedAt { get; set; }
 
         [ForeignKey("GradeLevelId")]
         public virtual GradeLevel GradeLevel { get; set; }

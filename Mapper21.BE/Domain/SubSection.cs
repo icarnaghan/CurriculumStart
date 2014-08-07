@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Mapper21.BE.Domain.LookUps;
 
 namespace Mapper21.BE.Domain
@@ -10,6 +11,10 @@ namespace Mapper21.BE.Domain
         public int SubSectionTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public int? LastUpdatedBy { get; set; }
+        public DateTime? LastUpdatedAt { get; set; }
+        public int? SubmittedBy { get; set; }
+        public DateTime? SubmittedAt { get; set; }
 
         [ForeignKey("SectionId")]
         public virtual Section Section { get; set; }

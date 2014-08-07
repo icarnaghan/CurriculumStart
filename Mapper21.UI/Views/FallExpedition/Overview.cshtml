@@ -1,0 +1,68 @@
+﻿@model Mapper21.BE.Domain.Section
+
+@{
+    ViewBag.Title = "Overview";
+    ViewBag.SectionId = Model.Id;
+}
+
+<script src="~/Scripts/Mapper21.js"> </script>
+<div class="col-md-9">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <i class="fa fa-edit"></i>
+                    <h3 class="box-title">Overview</h3>
+                </div>
+                <div class="box-body">
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.GradeLevelId)
+                    @Html.HiddenFor(model => model.SectionTypeId)
+                    @Html.HiddenFor(model => model.Year)
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
+                    </div>           
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="Description">Description</label>
+                            @(Html.Kendo().Editor()
+                              .Name("Description")
+                              .HtmlAttributes(new { style = "height:340px" })
+                              .Value(@<text></text>)
+                              .ImageBrowser(imageBrowser => imageBrowser
+                              .Image("~/Content/UserFiles/Images/{0}")
+                              .Read("Read", "ImageBrowser")
+                              .Create("Create", "ImageBrowser")
+                              .Destroy("Destroy", "ImageBrowser")
+                              .Upload("Upload", "ImageBrowser")
+                              .Thumbnail("Thumbnail", "ImageBrowser"))
+                            )
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    }
+</div>
+<div class="col-md-3">
+    @RenderPage("~/Views/Shared/_Attachments.cshtml")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

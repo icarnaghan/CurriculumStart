@@ -1,4 +1,10 @@
-﻿<ul class="sidebar-menu">
+﻿@{
+    var expeditionNav = ViewContext.RouteData.Values["action"].ToString() == "ItemsInQueue" ? "active" : "";
+    var recordsIcon = ViewContext.RouteData.Values["action"].ToString() == "MyRecords" ? "records-active" : "records-grey";
+    var solrIcon = ViewContext.RouteData.Values["action"].ToString() == "Search" ? "solr-active" : "solr-grey";
+    var reportsIcon = ViewContext.RouteData.Values["action"].ToString() == "Custom" ? "reports-active" : "reports-grey";
+}
+<ul class="sidebar-menu">
     <li class="active">
         <a href="/">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
