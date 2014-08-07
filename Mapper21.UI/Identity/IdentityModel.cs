@@ -6,6 +6,5 @@ namespace Mapper21.UI.Identity
 {
     public class ApplicationUser : IdentityUser
     {
-        public string Email { get; set; }
     }
 }

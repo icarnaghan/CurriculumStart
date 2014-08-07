@@ -13,12 +13,12 @@ namespace Mapper21.UI.Identity
         {
             base.OnModelCreating(modelBuilder); 
 
-            modelBuilder.Entity<IdentityUser>().ToTable("IdentityUsers");
-            modelBuilder.Entity<ApplicationUser>().ToTable("IdentityUsers");
-            modelBuilder.Entity<IdentityRole>().ToTable("IdentityRoles");
-            modelBuilder.Entity<IdentityUserRole>().ToTable("IdentityUserRoles");
-            modelBuilder.Entity<IdentityUserLogin>().ToTable("IdentityUserLogins");
-            modelBuilder.Entity<IdentityUserClaim>().ToTable("IdentityUserClaims");
+            modelBuilder.Entity<IdentityUser>().ToTable("Users");
+            modelBuilder.Entity<ApplicationUser>().ToTable("Users");
+            modelBuilder.Entity<IdentityRole>().ToTable("Roles");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("UserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("UserLogins");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("UserClaims");
         }
     }
 }
