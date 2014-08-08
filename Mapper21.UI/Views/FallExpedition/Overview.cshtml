@@ -37,6 +37,7 @@
                             @(Html.Kendo().Editor()
                               .Name("Description")
                               .HtmlAttributes(new { style = "height:340px" })
+                              .Tools(tools => tools.InsertFile().ViewHtml())
                               .Value(@<text></text>)
                               .ImageBrowser(imageBrowser => imageBrowser
                               .Image("~/Content/UserFiles/Images/{0}")
@@ -45,6 +46,12 @@
                               .Destroy("Destroy", "ImageBrowser")
                               .Upload("Upload", "ImageBrowser")
                               .Thumbnail("Thumbnail", "ImageBrowser"))
+                              .FileBrowser(fileBrowser => fileBrowser
+                              .File("~/Content/UserFiles/Images/{0}")
+                              .Read("Read", "FileBrowser")
+                              .Create("Create", "FileBrowser")
+                              .Destroy("Destroy", "FileBrowser")
+                              .Upload("Upload", "FileBrowser"))
                             )
                         </div>
                     </div>

@@ -47,9 +47,9 @@
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Kendo.Mvc">
-      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET MVC Q1 2014\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Kendo.Mvc, Version=2014.2.716.545, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\KendoUI\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -189,6 +189,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
+    <Compile Include="Controllers\FileBrowserController.cs" />
+    <Compile Include="Controllers\ImageBrowserController.cs" />
     <Compile Include="Controllers\SubSectionController.cs" />
     <Compile Include="Controllers\AssessmentController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
@@ -509,7 +511,7 @@
     <Content Include="Content\Libraries\KendoUI\textures\transparency.png" />
     <Content Include="Content\Libraries\KendoUI\textures\transtexture.png" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\coloricons-sprite.png" />
@@ -1169,12 +1171,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Libraries\KendoUI\2014.1.318\" />
+    <Folder Include="Content\UserFiles\Images\SubFolder\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\FileBrowser\" />
+    <Folder Include="Views\ImageBrowser\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
