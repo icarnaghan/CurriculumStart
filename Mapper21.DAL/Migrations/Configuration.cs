@@ -333,49 +333,49 @@ namespace Mapper21.DAL.Migrations
             context.SubSections.AddOrUpdate(caseStudy);
             context.SaveChanges();
 
-            var experts = new List<Expert>
+            var experts = new List<SubSectionExpert>
             {
-                new Expert {Id = 1, SubSectionId = 1, Name = "Tom Baker", Description = "Field Architect"},
-                new Expert {Id = 1, SubSectionId = 1, Name = "Steven Smith", Description = "Historical Professional"},
-                new Expert {Id = 1, SubSectionId = 1, Name = "Janet Fayhe", Description = "Interpreter"},
-                new Expert {Id = 1, SubSectionId = 1, Name = "Chris Appleson", Description = "Biologist"},
-                new Expert {Id = 1, SubSectionId = 1, Name = "Susan Johnson", Description = "Archaeologist"}
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Tom Baker", Description = "Field Architect"},
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Steven Smith", Description = "Historical Professional"},
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Janet Fayhe", Description = "Interpreter"},
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Chris Appleson", Description = "Biologist"},
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Susan Johnson", Description = "Archaeologist"}
             };
             experts.ForEach(g => context.Experts.AddOrUpdate(g));
             context.SaveChanges();
 
-            var fieldworks = new List<Fieldwork>
+            var fieldworks = new List<SubSectionFieldwork>
             {
-                new Fieldwork {Id = 1, SubSectionId = 1, Name = "Anarundel Park Visit ", Description = "Exploratory"},
-                new Fieldwork {Id = 1, SubSectionId = 1, Name = "Baltimore Aquarium", Description = "Scientific"},
+                new SubSectionFieldwork {Id = 1, SubSectionId = 1, Name = "Anarundel Park Visit ", Description = "Exploratory"},
+                new SubSectionFieldwork {Id = 1, SubSectionId = 1, Name = "Baltimore Aquarium", Description = "Scientific"},
             };
             fieldworks.ForEach(g => context.Fieldworks.AddOrUpdate(g));
             context.SaveChanges();
 
-            var serviceLearnings = new List<ServiceLearning>
+            var serviceLearnings = new List<SubSectionServiceLearning>
             {
-                new ServiceLearning
+                new SubSectionServiceLearning
                 {
                     Id = 1,
                     SubSectionId = 1,
                     Name = "Natural Disasters",
                     Description = "Studied the consequences of natural disasters"
                 },
-                new ServiceLearning
+                new SubSectionServiceLearning
                 {
                     Id = 1,
                     SubSectionId = 1,
                     Name = "Health",
                     Description = "Learned about the health consequences of poor nutrition"
                 },
-                new ServiceLearning
+                new SubSectionServiceLearning
                 {
                     Id = 1,
                     SubSectionId = 1,
                     Name = "Wetlands",
                     Description = "Investigated the biological complexity and diversity of wetlands"
                 },
-                new ServiceLearning
+                new SubSectionServiceLearning
                 {
                     Id = 1,
                     SubSectionId = 1,
@@ -386,9 +386,9 @@ namespace Mapper21.DAL.Migrations
             serviceLearnings.ForEach(g => context.ServiceLearnings.AddOrUpdate(g));
             context.SaveChanges();
 
-            var expeditionHabits = new List<Habit>
+            var expeditionHabits = new List<SectionHabit>
             {
-                new Habit
+                new SectionHabit
                 {
                     Id = 1,
                     SectionId = 1,
@@ -396,7 +396,7 @@ namespace Mapper21.DAL.Migrations
                         "Synergy is achieved when two or more people work together to create something better than either could alone.",
                     Description = "Synergize"
                 },
-                new Habit
+                new SectionHabit
                 {
                     Id = 1,
                     SectionId = 1,
@@ -408,33 +408,33 @@ namespace Mapper21.DAL.Migrations
             expeditionHabits.ForEach(g => context.Habits.AddOrUpdate(g));
             context.SaveChanges();
 
-            var guidingQuestions = new List<GuidingQuestion>
+            var guidingQuestions = new List<SectionGuidingQuestion>
             {
-                new GuidingQuestion {Id = 1, SectionId = 1, Name = "Who will survive? or, What is waste?"},
-                new GuidingQuestion {Id = 1, SectionId = 1, Name = "Where do waves come from?"},
-                new GuidingQuestion {Id = 1, SectionId = 1, Name = "What is health?"},
-                new GuidingQuestion {Id = 1, SectionId = 1, Name = "When are laws fair?"},
+                new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "Who will survive? or, What is waste?"},
+                new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "Where do waves come from?"},
+                new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "What is health?"},
+                new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "When are laws fair?"},
             };
             guidingQuestions.ForEach(g => context.GuidingQuestions.AddOrUpdate(g));
             context.SaveChanges();
 
-            var scienceBigIdeas = new List<ScienceBigIdea>
+            var scienceBigIdeas = new List<SectionBigIdeasForScience>
             {
-                new ScienceBigIdea
+                new SectionBigIdeasForScience
                 {
                     Id = 1,
                     SectionId = 1,
                     Rationale = "Promotes learning about environmental changes.",
                     Idea = "Structure and Function: When an environment changes, an organism must adapt, move, or die."
                 },
-                new ScienceBigIdea
+                new SectionBigIdeasForScience
                 {
                     Id = 1,
                     SectionId = 1,
                     Rationale = "Learn about organisms.",
                     Idea = "Interdependence: Organisms depend on one another and on their environment."
                 },
-                new ScienceBigIdea
+                new SectionBigIdeasForScience
                 {
                     Id = 1,
                     SectionId = 1,
@@ -446,23 +446,23 @@ namespace Mapper21.DAL.Migrations
             scienceBigIdeas.ForEach(g => context.ScienceBigIdeases.AddOrUpdate(g));
             context.SaveChanges();
 
-            var socialStudiesBigIdeas = new List<SocialStudiesBigIdea>
+            var socialStudiesBigIdeas = new List<SectionBigIdeasForSocialStudies>
             {
-                new SocialStudiesBigIdea
+                new SectionBigIdeasForSocialStudies
                 {
                     Id = 1,
                     SectionId = 1,
                     Rationale = "Understand importance of migration.",
                     Idea = "Geographic Relationships: People migrate for a variety of reasons."
                 },
-                new SocialStudiesBigIdea
+                new SectionBigIdeasForSocialStudies
                 {
                     Id = 1,
                     SectionId = 1,
                     Rationale = "Promote understanding of different cultures.",
                     Idea = "Universals of Culture: Cultures are dynamic."
                 },
-                new SocialStudiesBigIdea
+                new SectionBigIdeasForSocialStudies
                 {
                     Id = 1,
                     SectionId = 1,

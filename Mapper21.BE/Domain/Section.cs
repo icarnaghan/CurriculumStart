@@ -32,9 +32,9 @@ namespace Mapper21.BE.Domain
         public virtual SubjectArea SubjectArea { get; set; }
 
         public virtual ICollection<SubSection> SubSections { get; set; }
-        public virtual ICollection<GuidingQuestion> GuidingQuestions { get; set; }
-        public virtual ICollection<Habit> ExpeditionHabits { get; set; }
-        public virtual ICollection<ScienceBigIdea> ScienceBigIdeas { get; set; }
-        public virtual ICollection<SocialStudiesBigIdea> SocialStudiesBigIdeas { get; set; }
+        public virtual ICollection<SectionGuidingQuestion> GuidingQuestions { get; set; }
+        public virtual ICollection<SectionHabit> ExpeditionHabits { get; set; }
+        public virtual ICollection<SectionBigIdeasForScience> ScienceBigIdeas { get; set; }
+        public virtual ICollection<SectionBigIdeasForSocialStudies> SocialStudiesBigIdeas { get; set; }
     }
 }

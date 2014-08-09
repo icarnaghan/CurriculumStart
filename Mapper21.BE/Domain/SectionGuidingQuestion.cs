@@ -2,13 +2,12 @@
 
 namespace Mapper21.BE.Domain
 {
-    public class ScienceBigIdea
+    public class SectionGuidingQuestion
     {
         public int Id { get; set; }
-        public string Idea { get; set; }
-        public string Rationale { get; set; }
+        public string Name { get; set; }
         public int SectionId { get; set; }
-        
+
         [ForeignKey("SectionId")]
         public Section Section { get; set; }
     }

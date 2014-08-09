@@ -2,7 +2,7 @@
 
 namespace Mapper21.BE.Domain
 {
-    public class SocialStudiesBigIdea
+    public class SectionBigIdeasForScience
     {
         public int Id { get; set; }
         public string Idea { get; set; }

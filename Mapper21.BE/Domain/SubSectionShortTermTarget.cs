@@ -2,13 +2,13 @@
 
 namespace Mapper21.BE.Domain
 {
-    public class ShortTermTarget
+    public class SubSectionShortTermTarget
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int StaCollectionId { get; set; }
         
         [ForeignKey("StaCollectionId")]
-        public StaCollection StaCollection { get; set; }
+        public SubSectionSta StaCollection { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult GuidingQuestion_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<GuidingQuestion> guidingQuestions = db.GuidingQuestions.Where(g => g.SectionId == sectionId);
+            IQueryable<SectionGuidingQuestion> guidingQuestions = db.GuidingQuestions.Where(g => g.SectionId == sectionId);
             return Json(guidingQuestions.ToDataSourceResult(request));
         }
 
@@ -26,7 +26,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new GuidingQuestion
+                var entity = new SectionGuidingQuestion
                 {
                     Id = guidingQuestion.Id,
                     Name = guidingQuestion.Name,
@@ -49,7 +49,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted Section Model
-                var entity = new GuidingQuestion
+                var entity = new SectionGuidingQuestion
                 {
                     Id = guidingQuestion.Id,
                     Name = guidingQuestion.Name,
@@ -72,7 +72,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new GuidingQuestion
+                var entity = new SectionGuidingQuestion
                 {
                     Id = guidingQuestion.Id,
                     Name = guidingQuestion.Name,

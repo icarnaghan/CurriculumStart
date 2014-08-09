@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult Expert_Read(int caseStudyId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<Expert> expert = db.Experts.Where(f => f.SubSectionId == caseStudyId);
+            IQueryable<SubSectionExpert> expert = db.Experts.Where(f => f.SubSectionId == caseStudyId);
             return Json(expert.ToDataSourceResult(request));
         }
 
@@ -25,7 +25,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new Expert
+                var entity = new SubSectionExpert
                 {
                     Id = expert.Id,
                     Name = expert.Name,
@@ -48,7 +48,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted SectionViewModel
-                var entity = new Expert
+                var entity = new SubSectionExpert
                 {
                     Id = expert.Id,
                     Name = expert.Name,
@@ -71,7 +71,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new Expert
+                var entity = new SubSectionExpert
                 {
                     Id = expert.Id,
                     Name = expert.Name,

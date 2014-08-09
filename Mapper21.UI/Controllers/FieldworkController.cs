@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult Fieldwork_Read(int caseStudyId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<Fieldwork> fieldwork = db.Fieldworks.Where(f => f.SubSectionId == caseStudyId);
+            IQueryable<SubSectionFieldwork> fieldwork = db.Fieldworks.Where(f => f.SubSectionId == caseStudyId);
             return Json(fieldwork.ToDataSourceResult(request));
         }
 
@@ -25,7 +25,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new Fieldwork
+                var entity = new SubSectionFieldwork
                 {
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
@@ -48,7 +48,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted SectionViewModel
-                var entity = new Fieldwork
+                var entity = new SubSectionFieldwork
                 {
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
@@ -72,7 +72,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new Fieldwork
+                var entity = new SubSectionFieldwork
                 {
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,

@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult ScienceBigIdea_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<ScienceBigIdea> scienceBigIdeas = db.ScienceBigIdeases.Where(b => b.SectionId == sectionId);
+            IQueryable<SectionBigIdeasForScience> scienceBigIdeas = db.ScienceBigIdeases.Where(b => b.SectionId == sectionId);
             return Json(scienceBigIdeas.ToDataSourceResult(request));
         }
 
@@ -26,7 +26,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new ScienceBigIdea
+                var entity = new SectionBigIdeasForScience
                 {
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,
@@ -50,7 +50,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted Section Model
-                var entity = new ScienceBigIdea
+                var entity = new SectionBigIdeasForScience
                 {
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,
@@ -74,7 +74,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new ScienceBigIdea
+                var entity = new SectionBigIdeasForScience
                 {
                     Id = scienceBigIdea.Id,
                     Idea = scienceBigIdea.Idea,

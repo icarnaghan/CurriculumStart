@@ -57,7 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Assessment.cs" />
+    <Compile Include="Domain\SubSectionAssessment.cs" />
     <Compile Include="Domain\LookUps\BigIdea.cs" />
     <Compile Include="Domain\LookUps\BigIdeaForScience.cs" />
     <Compile Include="Domain\LookUps\BigIdeaForSocialStudies.cs" />
@@ -69,19 +69,19 @@
     <Compile Include="Domain\LookUps\CommonCoreStandard.cs" />
     <Compile Include="Domain\SubSection.cs" />
     <Compile Include="Domain\Section.cs" />
-    <Compile Include="Domain\Habit.cs" />
-    <Compile Include="Domain\Expert.cs" />
-    <Compile Include="Domain\Fieldwork.cs" />
-    <Compile Include="Domain\GuidingQuestion.cs" />
-    <Compile Include="Domain\LongTermTarget.cs" />
+    <Compile Include="Domain\SectionHabit.cs" />
+    <Compile Include="Domain\SubSectionExpert.cs" />
+    <Compile Include="Domain\SubSectionFieldwork.cs" />
+    <Compile Include="Domain\SectionGuidingQuestion.cs" />
+    <Compile Include="Domain\SubSectionLongTermTarget.cs" />
     <Compile Include="Domain\LookUps\GradeLevel.cs" />
-    <Compile Include="Domain\ScienceBigIdea.cs" />
-    <Compile Include="Domain\ServiceLearning.cs" />
-    <Compile Include="Domain\ShortTermTarget.cs" />
-    <Compile Include="Domain\SocialStudiesBigIdea.cs" />
-    <Compile Include="Domain\StaCollection.cs" />
-    <Compile Include="Domain\StaGrid.cs" />
-    <Compile Include="Domain\Standard.cs" />
+    <Compile Include="Domain\SectionBigIdeasForScience.cs" />
+    <Compile Include="Domain\SubSectionServiceLearning.cs" />
+    <Compile Include="Domain\SubSectionShortTermTarget.cs" />
+    <Compile Include="Domain\SectionBigIdeasForSocialStudies.cs" />
+    <Compile Include="Domain\SubSectionSta.cs" />
+    <Compile Include="Domain\SubSectionStaGrid.cs" />
+    <Compile Include="Domain\SubSectionStandard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>

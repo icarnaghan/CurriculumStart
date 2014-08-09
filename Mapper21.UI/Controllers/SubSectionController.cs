@@ -51,7 +51,7 @@ namespace Mapper21.UI.Controllers
                 return HttpNotFound();
             }
 
-            List<StaGrid> staGrid = _subSectionRepository.GetStaGrids(id).ToList();
+            List<SubSectionStaGrid> staGrid = _subSectionRepository.GetStaGrids(id).ToList();
 
             ViewBag.staGrid = staGrid;
 

@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult ShortTermTarget_Read(int staCollectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<ShortTermTarget> shortTermTargets =
+            IQueryable<SubSectionShortTermTarget> shortTermTargets =
                 db.ShortTermTargets.Where(h => h.StaCollectionId == staCollectionId);
             return Json(shortTermTargets.ToDataSourceResult(request));
         }
@@ -27,7 +27,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new ShortTermTarget
+                var entity = new SubSectionShortTermTarget
                 {
                     Id = shortTermTarget.Id,
                     Name = shortTermTarget.Name,
@@ -50,7 +50,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted SectionViewModel
-                var entity = new ShortTermTarget
+                var entity = new SubSectionShortTermTarget
                 {
                     Id = shortTermTarget.Id,
                     Name = shortTermTarget.Name,
@@ -73,7 +73,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new ShortTermTarget
+                var entity = new SubSectionShortTermTarget
                 {
                     Id = shortTermTarget.Id,
                     Name = shortTermTarget.Name,

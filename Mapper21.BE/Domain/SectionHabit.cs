@@ -2,7 +2,7 @@
 
 namespace Mapper21.BE.Domain
 {
-    public class Habit
+    public class SectionHabit
     {
         public int Id { get; set; }
         public string Rationale { get; set; }

@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult Assessment_Read(int staCollectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<Assessment> assessments = db.Assessments.Where(h => h.StaCollectionId == staCollectionId);
+            IQueryable<SubSectionAssessment> assessments = db.Assessments.Where(h => h.StaCollectionId == staCollectionId);
             return Json(assessments.ToDataSourceResult(request));
         }
 
@@ -26,7 +26,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted SectionViewModel
-                var entity = new Assessment
+                var entity = new SubSectionAssessment
                 {
                     Id = assessment.Id,
                     Name = assessment.Name,
@@ -50,7 +50,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted SectionViewModel
-                var entity = new Assessment
+                var entity = new SubSectionAssessment
                 {
                     Id = assessment.Id,
                     Name = assessment.Name,
@@ -74,7 +74,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new Assessment
+                var entity = new SubSectionAssessment
                 {
                     Id = assessment.Id,
                     Name = assessment.Name,

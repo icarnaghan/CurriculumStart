@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult LongTermTarget_Read(int staCollectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<LongTermTarget> longTermTargets =
+            IQueryable<SubSectionLongTermTarget> longTermTargets =
                 db.LongTermTargets.Where(h => h.StaCollectionId == staCollectionId);
             return Json(longTermTargets.ToDataSourceResult(request));
         }
@@ -27,7 +27,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new LongTermTarget
+                var entity = new SubSectionLongTermTarget
                 {
                     Id = longTermTarget.Id,
                     Name = longTermTarget.Name,
@@ -50,7 +50,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted Section Model
-                var entity = new LongTermTarget
+                var entity = new SubSectionLongTermTarget
                 {
                     Id = longTermTarget.Id,
                     Name = longTermTarget.Name,
@@ -73,7 +73,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new LongTermTarget
+                var entity = new SubSectionLongTermTarget
                 {
                     Id = longTermTarget.Id,
                     Name = longTermTarget.Name,

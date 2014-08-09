@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult ServiceLearning_Read(int caseStudyId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<ServiceLearning> serviceLearning = db.ServiceLearnings.Where(f => f.SubSectionId == caseStudyId);
+            IQueryable<SubSectionServiceLearning> serviceLearning = db.ServiceLearnings.Where(f => f.SubSectionId == caseStudyId);
             return Json(serviceLearning.ToDataSourceResult(request));
         }
 
@@ -26,7 +26,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new ServiceLearning
+                var entity = new SubSectionServiceLearning
                 {
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
@@ -50,7 +50,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted Section Model
-                var entity = new ServiceLearning
+                var entity = new SubSectionServiceLearning
                 {
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
@@ -74,7 +74,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new ServiceLearning
+                var entity = new SubSectionServiceLearning
                 {
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,

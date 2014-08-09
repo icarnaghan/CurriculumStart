@@ -21,7 +21,7 @@ namespace Mapper21.UI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CaseStudyId")] StaCollection stacollection)
+        public ActionResult Create([Bind(Include = "Id,CaseStudyId")] SubSectionSta stacollection)
         {
             if (ModelState.IsValid)
             {
@@ -41,7 +41,7 @@ namespace Mapper21.UI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StaCollection stacollection = db.StaCollections.Find(id);
+            SubSectionSta stacollection = db.StaCollections.Find(id);
             if (stacollection == null)
             {
                 return HttpNotFound();
@@ -55,7 +55,7 @@ namespace Mapper21.UI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CaseStudyId")] StaCollection stacollection)
+        public ActionResult Edit([Bind(Include = "Id,CaseStudyId")] SubSectionSta stacollection)
         {
             return RedirectToAction("Edit", "CaseStudy", new {id = stacollection.SubSectionId});
         }
@@ -67,7 +67,7 @@ namespace Mapper21.UI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StaCollection stacollection = db.StaCollections.Find(id);
+            SubSectionSta stacollection = db.StaCollections.Find(id);
             if (stacollection == null)
             {
                 return HttpNotFound();
@@ -80,7 +80,7 @@ namespace Mapper21.UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            StaCollection stacollection = db.StaCollections.Find(id);
+            SubSectionSta stacollection = db.StaCollections.Find(id);
             db.StaCollections.Remove(stacollection);
             db.SaveChanges();
             return RedirectToAction("Index");

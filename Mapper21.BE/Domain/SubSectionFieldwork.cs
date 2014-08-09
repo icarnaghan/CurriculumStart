@@ -2,7 +2,7 @@
 
 namespace Mapper21.BE.Domain
 {
-    public class Expert
+    public class SubSectionFieldwork
     {
         public int Id { get; set; }
         public string Name { get; set; }

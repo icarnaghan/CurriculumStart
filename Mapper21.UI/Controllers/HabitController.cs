@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult SectionHabit_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<Habit> habits = db.Habits.Where(h => h.SectionId == sectionId);
+            IQueryable<SectionHabit> habits = db.Habits.Where(h => h.SectionId == sectionId);
             return Json(habits.ToDataSourceResult(request));
         }
 
@@ -26,7 +26,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new Habit
+                var entity = new SectionHabit
                 {
                     Id = habit.Id,
                     Description = habit.Habit,
@@ -50,7 +50,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted Section Model
-                var entity = new Habit
+                var entity = new SectionHabit
                 {
                     Id = habit.Id,
                     Description = habit.Habit,
@@ -74,7 +74,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new Habit
+                var entity = new SectionHabit
                 {
                     Id = habit.Id,
                     Description = habit.Habit,

@@ -8,7 +8,7 @@ namespace Mapper21.DAL.Interfaces
     {
         IEnumerable<SubSection> GetAll();
         IEnumerable<SubSection> GetAllBySection(int? id);
-        IEnumerable<StaGrid> GetStaGrids(int? id);
+        IEnumerable<SubSectionStaGrid> GetStaGrids(int? id);
         void InsertorUpdate(SubSection caseStudy);
         SubSection Find(int? id);
         bool Delete(int id);

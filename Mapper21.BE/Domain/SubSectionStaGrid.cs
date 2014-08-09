@@ -1,6 +1,6 @@
 ﻿namespace Mapper21.BE.Domain
 {
-    public class StaGrid
+    public class SubSectionStaGrid
     {
         public int Id { get; set; }
         public int StaCollectionId { get; set; }

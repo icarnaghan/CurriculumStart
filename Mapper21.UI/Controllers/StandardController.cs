@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult Standard_Read(int staCollectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<Standard> standards = db.Standards.Where(h => h.StaCollectionId == staCollectionId);
+            IQueryable<SubSectionStandard> standards = db.Standards.Where(h => h.StaCollectionId == staCollectionId);
             return Json(standards.ToDataSourceResult(request));
         }
 
@@ -26,7 +26,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new Standard
+                var entity = new SubSectionStandard
                 {
                     Id = standard.Id,
                     Name = standard.Name,
@@ -49,7 +49,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted SectionViewModel
-                var entity = new Standard
+                var entity = new SubSectionStandard
                 {
                     Id = standard.Id,
                     Name = standard.Name,
@@ -72,7 +72,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new Standard
+                var entity = new SubSectionStandard
                 {
                     Id = standard.Id,
                     Name = standard.Name,

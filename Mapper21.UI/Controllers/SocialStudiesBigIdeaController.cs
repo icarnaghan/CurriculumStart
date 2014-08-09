@@ -15,7 +15,7 @@ namespace Mapper21.UI.Controllers
 
         public ActionResult SocialStudiesBigIdea_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<SocialStudiesBigIdea> socialStudiesBigIdeas =
+            IQueryable<SectionBigIdeasForSocialStudies> socialStudiesBigIdeas =
                 db.SocialStudiesBigIdeas.Where(b => b.SectionId == sectionId);
             return Json(socialStudiesBigIdeas.ToDataSourceResult(request));
         }
@@ -27,7 +27,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Section entity and set its properties from the posted Section Model
-                var entity = new SocialStudiesBigIdea
+                var entity = new SectionBigIdeasForSocialStudies
                 {
                     Id = socialStudiesBigIdea.Id,
                     Idea = socialStudiesBigIdea.Idea,
@@ -51,7 +51,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted Section Model
-                var entity = new SocialStudiesBigIdea
+                var entity = new SectionBigIdeasForSocialStudies
                 {
                     Id = socialStudiesBigIdea.Id,
                     Idea = socialStudiesBigIdea.Idea,
@@ -75,7 +75,7 @@ namespace Mapper21.UI.Controllers
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
-                var entity = new SocialStudiesBigIdea
+                var entity = new SectionBigIdeasForSocialStudies
                 {
                     Id = socialStudiesBigIdea.Id,
                     Idea = socialStudiesBigIdea.Idea,
