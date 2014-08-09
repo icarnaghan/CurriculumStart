@@ -35,7 +35,7 @@ namespace Mapper21.DAL.Migrations
                 new GradeLevel {Id = "11", Name = "Eleventh Grade"},
                 new GradeLevel {Id = "12", Name = "Twelfth Grade"},
             };
-            grades.ForEach(g => context.GradeLevels.Add(g));
+            grades.ForEach(g => context.GradeLevels.AddOrUpdate(g));
             context.SaveChanges();
 
             var sectionTypes = new List<SectionType>
@@ -46,7 +46,7 @@ namespace Mapper21.DAL.Migrations
                 new SectionType {Id = 4, Name = "Spring Expedition"},
                 new SectionType {Id = 5, Name = "Strand"},
             };
-            sectionTypes.ForEach(s => context.SectionTypes.Add(s));
+            sectionTypes.ForEach(s => context.SectionTypes.AddOrUpdate(s));
             context.SaveChanges();
 
             var subSectionTypes = new List<SubSectionType>
@@ -55,7 +55,7 @@ namespace Mapper21.DAL.Migrations
                 new SubSectionType {Id = 1, Name = "Case Study"},
                 new SubSectionType {Id = 1, Name = "Unit"},
             };
-            subSectionTypes.ForEach(s => context.SubSectionTypes.Add(s));
+            subSectionTypes.ForEach(s => context.SubSectionTypes.AddOrUpdate(s));
             context.SaveChanges();
 
             var subjectArea = new List<SubjectArea>
@@ -73,7 +73,7 @@ namespace Mapper21.DAL.Migrations
                 new SubjectArea {Id = 11, Name = "Technology"},
                 new SubjectArea {Id = 12, Name = "Writing"},
             };
-            subjectArea.ForEach(s => context.SubjectAreas.Add(s));
+            subjectArea.ForEach(s => context.SubjectAreas.AddOrUpdate(s));
             context.SaveChanges();
 
             // Fall Expedition
@@ -91,7 +91,7 @@ namespace Mapper21.DAL.Migrations
                     "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. ",
                 SectionTypeId = 2
             };
-            context.Sections.Add(section);
+            context.Sections.AddOrUpdate(section);
             context.SaveChanges();
 
             // Spring Expedition
@@ -108,7 +108,7 @@ namespace Mapper21.DAL.Migrations
                     "",
                 SectionTypeId = 4
             };
-            context.Sections.Add(section2);
+            context.Sections.AddOrUpdate(section2);
             context.SaveChanges();
 
             // FSW
@@ -121,7 +121,7 @@ namespace Mapper21.DAL.Migrations
                 Description = "TBD",
                 SectionTypeId = 1
             };
-            context.Sections.Add(section3);
+            context.Sections.AddOrUpdate(section3);
             context.SaveChanges();
 
             // Mini-Mester
@@ -138,7 +138,7 @@ namespace Mapper21.DAL.Migrations
                     "",
                 SectionTypeId = 3
             };
-            context.Sections.Add(section4);
+            context.Sections.AddOrUpdate(section4);
             context.SaveChanges();
 
             // Subject
@@ -153,7 +153,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 1
             };
-            context.Sections.Add(section5);
+            context.Sections.AddOrUpdate(section5);
             context.SaveChanges();
 
             // Subject
@@ -168,7 +168,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 2
             };
-            context.Sections.Add(section6);
+            context.Sections.AddOrUpdate(section6);
             context.SaveChanges();
 
             // Subject
@@ -183,7 +183,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 3
             };
-            context.Sections.Add(section7);
+            context.Sections.AddOrUpdate(section7);
             context.SaveChanges();
 
             // Subject
@@ -198,7 +198,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 4
             };
-            context.Sections.Add(section8);
+            context.Sections.AddOrUpdate(section8);
             context.SaveChanges();
 
             // Subject
@@ -213,7 +213,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 5
             };
-            context.Sections.Add(section9);
+            context.Sections.AddOrUpdate(section9);
             context.SaveChanges();
 
             // Subject
@@ -228,7 +228,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 6
             };
-            context.Sections.Add(section10);
+            context.Sections.AddOrUpdate(section10);
             context.SaveChanges();
 
             // Subject
@@ -243,7 +243,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 7
             };
-            context.Sections.Add(section11);
+            context.Sections.AddOrUpdate(section11);
             context.SaveChanges();
 
             // Subject
@@ -258,7 +258,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 8
             };
-            context.Sections.Add(section12);
+            context.Sections.AddOrUpdate(section12);
             context.SaveChanges();
 
             // Subject
@@ -273,7 +273,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 9
             };
-            context.Sections.Add(section13);
+            context.Sections.AddOrUpdate(section13);
             context.SaveChanges();
 
             // Subject
@@ -288,7 +288,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 10
             };
-            context.Sections.Add(section14);
+            context.Sections.AddOrUpdate(section14);
             context.SaveChanges();
 
             // Subject
@@ -303,7 +303,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 11
             };
-            context.Sections.Add(section15);
+            context.Sections.AddOrUpdate(section15);
             context.SaveChanges();
 
             // Subject
@@ -318,7 +318,7 @@ namespace Mapper21.DAL.Migrations
                 SectionTypeId = 5,
                 SubjectAreaId = 12
             };
-            context.Sections.Add(section16);
+            context.Sections.AddOrUpdate(section16);
             context.SaveChanges();
 
             var caseStudy = new SubSection
@@ -330,7 +330,7 @@ namespace Mapper21.DAL.Migrations
                     "The ancient Greece case study encompasses several tasks associated with ancient civilizations.",
                 SubSectionTypeId = 2
             };
-            context.SubSections.Add(caseStudy);
+            context.SubSections.AddOrUpdate(caseStudy);
             context.SaveChanges();
 
             var experts = new List<Expert>
@@ -341,7 +341,7 @@ namespace Mapper21.DAL.Migrations
                 new Expert {Id = 1, SubSectionId = 1, Name = "Chris Appleson", Description = "Biologist"},
                 new Expert {Id = 1, SubSectionId = 1, Name = "Susan Johnson", Description = "Archaeologist"}
             };
-            experts.ForEach(g => context.Experts.Add(g));
+            experts.ForEach(g => context.Experts.AddOrUpdate(g));
             context.SaveChanges();
 
             var fieldworks = new List<Fieldwork>
@@ -349,7 +349,7 @@ namespace Mapper21.DAL.Migrations
                 new Fieldwork {Id = 1, SubSectionId = 1, Name = "Anarundel Park Visit ", Description = "Exploratory"},
                 new Fieldwork {Id = 1, SubSectionId = 1, Name = "Baltimore Aquarium", Description = "Scientific"},
             };
-            fieldworks.ForEach(g => context.Fieldworks.Add(g));
+            fieldworks.ForEach(g => context.Fieldworks.AddOrUpdate(g));
             context.SaveChanges();
 
             var serviceLearnings = new List<ServiceLearning>
@@ -383,7 +383,7 @@ namespace Mapper21.DAL.Migrations
                     Description = "Looked for ways to support struggling local non-profit organizations"
                 },
             };
-            serviceLearnings.ForEach(g => context.ServiceLearnings.Add(g));
+            serviceLearnings.ForEach(g => context.ServiceLearnings.AddOrUpdate(g));
             context.SaveChanges();
 
             var expeditionHabits = new List<Habit>
@@ -405,7 +405,7 @@ namespace Mapper21.DAL.Migrations
                     Description = "Begin With the End in Mind"
                 },
             };
-            expeditionHabits.ForEach(g => context.Habits.Add(g));
+            expeditionHabits.ForEach(g => context.Habits.AddOrUpdate(g));
             context.SaveChanges();
 
             var guidingQuestions = new List<GuidingQuestion>
@@ -415,7 +415,7 @@ namespace Mapper21.DAL.Migrations
                 new GuidingQuestion {Id = 1, SectionId = 1, Name = "What is health?"},
                 new GuidingQuestion {Id = 1, SectionId = 1, Name = "When are laws fair?"},
             };
-            guidingQuestions.ForEach(g => context.GuidingQuestions.Add(g));
+            guidingQuestions.ForEach(g => context.GuidingQuestions.AddOrUpdate(g));
             context.SaveChanges();
 
             var scienceBigIdeas = new List<ScienceBigIdea>
@@ -443,7 +443,7 @@ namespace Mapper21.DAL.Migrations
                         "Scale: Some things are so immense or minute that they are difficult to measure and understand."
                 },
             };
-            scienceBigIdeas.ForEach(g => context.ScienceBigIdeases.Add(g));
+            scienceBigIdeas.ForEach(g => context.ScienceBigIdeases.AddOrUpdate(g));
             context.SaveChanges();
 
             var socialStudiesBigIdeas = new List<SocialStudiesBigIdea>
@@ -470,8 +470,189 @@ namespace Mapper21.DAL.Migrations
                     Idea = "Geographic Relationships: Changes in regions have human implications."
                 },
             };
-            socialStudiesBigIdeas.ForEach(g => context.SocialStudiesBigIdeas.Add(g));
+            socialStudiesBigIdeas.ForEach(g => context.SocialStudiesBigIdeas.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var bigIdeasForScience = new List<BigIdeaForScience>
+            {
+                new BigIdeaForScience
+                {
+                    Name = "A system consists of related objects that form a whole.",
+                    Category = "Systems"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "A change in one part of a system can change the whole system.",
+                    Category = "Systems"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Systems can be used to predict patterns.",
+                    Category = "Systems"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "The physical characteristics of an organism directly impact its survival.",
+                    Category = "Structure and Function"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "When an environment changes, an organism must adapt, move, or die.",
+                    Category = "Structure and Function"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Organisms need energy to survive.",
+                    Category = "Structure and Function"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Organisms have predictable patterns of change in growth and development.",
+                    Category = "Constancy and Change"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "New technologies can cause change, and change can lead to new technologies.",
+                    Category = "Constancy and Change"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Forces of nature continuously change the Earth.",
+                    Category = "Constancy and Change"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Energy can change forms but cannot be created or destroyed.",
+                    Category = "Constancy and Change"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Organisms depend on one another and on their environment.",
+                    Category = "Interdependence"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Models can be used to represent observable science phenomenon.",
+                    Category = "Models"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Models can be used to test theories of science phenomenon that are not directly observable.",
+                    Category = "Models"
+                },
+                new BigIdeaForScience
+                {
+                    Name =
+                        "Models involving hypothesized relationships and process can be used to find, articulate, and test theories.",
+                    Category = "Models"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "Some things are so immense or minute that they are difficult to measure and understand.",
+                    Category = "Scale"
+                },
+                new BigIdeaForScience
+                {
+                    Name = "The ways in which things work may change with changes to scale.",
+                    Category = "Scale"
+                },
+            };
+            bigIdeasForScience.ForEach(g => context.BigIdeas.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var bigIdeasForSocialStudies = new List<BigIdeaForSocialStudies>
+            {
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Regions have diverse natural resources and geography.",
+                    Category = "Geographic Relationships"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Humans have an effect on the places they live.",
+                    Category = "Geographic Relationships"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Resources and the physical environment dictate what life is like in a particular region.",
+                    Category = "Geographic Relationships"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "People migrate for a variety of reasons.",
+                    Category = "Geographic Relationships"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name =
+                        "A community’s government affects its culture, and a community’s culture affects its government.",
+                    Category = "Evolution of Governance"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Governance is how a community makes decisions.  Those decisions affect the people.",
+                    Category = "Evolution of Governance"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Democracy depends on the participation of its citizens.",
+                    Category = "Evolution of Governance"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Society drives the development of technology, and technology drives societal change.",
+                    Category = "The Challenge of Progress"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Economic systems impact decisions about the use of resources.",
+                    Category = "The Challenge of Progress"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "People's culture is reflected in their celebrations and practices.",
+                    Category = "Universals of Culture"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "People form communities based on their culture, beliefs, traditions, and values.",
+                    Category = "Universals of Culture"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Communities are dynamic.",
+                    Category = "Universals of Culture"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Differences in the access to resources can lead to conflict.",
+                    Category = "Sources of Conflict"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Cooperation and conflict among people contribute to political, economic, and social change.",
+                    Category = "Sources of Conflict"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Cultural differences and/or misunderstandings can lead to conflict.",
+                    Category = "Sources of Conflict"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name =
+                        "Historical patterns can be used to make sense of present events and predict future outcomes.",
+                    Category = "Historical Inquiry"
+                },
+                new BigIdeaForSocialStudies()
+                {
+                    Name = "Examining multiple perspectives enriches our understanding of historical events.",
+                    Category = "Historical Inquiry"
+                },
+            };
+            bigIdeasForSocialStudies.ForEach(g => context.BigIdeas.AddOrUpdate(g));
             context.SaveChanges();
         }
     }
 }
+

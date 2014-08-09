@@ -30,5 +30,6 @@ namespace Mapper21.DAL.Provider
         public DbSet<Assessment> Assessments { get; set; }
         public DbSet<StaGrid> StaGrid { get; set; }
         public DbSet<CommonCoreStandard> CommonCoreStandards { get; set; }
+        public DbSet<BigIdea> BigIdeas{ get; set; }
     }
 }

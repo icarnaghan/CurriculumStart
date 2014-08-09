@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Assessment.cs" />
+    <Compile Include="Domain\LookUps\BigIdea.cs" />
+    <Compile Include="Domain\LookUps\BigIdeaForScience.cs" />
+    <Compile Include="Domain\LookUps\BigIdeaForSocialStudies.cs" />
     <Compile Include="Domain\LookUps\MathCommonCoreStandard.cs" />
     <Compile Include="Domain\LookUps\SectionType.cs" />
     <Compile Include="Domain\LookUps\SubjectArea.cs" />

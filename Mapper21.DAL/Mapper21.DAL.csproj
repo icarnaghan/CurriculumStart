@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201408092306465_InitialCreate.Designer.cs">
       <DependentUpon>201408092306465_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201408092323041_DomainChanges.cs" />
+    <Compile Include="Migrations\201408092323041_DomainChanges.Designer.cs">
+      <DependentUpon>201408092323041_DomainChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Provider\Mapper21Context.cs" />
     <Compile Include="Repositories\SubSectionRepository.cs" />
@@ -88,6 +92,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201408092306465_InitialCreate.resx">
       <DependentUpon>201408092306465_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408092323041_DomainChanges.resx">
+      <DependentUpon>201408092323041_DomainChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
