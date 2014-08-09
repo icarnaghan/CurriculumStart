@@ -81,16 +81,18 @@ namespace Mapper21.UI.Controllers
             return subjectAreaId;
         }
 
-        public int CurrentGradeLevel()
+        public string CurrentGradeLevel()
         {
-            var gradeLevelId = 0;
-            if (User.IsInRole("Kindergarten")) gradeLevelId = 1;
-            if (User.IsInRole("First Grade")) gradeLevelId = 2;
-            if (User.IsInRole("Second Grade")) gradeLevelId = 3;
-            if (User.IsInRole("Third Grade")) gradeLevelId = 4;
-            if (User.IsInRole("Fourth Grade")) gradeLevelId = 5;
-            if (User.IsInRole("Fifth Grade")) gradeLevelId = 6;
-            if (User.IsInRole("Sixth Grade")) gradeLevelId = 7;
+            var gradeLevelId = "";
+            if (User.IsInRole("Kindergarten")) gradeLevelId = "K";
+            if (User.IsInRole("First Grade")) gradeLevelId = "1";
+            if (User.IsInRole("Second Grade")) gradeLevelId = "2";
+            if (User.IsInRole("Third Grade")) gradeLevelId = "3";
+            if (User.IsInRole("Fourth Grade")) gradeLevelId = "4";
+            if (User.IsInRole("Fifth Grade")) gradeLevelId = "5";
+            if (User.IsInRole("Sixth Grade")) gradeLevelId = "6";
+            if (User.IsInRole("Sixth Grade")) gradeLevelId = "7";
+            if (User.IsInRole("Sixth Grade")) gradeLevelId = "8";
             return gradeLevelId;
         }
 

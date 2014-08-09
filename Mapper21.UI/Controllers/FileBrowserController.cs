@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Web.Mvc;
 using Kendo.Mvc.UI;
 
 namespace Mapper21.UI.Controllers
@@ -8,17 +9,32 @@ namespace Mapper21.UI.Controllers
         private const string contentFolderRoot = "~/Content/";
         private const string prettyName = "Images/";
         private static readonly string[] foldersToCopy = new[] { "~/Content/shared/" };
-
+        private int _id;
 
         /// <summary>
         /// Gets the base paths from which content will be served.
         /// </summary>
+        //public override string ContentPath
+        //{
+        //    get
+        //    {
+        //        return CreateUserFolder();
+        //    }
+        //}
+
         public override string ContentPath
         {
             get
             {
+                //return "~/Content/UserFiles/" + id;
                 return CreateUserFolder();
             }
+        }
+
+        public JsonResult MyRead(string path, int id)
+        {
+            _id = id;
+            return base.Read(contentFolderRoot);
         }
 
         /// <summary>

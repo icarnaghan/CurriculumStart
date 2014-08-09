@@ -13,22 +13,27 @@ namespace Mapper21.DAL.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Mapper21.DAL.Provider.Mapper21Context context)
         {
             var grades = new List<GradeLevel>
             {
-                new GradeLevel {Id = 1, Name = "Kindergarten"},
-                new GradeLevel {Id = 2, Name = "First Grade"},
-                new GradeLevel {Id = 3, Name = "Second Grade"},
-                new GradeLevel {Id = 4, Name = "Third Grade"},
-                new GradeLevel {Id = 5, Name = "Forth Grade"},
-                new GradeLevel {Id = 6, Name = "Fifth Grade"},
-                new GradeLevel {Id = 7, Name = "Sixth Grade"},
-                new GradeLevel {Id = 8, Name = "Seventh Grade"},
-                new GradeLevel {Id = 9, Name = "Eighth Grade"},
+                new GradeLevel {Id = "K", Name = "Kindergarten"},
+                new GradeLevel {Id = "1", Name = "First Grade"},
+                new GradeLevel {Id = "2", Name = "Second Grade"},
+                new GradeLevel {Id = "3", Name = "Third Grade"},
+                new GradeLevel {Id = "4", Name = "Forth Grade"},
+                new GradeLevel {Id = "5", Name = "Fifth Grade"},
+                new GradeLevel {Id = "6", Name = "Sixth Grade"},
+                new GradeLevel {Id = "7", Name = "Seventh Grade"},
+                new GradeLevel {Id = "8", Name = "Eighth Grade"},
+                new GradeLevel {Id = "9", Name = "Ninth Grade"},
+                new GradeLevel {Id = "10", Name = "Tenth Grade"},
+                new GradeLevel {Id = "11", Name = "Eleventh Grade"},
+                new GradeLevel {Id = "12", Name = "Twelfth Grade"},
             };
             grades.ForEach(g => context.GradeLevels.Add(g));
             context.SaveChanges();
@@ -76,7 +81,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 1,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Ancient Civilizations",
                 Description = "Summary Information",
                 KickOff = "Ancient Civilizations Summary information",
@@ -94,7 +99,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 2,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Spring Expedition",
                 Description = "TBD",
                 KickOff = "",
@@ -111,7 +116,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 3,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "First Six Weeks",
                 Description = "TBD",
                 SectionTypeId = 1
@@ -124,7 +129,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 4,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Mini-Semester - Fall",
                 Description = "TBD",
                 KickOff = "",
@@ -141,7 +146,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 5,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Art",
                 Description = "TBD",
                 KickOff = "",
@@ -156,7 +161,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 6,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Foreign Languages",
                 Description = "TBD",
                 KickOff = "",
@@ -171,7 +176,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 7,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Language Arts",
                 Description = "TBD",
                 KickOff = "",
@@ -186,7 +191,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 8,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Mathematics",
                 Description = "TBD",
                 KickOff = "",
@@ -201,7 +206,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 9,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Media",
                 Description = "TBD",
                 KickOff = "",
@@ -216,7 +221,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 10,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Music",
                 Description = "TBD",
                 KickOff = "",
@@ -231,7 +236,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 11,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Physical Education",
                 Description = "TBD",
                 KickOff = "",
@@ -246,7 +251,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 12,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Science",
                 Description = "TBD",
                 KickOff = "",
@@ -261,7 +266,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 13,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Social Skills",
                 Description = "TBD",
                 KickOff = "",
@@ -276,7 +281,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 14,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Social Studies",
                 Description = "TBD",
                 KickOff = "",
@@ -291,7 +296,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 15,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Technology",
                 Description = "TBD",
                 KickOff = "",
@@ -306,7 +311,7 @@ namespace Mapper21.DAL.Migrations
             {
                 Id = 16,
                 Year = 2013,
-                GradeLevelId = 3,
+                GradeLevelId = "2",
                 Name = "Second Grade Writing",
                 Description = "TBD",
                 KickOff = "",

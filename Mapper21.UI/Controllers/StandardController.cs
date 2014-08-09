@@ -29,7 +29,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new Standard
                 {
                     Id = standard.Id,
-                    Name = standard.Name,
+                    StateStandard = standard.Name,
                     StaCollectionId = standard.StaCollectionId
                 };
                 // Add the entity
@@ -52,7 +52,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new Standard
                 {
                     Id = standard.Id,
-                    Name = standard.Name,
+                    StateStandard = standard.Name,
                     StaCollectionId = standard.StaCollectionId
                 };
                 // Attach the entity
@@ -75,7 +75,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new Standard
                 {
                     Id = standard.Id,
-                    Name = standard.Name,
+                    StateStandard = standard.Name,
                     StaCollectionId = standard.StaCollectionId
                 };
                 // Attach the entity

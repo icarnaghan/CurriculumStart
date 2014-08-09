@@ -17,37 +17,37 @@ namespace Mapper21.DAL.Repositories
             return db.Sections.ToList();
         }
 
-        public Section GetSectionByGrade(int id, string year)
+        public Section GetSectionByGrade(string id, string year)
         {
             int currentYear = int.Parse(year);
             return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear);
         }
 
-        public Section GetFirstSixWeeksByGrade(int id, string year)
+        public Section GetFirstSixWeeksByGrade(string id, string year)
         {
             int currentYear = int.Parse(year);
             return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 1);
         }
 
-        public Section GetFallExpeditionByGrade(int id, string year)
+        public Section GetFallExpeditionByGrade(string id, string year)
         {
             int currentYear = int.Parse(year);
             return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 2);
         }
 
-        public Section GetMiniMesterByGrade(int id, string year)
+        public Section GetMiniMesterByGrade(string id, string year)
         {
             int currentYear = int.Parse(year);
             return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 3);
         }
 
-        public Section GetSpringExpeditionByGrade(int id, string year)
+        public Section GetSpringExpeditionByGrade(string id, string year)
         {
             int currentYear = int.Parse(year);
             return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 4);
         }
 
-        public Section GetSubjectAreaByGrade(int id, string year, int subjectAreaId)
+        public Section GetSubjectAreaByGrade(string id, string year, int subjectAreaId)
         {
             int currentYear = int.Parse(year);
             return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SubjectAreaId == subjectAreaId);

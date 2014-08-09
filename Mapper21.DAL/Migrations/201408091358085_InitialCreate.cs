@@ -60,12 +60,26 @@ namespace Mapper21.DAL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        Category = c.String(),
+                        SubCategory = c.String(),
+                        StateStandard = c.String(),
+                        GradeLevelId = c.String(maxLength: 128),
                         StaCollectionId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.GradeLevels", t => t.GradeLevelId)
                 .ForeignKey("dbo.StaCollections", t => t.StaCollectionId, cascadeDelete: true)
+                .Index(t => t.GradeLevelId)
                 .Index(t => t.StaCollectionId);
+            
+            CreateTable(
+                "dbo.GradeLevels",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.SubSections",
@@ -93,7 +107,7 @@ namespace Mapper21.DAL.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Year = c.Int(nullable: false),
-                        GradeLevelId = c.Int(nullable: false),
+                        GradeLevelId = c.String(maxLength: 128),
                         SectionTypeId = c.Int(nullable: false),
                         SubjectAreaId = c.Int(),
                         Name = c.String(),
@@ -107,7 +121,7 @@ namespace Mapper21.DAL.Migrations
                         SubmittedAt = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.GradeLevels", t => t.GradeLevelId, cascadeDelete: true)
+                .ForeignKey("dbo.GradeLevels", t => t.GradeLevelId)
                 .ForeignKey("dbo.SectionTypes", t => t.SectionTypeId, cascadeDelete: true)
                 .ForeignKey("dbo.SubjectAreas", t => t.SubjectAreaId)
                 .Index(t => t.GradeLevelId)
@@ -126,15 +140,6 @@ namespace Mapper21.DAL.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Sections", t => t.SectionId, cascadeDelete: true)
                 .Index(t => t.SectionId);
-            
-            CreateTable(
-                "dbo.GradeLevels",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.GuidingQuestions",
@@ -272,6 +277,7 @@ namespace Mapper21.DAL.Migrations
             DropForeignKey("dbo.Sections", "GradeLevelId", "dbo.GradeLevels");
             DropForeignKey("dbo.Habits", "SectionId", "dbo.Sections");
             DropForeignKey("dbo.Standards", "StaCollectionId", "dbo.StaCollections");
+            DropForeignKey("dbo.Standards", "GradeLevelId", "dbo.GradeLevels");
             DropForeignKey("dbo.ShortTermTargets", "StaCollectionId", "dbo.StaCollections");
             DropForeignKey("dbo.LongTermTargets", "StaCollectionId", "dbo.StaCollections");
             DropForeignKey("dbo.Assessments", "StaCollectionId", "dbo.StaCollections");
@@ -289,6 +295,7 @@ namespace Mapper21.DAL.Migrations
             DropIndex("dbo.Sections", new[] { "GradeLevelId" });
             DropIndex("dbo.Habits", new[] { "SectionId" });
             DropIndex("dbo.Standards", new[] { "StaCollectionId" });
+            DropIndex("dbo.Standards", new[] { "GradeLevelId" });
             DropIndex("dbo.ShortTermTargets", new[] { "StaCollectionId" });
             DropIndex("dbo.LongTermTargets", new[] { "StaCollectionId" });
             DropIndex("dbo.Assessments", new[] { "StaCollectionId" });
@@ -302,10 +309,10 @@ namespace Mapper21.DAL.Migrations
             DropTable("dbo.SectionTypes");
             DropTable("dbo.ScienceBigIdeas");
             DropTable("dbo.GuidingQuestions");
-            DropTable("dbo.GradeLevels");
             DropTable("dbo.Habits");
             DropTable("dbo.Sections");
             DropTable("dbo.SubSections");
+            DropTable("dbo.GradeLevels");
             DropTable("dbo.Standards");
             DropTable("dbo.ShortTermTargets");
             DropTable("dbo.LongTermTargets");
