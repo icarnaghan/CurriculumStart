@@ -29,5 +29,6 @@ namespace Mapper21.DAL.Provider
         public DbSet<ShortTermTarget> ShortTermTargets { get; set; }
         public DbSet<Assessment> Assessments { get; set; }
         public DbSet<StaGrid> StaGrid { get; set; }
+        public DbSet<CommonCoreStandard> CommonCoreStandards { get; set; }
     }
 }

@@ -58,9 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Assessment.cs" />
+    <Compile Include="Domain\LookUps\MathCommonCoreStandard.cs" />
     <Compile Include="Domain\LookUps\SectionType.cs" />
     <Compile Include="Domain\LookUps\SubjectArea.cs" />
     <Compile Include="Domain\LookUps\SubSectionType.cs" />
+    <Compile Include="Domain\LookUps\EnglishCommonCoreStandard.cs" />
+    <Compile Include="Domain\LookUps\CommonCoreStandard.cs" />
     <Compile Include="Domain\SubSection.cs" />
     <Compile Include="Domain\Section.cs" />
     <Compile Include="Domain\Habit.cs" />
