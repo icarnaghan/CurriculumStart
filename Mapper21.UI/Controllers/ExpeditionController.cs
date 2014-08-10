@@ -6,28 +6,27 @@ using Mapper21.DAL.Interfaces;
 
 namespace Mapper21.UI.Controllers
 {
-    public class MiniMesterController : BaseController
+    public class ExpeditionController : BaseController
     {
         private readonly ISectionRepository _sectionRepository;
-        private readonly ISubSectionRepository _subSectionRepository;
+        private readonly ISubSectionRepository _caseStudyRepository;
 
-        public MiniMesterController(ISectionRepository sectionRepository, ISubSectionRepository subSectionRepository)
+        public ExpeditionController(ISectionRepository sectionRepository, ISubSectionRepository caseStudyRepository)
         {
             _sectionRepository = sectionRepository;
-            _subSectionRepository = subSectionRepository;
+            _caseStudyRepository = caseStudyRepository;
         }
 
-        // GET: /MiniMester/CaseStudy/5
+        // GET: /Expedition/CaseStudy/5
         public ActionResult CaseStudy(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var section = _sectionRepository.Find(id);
             if (section == null) return HttpNotFound();
-            section.SubSections = _subSectionRepository.GetAllBySection(id).ToList();
             return View(section);
         }
 
-        // GET: /MiniMester/FinalProduct/5
+        // GET: /Expedition/FinalProduct/5
         public ActionResult FinalProduct(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -36,7 +35,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // POST: /MiniMester/FinalProduct/5
+        // POST: /Expedition/FinalProduct/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult FinalProduct(Section section)
@@ -51,7 +50,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /MiniMester/Overview/5
+        // GET: /Expedition/Overview/5
         public ActionResult Overview(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -62,7 +61,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // POST: /MiniMester/Overview/5
+        // POST: /Expedition/Overview/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Overview(Section section)
@@ -75,7 +74,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /MiniMester/GuidingQuestions/5
+        // GET: /Expedition/GuidingQuestions/5
         public ActionResult GuidingQuestions(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -84,7 +83,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /MiniMester/Habits/5
+        // GET: /Expedition/Habits/5
         public ActionResult Habits(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -93,7 +92,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /MiniMester/ScienceBigIdeas/5
+        // GET: /Expedition/ScienceBigIdeas/5
         public ActionResult ScienceBigIdeas(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -102,7 +101,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /MiniMester/SocialStudiesBigIdeas/5
+        // GET: /Expedition/SocialStudiesBigIdeas/5
         public ActionResult SocialStudiesBigIdeas(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

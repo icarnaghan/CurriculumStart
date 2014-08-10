@@ -32,7 +32,7 @@ namespace Mapper21.UI.Controllers
             var gradeLevelId = CurrentGradeLevel();
             sectionId = _sectionRepository.GetFallExpeditionByGrade(gradeLevelId, _currentYear).Id;
 
-            return RedirectToAction("Overview", "FallExpedition", new { id = sectionId });
+            return RedirectToAction("Overview", "Expedition", new { id = sectionId });
         }
 
         public ActionResult MiniMester()
@@ -41,7 +41,7 @@ namespace Mapper21.UI.Controllers
             var gradeLevelId = CurrentGradeLevel();
             sectionId = _sectionRepository.GetMiniMesterByGrade(gradeLevelId, _currentYear).Id;
 
-            return RedirectToAction("Overview", "MiniMester", new { id = sectionId });
+            return RedirectToAction("Overview", "Expedition", new { id = sectionId });
         }
 
         public ActionResult SpringExpedition()
@@ -50,7 +50,7 @@ namespace Mapper21.UI.Controllers
             var gradeLevelId = CurrentGradeLevel();
             sectionId = _sectionRepository.GetSpringExpeditionByGrade(gradeLevelId, _currentYear).Id;
 
-            return RedirectToAction("Overview", "SpringExpedition", new { id = sectionId });
+            return RedirectToAction("Overview", "Expedition", new { id = sectionId });
         }
 
         public ActionResult SubjectArea(string id)
