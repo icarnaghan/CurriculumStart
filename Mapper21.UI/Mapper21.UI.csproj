@@ -1732,6 +1732,9 @@
     <Content Include="Views\Strand\SocialStudiesBigIdeas.cshtml" />
     <Content Include="Views\Sta\Partials\_Standard.cshtml" />
     <Content Include="Views\Sta\EditorTemplates\StandardDropDownList.cshtml" />
+    <Content Include="Views\Shared\_ExpeditionNavigation.cshtml" />
+    <Content Include="Views\Shared\_StrandNavigation.cshtml" />
+    <Content Include="Views\Shared\_FirstSixWeeksNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

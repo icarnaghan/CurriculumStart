@@ -4,6 +4,7 @@
 @{
     ViewBag.Title = "Edit";
     ViewBag.CaseStudyId = Model.Id;
+    ViewBag.SectionId = Model.SectionId;
 }
 <div class="col-md-9">
     <div class="nav-tabs-custom">
@@ -23,6 +24,7 @@
                     @Html.ValidationSummary(true)
                     @Html.HiddenFor(model => model.Id)
                     @Html.HiddenFor(model => model.SectionId)
+                    @Html.HiddenFor(model => model.SubSectionTypeId)
 
                     <div class="form-group">
                         <div class="col-md-12">
@@ -107,5 +109,16 @@
     </div>
 </div>
 <div class="col-md-3">
-    @RenderPage("~/Views/Shared/_Attachments.cshtml")
+    @if (ViewBag.SubSectionType == 1)
+    {
+        @Html.Partial("~/Views/Shared/_FirstSixWeeksNavigation.cshtml")
+    }
+    else if (ViewBag.SubSectionType == 3)
+    {
+        @Html.Partial("~/Views/Shared/_StrandNavigation.cshtml")
+    }
+    else
+    {
+        @Html.Partial("~/Views/Shared/_ExpeditionNavigation.cshtml")
+    }
 </div>

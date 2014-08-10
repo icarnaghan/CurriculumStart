@@ -19,7 +19,7 @@ namespace Mapper21.DAL.Repositories
 
         public IEnumerable<SubSection> GetAllBySection(int? id)
         {
-            return db.SubSections.ToList();
+            return db.SubSections.Where(s => s.SectionId == id);
         }
 
         public IEnumerable<SubSectionStaGrid> GetStaGrids(int? id)

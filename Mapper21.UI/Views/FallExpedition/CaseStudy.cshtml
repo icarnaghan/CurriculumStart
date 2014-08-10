@@ -21,13 +21,13 @@
             </div>
             <div class="box-body">
                 <div class="row">
-                    @foreach (SubSection @item in Model.SubSections)
+                    @foreach (var @item in Model.SubSections)
                     {
                         <div class="col-md-4">
                             <!-- Primary box -->
                             <div class="box box-solid box-primary">
                                 <div class="box-header" data-toggle="tooltip" title="" data-original-title="Header tooltip">
-                                    <h3 class="box-title"><a style="color: #fff;" href="/CaseStudy/Edit/@item.Id">@item.Name</a></h3>
+                                    <h3 class="box-title"><a style="color: #fff;" href="/SubSection/Edit/@item.Id">@item.Name</a></h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-primary btn-xs" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-primary btn-xs" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -39,7 +39,7 @@
                                     </p>
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <a href="/CaseStudy/Edit/@item.Id">Edit @item.Name Case Study</a>
+                                    <a href="/SubSection/Edit/@item.Id">Edit @item.Name Case Study</a>
                                 </div><!-- /.box-footer-->
                             </div><!-- /.box -->
                         </div>
@@ -47,14 +47,14 @@
                 </div>
             </div>
             <div class="box-footer">
-                <a class="btn btn-primary" href="/CaseStudy/Create/@Model.Id">Add a New Case Study</a>
+                <a class="btn btn-primary" href="/SubSection/Create/?sectionId=@Model.Id">Add a New Case Study</a>
             </div>
         </div>
         
     </div>
 }
     <div class="col-md-3">
-        @RenderPage("~/Views/Shared/_Attachments.cshtml");
+        @Html.Partial("~/Views/Shared/_ExpeditionNavigation.cshtml")
     </div>
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")

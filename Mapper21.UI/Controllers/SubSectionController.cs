@@ -4,49 +4,57 @@ using System.Net;
 using System.Web.Mvc;
 using Mapper21.BE.Domain;
 using Mapper21.DAL.Interfaces;
+using Microsoft.Owin.Security.Provider;
 
 namespace Mapper21.UI.Controllers
 {
     public class SubSectionController : BaseController
     {
         private readonly ISubSectionRepository _subSectionRepository;
+        private readonly ISectionRepository _sectionRepository;
 
-        public SubSectionController(ISubSectionRepository subSectionRepository)
+        public SubSectionController(ISubSectionRepository subSectionRepository,
+                                    ISectionRepository sectionRepository)
         {
             _subSectionRepository = subSectionRepository;
+            _sectionRepository = sectionRepository;
         }
 
         // GET: /CS/Create
-        public ActionResult Create(int Id)
+        public ActionResult Create(int sectionId)
         {
-            ViewBag.SectionId = Id;
+            var subSectionType = GetSubSectionType(sectionId);
+
+            ViewBag.SubSectionType = subSectionType;
+            ViewBag.SectionId = sectionId;
             return View();
         }
 
-        // POST: /CaseStudy/Create
+        // POST: /SubSection/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(SubSection casestudy)
+        public ActionResult Create(SubSection subSection)
         {
             if (ModelState.IsValid)
             {
-                _subSectionRepository.InsertorUpdate(casestudy);
+                subSection.SubSectionTypeId = GetSubSectionType(subSection.SectionId);
+                _subSectionRepository.InsertorUpdate(subSection);
                 _subSectionRepository.Save();
-                return RedirectToAction("Edit", "CaseStudy", new {casestudy.Id});
+                return RedirectToAction("Edit", "SubSection", new { subSection.Id });
             }
 
-            return View(casestudy);
+            return View(subSection);
         }
 
 
-        // GET: /CaseStudy/Edit/5
+        // GET: /SubSection/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var casestudy = _subSectionRepository.Find(id);
-            
-            if (casestudy == null)
+            var subSection = _subSectionRepository.Find(id);
+
+            if (subSection == null)
             {
                 return HttpNotFound();
             }
@@ -55,21 +63,35 @@ namespace Mapper21.UI.Controllers
 
             ViewBag.staGrid = staGrid;
 
-            return View(casestudy);
+            return View(subSection);
         }
 
-        // POST: /CaseStudy/Edit/5
+        // POST: /SubSection/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(SubSection casestudy)
+        public ActionResult Edit(SubSection subSection)
         {
             if (ModelState.IsValid)
             {
-                _subSectionRepository.InsertorUpdate(casestudy);
+                _subSectionRepository.InsertorUpdate(subSection);
                 _subSectionRepository.Save();
-                return RedirectToAction("Edit", "Section", new {id = casestudy.SectionId});
+                return RedirectToAction("Edit", "SubSection", new { id = subSection.SectionId });
             }
-            return View(casestudy);
+            return View(subSection);
+        }
+
+        public int GetSubSectionType(int sectionId)
+        {
+            var section = _sectionRepository.Find(sectionId);
+            switch (section.SectionTypeId)
+            {
+                case 1: // First Six Weeks
+                    return 1; // Return Week Type
+                case 5: // Strand
+                    return 3; // Return Unit Type
+                default: 
+                    return 2; // Return Case Study Type
+            }
         }
 
         protected override void Dispose(bool disposing)
