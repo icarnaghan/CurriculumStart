@@ -29,8 +29,8 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionBigIdeasForScience
                 {
                     Id = scienceBigIdea.Id,
-                    Idea = scienceBigIdea.Idea,
-                    Rationale = scienceBigIdea.Rationale,
+                    Name = scienceBigIdea.Idea,
+                    Context = scienceBigIdea.Context,
                     SectionId = scienceBigIdea.SectionId
                 };
                 // Add the entity
@@ -53,8 +53,8 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionBigIdeasForScience
                 {
                     Id = scienceBigIdea.Id,
-                    Idea = scienceBigIdea.Idea,
-                    Rationale = scienceBigIdea.Rationale,
+                    Name = scienceBigIdea.Idea,
+                    Context = scienceBigIdea.Context,
                     SectionId = scienceBigIdea.SectionId
                 };
                 // Attach the entity
@@ -77,8 +77,8 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionBigIdeasForScience
                 {
                     Id = scienceBigIdea.Id,
-                    Idea = scienceBigIdea.Idea,
-                    Rationale = scienceBigIdea.Rationale,
+                    Name = scienceBigIdea.Idea,
+                    Context = scienceBigIdea.Context,
                     SectionId = scienceBigIdea.SectionId
                 };
                 // Attach the entity

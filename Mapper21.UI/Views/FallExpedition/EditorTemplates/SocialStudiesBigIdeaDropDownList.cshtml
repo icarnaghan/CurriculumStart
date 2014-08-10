@@ -1,12 +1,12 @@
 ﻿@model string
 
 @(Html.Kendo().DropDownList()
-      .Name("Idea") //Important, must match the column's name
+      .Name("Name") //Important, must match the column's name
       .Value(Model)
       .SelectedIndex(0)
       .BindTo(new[]
       {
-          "Select Science Big Idea",
+          "Select Science Big Name",
           "Geographic Relationships: Humans have an effect on the places they live.",
           "Geographic Relationships: Resources and the physical environment dictate what life is like in a particular region.",
           "Geographic Relationships: Changes in regions have human implications.",

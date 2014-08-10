@@ -28,10 +28,13 @@ namespace Mapper21.DAL.Provider
         public DbSet<SubSectionShortTermTarget> SubSectionShortTermTargets { get; set; }
         public DbSet<SubSectionAssessment> SubSectionAssessments { get; set; }
         public DbSet<SubSectionStaGrid> SubSectionStaGrid { get; set; }
+        public DbSet<SubSectionGuidingQuestion> SubSectionGuidingQuestions{ get; set; }
+        public DbSet<SubSectionHabit> SubSectionHabits { get; set; }
 
         public DbSet<SubjectArea> SubjectAreas { get; set; }
         public DbSet<GradeLevel> GradeLevels { get; set; }
         public DbSet<CommonCoreStandard> CommonCoreStandards { get; set; }
         public DbSet<BigIdea> BigIdeas{ get; set; }
+        public DbSet<Habit> Habits { get; set; }
     }
 }

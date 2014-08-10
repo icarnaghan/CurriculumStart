@@ -30,7 +30,7 @@ namespace Mapper21.UI.Controllers
                 {
                     Id = habit.Id,
                     Description = habit.Habit,
-                    Rationale = habit.Rationale,
+                    Context = habit.Context,
                     SectionId = habit.SectionId
                 };
                 // Add the entity
@@ -54,7 +54,7 @@ namespace Mapper21.UI.Controllers
                 {
                     Id = habit.Id,
                     Description = habit.Habit,
-                    Rationale = habit.Rationale,
+                    Context = habit.Context,
                     SectionId = habit.SectionId
                 };
                 // Attach the entity
@@ -78,7 +78,7 @@ namespace Mapper21.UI.Controllers
                 {
                     Id = habit.Id,
                     Description = habit.Habit,
-                    Rationale = habit.Rationale,
+                    Context = habit.Context,
                     SectionId = habit.SectionId
                 };
                 // Attach the entity

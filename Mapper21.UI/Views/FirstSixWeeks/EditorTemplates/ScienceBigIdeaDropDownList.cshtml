@@ -1,12 +1,12 @@
 ﻿@model string
 
 @(Html.Kendo().DropDownList()
-      .Name("Idea") //Important, must match the column's name
+      .Name("Name") //Important, must match the column's name
       .Value(Model)
       .SelectedIndex(0)
       .BindTo(new[]
       {
-          "Select Science Big Idea",
+          "Select Science Big Name",
           "Systems: A change in one part of a system can change the whole system.",
           "Systems: Systems can be used to predict patterns.",
           "Structure and Function: The physical characteristics of an organism directly impact its survival.",

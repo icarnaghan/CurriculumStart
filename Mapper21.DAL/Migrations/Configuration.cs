@@ -392,7 +392,7 @@ namespace Mapper21.DAL.Migrations
                 {
                     Id = 1,
                     SectionId = 1,
-                    Rationale =
+                    Context =
                         "Synergy is achieved when two or more people work together to create something better than either could alone.",
                     Description = "Synergize"
                 },
@@ -400,7 +400,7 @@ namespace Mapper21.DAL.Migrations
                 {
                     Id = 1,
                     SectionId = 1,
-                    Rationale =
+                    Context =
                         "Creates a personal mission statement which will act as a road map and direct and guide decision-making.",
                     Description = "Begin With the End in Mind"
                 },
@@ -424,22 +424,22 @@ namespace Mapper21.DAL.Migrations
                 {
                     Id = 1,
                     SectionId = 1,
-                    Rationale = "Promotes learning about environmental changes.",
-                    Idea = "Structure and Function: When an environment changes, an organism must adapt, move, or die."
+                    Context = "Promotes learning about environmental changes.",
+                    Name = "Structure and Function: When an environment changes, an organism must adapt, move, or die."
                 },
                 new SectionBigIdeasForScience
                 {
                     Id = 1,
                     SectionId = 1,
-                    Rationale = "Learn about organisms.",
-                    Idea = "Interdependence: Organisms depend on one another and on their environment."
+                    Context = "Learn about organisms.",
+                    Name = "Interdependence: Organisms depend on one another and on their environment."
                 },
                 new SectionBigIdeasForScience
                 {
                     Id = 1,
                     SectionId = 1,
-                    Rationale = "Understanding size and scale.",
-                    Idea =
+                    Context = "Understanding size and scale.",
+                    Name =
                         "Scale: Some things are so immense or minute that they are difficult to measure and understand."
                 },
             };
@@ -452,22 +452,22 @@ namespace Mapper21.DAL.Migrations
                 {
                     Id = 1,
                     SectionId = 1,
-                    Rationale = "Understand importance of migration.",
-                    Idea = "Geographic Relationships: People migrate for a variety of reasons."
+                    Context = "Understand importance of migration.",
+                    Name = "Geographic Relationships: People migrate for a variety of reasons."
                 },
                 new SectionBigIdeasForSocialStudies
                 {
                     Id = 1,
                     SectionId = 1,
-                    Rationale = "Promote understanding of different cultures.",
-                    Idea = "Universals of Culture: Cultures are dynamic."
+                    Context = "Promote understanding of different cultures.",
+                    Name = "Universals of Culture: Cultures are dynamic."
                 },
                 new SectionBigIdeasForSocialStudies
                 {
                     Id = 1,
                     SectionId = 1,
-                    Rationale = "Raise awareness of regional change",
-                    Idea = "Geographic Relationships: Changes in regions have human implications."
+                    Context = "Raise awareness of regional change",
+                    Name = "Geographic Relationships: Changes in regions have human implications."
                 },
             };
             socialStudiesBigIdeas.ForEach(g => context.SectionSocialStudiesBigIdeas.AddOrUpdate(g));
@@ -477,82 +477,98 @@ namespace Mapper21.DAL.Migrations
             {
                 new BigIdeaForScience
                 {
+                    Id = 1,
                     Name = "A system consists of related objects that form a whole.",
                     Category = "Systems"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 2,
                     Name = "A change in one part of a system can change the whole system.",
                     Category = "Systems"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 3,
                     Name = "Systems can be used to predict patterns.",
                     Category = "Systems"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 4,
                     Name = "The physical characteristics of an organism directly impact its survival.",
                     Category = "Structure and Function"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 5,
                     Name = "When an environment changes, an organism must adapt, move, or die.",
                     Category = "Structure and Function"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 6,
                     Name = "Organisms need energy to survive.",
                     Category = "Structure and Function"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 7,
                     Name = "Organisms have predictable patterns of change in growth and development.",
                     Category = "Constancy and Change"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 8,
                     Name = "New technologies can cause change, and change can lead to new technologies.",
                     Category = "Constancy and Change"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 9,
                     Name = "Forces of nature continuously change the Earth.",
                     Category = "Constancy and Change"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 10,
                     Name = "Energy can change forms but cannot be created or destroyed.",
                     Category = "Constancy and Change"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 11,
                     Name = "Organisms depend on one another and on their environment.",
                     Category = "Interdependence"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 12,
                     Name = "Models can be used to represent observable science phenomenon.",
                     Category = "Models"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 13,
                     Name = "Models can be used to test theories of science phenomenon that are not directly observable.",
                     Category = "Models"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 14,
                     Name =
                         "Models involving hypothesized relationships and process can be used to find, articulate, and test theories.",
                     Category = "Models"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 15,
                     Name = "Some things are so immense or minute that they are difficult to measure and understand.",
                     Category = "Scale"
                 },
                 new BigIdeaForScience
                 {
+                    Id = 16,
                     Name = "The ways in which things work may change with changes to scale.",
                     Category = "Scale"
                 },
@@ -564,93 +580,146 @@ namespace Mapper21.DAL.Migrations
             {
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 17,
                     Name = "Regions have diverse natural resources and geography.",
                     Category = "Geographic Relationships"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 18,
                     Name = "Humans have an effect on the places they live.",
                     Category = "Geographic Relationships"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 19,
                     Name = "Resources and the physical environment dictate what life is like in a particular region.",
                     Category = "Geographic Relationships"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 20,
                     Name = "People migrate for a variety of reasons.",
                     Category = "Geographic Relationships"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 21,
                     Name =
                         "A community’s government affects its culture, and a community’s culture affects its government.",
                     Category = "Evolution of Governance"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 22,
                     Name = "Governance is how a community makes decisions.  Those decisions affect the people.",
                     Category = "Evolution of Governance"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 23,
                     Name = "Democracy depends on the participation of its citizens.",
                     Category = "Evolution of Governance"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 24,
                     Name = "Society drives the development of technology, and technology drives societal change.",
                     Category = "The Challenge of Progress"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 25,
                     Name = "Economic systems impact decisions about the use of resources.",
                     Category = "The Challenge of Progress"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 26,
                     Name = "People's culture is reflected in their celebrations and practices.",
                     Category = "Universals of Culture"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 27,
                     Name = "People form communities based on their culture, beliefs, traditions, and values.",
                     Category = "Universals of Culture"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 28,
                     Name = "Communities are dynamic.",
                     Category = "Universals of Culture"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 29,
                     Name = "Differences in the access to resources can lead to conflict.",
                     Category = "Sources of Conflict"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 30,
                     Name = "Cooperation and conflict among people contribute to political, economic, and social change.",
                     Category = "Sources of Conflict"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 31,
                     Name = "Cultural differences and/or misunderstandings can lead to conflict.",
                     Category = "Sources of Conflict"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 32,
                     Name =
                         "Historical patterns can be used to make sense of present events and predict future outcomes.",
                     Category = "Historical Inquiry"
                 },
                 new BigIdeaForSocialStudies()
                 {
+                    Id = 33,
                     Name = "Examining multiple perspectives enriches our understanding of historical events.",
                     Category = "Historical Inquiry"
                 },
             };
             bigIdeasForSocialStudies.ForEach(g => context.BigIdeas.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var habit = new List<Habit>
+            {
+                new Habit()
+                {
+                    Id = 1,
+                    Name = "Quality",
+                },
+                new Habit()
+                {
+                    Id = 2,
+                    Name = "Responsibility",
+                },
+                new Habit()
+                {
+                    Id = 3,
+                    Name = "Collaboration",
+                },
+                new Habit()
+                {
+                    Id = 4,
+                    Name = "Inquiry",
+                },
+                new Habit()
+                {
+                    Id = 5,
+                    Name = "Perseverance",
+                },
+                new Habit()
+                {
+                    Id = 6,
+                    Name = "Service and Compassion",
+                },
+            };
+            habit.ForEach(g => context.Habits.AddOrUpdate(g));
             context.SaveChanges();
         }
     }

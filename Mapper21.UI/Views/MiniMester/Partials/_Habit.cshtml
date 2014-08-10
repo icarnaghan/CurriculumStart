@@ -6,7 +6,7 @@
       .Columns(columns =>
       {
           columns.Bound(h => h.Habit).EditorTemplateName("HabitDropdownList");
-          columns.Bound(h => h.Rationale);
+          columns.Bound(h => h.Context);
           columns.Command(commands =>
           {
               commands.Edit(); // The "edit" command will edit and update data items
