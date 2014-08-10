@@ -1,0 +1,5 @@
+﻿@(Html.Kendo().DropDownList()
+      .Name("Name") //Important, must match the column's name
+      .Value(Model)
+      .SelectedIndex(0)
+      .BindTo(ViewBag.CommonCoreList))

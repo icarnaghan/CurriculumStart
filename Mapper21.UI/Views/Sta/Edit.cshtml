@@ -4,6 +4,7 @@
 @{
     ViewBag.Title = "Edit";
     ViewBag.SubSectionStaId = Model.SubSectionSta.Id;
+    ViewBag.CommonCoreList = Model.CommonCoreStandards;
 }
 
 <h2>Edit</h2>
@@ -21,6 +22,9 @@
         @Html.HiddenFor(model => model.SubSectionSta.SubSectionId)
         @Html.HiddenFor(model => model.SubSectionLongTermTarget.Id)
         
+        <h2>Standards</h2>
+        TBD
+
         <div class="form-group">
             <div class="col-md-12">
                 @Html.LabelFor(model => model.SubSectionLongTermTarget.Name, new { @class = "control-label" })
@@ -28,6 +32,10 @@
                 @Html.ValidationMessageFor(model => model.SubSectionLongTermTarget.Name)
             </div>
         </div>    
+
+        @*<div id="standard">
+            @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new StandardViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+        </div>*@
 
         <div id="short-term-target">
             @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new ShortTermTargetViewModel { SubSectionStaId = Model.SubSectionSta.Id })

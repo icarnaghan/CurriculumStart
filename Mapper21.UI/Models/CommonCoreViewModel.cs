@@ -1,8 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace Mapper21.BE.Domain.LookUps
+namespace Mapper21.UI.Models
 {
-    public class CommonCoreStandard
+    public class CommonCoreViewModel
     {
         public int Id { get; set; }
         public string Subject { get; set; }
@@ -13,8 +16,5 @@ namespace Mapper21.BE.Domain.LookUps
         public string SubCategory { get; set; }
         public string Domain { get; set; }
         public string ClusterStatement { get; set; }
-
-        [ForeignKey("GradeLevelId")]
-        public GradeLevel GradeLevel { get; set; }
     }
 }

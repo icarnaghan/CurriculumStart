@@ -1,9 +1,11 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Mapper21.BE.Domain;
+using Mapper21.BE.Domain.LookUps;
 using Mapper21.DAL.Provider;
 using Mapper21.UI.Models;
 
@@ -50,6 +52,7 @@ namespace Mapper21.UI.Controllers
             
             SubSectionSta subSectionSta = db.SubSectionStas.Find(id);
             SubSectionLongTermTarget longTermTarget = db.SubSectionLongTermTargets.FirstOrDefault(l => l.SubSectionStaId == subSectionSta.Id);
+            ICollection<CommonCoreStandard> commonCore = db.CommonCoreStandards.ToList();
 
             if (subSectionSta == null)
             {
@@ -60,6 +63,7 @@ namespace Mapper21.UI.Controllers
             {
                 SubSectionSta = new SubSectionSta {Id = subSectionSta.Id, SubSectionId = subSectionSta.SubSectionId},
                 SubSectionLongTermTarget = longTermTarget,
+                CommonCoreStandards = commonCore
             };
 
             return View(subSectionStaViewModel);
