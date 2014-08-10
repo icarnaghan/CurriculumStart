@@ -53,11 +53,9 @@ namespace Mapper21.UI.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             var subSection = _subSectionRepository.Find(id);
+            var subSectionType = GetSubSectionType(subSection.SectionId);
 
-            if (subSection == null)
-            {
-                return HttpNotFound();
-            }
+            ViewBag.SubSectionType = subSectionType;
 
             List<SubSectionStaGrid> staGrid = _subSectionRepository.GetStaGrids(id).ToList();
 

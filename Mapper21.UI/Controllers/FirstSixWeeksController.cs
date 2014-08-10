@@ -23,7 +23,6 @@ namespace Mapper21.UI.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var section = _sectionRepository.Find(id);
             if (section == null) return HttpNotFound();
-            section.SubSections = _subSectionRepository.GetAllBySection(id).ToList();
             return View(section);
         }
 
