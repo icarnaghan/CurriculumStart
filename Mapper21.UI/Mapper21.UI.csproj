@@ -1562,15 +1562,10 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\SubSection\Edit.cshtml" />
-    <Content Include="Views\SubSection\Partials\_Fieldwork.cshtml" />
-    <Content Include="Views\SubSection\Partials\_Expert.cshtml" />
-    <Content Include="Views\SubSection\Partials\_ServiceLearning.cshtml" />
     <Content Include="Views\Browse\Index.cshtml" />
     <Content Include="Views\Browse\Results.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Views\Home\Unavailable.cshtml" />
-    <Content Include="Views\SubSection\Create.cshtml" />
     <Content Include="Views\Sta\Create.cshtml" />
     <Content Include="Views\Sta\Edit.cshtml" />
     <Content Include="Views\Sta\Partials\_LongTermTarget.cshtml" />

@@ -7,11 +7,7 @@ namespace Mapper21.BE.Domain
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string ContactAddress { get; set; }
-        public string ContactCity { get; set; }
-        public string ContactZip { get; set; }
-        public string ContactPhone { get; set; }
-        public string ContactEmail { get; set; }
+        public string Notes { get; set; }
         public int SubSectionId { get; set; }
 
         [ForeignKey("SubSectionId")]

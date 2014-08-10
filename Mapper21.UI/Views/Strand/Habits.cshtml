@@ -18,14 +18,14 @@
                 @Html.HiddenFor(model => model.Id)
 
                 <div id="guidingQuestions">
-                    @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel { SectionId = Model.Id })
+                    @Html.Partial("~/Views/Strand/Partials/_Habit.cshtml", new HabitViewModel { SectionId = Model.Id })
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="col-md-3">
-    @RenderPage("~/Views/Shared/_Attachments.cshtml")
+    @Html.Partial("~/Views/Shared/_StrandNavigation.cshtml")
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
