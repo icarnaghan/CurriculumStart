@@ -10,7 +10,7 @@
         @Html.Hidden("SectionId", (int)ViewBag.SectionId)
 
         <div class="form-horizontal">
-            <h4>Create</h4>
+            <h4>Create New Case Study</h4>
             <p>Click the create button to continue.</p>
             <hr />
             @Html.ValidationSummary(true)
@@ -40,18 +40,7 @@
     }
 </div>
 <div class="col-md-3">
-    @if (ViewBag.SubSectionType == 1)
-    {
-        @Html.Partial("~/Views/Shared/_FirstSixWeeksNavigation.cshtml")
-    }
-    else if (ViewBag.SubSectionType == 3)
-    {
-        @Html.Partial("~/Views/Shared/_StrandNavigation.cshtml")
-    }
-    else
-    {
-        @Html.Partial("~/Views/Shared/_ExpeditionNavigation.cshtml")
-    }    
+    @Html.Partial("~/Views/Shared/_ExpeditionNavigation.cshtml")
 </div>
 
 @section Scripts {

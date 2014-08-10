@@ -192,6 +192,9 @@
     <Compile Include="Controllers\FileBrowserController.cs" />
     <Compile Include="Controllers\ImageBrowserController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
+    <Compile Include="Controllers\CaseStudyController.cs" />
+    <Compile Include="Controllers\UnitController.cs" />
+    <Compile Include="Controllers\WeekController.cs" />
     <Compile Include="Controllers\SubSectionController.cs" />
     <Compile Include="Controllers\AssessmentController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
@@ -1705,6 +1708,21 @@
     <Content Include="Views\Shared\_ExpeditionNavigation.cshtml" />
     <Content Include="Views\Shared\_StrandNavigation.cshtml" />
     <Content Include="Views\Shared\_FirstSixWeeksNavigation.cshtml" />
+    <Content Include="Views\CaseStudy\Create.cshtml" />
+    <Content Include="Views\CaseStudy\Edit.cshtml" />
+    <Content Include="Views\CaseStudy\Partials\_Expert.cshtml" />
+    <Content Include="Views\CaseStudy\Partials\_Fieldwork.cshtml" />
+    <Content Include="Views\CaseStudy\Partials\_ServiceLearning.cshtml" />
+    <Content Include="Views\Week\Create.cshtml" />
+    <Content Include="Views\Week\Edit.cshtml" />
+    <Content Include="Views\Week\Partials\_Expert.cshtml" />
+    <Content Include="Views\Week\Partials\_Fieldwork.cshtml" />
+    <Content Include="Views\Week\Partials\_ServiceLearning.cshtml" />
+    <Content Include="Views\Unit\Create.cshtml" />
+    <Content Include="Views\Unit\Edit.cshtml" />
+    <Content Include="Views\Unit\Partials\_Expert.cshtml" />
+    <Content Include="Views\Unit\Partials\_Fieldwork.cshtml" />
+    <Content Include="Views\Unit\Partials\_ServiceLearning.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
