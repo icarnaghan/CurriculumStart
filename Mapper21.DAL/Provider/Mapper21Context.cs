@@ -11,24 +11,26 @@ namespace Mapper21.DAL.Provider
         }
 
         public DbSet<Section> Sections { get; set; }
-        public DbSet<SubSection> SubSections { get; set; }
         public DbSet<SectionType> SectionTypes { get; set; }
+        public DbSet<SectionHabit> SectionHabits { get; set; }
+        public DbSet<SectionGuidingQuestion> SectionGuidingQuestions { get; set; }
+        public DbSet<SectionBigIdeasForScience> SectionScienceBigIdeases { get; set; }
+        public DbSet<SectionBigIdeasForSocialStudies> SectionSocialStudiesBigIdeas { get; set; }
+
+        public DbSet<SubSection> SubSections { get; set; }
         public DbSet<SubSectionType> SubSectionTypes { get; set; }
+        public DbSet<SubSectionFieldwork> SubSectionFieldworks { get; set; }
+        public DbSet<SubSectionExpert> SubSectionExperts { get; set; }
+        public DbSet<SubSectionServiceLearning> SubSectionServiceLearnings { get; set; }
+        public DbSet<SubSectionSta> SubSectionStas { get; set; }
+        public DbSet<SubSectionStandard> SubSectionStandards { get; set; }
+        public DbSet<SubSectionLongTermTarget> SubSectionLongTermTargets { get; set; }
+        public DbSet<SubSectionShortTermTarget> SubSectionShortTermTargets { get; set; }
+        public DbSet<SubSectionAssessment> SubSectionAssessments { get; set; }
+        public DbSet<SubSectionStaGrid> SubSectionStaGrid { get; set; }
+
         public DbSet<SubjectArea> SubjectAreas { get; set; }
-        public DbSet<SectionGuidingQuestion> GuidingQuestions { get; set; }
         public DbSet<GradeLevel> GradeLevels { get; set; }
-        public DbSet<SectionHabit> Habits { get; set; }
-        public DbSet<SectionBigIdeasForScience> ScienceBigIdeases { get; set; }
-        public DbSet<SectionBigIdeasForSocialStudies> SocialStudiesBigIdeas { get; set; }
-        public DbSet<SubSectionFieldwork> Fieldworks { get; set; }
-        public DbSet<SubSectionExpert> Experts { get; set; }
-        public DbSet<SubSectionServiceLearning> ServiceLearnings { get; set; }
-        public DbSet<SubSectionSta> StaCollections { get; set; }
-        public DbSet<SubSectionStandard> Standards { get; set; }
-        public DbSet<SubSectionLongTermTarget> LongTermTargets { get; set; }
-        public DbSet<SubSectionShortTermTarget> ShortTermTargets { get; set; }
-        public DbSet<SubSectionAssessment> Assessments { get; set; }
-        public DbSet<SubSectionStaGrid> StaGrid { get; set; }
         public DbSet<CommonCoreStandard> CommonCoreStandards { get; set; }
         public DbSet<BigIdea> BigIdeas{ get; set; }
     }

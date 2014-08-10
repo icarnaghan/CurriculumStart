@@ -1,0 +1,31 @@
+﻿@model Mapper21.BE.Domain.SubSectionSta
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("SubSectionId", (int) ViewBag.SubSectionId)
+
+    <div class="form-horizontal">
+        <h4>Create STA</h4>
+        <p>Click the create button to continue.</p>
+        <hr />
+        @Html.ValidationSummary(true)
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<a href="~/Views/StaCollection/Create.cshtml">~/Views/StaCollection/Create.cshtml</a>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

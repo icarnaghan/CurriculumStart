@@ -6,9 +6,9 @@ namespace Mapper21.BE.Domain
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int StaCollectionId { get; set; }
-        
-        [ForeignKey("StaCollectionId")]
-        public SubSectionSta StaCollection { get; set; }
+        public int SubSectionStaId { get; set; }
+
+        [ForeignKey("SubSectionStaId")]
+        public SubSectionSta SubSectionSta { get; set; }
     }
 }

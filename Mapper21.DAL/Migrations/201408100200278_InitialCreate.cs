@@ -8,20 +8,20 @@ namespace Mapper21.DAL.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Assessments",
+                "dbo.SubSectionAssessments",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
-                        StaCollectionId = c.Int(nullable: false),
+                        SubSectionStaId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.StaCollections", t => t.StaCollectionId, cascadeDelete: true)
-                .Index(t => t.StaCollectionId);
+                .ForeignKey("dbo.SubSectionStas", t => t.SubSectionStaId, cascadeDelete: true)
+                .Index(t => t.SubSectionStaId);
             
             CreateTable(
-                "dbo.StaCollections",
+                "dbo.SubSectionStas",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -32,40 +32,40 @@ namespace Mapper21.DAL.Migrations
                 .Index(t => t.SubSectionId);
             
             CreateTable(
-                "dbo.LongTermTargets",
+                "dbo.SubSectionLongTermTargets",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        StaCollectionId = c.Int(nullable: false),
+                        SubSectionStaId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.StaCollections", t => t.StaCollectionId, cascadeDelete: true)
-                .Index(t => t.StaCollectionId);
+                .ForeignKey("dbo.SubSectionStas", t => t.SubSectionStaId, cascadeDelete: true)
+                .Index(t => t.SubSectionStaId);
             
             CreateTable(
-                "dbo.ShortTermTargets",
+                "dbo.SubSectionShortTermTargets",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        StaCollectionId = c.Int(nullable: false),
+                        SubSectionStaId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.StaCollections", t => t.StaCollectionId, cascadeDelete: true)
-                .Index(t => t.StaCollectionId);
+                .ForeignKey("dbo.SubSectionStas", t => t.SubSectionStaId, cascadeDelete: true)
+                .Index(t => t.SubSectionStaId);
             
             CreateTable(
-                "dbo.Standards",
+                "dbo.SubSectionStandards",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        StaCollectionId = c.Int(nullable: false),
+                        SubSectionStaId = c.Int(nullable: false),
+                        CommonCoreStandardId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.StaCollections", t => t.StaCollectionId, cascadeDelete: true)
-                .Index(t => t.StaCollectionId);
+                .ForeignKey("dbo.SubSectionStas", t => t.SubSectionStaId, cascadeDelete: true)
+                .Index(t => t.SubSectionStaId);
             
             CreateTable(
                 "dbo.SubSections",
@@ -115,7 +115,7 @@ namespace Mapper21.DAL.Migrations
                 .Index(t => t.SubjectAreaId);
             
             CreateTable(
-                "dbo.Habits",
+                "dbo.SectionHabits",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -137,7 +137,7 @@ namespace Mapper21.DAL.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.GuidingQuestions",
+                "dbo.SectionGuidingQuestions",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -149,7 +149,7 @@ namespace Mapper21.DAL.Migrations
                 .Index(t => t.SectionId);
             
             CreateTable(
-                "dbo.ScienceBigIdeas",
+                "dbo.SectionBigIdeasForSciences",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -171,7 +171,7 @@ namespace Mapper21.DAL.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.SocialStudiesBigIdeas",
+                "dbo.SectionBigIdeasForSocialStudies",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -202,6 +202,17 @@ namespace Mapper21.DAL.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.BigIdeas",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Category = c.String(),
+                        Name = c.String(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.CommonCoreStandards",
                 c => new
                     {
@@ -221,7 +232,7 @@ namespace Mapper21.DAL.Migrations
                 .Index(t => t.GradeLevelId);
             
             CreateTable(
-                "dbo.Experts",
+                "dbo.SubSectionExperts",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -234,7 +245,7 @@ namespace Mapper21.DAL.Migrations
                 .Index(t => t.SubSectionId);
             
             CreateTable(
-                "dbo.Fieldworks",
+                "dbo.SubSectionFieldworks",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -247,7 +258,7 @@ namespace Mapper21.DAL.Migrations
                 .Index(t => t.SubSectionId);
             
             CreateTable(
-                "dbo.ServiceLearnings",
+                "dbo.SubSectionServiceLearnings",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -260,7 +271,7 @@ namespace Mapper21.DAL.Migrations
                 .Index(t => t.SubSectionId);
             
             CreateTable(
-                "dbo.StaGrids",
+                "dbo.SubSectionStaGrids",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -277,62 +288,63 @@ namespace Mapper21.DAL.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.ServiceLearnings", "SubSectionId", "dbo.SubSections");
-            DropForeignKey("dbo.Fieldworks", "SubSectionId", "dbo.SubSections");
-            DropForeignKey("dbo.Experts", "SubSectionId", "dbo.SubSections");
+            DropForeignKey("dbo.SubSectionServiceLearnings", "SubSectionId", "dbo.SubSections");
+            DropForeignKey("dbo.SubSectionFieldworks", "SubSectionId", "dbo.SubSections");
+            DropForeignKey("dbo.SubSectionExperts", "SubSectionId", "dbo.SubSections");
             DropForeignKey("dbo.CommonCoreStandards", "GradeLevelId", "dbo.GradeLevels");
-            DropForeignKey("dbo.StaCollections", "SubSectionId", "dbo.SubSections");
+            DropForeignKey("dbo.SubSectionStas", "SubSectionId", "dbo.SubSections");
             DropForeignKey("dbo.SubSections", "SubSectionTypeId", "dbo.SubSectionTypes");
             DropForeignKey("dbo.SubSections", "SectionId", "dbo.Sections");
             DropForeignKey("dbo.Sections", "SubjectAreaId", "dbo.SubjectAreas");
-            DropForeignKey("dbo.SocialStudiesBigIdeas", "SectionId", "dbo.Sections");
+            DropForeignKey("dbo.SectionBigIdeasForSocialStudies", "SectionId", "dbo.Sections");
             DropForeignKey("dbo.Sections", "SectionTypeId", "dbo.SectionTypes");
-            DropForeignKey("dbo.ScienceBigIdeas", "SectionId", "dbo.Sections");
-            DropForeignKey("dbo.GuidingQuestions", "SectionId", "dbo.Sections");
+            DropForeignKey("dbo.SectionBigIdeasForSciences", "SectionId", "dbo.Sections");
+            DropForeignKey("dbo.SectionGuidingQuestions", "SectionId", "dbo.Sections");
             DropForeignKey("dbo.Sections", "GradeLevelId", "dbo.GradeLevels");
-            DropForeignKey("dbo.Habits", "SectionId", "dbo.Sections");
-            DropForeignKey("dbo.Standards", "StaCollectionId", "dbo.StaCollections");
-            DropForeignKey("dbo.ShortTermTargets", "StaCollectionId", "dbo.StaCollections");
-            DropForeignKey("dbo.LongTermTargets", "StaCollectionId", "dbo.StaCollections");
-            DropForeignKey("dbo.Assessments", "StaCollectionId", "dbo.StaCollections");
-            DropIndex("dbo.ServiceLearnings", new[] { "SubSectionId" });
-            DropIndex("dbo.Fieldworks", new[] { "SubSectionId" });
-            DropIndex("dbo.Experts", new[] { "SubSectionId" });
+            DropForeignKey("dbo.SectionHabits", "SectionId", "dbo.Sections");
+            DropForeignKey("dbo.SubSectionStandards", "SubSectionStaId", "dbo.SubSectionStas");
+            DropForeignKey("dbo.SubSectionShortTermTargets", "SubSectionStaId", "dbo.SubSectionStas");
+            DropForeignKey("dbo.SubSectionLongTermTargets", "SubSectionStaId", "dbo.SubSectionStas");
+            DropForeignKey("dbo.SubSectionAssessments", "SubSectionStaId", "dbo.SubSectionStas");
+            DropIndex("dbo.SubSectionServiceLearnings", new[] { "SubSectionId" });
+            DropIndex("dbo.SubSectionFieldworks", new[] { "SubSectionId" });
+            DropIndex("dbo.SubSectionExperts", new[] { "SubSectionId" });
             DropIndex("dbo.CommonCoreStandards", new[] { "GradeLevelId" });
-            DropIndex("dbo.StaCollections", new[] { "SubSectionId" });
+            DropIndex("dbo.SubSectionStas", new[] { "SubSectionId" });
             DropIndex("dbo.SubSections", new[] { "SubSectionTypeId" });
             DropIndex("dbo.SubSections", new[] { "SectionId" });
             DropIndex("dbo.Sections", new[] { "SubjectAreaId" });
-            DropIndex("dbo.SocialStudiesBigIdeas", new[] { "SectionId" });
+            DropIndex("dbo.SectionBigIdeasForSocialStudies", new[] { "SectionId" });
             DropIndex("dbo.Sections", new[] { "SectionTypeId" });
-            DropIndex("dbo.ScienceBigIdeas", new[] { "SectionId" });
-            DropIndex("dbo.GuidingQuestions", new[] { "SectionId" });
+            DropIndex("dbo.SectionBigIdeasForSciences", new[] { "SectionId" });
+            DropIndex("dbo.SectionGuidingQuestions", new[] { "SectionId" });
             DropIndex("dbo.Sections", new[] { "GradeLevelId" });
-            DropIndex("dbo.Habits", new[] { "SectionId" });
-            DropIndex("dbo.Standards", new[] { "StaCollectionId" });
-            DropIndex("dbo.ShortTermTargets", new[] { "StaCollectionId" });
-            DropIndex("dbo.LongTermTargets", new[] { "StaCollectionId" });
-            DropIndex("dbo.Assessments", new[] { "StaCollectionId" });
-            DropTable("dbo.StaGrids");
-            DropTable("dbo.ServiceLearnings");
-            DropTable("dbo.Fieldworks");
-            DropTable("dbo.Experts");
+            DropIndex("dbo.SectionHabits", new[] { "SectionId" });
+            DropIndex("dbo.SubSectionStandards", new[] { "SubSectionStaId" });
+            DropIndex("dbo.SubSectionShortTermTargets", new[] { "SubSectionStaId" });
+            DropIndex("dbo.SubSectionLongTermTargets", new[] { "SubSectionStaId" });
+            DropIndex("dbo.SubSectionAssessments", new[] { "SubSectionStaId" });
+            DropTable("dbo.SubSectionStaGrids");
+            DropTable("dbo.SubSectionServiceLearnings");
+            DropTable("dbo.SubSectionFieldworks");
+            DropTable("dbo.SubSectionExperts");
             DropTable("dbo.CommonCoreStandards");
+            DropTable("dbo.BigIdeas");
             DropTable("dbo.SubSectionTypes");
             DropTable("dbo.SubjectAreas");
-            DropTable("dbo.SocialStudiesBigIdeas");
+            DropTable("dbo.SectionBigIdeasForSocialStudies");
             DropTable("dbo.SectionTypes");
-            DropTable("dbo.ScienceBigIdeas");
-            DropTable("dbo.GuidingQuestions");
+            DropTable("dbo.SectionBigIdeasForSciences");
+            DropTable("dbo.SectionGuidingQuestions");
             DropTable("dbo.GradeLevels");
-            DropTable("dbo.Habits");
+            DropTable("dbo.SectionHabits");
             DropTable("dbo.Sections");
             DropTable("dbo.SubSections");
-            DropTable("dbo.Standards");
-            DropTable("dbo.ShortTermTargets");
-            DropTable("dbo.LongTermTargets");
-            DropTable("dbo.StaCollections");
-            DropTable("dbo.Assessments");
+            DropTable("dbo.SubSectionStandards");
+            DropTable("dbo.SubSectionShortTermTargets");
+            DropTable("dbo.SubSectionLongTermTargets");
+            DropTable("dbo.SubSectionStas");
+            DropTable("dbo.SubSectionAssessments");
         }
     }
 }

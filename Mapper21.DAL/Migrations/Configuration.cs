@@ -341,7 +341,7 @@ namespace Mapper21.DAL.Migrations
                 new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Chris Appleson", Description = "Biologist"},
                 new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Susan Johnson", Description = "Archaeologist"}
             };
-            experts.ForEach(g => context.Experts.AddOrUpdate(g));
+            experts.ForEach(g => context.SubSectionExperts.AddOrUpdate(g));
             context.SaveChanges();
 
             var fieldworks = new List<SubSectionFieldwork>
@@ -349,7 +349,7 @@ namespace Mapper21.DAL.Migrations
                 new SubSectionFieldwork {Id = 1, SubSectionId = 1, Name = "Anarundel Park Visit ", Description = "Exploratory"},
                 new SubSectionFieldwork {Id = 1, SubSectionId = 1, Name = "Baltimore Aquarium", Description = "Scientific"},
             };
-            fieldworks.ForEach(g => context.Fieldworks.AddOrUpdate(g));
+            fieldworks.ForEach(g => context.SubSectionFieldworks.AddOrUpdate(g));
             context.SaveChanges();
 
             var serviceLearnings = new List<SubSectionServiceLearning>
@@ -383,7 +383,7 @@ namespace Mapper21.DAL.Migrations
                     Description = "Looked for ways to support struggling local non-profit organizations"
                 },
             };
-            serviceLearnings.ForEach(g => context.ServiceLearnings.AddOrUpdate(g));
+            serviceLearnings.ForEach(g => context.SubSectionServiceLearnings.AddOrUpdate(g));
             context.SaveChanges();
 
             var expeditionHabits = new List<SectionHabit>
@@ -405,7 +405,7 @@ namespace Mapper21.DAL.Migrations
                     Description = "Begin With the End in Mind"
                 },
             };
-            expeditionHabits.ForEach(g => context.Habits.AddOrUpdate(g));
+            expeditionHabits.ForEach(g => context.SectionHabits.AddOrUpdate(g));
             context.SaveChanges();
 
             var guidingQuestions = new List<SectionGuidingQuestion>
@@ -415,7 +415,7 @@ namespace Mapper21.DAL.Migrations
                 new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "What is health?"},
                 new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "When are laws fair?"},
             };
-            guidingQuestions.ForEach(g => context.GuidingQuestions.AddOrUpdate(g));
+            guidingQuestions.ForEach(g => context.SectionGuidingQuestions.AddOrUpdate(g));
             context.SaveChanges();
 
             var scienceBigIdeas = new List<SectionBigIdeasForScience>
@@ -443,7 +443,7 @@ namespace Mapper21.DAL.Migrations
                         "Scale: Some things are so immense or minute that they are difficult to measure and understand."
                 },
             };
-            scienceBigIdeas.ForEach(g => context.ScienceBigIdeases.AddOrUpdate(g));
+            scienceBigIdeas.ForEach(g => context.SectionScienceBigIdeases.AddOrUpdate(g));
             context.SaveChanges();
 
             var socialStudiesBigIdeas = new List<SectionBigIdeasForSocialStudies>
@@ -470,7 +470,7 @@ namespace Mapper21.DAL.Migrations
                     Idea = "Geographic Relationships: Changes in regions have human implications."
                 },
             };
-            socialStudiesBigIdeas.ForEach(g => context.SocialStudiesBigIdeas.AddOrUpdate(g));
+            socialStudiesBigIdeas.ForEach(g => context.SectionSocialStudiesBigIdeas.AddOrUpdate(g));
             context.SaveChanges();
 
             var bigIdeasForScience = new List<BigIdeaForScience>

@@ -86,21 +86,21 @@
                         }
                     </tbody>
                 </table>
-                <a href="/StaCollection/Create/@Model.Id">Add new set of Standards, Targets and Assessments</a>
+                <a href="/Sta/Create/@Model.Id">Add new set of Standards, Targets and Assessments</a>
             </div><!-- /.tab-pane -->
             <div class="tab-pane" id="tab_3">
                 <div id="fieldwork">
-                    @Html.Partial("~/Views/CaseStudy/Partials/_Fieldwork.cshtml", new FieldworkViewModel { CaseStudyId = Model.Id })
+                    @Html.Partial("~/Views/SubSection/Partials/_Fieldwork.cshtml", new FieldworkViewModel { CaseStudyId = Model.Id })
                 </div>
             </div><!-- /.tab-pane -->
             <div class="tab-pane" id="tab_4">
                 <div id="expert">
-                    @Html.Partial("~/Views/CaseStudy/Partials/_Expert.cshtml", new ExpertViewModel { CaseStudyId = Model.Id })
+                    @Html.Partial("~/Views/SubSection/Partials/_Expert.cshtml", new ExpertViewModel { CaseStudyId = Model.Id })
                 </div>
             </div><!-- /.tab-pane -->
             <div class="tab-pane" id="tab_5">
                 <div id="serviceLearning">
-                    @Html.Partial("~/Views/CaseStudy/Partials/_ServiceLearning.cshtml", new ExpertViewModel { CaseStudyId = Model.Id })
+                    @Html.Partial("~/Views/SubSection/Partials/_ServiceLearning.cshtml", new ExpertViewModel { CaseStudyId = Model.Id })
                 </div>
             </div><!-- /.tab-pane -->
         </div><!-- /.tab-content -->

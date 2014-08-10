@@ -1,0 +1,50 @@
+﻿@using Mapper21.UI.Models
+@model SubSectionStaViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    ViewBag.SubSectionStaId = Model.SubSectionSta.Id;
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>StaCollection</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.SubSectionSta.Id)
+        @Html.HiddenFor(model => model.SubSectionSta.SubSectionId)
+        @Html.HiddenFor(model => model.SubSectionLongTermTarget.Id)
+        
+        <div class="form-group">
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.SubSectionLongTermTarget.Name, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.SubSectionLongTermTarget.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SubSectionLongTermTarget.Name)
+            </div>
+        </div>    
+
+        <div id="short-term-target">
+            @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new ShortTermTargetViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+        </div>
+
+        <div id="assessment">
+            @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new AssessmentViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
