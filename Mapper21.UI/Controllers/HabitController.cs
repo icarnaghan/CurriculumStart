@@ -13,7 +13,7 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult SectionHabit_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult Habit_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SectionHabit> habits = db.SectionHabits.Where(h => h.SectionId == sectionId);
             return Json(habits.ToDataSourceResult(request));
@@ -29,7 +29,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionHabit
                 {
                     Id = habit.Id,
-                    Description = habit.Habit,
+                    HabitId = habit.HabitId,
                     Context = habit.Context,
                     SectionId = habit.SectionId
                 };
@@ -53,7 +53,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionHabit
                 {
                     Id = habit.Id,
-                    Description = habit.Habit,
+                    HabitId = habit.HabitId,
                     Context = habit.Context,
                     SectionId = habit.SectionId
                 };
@@ -77,7 +77,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionHabit
                 {
                     Id = habit.Id,
-                    Description = habit.Habit,
+                    HabitId = habit.HabitId,
                     Context = habit.Context,
                     SectionId = habit.SectionId
                 };

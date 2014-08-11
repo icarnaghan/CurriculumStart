@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Mapper21.BE.Domain;
+using Mapper21.BE.Domain.LookUps;
 using Mapper21.DAL.Interfaces;
 using Mapper21.DAL.Provider;
 
@@ -15,6 +16,11 @@ namespace Mapper21.DAL.Repositories
         public IEnumerable<Section> GetAll()
         {
             return db.Sections.ToList();
+        }
+
+        public IEnumerable<Habit> GetHabits()
+        {
+            return db.Habits.ToList();
         }
 
         public Section GetSectionByGrade(string id, string year)

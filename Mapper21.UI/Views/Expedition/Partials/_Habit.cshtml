@@ -1,11 +1,13 @@
-﻿@using Mapper21.UI.Models
+﻿@using System.Collections
+@using Mapper21.UI.Models
 
 @(Html.Kendo().Grid<HabitViewModel>
       ()
       .Name("grid2")
       .Columns(columns =>
       {
-          columns.Bound(h => h.Habit).EditorTemplateName("HabitDropdownList");
+          //columns.Bound(h => h.Habit).EditorTemplateName("HabitDropdownList");
+          columns.ForeignKey(h => h.HabitId, (IEnumerable)ViewData["HabitList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("HabitDropDownList");
           columns.Bound(h => h.Context);
           columns.Command(commands =>
           {

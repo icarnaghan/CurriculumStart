@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using Mapper21.BE.Domain;
+using Mapper21.BE.Domain.LookUps;
 
 namespace Mapper21.DAL.Interfaces
 {
     public interface ISectionRepository : IDisposable
     {
         IEnumerable<Section> GetAll();
+        IEnumerable<Habit> GetHabits();
         Section GetSectionByGrade(string id, string year);
         Section GetFirstSixWeeksByGrade(string id, string year);
         Section GetFallExpeditionByGrade(string id, string year);

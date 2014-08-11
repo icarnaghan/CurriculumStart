@@ -386,28 +386,6 @@ namespace Mapper21.DAL.Migrations
             serviceLearnings.ForEach(g => context.SubSectionServiceLearnings.AddOrUpdate(g));
             context.SaveChanges();
 
-            var expeditionHabits = new List<SectionHabit>
-            {
-                new SectionHabit
-                {
-                    Id = 1,
-                    SectionId = 1,
-                    Context =
-                        "Synergy is achieved when two or more people work together to create something better than either could alone.",
-                    Description = "Synergize"
-                },
-                new SectionHabit
-                {
-                    Id = 1,
-                    SectionId = 1,
-                    Context =
-                        "Creates a personal mission statement which will act as a road map and direct and guide decision-making.",
-                    Description = "Begin With the End in Mind"
-                },
-            };
-            expeditionHabits.ForEach(g => context.SectionHabits.AddOrUpdate(g));
-            context.SaveChanges();
-
             var guidingQuestions = new List<SectionGuidingQuestion>
             {
                 new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "Who will survive? or, What is waste?"},
@@ -720,6 +698,28 @@ namespace Mapper21.DAL.Migrations
                 },
             };
             habit.ForEach(g => context.Habits.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var expeditionHabits = new List<SectionHabit>
+            {
+                new SectionHabit
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context =
+                        "Synergy is achieved when two or more people work together to create something better than either could alone.",
+                    HabitId = 1
+                },
+                new SectionHabit
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context =
+                        "Creates a personal mission statement which will act as a road map and direct and guide decision-making.",
+                    HabitId = 2
+                },
+            };
+            expeditionHabits.ForEach(g => context.SectionHabits.AddOrUpdate(g));
             context.SaveChanges();
         }
     }

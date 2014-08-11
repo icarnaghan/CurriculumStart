@@ -224,6 +224,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommonCoreViewModel.cs" />
+    <Compile Include="Models\HabitListViewModel.cs" />
     <Compile Include="Models\NavigationViewModel.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\AssessmentViewModel.cs" />

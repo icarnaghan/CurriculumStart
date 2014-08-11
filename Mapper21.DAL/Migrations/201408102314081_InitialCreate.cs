@@ -98,12 +98,14 @@ namespace Mapper21.DAL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        HabitId = c.Int(nullable: false),
                         Context = c.String(),
-                        Description = c.String(),
                         SectionId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Habits", t => t.HabitId, cascadeDelete: true)
                 .ForeignKey("dbo.Sections", t => t.SectionId, cascadeDelete: true)
+                .Index(t => t.HabitId)
                 .Index(t => t.SectionId);
             
             CreateTable(
@@ -246,11 +248,7 @@ namespace Mapper21.DAL.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
-                        ContactAddress = c.String(),
-                        ContactCity = c.String(),
-                        ContactZip = c.String(),
-                        ContactPhone = c.String(),
-                        ContactEmail = c.String(),
+                        Notes = c.String(),
                         SubSectionId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -264,11 +262,7 @@ namespace Mapper21.DAL.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
-                        ContactAddress = c.String(),
-                        ContactCity = c.String(),
-                        ContactZip = c.String(),
-                        ContactPhone = c.String(),
-                        ContactEmail = c.String(),
+                        Notes = c.String(),
                         SubSectionId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -307,11 +301,7 @@ namespace Mapper21.DAL.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
-                        ContactAddress = c.String(),
-                        ContactCity = c.String(),
-                        ContactZip = c.String(),
-                        ContactPhone = c.String(),
-                        ContactEmail = c.String(),
+                        Notes = c.String(),
                         SubSectionId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -355,6 +345,7 @@ namespace Mapper21.DAL.Migrations
             DropForeignKey("dbo.SectionGuidingQuestions", "SectionId", "dbo.Sections");
             DropForeignKey("dbo.Sections", "GradeLevelId", "dbo.GradeLevels");
             DropForeignKey("dbo.SectionHabits", "SectionId", "dbo.Sections");
+            DropForeignKey("dbo.SectionHabits", "HabitId", "dbo.Habits");
             DropForeignKey("dbo.CommonCoreStandards", "GradeLevelId", "dbo.GradeLevels");
             DropIndex("dbo.SubSectionServiceLearnings", new[] { "SubSectionId" });
             DropIndex("dbo.SubSectionHabits", new[] { "SubSectionId" });
@@ -375,6 +366,7 @@ namespace Mapper21.DAL.Migrations
             DropIndex("dbo.SectionGuidingQuestions", new[] { "SectionId" });
             DropIndex("dbo.Sections", new[] { "GradeLevelId" });
             DropIndex("dbo.SectionHabits", new[] { "SectionId" });
+            DropIndex("dbo.SectionHabits", new[] { "HabitId" });
             DropIndex("dbo.CommonCoreStandards", new[] { "GradeLevelId" });
             DropTable("dbo.SubSectionStaGrids");
             DropTable("dbo.SubSectionServiceLearnings");

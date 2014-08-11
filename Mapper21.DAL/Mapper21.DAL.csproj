@@ -67,9 +67,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201408101358368_InitialCreate.cs" />
-    <Compile Include="Migrations\201408101358368_InitialCreate.Designer.cs">
-      <DependentUpon>201408101358368_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201408102314081_InitialCreate.cs" />
+    <Compile Include="Migrations\201408102314081_InitialCreate.Designer.cs">
+      <DependentUpon>201408102314081_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Provider\Mapper21Context.cs" />
@@ -86,8 +86,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408101358368_InitialCreate.resx">
-      <DependentUpon>201408101358368_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201408102314081_InitialCreate.resx">
+      <DependentUpon>201408102314081_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
