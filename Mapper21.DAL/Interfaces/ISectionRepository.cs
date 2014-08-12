@@ -9,6 +9,8 @@ namespace Mapper21.DAL.Interfaces
     {
         IEnumerable<Section> GetAll();
         IEnumerable<Habit> GetHabits();
+        IEnumerable<BigIdeaForScience> GetBigIdeaForSciences();
+        IEnumerable<BigIdeaForSocialStudies> GetBigIdeaForSocialStudies();
         Section GetSectionByGrade(string id, string year);
         Section GetFirstSixWeeksByGrade(string id, string year);
         Section GetFallExpeditionByGrade(string id, string year);

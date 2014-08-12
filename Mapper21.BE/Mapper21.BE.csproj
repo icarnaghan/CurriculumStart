@@ -60,7 +60,6 @@
     <Compile Include="Domain\LookUps\Habit.cs" />
     <Compile Include="Domain\SectionBigIdeasOther.cs" />
     <Compile Include="Domain\SubSectionAssessment.cs" />
-    <Compile Include="Domain\LookUps\BigIdea.cs" />
     <Compile Include="Domain\LookUps\BigIdeaForScience.cs" />
     <Compile Include="Domain\LookUps\BigIdeaForSocialStudies.cs" />
     <Compile Include="Domain\LookUps\SectionType.cs" />

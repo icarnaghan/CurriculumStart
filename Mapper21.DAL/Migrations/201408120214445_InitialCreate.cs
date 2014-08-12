@@ -8,13 +8,22 @@ namespace Mapper21.DAL.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.BigIdeas",
+                "dbo.BigIdeaForSciences",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Category = c.String(),
                         Name = c.String(),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.BigIdeaForSocialStudies",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Category = c.String(),
+                        Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -113,12 +122,14 @@ namespace Mapper21.DAL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        BigIdeaForScienceId = c.Int(nullable: false),
                         Context = c.String(),
                         SectionId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.BigIdeaForSciences", t => t.BigIdeaForScienceId, cascadeDelete: true)
                 .ForeignKey("dbo.Sections", t => t.SectionId, cascadeDelete: true)
+                .Index(t => t.BigIdeaForScienceId)
                 .Index(t => t.SectionId);
             
             CreateTable(
@@ -135,12 +146,14 @@ namespace Mapper21.DAL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
+                        BigIdeaForSocialStudiesId = c.Int(nullable: false),
                         Context = c.String(),
                         SectionId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.BigIdeaForSocialStudies", t => t.BigIdeaForSocialStudiesId, cascadeDelete: true)
                 .ForeignKey("dbo.Sections", t => t.SectionId, cascadeDelete: true)
+                .Index(t => t.BigIdeaForSocialStudiesId)
                 .Index(t => t.SectionId);
             
             CreateTable(
@@ -316,8 +329,10 @@ namespace Mapper21.DAL.Migrations
             DropForeignKey("dbo.SubSections", "SectionId", "dbo.Sections");
             DropForeignKey("dbo.Sections", "SubjectAreaId", "dbo.SubjectAreas");
             DropForeignKey("dbo.SectionBigIdeasForSocialStudies", "SectionId", "dbo.Sections");
+            DropForeignKey("dbo.SectionBigIdeasForSocialStudies", "BigIdeaForSocialStudiesId", "dbo.BigIdeaForSocialStudies");
             DropForeignKey("dbo.Sections", "SectionTypeId", "dbo.SectionTypes");
             DropForeignKey("dbo.SectionBigIdeasForSciences", "SectionId", "dbo.Sections");
+            DropForeignKey("dbo.SectionBigIdeasForSciences", "BigIdeaForScienceId", "dbo.BigIdeaForSciences");
             DropForeignKey("dbo.SectionGuidingQuestions", "SectionId", "dbo.Sections");
             DropForeignKey("dbo.Sections", "GradeLevelId", "dbo.GradeLevels");
             DropForeignKey("dbo.SectionHabits", "SectionId", "dbo.Sections");
@@ -336,8 +351,10 @@ namespace Mapper21.DAL.Migrations
             DropIndex("dbo.SubSections", new[] { "SectionId" });
             DropIndex("dbo.Sections", new[] { "SubjectAreaId" });
             DropIndex("dbo.SectionBigIdeasForSocialStudies", new[] { "SectionId" });
+            DropIndex("dbo.SectionBigIdeasForSocialStudies", new[] { "BigIdeaForSocialStudiesId" });
             DropIndex("dbo.Sections", new[] { "SectionTypeId" });
             DropIndex("dbo.SectionBigIdeasForSciences", new[] { "SectionId" });
+            DropIndex("dbo.SectionBigIdeasForSciences", new[] { "BigIdeaForScienceId" });
             DropIndex("dbo.SectionGuidingQuestions", new[] { "SectionId" });
             DropIndex("dbo.Sections", new[] { "GradeLevelId" });
             DropIndex("dbo.SectionHabits", new[] { "SectionId" });
@@ -364,7 +381,8 @@ namespace Mapper21.DAL.Migrations
             DropTable("dbo.Habits");
             DropTable("dbo.GradeLevels");
             DropTable("dbo.CommonCoreStandards");
-            DropTable("dbo.BigIdeas");
+            DropTable("dbo.BigIdeaForSocialStudies");
+            DropTable("dbo.BigIdeaForSciences");
         }
     }
 }

@@ -396,61 +396,6 @@ namespace Mapper21.DAL.Migrations
             guidingQuestions.ForEach(g => context.SectionGuidingQuestions.AddOrUpdate(g));
             context.SaveChanges();
 
-            var scienceBigIdeas = new List<SectionBigIdeasForScience>
-            {
-                new SectionBigIdeasForScience
-                {
-                    Id = 1,
-                    SectionId = 1,
-                    Context = "Promotes learning about environmental changes.",
-                    Name = "Structure and Function: When an environment changes, an organism must adapt, move, or die."
-                },
-                new SectionBigIdeasForScience
-                {
-                    Id = 1,
-                    SectionId = 1,
-                    Context = "Learn about organisms.",
-                    Name = "Interdependence: Organisms depend on one another and on their environment."
-                },
-                new SectionBigIdeasForScience
-                {
-                    Id = 1,
-                    SectionId = 1,
-                    Context = "Understanding size and scale.",
-                    Name =
-                        "Scale: Some things are so immense or minute that they are difficult to measure and understand."
-                },
-            };
-            scienceBigIdeas.ForEach(g => context.SectionScienceBigIdeases.AddOrUpdate(g));
-            context.SaveChanges();
-
-            var socialStudiesBigIdeas = new List<SectionBigIdeasForSocialStudies>
-            {
-                new SectionBigIdeasForSocialStudies
-                {
-                    Id = 1,
-                    SectionId = 1,
-                    Context = "Understand importance of migration.",
-                    Name = "Geographic Relationships: People migrate for a variety of reasons."
-                },
-                new SectionBigIdeasForSocialStudies
-                {
-                    Id = 1,
-                    SectionId = 1,
-                    Context = "Promote understanding of different cultures.",
-                    Name = "Universals of Culture: Cultures are dynamic."
-                },
-                new SectionBigIdeasForSocialStudies
-                {
-                    Id = 1,
-                    SectionId = 1,
-                    Context = "Raise awareness of regional change",
-                    Name = "Geographic Relationships: Changes in regions have human implications."
-                },
-            };
-            socialStudiesBigIdeas.ForEach(g => context.SectionSocialStudiesBigIdeas.AddOrUpdate(g));
-            context.SaveChanges();
-
             var bigIdeasForScience = new List<BigIdeaForScience>
             {
                 new BigIdeaForScience
@@ -551,7 +496,7 @@ namespace Mapper21.DAL.Migrations
                     Category = "Scale"
                 },
             };
-            bigIdeasForScience.ForEach(g => context.BigIdeas.AddOrUpdate(g));
+            bigIdeasForScience.ForEach(g => context.BigIdeasForScience.AddOrUpdate(g));
             context.SaveChanges();
 
             var bigIdeasForSocialStudies = new List<BigIdeaForSocialStudies>
@@ -661,7 +606,61 @@ namespace Mapper21.DAL.Migrations
                     Category = "Historical Inquiry"
                 },
             };
-            bigIdeasForSocialStudies.ForEach(g => context.BigIdeas.AddOrUpdate(g));
+            bigIdeasForSocialStudies.ForEach(g => context.BigIdeasForSocialStudies.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var scienceBigIdeas = new List<SectionBigIdeasForScience>
+            {
+                new SectionBigIdeasForScience
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Promotes learning about environmental changes.",
+                    BigIdeaForScienceId = 1
+                },
+                new SectionBigIdeasForScience
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Learn about organisms.",
+                    BigIdeaForScienceId = 2
+                },
+                new SectionBigIdeasForScience
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Understanding size and scale.",
+                    BigIdeaForScienceId = 3
+                },
+            };
+            scienceBigIdeas.ForEach(g => context.SectionScienceBigIdeas.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var socialStudiesBigIdeas = new List<SectionBigIdeasForSocialStudies>
+            {
+                new SectionBigIdeasForSocialStudies
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Understand importance of migration.",
+                    BigIdeaForSocialStudiesId = 1
+                },
+                new SectionBigIdeasForSocialStudies
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Promote understanding of different cultures.",
+                    BigIdeaForSocialStudiesId = 2
+                },
+                new SectionBigIdeasForSocialStudies
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Raise awareness of regional change",
+                    BigIdeaForSocialStudiesId = 3
+                },
+            };
+            socialStudiesBigIdeas.ForEach(g => context.SectionSocialStudiesBigIdeas.AddOrUpdate(g));
             context.SaveChanges();
 
             var habit = new List<Habit>

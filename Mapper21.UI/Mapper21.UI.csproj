@@ -224,7 +224,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BigIdeaForSocialStudiesListViewModel.cs" />
     <Compile Include="Models\CommonCoreViewModel.cs" />
+    <Compile Include="Models\BigIdeaForScienceListViewModel.cs" />
     <Compile Include="Models\StandardListViewModel.cs" />
     <Compile Include="Models\HabitListViewModel.cs" />
     <Compile Include="Models\NavigationViewModel.cs" />

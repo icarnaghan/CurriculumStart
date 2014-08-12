@@ -30,7 +30,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionBigIdeasForSocialStudies
                 {
                     Id = socialStudiesBigIdea.Id,
-                    Name = socialStudiesBigIdea.Idea,
+                    BigIdeaForSocialStudiesId = socialStudiesBigIdea.BigIdeaForSocialStudiesId,
                     Context = socialStudiesBigIdea.Context,
                     SectionId = socialStudiesBigIdea.SectionId
                 };
@@ -54,7 +54,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionBigIdeasForSocialStudies
                 {
                     Id = socialStudiesBigIdea.Id,
-                    Name = socialStudiesBigIdea.Idea,
+                    BigIdeaForSocialStudiesId = socialStudiesBigIdea.BigIdeaForSocialStudiesId,
                     Context = socialStudiesBigIdea.Context,
                     SectionId = socialStudiesBigIdea.SectionId
                 };
@@ -78,7 +78,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new SectionBigIdeasForSocialStudies
                 {
                     Id = socialStudiesBigIdea.Id,
-                    Name = socialStudiesBigIdea.Idea,
+                    BigIdeaForSocialStudiesId = socialStudiesBigIdea.BigIdeaForSocialStudiesId,
                     Context = socialStudiesBigIdea.Context,
                     SectionId = socialStudiesBigIdea.SectionId
                 };

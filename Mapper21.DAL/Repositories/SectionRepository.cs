@@ -23,6 +23,16 @@ namespace Mapper21.DAL.Repositories
             return db.Habits.ToList();
         }
 
+        public IEnumerable<BigIdeaForScience> GetBigIdeaForSciences()
+        {
+            return db.BigIdeasForScience.ToList();
+        }
+
+        public IEnumerable<BigIdeaForSocialStudies> GetBigIdeaForSocialStudies()
+        {
+            return db.BigIdeasForSocialStudies.ToList();
+        }
+
         public Section GetSectionByGrade(string id, string year)
         {
             int currentYear = int.Parse(year);
