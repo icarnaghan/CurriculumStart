@@ -396,236 +396,236 @@ namespace Mapper21.DAL.Migrations
             guidingQuestions.ForEach(g => context.SectionGuidingQuestions.AddOrUpdate(g));
             context.SaveChanges();
 
-            var bigIdeasForScience = new List<BigIdeaForScience>
+            var bigIdeasForScience = new List<ScienceBigIdea>
             {
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 1,
                     Name = "A system consists of related objects that form a whole.",
                     Category = "Systems"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 2,
                     Name = "A change in one part of a system can change the whole system.",
                     Category = "Systems"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 3,
                     Name = "Systems can be used to predict patterns.",
                     Category = "Systems"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 4,
                     Name = "The physical characteristics of an organism directly impact its survival.",
                     Category = "Structure and Function"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 5,
                     Name = "When an environment changes, an organism must adapt, move, or die.",
                     Category = "Structure and Function"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 6,
                     Name = "Organisms need energy to survive.",
                     Category = "Structure and Function"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 7,
                     Name = "Organisms have predictable patterns of change in growth and development.",
                     Category = "Constancy and Change"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 8,
                     Name = "New technologies can cause change, and change can lead to new technologies.",
                     Category = "Constancy and Change"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 9,
                     Name = "Forces of nature continuously change the Earth.",
                     Category = "Constancy and Change"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 10,
                     Name = "Energy can change forms but cannot be created or destroyed.",
                     Category = "Constancy and Change"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 11,
                     Name = "Organisms depend on one another and on their environment.",
                     Category = "Interdependence"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 12,
                     Name = "Models can be used to represent observable science phenomenon.",
                     Category = "Models"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 13,
                     Name = "Models can be used to test theories of science phenomenon that are not directly observable.",
                     Category = "Models"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 14,
                     Name =
                         "Models involving hypothesized relationships and process can be used to find, articulate, and test theories.",
                     Category = "Models"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 15,
                     Name = "Some things are so immense or minute that they are difficult to measure and understand.",
                     Category = "Scale"
                 },
-                new BigIdeaForScience
+                new ScienceBigIdea
                 {
                     Id = 16,
                     Name = "The ways in which things work may change with changes to scale.",
                     Category = "Scale"
                 },
             };
-            bigIdeasForScience.ForEach(g => context.BigIdeasForScience.AddOrUpdate(g));
+            bigIdeasForScience.ForEach(g => context.ScienceBigIdeas.AddOrUpdate(g));
             context.SaveChanges();
 
-            var bigIdeasForSocialStudies = new List<BigIdeaForSocialStudies>
+            var bigIdeasForSocialStudies = new List<SocialStudiesBigIdea>
             {
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 17,
                     Name = "Regions have diverse natural resources and geography.",
                     Category = "Geographic Relationships"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 18,
                     Name = "Humans have an effect on the places they live.",
                     Category = "Geographic Relationships"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 19,
                     Name = "Resources and the physical environment dictate what life is like in a particular region.",
                     Category = "Geographic Relationships"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 20,
                     Name = "People migrate for a variety of reasons.",
                     Category = "Geographic Relationships"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 21,
                     Name =
                         "A community’s government affects its culture, and a community’s culture affects its government.",
                     Category = "Evolution of Governance"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 22,
                     Name = "Governance is how a community makes decisions.  Those decisions affect the people.",
                     Category = "Evolution of Governance"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 23,
                     Name = "Democracy depends on the participation of its citizens.",
                     Category = "Evolution of Governance"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 24,
                     Name = "Society drives the development of technology, and technology drives societal change.",
                     Category = "The Challenge of Progress"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 25,
                     Name = "Economic systems impact decisions about the use of resources.",
                     Category = "The Challenge of Progress"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 26,
                     Name = "People's culture is reflected in their celebrations and practices.",
                     Category = "Universals of Culture"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 27,
                     Name = "People form communities based on their culture, beliefs, traditions, and values.",
                     Category = "Universals of Culture"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 28,
                     Name = "Communities are dynamic.",
                     Category = "Universals of Culture"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 29,
                     Name = "Differences in the access to resources can lead to conflict.",
                     Category = "Sources of Conflict"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 30,
                     Name = "Cooperation and conflict among people contribute to political, economic, and social change.",
                     Category = "Sources of Conflict"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 31,
                     Name = "Cultural differences and/or misunderstandings can lead to conflict.",
                     Category = "Sources of Conflict"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 32,
                     Name =
                         "Historical patterns can be used to make sense of present events and predict future outcomes.",
                     Category = "Historical Inquiry"
                 },
-                new BigIdeaForSocialStudies()
+                new SocialStudiesBigIdea()
                 {
                     Id = 33,
                     Name = "Examining multiple perspectives enriches our understanding of historical events.",
                     Category = "Historical Inquiry"
                 },
             };
-            bigIdeasForSocialStudies.ForEach(g => context.BigIdeasForSocialStudies.AddOrUpdate(g));
+            bigIdeasForSocialStudies.ForEach(g => context.SocialStudiesBigIdeas.AddOrUpdate(g));
             context.SaveChanges();
 
-            var scienceBigIdeas = new List<SectionBigIdeasForScience>
+            var scienceBigIdeas = new List<SectionScienceBigIdea>
             {
-                new SectionBigIdeasForScience
+                new SectionScienceBigIdea
                 {
                     Id = 1,
                     SectionId = 1,
                     Context = "Promotes learning about environmental changes.",
                     BigIdeaForScienceId = 1
                 },
-                new SectionBigIdeasForScience
+                new SectionScienceBigIdea
                 {
                     Id = 1,
                     SectionId = 1,
                     Context = "Learn about organisms.",
                     BigIdeaForScienceId = 2
                 },
-                new SectionBigIdeasForScience
+                new SectionScienceBigIdea
                 {
                     Id = 1,
                     SectionId = 1,
@@ -636,23 +636,23 @@ namespace Mapper21.DAL.Migrations
             scienceBigIdeas.ForEach(g => context.SectionScienceBigIdeas.AddOrUpdate(g));
             context.SaveChanges();
 
-            var socialStudiesBigIdeas = new List<SectionBigIdeasForSocialStudies>
+            var socialStudiesBigIdeas = new List<SectionSocialStudiesBigIdea>
             {
-                new SectionBigIdeasForSocialStudies
+                new SectionSocialStudiesBigIdea
                 {
                     Id = 1,
                     SectionId = 1,
                     Context = "Understand importance of migration.",
                     BigIdeaForSocialStudiesId = 1
                 },
-                new SectionBigIdeasForSocialStudies
+                new SectionSocialStudiesBigIdea
                 {
                     Id = 1,
                     SectionId = 1,
                     Context = "Promote understanding of different cultures.",
                     BigIdeaForSocialStudiesId = 2
                 },
-                new SectionBigIdeasForSocialStudies
+                new SectionSocialStudiesBigIdea
                 {
                     Id = 1,
                     SectionId = 1,

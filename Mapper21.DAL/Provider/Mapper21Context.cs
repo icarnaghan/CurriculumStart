@@ -14,8 +14,8 @@ namespace Mapper21.DAL.Provider
         public DbSet<SectionType> SectionTypes { get; set; }
         public DbSet<SectionHabit> SectionHabits { get; set; }
         public DbSet<SectionGuidingQuestion> SectionGuidingQuestions { get; set; }
-        public DbSet<SectionBigIdeasForScience> SectionScienceBigIdeas { get; set; }
-        public DbSet<SectionBigIdeasForSocialStudies> SectionSocialStudiesBigIdeas { get; set; }
+        public DbSet<SectionScienceBigIdea> SectionScienceBigIdeas { get; set; }
+        public DbSet<SectionSocialStudiesBigIdea> SectionSocialStudiesBigIdeas { get; set; }
 
         public DbSet<SubSection> SubSections { get; set; }
         public DbSet<SubSectionType> SubSectionTypes { get; set; }
@@ -32,8 +32,8 @@ namespace Mapper21.DAL.Provider
         public DbSet<SubjectArea> SubjectAreas { get; set; }
         public DbSet<GradeLevel> GradeLevels { get; set; }
         public DbSet<CommonCoreStandard> CommonCoreStandards { get; set; }
-        public DbSet<BigIdeaForScience> BigIdeasForScience{ get; set; }
-        public DbSet<BigIdeaForSocialStudies> BigIdeasForSocialStudies { get; set; }
+        public DbSet<ScienceBigIdea> ScienceBigIdeas { get; set; }
+        public DbSet<SocialStudiesBigIdea> SocialStudiesBigIdeas { get; set; }
         public DbSet<Habit> Habits { get; set; }
     }
 }
