@@ -238,7 +238,9 @@ namespace Mapper21.DAL.Migrations
                         CommonCoreStandardId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.CommonCoreStandards", t => t.CommonCoreStandardId, cascadeDelete: true)
                 .ForeignKey("dbo.SubSectionStas", t => t.SubSectionStaId, cascadeDelete: true)
+                .Index(t => t.CommonCoreStandardId)
                 .Index(t => t.SubSectionStaId);
             
             CreateTable(
@@ -270,31 +272,6 @@ namespace Mapper21.DAL.Migrations
                 .Index(t => t.SubSectionId);
             
             CreateTable(
-                "dbo.SubSectionGuidingQuestions",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        SubSectionId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.SubSections", t => t.SubSectionId, cascadeDelete: true)
-                .Index(t => t.SubSectionId);
-            
-            CreateTable(
-                "dbo.SubSectionHabits",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Context = c.String(),
-                        Description = c.String(),
-                        SubSectionId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.SubSections", t => t.SubSectionId, cascadeDelete: true)
-                .Index(t => t.SubSectionId);
-            
-            CreateTable(
                 "dbo.SubSectionServiceLearnings",
                 c => new
                     {
@@ -313,8 +290,8 @@ namespace Mapper21.DAL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        StaCollectionId = c.Int(nullable: false),
-                        CaseStudyId = c.Int(nullable: false),
+                        SubSectionStaId = c.Int(nullable: false),
+                        SubSectionId = c.Int(nullable: false),
                         Standards = c.String(),
                         LongTermTargets = c.String(),
                         ShortTermTargets = c.String(),
@@ -327,12 +304,11 @@ namespace Mapper21.DAL.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.SubSectionServiceLearnings", "SubSectionId", "dbo.SubSections");
-            DropForeignKey("dbo.SubSectionHabits", "SubSectionId", "dbo.SubSections");
-            DropForeignKey("dbo.SubSectionGuidingQuestions", "SubSectionId", "dbo.SubSections");
             DropForeignKey("dbo.SubSectionFieldworks", "SubSectionId", "dbo.SubSections");
             DropForeignKey("dbo.SubSectionExperts", "SubSectionId", "dbo.SubSections");
             DropForeignKey("dbo.SubSectionStas", "SubSectionId", "dbo.SubSections");
             DropForeignKey("dbo.SubSectionStandards", "SubSectionStaId", "dbo.SubSectionStas");
+            DropForeignKey("dbo.SubSectionStandards", "CommonCoreStandardId", "dbo.CommonCoreStandards");
             DropForeignKey("dbo.SubSectionShortTermTargets", "SubSectionStaId", "dbo.SubSectionStas");
             DropForeignKey("dbo.SubSectionLongTermTargets", "SubSectionStaId", "dbo.SubSectionStas");
             DropForeignKey("dbo.SubSectionAssessments", "SubSectionStaId", "dbo.SubSectionStas");
@@ -348,12 +324,11 @@ namespace Mapper21.DAL.Migrations
             DropForeignKey("dbo.SectionHabits", "HabitId", "dbo.Habits");
             DropForeignKey("dbo.CommonCoreStandards", "GradeLevelId", "dbo.GradeLevels");
             DropIndex("dbo.SubSectionServiceLearnings", new[] { "SubSectionId" });
-            DropIndex("dbo.SubSectionHabits", new[] { "SubSectionId" });
-            DropIndex("dbo.SubSectionGuidingQuestions", new[] { "SubSectionId" });
             DropIndex("dbo.SubSectionFieldworks", new[] { "SubSectionId" });
             DropIndex("dbo.SubSectionExperts", new[] { "SubSectionId" });
             DropIndex("dbo.SubSectionStas", new[] { "SubSectionId" });
             DropIndex("dbo.SubSectionStandards", new[] { "SubSectionStaId" });
+            DropIndex("dbo.SubSectionStandards", new[] { "CommonCoreStandardId" });
             DropIndex("dbo.SubSectionShortTermTargets", new[] { "SubSectionStaId" });
             DropIndex("dbo.SubSectionLongTermTargets", new[] { "SubSectionStaId" });
             DropIndex("dbo.SubSectionAssessments", new[] { "SubSectionStaId" });
@@ -370,8 +345,6 @@ namespace Mapper21.DAL.Migrations
             DropIndex("dbo.CommonCoreStandards", new[] { "GradeLevelId" });
             DropTable("dbo.SubSectionStaGrids");
             DropTable("dbo.SubSectionServiceLearnings");
-            DropTable("dbo.SubSectionHabits");
-            DropTable("dbo.SubSectionGuidingQuestions");
             DropTable("dbo.SubSectionFieldworks");
             DropTable("dbo.SubSectionExperts");
             DropTable("dbo.SubSectionStandards");

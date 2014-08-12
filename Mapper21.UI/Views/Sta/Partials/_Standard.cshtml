@@ -1,12 +1,14 @@
-﻿@using Mapper21.UI.Models
-<h4><label>Standards</label></h4>
+﻿@using System.Collections
+@using Mapper21.UI.Models
+<h4><label>Common Core Standards</label></h4>
 
 @(Html.Kendo().Grid<StandardViewModel>
       ()
       .Name("grid1")
       .Columns(columns =>
       {
-          columns.Bound(s => s.Name).EditorTemplateName("StandardDropdownList");
+          //columns.Bound(s => s.Name).EditorTemplateName("StandardDropdownList");
+          columns.ForeignKey(s => s.StandardId, (IEnumerable)ViewData["StandardList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("StandardDropDownList");
           columns.Command(commands =>
           {
               commands.Edit(); // The "edit" command will edit and update data items

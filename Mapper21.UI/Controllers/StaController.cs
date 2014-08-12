@@ -8,6 +8,7 @@ using Mapper21.BE.Domain;
 using Mapper21.BE.Domain.LookUps;
 using Mapper21.DAL.Provider;
 using Mapper21.UI.Models;
+using WebGrease;
 
 namespace Mapper21.UI.Controllers
 {
@@ -19,6 +20,7 @@ namespace Mapper21.UI.Controllers
         public ActionResult Create(int id)
         {
             ViewBag.SubSectionId = id;
+            ViewBag.SectionId = db.SubSections.Find(id).SectionId;
             return View();
         }
 
@@ -65,6 +67,12 @@ namespace Mapper21.UI.Controllers
                 SubSectionLongTermTarget = longTermTarget,
                 CommonCoreStandards = commonCore
             };
+
+            // Get SelectList
+            var currentGrade = Helpers.PermissionHelpers.GetCurrentGradeLevel(User);
+            var standard = db.CommonCoreStandards.Where(s => s.GradeLevelId == currentGrade);
+            ViewData["StandardList"] = new SelectList(standard, "Id", "Name");
+            ViewBag.SectionId = db.SubSections.Find(subSectionSta.SubSectionId).SectionId;
 
             return View(subSectionStaViewModel);
         }

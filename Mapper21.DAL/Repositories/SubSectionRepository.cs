@@ -24,7 +24,7 @@ namespace Mapper21.DAL.Repositories
 
         public IEnumerable<SubSectionStaGrid> GetStaGrids(int? id)
         {
-            return db.SubSectionStaGrid.Where(s => s.CaseStudyId == id).ToList();
+            return db.SubSectionStaGrid.Where(s => s.SubSectionId == id).ToList();
         }
 
         public SubSection Find(int? id)

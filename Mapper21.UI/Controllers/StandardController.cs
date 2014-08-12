@@ -29,6 +29,7 @@ namespace Mapper21.UI.Controllers
                 var entity = new SubSectionStandard
                 {
                     Id = standard.Id,
+                    CommonCoreStandardId = standard.StandardId,
                     SubSectionStaId = standard.SubSectionStaId
                 };
                 // Add the entity

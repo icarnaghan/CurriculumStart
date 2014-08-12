@@ -4,27 +4,35 @@
     ViewBag.Title = "Create";
 }
 
-
+<div class="col-md-9">
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     @Html.Hidden("SubSectionId", (int) ViewBag.SubSectionId)
-
     <div class="form-horizontal">
-        <h4>Create STA</h4>
-        <p>Click the create button to continue.</p>
-        <hr />
-        @Html.ValidationSummary(true)
-
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+        <div class="box box-primary">
+            <div class="box-header">
+                <i class="fa fa-edit"></i>
+                <h3 class="box-title">Standards, Targets, and Assessments</h3>
+            </div>
+            <div class="box-body">
+                <p>This section allows you create a new set of Standards, Targets and Assessments which are aligned to this case study.</p><br />
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 }
-<a href="~/Views/StaCollection/Create.cshtml">~/Views/StaCollection/Create.cshtml</a>
+</div>
+<div class="col-md-3">
+    @Html.Partial("~/Views/Shared/_ExpeditionNavigation.cshtml")
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
