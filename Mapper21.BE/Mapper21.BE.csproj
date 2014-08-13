@@ -58,10 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\LookUps\Habit.cs" />
-    <Compile Include="Domain\SectionBigIdeasOther.cs" />
+    <Compile Include="Domain\SectionOtherBigIdea.cs" />
     <Compile Include="Domain\SubSectionAssessment.cs" />
-    <Compile Include="Domain\LookUps\BigIdeaForScience.cs" />
-    <Compile Include="Domain\LookUps\BigIdeaForSocialStudies.cs" />
+    <Compile Include="Domain\LookUps\ScienceBigIdea.cs" />
+    <Compile Include="Domain\LookUps\SocialStudiesBigIdea.cs" />
     <Compile Include="Domain\LookUps\SectionType.cs" />
     <Compile Include="Domain\LookUps\SubjectArea.cs" />
     <Compile Include="Domain\LookUps\SubSectionType.cs" />
@@ -74,10 +74,10 @@
     <Compile Include="Domain\SectionGuidingQuestion.cs" />
     <Compile Include="Domain\SubSectionLongTermTarget.cs" />
     <Compile Include="Domain\LookUps\GradeLevel.cs" />
-    <Compile Include="Domain\SectionBigIdeasForScience.cs" />
+    <Compile Include="Domain\SectionScienceBigIdea.cs" />
     <Compile Include="Domain\SubSectionServiceLearning.cs" />
     <Compile Include="Domain\SubSectionShortTermTarget.cs" />
-    <Compile Include="Domain\SectionBigIdeasForSocialStudies.cs" />
+    <Compile Include="Domain\SectionSocialStudiesBigIdea.cs" />
     <Compile Include="Domain\SubSectionSta.cs" />
     <Compile Include="Domain\SubSectionStaGrid.cs" />
     <Compile Include="Domain\SubSectionStandard.cs" />

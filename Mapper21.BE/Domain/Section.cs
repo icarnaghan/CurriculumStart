@@ -34,7 +34,7 @@ namespace Mapper21.BE.Domain
         public virtual ICollection<SubSection> SubSections { get; set; }
         public virtual ICollection<SectionGuidingQuestion> GuidingQuestions { get; set; }
         public virtual ICollection<SectionHabit> ExpeditionHabits { get; set; }
-        public virtual ICollection<SectionBigIdeasForScience> ScienceBigIdeas { get; set; }
-        public virtual ICollection<SectionBigIdeasForSocialStudies> SocialStudiesBigIdeas { get; set; }
+        public virtual ICollection<SectionScienceBigIdea> ScienceBigIdeas { get; set; }
+        public virtual ICollection<SectionSocialStudiesBigIdea> SocialStudiesBigIdeas { get; set; }
     }
 }
