@@ -117,6 +117,11 @@ namespace Mapper21.UI.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var section = _sectionRepository.Find(id);
             if (section == null) return HttpNotFound();
+
+            // Get SelectList
+            var bigIdeaForSocialStudies = _sectionRepository.GetBigIdeaForSocialStudies();
+            ViewData["BigIdeaForSocialStudiesList"] = new SelectList(bigIdeaForSocialStudies, "Id", "Name");
+
             return View(section);
         }
 
