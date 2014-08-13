@@ -23,14 +23,14 @@ namespace Mapper21.DAL.Repositories
             return db.Habits.ToList();
         }
 
-        public IEnumerable<ScienceBigIdea> GetBigIdeaForSciences()
+        public IEnumerable<BigIdeaForScience> GetBigIdeaForSciences()
         {
-            return db.ScienceBigIdeas.ToList();
+            return db.BigIdeasForScience.ToList();
         }
 
-        public IEnumerable<SocialStudiesBigIdea> GetBigIdeaForSocialStudies()
+        public IEnumerable<BigIdeaForSocialStudies> GetBigIdeaForSocialStudies()
         {
-            return db.SocialStudiesBigIdeas.ToList();
+            return db.BigIdeasForSocialStudies.ToList();
         }
 
         public Section GetSectionByGrade(string id, string year)

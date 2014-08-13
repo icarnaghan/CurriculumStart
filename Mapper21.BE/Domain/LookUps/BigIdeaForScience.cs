@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Mapper21.BE.Domain.LookUps
 {
-    public class ScienceBigIdea
+    public class BigIdeaForScience
     {
         public int Id { get; set; }
         public string Category { get; set; }

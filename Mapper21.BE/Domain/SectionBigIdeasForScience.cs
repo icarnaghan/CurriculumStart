@@ -3,7 +3,7 @@ using Mapper21.BE.Domain.LookUps;
 
 namespace Mapper21.BE.Domain
 {
-    public class SectionScienceBigIdea
+    public class SectionBigIdeasForScience
     {
         public int Id { get; set; }
         public int BigIdeaForScienceId { get; set; }
@@ -11,7 +11,7 @@ namespace Mapper21.BE.Domain
         public int SectionId { get; set; }
 
         [ForeignKey("BigIdeaForScienceId")]
-        public ScienceBigIdea BigIdeaForScience { get; set; }
+        public BigIdeaForScience BigIdeaForScience { get; set; }
         
         [ForeignKey("SectionId")]
         public Section Section { get; set; }
