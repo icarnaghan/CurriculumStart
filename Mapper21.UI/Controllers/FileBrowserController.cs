@@ -1,13 +1,14 @@
 ﻿using System.IO;
+using System.Web;
 using System.Web.Mvc;
 using Kendo.Mvc.UI;
+using Microsoft.Ajax.Utilities;
 
 namespace Mapper21.UI.Controllers
 {
     public class FileBrowserController : EditorFileBrowserController
     {
-        private const string contentFolderRoot = "~/Content/";
-        private const string prettyName = "Images/";
+        private const string contentFolderRoot = "~/Content/UserFiles/Sections/";
         private static readonly string[] foldersToCopy = new[] { "~/Content/shared/" };
         private int _id;
 
@@ -27,6 +28,7 @@ namespace Mapper21.UI.Controllers
             get
             {
                 //return "~/Content/UserFiles/" + id;
+                var returnFolder = CreateUserFolder();
                 return CreateUserFolder();
             }
         }
@@ -34,8 +36,31 @@ namespace Mapper21.UI.Controllers
         public JsonResult MyRead(string path, int id)
         {
             _id = id;
-            return base.Read(contentFolderRoot);
+            return base.Read(path);
         }
+
+        public ActionResult MyCreate(string path, int id, FileBrowserEntry entry)
+        {
+            _id = id;
+            return base.Create(path, entry);
+        }
+
+        public ActionResult MyUpload(string path, int id, HttpPostedFileBase file)
+        {
+            _id = id;
+            return base.Upload(path, file);
+        }
+
+        public ActionResult MyDestroy(string path, int id, FileBrowserEntry entry)
+        {
+            _id = id;
+            return base.Destroy(path, entry);
+        }
+
+        //public JsonResult MyUpload(string path, int id)
+        //{
+            
+        //}
 
         /// <summary>
         /// Gets the valid file extensions by which served files will be filtered.
@@ -44,22 +69,22 @@ namespace Mapper21.UI.Controllers
         {
             get
             {
-                return "*.txt, *.doc, *.docx, *.xls, *.xlsx, *.ppt, *.pptx, *.zip, *.rar, *.jpg, *.jpeg, *.gif, *.png";
+                return "*.txt, *.doc, *.docx, *.xls, *.xlsx, *.ppt, *.pptx, *.zip, *.rar, *.jpg, *.jpeg, *.gif, *.png, *.pdf";
             }
         }
 
         private string CreateUserFolder()
         {
-            var virtualPath = Path.Combine(contentFolderRoot, "UserFiles", prettyName);
+            var virtualPath = Path.Combine(contentFolderRoot, _id.ToString());
 
             var path = Server.MapPath(virtualPath);
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
-                foreach (var sourceFolder in foldersToCopy)
-                {
-                    CopyFolder(Server.MapPath(sourceFolder), path);
-                }
+                //foreach (var sourceFolder in foldersToCopy)
+                //{
+                //    CopyFolder(Server.MapPath(sourceFolder), path);
+                //}
             }
             return virtualPath;
         }

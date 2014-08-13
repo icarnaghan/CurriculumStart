@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Overview";
     ViewBag.SectionId = Model.Id;
-    var fileUploadUrl = "~/Content/UserFiles/Images/{0}" + Model.Id + "/Images/{0}";
+    var fileUploadUrl = "~/Content/UserFiles/Sections/" + Model.Id + "/{0}";
 }
 
 <script src="~/Scripts/Mapper21.js"> </script>
@@ -48,11 +48,11 @@
                               .Upload("Upload", "ImageBrowser")
                               .Thumbnail("Thumbnail", "ImageBrowser"))
                               .FileBrowser(fileBrowser => fileBrowser
-                              .File("~/Content/UserFiles/Images/{0}")
+                              .File(fileUploadUrl)
                               .Read("MyRead", "FileBrowser", new { id = Model.Id })
-                              .Create("Create", "FileBrowser")
-                              .Destroy("Destroy", "FileBrowser")
-                              .Upload("Upload", "FileBrowser"))
+                              .Create("MyCreate", "FileBrowser", new { id = Model.Id })
+                              .Destroy("MyDestroy", "FileBrowser", new { id = Model.Id })
+                              .Upload("MyUpload", "FileBrowser", new { id = Model.Id }))
                             )
                         </div>
                     </div>
