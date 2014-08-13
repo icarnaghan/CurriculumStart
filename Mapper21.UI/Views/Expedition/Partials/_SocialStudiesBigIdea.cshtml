@@ -1,12 +1,11 @@
-﻿@using System.Collections
-@using Mapper21.UI.Models
+﻿@using Mapper21.UI.Models
 
 @(Html.Kendo().Grid<SocialStudiesBigIdeaViewModel>
       ()
       .Name("grid4")
       .Columns(columns =>
       {
-          columns.ForeignKey(h => h.BigIdeaForSocialStudiesId, (IEnumerable)ViewData["BigIdeaForSocialStudiesList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("SocialStudiesBigIdeaDropDownList");
+          columns.Bound(b => b.Idea).EditorTemplateName("SocialStudiesBigNameDropdownList");
           columns.Bound(b => b.Context);
           columns.Command(commands =>
           {
@@ -30,10 +29,10 @@
                   model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
                   model.Field(g => g.SectionId).DefaultValue(@ViewBag.SectionId);
               })
-              .Create(create => create.Action("SocialStudiesBigIdea_Create", "SocialStudiesBigIdea")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("SocialStudiesBigIdea_Read", "SocialStudiesBigIdea", new { sectionId = ViewBag.SectionId })) // Action method invoked when the grid needs data
-              .Update(update => update.Action("SocialStudiesBigIdea_Update", "SocialStudiesBigIdea")) // Action method invoked when the user saves an updated data item
-              .Destroy(destroy => destroy.Action("SocialStudiesBigIdea_Destroy", "SocialStudiesBigIdea")) // Action method invoked when the user removes a data item
+              .Create(create => create.Action("SocialStudiesBigName_Create", "SocialStudiesBigName")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("SocialStudiesBigName_Read", "SocialStudiesBigName", new {sectionId = ViewBag.SectionId})) // Action method invoked when the grid needs data
+              .Update(update => update.Action("SocialStudiesBigName_Update", "SocialStudiesBigName")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("SocialStudiesBigName_Destroy", "SocialStudiesBigName")) // Action method invoked when the user removes a data item
       )
       .Pageable()
       )

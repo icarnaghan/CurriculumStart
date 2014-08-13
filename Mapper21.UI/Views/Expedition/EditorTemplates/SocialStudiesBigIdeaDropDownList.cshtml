@@ -1,8 +1,35 @@
-﻿@(Html.Kendo().DropDownList()
-    .Name("BigIdeaForSocialStudiesId") //Important, must match the column's name
-    .BindTo(ViewData["BigIdeaForSocialStudiesList"] as SelectList)
-    .OptionLabel("- Select Big Idea For Social Studies - ")
-    .DataValueField("Value")
-    .DataTextField("Text")
-    .SelectedIndex(0)
-)
+﻿@model string
+
+@(Html.Kendo().DropDownList()
+      .Name("Name") //Important, must match the column's name
+      .Value(Model)
+      .SelectedIndex(0)
+      .BindTo(new[]
+      {
+          "Select Science Big Name",
+          "Geographic Relationships: Humans have an effect on the places they live.",
+          "Geographic Relationships: Resources and the physical environment dictate what life is like in a particular region.",
+          "Geographic Relationships: Changes in regions have human implications.",
+          "Geographic Relationships: People migrate for a variety of reasons.",
+          "Evolution of Governance: A community’s government affects its culture, and a community’s culture affects its government.",
+          "Evolution of Governance: Power is gained, used and justified in many ways.",
+          "Evolution of Governance: Governance is how a community makes decisions and communicates a value of the role of the institution and the role of the individual.",
+          "Evolution of Governance: Democracy depends on the understanding and participation of its citizens.",
+          "The Challenge of Progress: Society drives the development of technology, and technology drives societal change.",
+          "The Challenge of Progress: Economic systems impact decisions about the use of resources.",
+          "The Challenge of Progress: Scientific, technological and economic developments have affected people’s lives and political structures.",
+          "The Challenge of Progress: Technology today forms the basis for some of the most difficult social choices.",
+          "The Challenge of Progress: Tensions between national interests and global priorities contribute to the development of a solution to persistent and emerging global issues in many fields.",
+          "Universals of Culture: People’s culture is reflected in their celebrations and practices.",
+          "Universals of Culture: People form communities based on their culture, beliefs, traditions, and values.",
+          "Universals of Culture: Cultures are dynamic.",
+          "Universals of Culture: Patterns and relationships within and among world cultures lead to policy that has both national and global interactions.",
+          "Sources of Conflict: Differences in the access to resources can lead to conflict.",
+          "Sources of Conflict: Cooperation and conflict among people contribute to political, economic, and social change.",
+          "Sources of Conflict: Cultural differences and/or misunderstandings can lead to conflict.",
+          "Historical Inquiry: Historical patterns can be used to make sense of present events and predict future outcomes.",
+          "Historical Inquiry: Examining multiple perspectives enriches our understanding of historical events.",
+          "Production, Distribution and Consumption: People have wants that often exceed the limited resources available to them.",
+          "Production, Distribution and Consumption: Unequal distribution of resources necessitates systems of exchange.",
+          "Production, Distribution and Consumption: The role of government in economic policymaking varies over time and from place to place."
+      }))
