@@ -45,6 +45,9 @@ namespace Mapper21.UI
 
             // Needed for account controller - http://stackoverflow.com/questions/20023065/how-to-add-mvc-5-authentication-to-unity-ioc
             container.RegisterType<AccountController>(new InjectionConstructor());
+            container.RegisterType<ManageController>(new InjectionConstructor());
+            container.RegisterType<RolesAdminController>(new InjectionConstructor());
+            container.RegisterType<UsersAdminController>(new InjectionConstructor());
         }
     }
 }
