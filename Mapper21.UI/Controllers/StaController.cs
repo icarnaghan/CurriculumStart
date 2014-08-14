@@ -69,7 +69,7 @@ namespace Mapper21.UI.Controllers
             };
 
             // Get SelectList
-            var currentGrade = Helpers.PermissionHelpers.GetCurrentGradeLevel(User);
+            var currentGrade = "2";
             var standard = db.CommonCoreStandards.Where(s => s.GradeLevelId == currentGrade);
             ViewData["StandardList"] = new SelectList(standard, "Id", "Name");
             ViewBag.SectionId = db.SubSections.Find(subSectionSta.SubSectionId).SectionId;

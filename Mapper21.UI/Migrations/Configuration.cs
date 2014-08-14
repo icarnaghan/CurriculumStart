@@ -1,4 +1,4 @@
-using Mapper21.UI.Identity;
+using Mapper21.UI.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -9,7 +9,7 @@ namespace Mapper21.UI.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Mapper21.UI.Identity.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Mapper21.UI.Models.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -17,7 +17,7 @@ namespace Mapper21.UI.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Mapper21.UI.Identity.ApplicationDbContext context)
+        protected override void Seed(Mapper21.UI.Models.ApplicationDbContext context)
         {
             // Populate User Roles
             if (!context.Roles.Any(r => r.Name == "Kindergarten"))
