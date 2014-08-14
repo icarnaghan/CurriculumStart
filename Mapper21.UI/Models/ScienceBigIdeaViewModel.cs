@@ -11,7 +11,7 @@ namespace Mapper21.UI.Models
         public int SectionId { get; set; }
 
         [UIHint("ScienceBigIdeaDropDownList")]
-        public BigIdeaForScienceListViewModel BigIdeaForScience { get; set; }
+        public ScienceBigIdeaListViewModel ScienceBigIdeaList { get; set; }
 
     }
 }

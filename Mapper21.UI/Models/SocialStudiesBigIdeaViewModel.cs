@@ -10,7 +10,7 @@ namespace Mapper21.UI.Models
         public int SectionId { get; set; }
 
         [UIHint("SocialStudiesBigIdeaDropDownList")]
-        public BigIdeaForSocialStudiesListViewModel BigIdeaForSocialStudies{ get; set; }
+        public SocialStudiesBigIdeaListViewModel BigIdeaForSocialStudies{ get; set; }
 
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Mapper21.UI.Models
 {
-    public class BigIdeaForScienceListViewModel
+    public class SocialStudiesBigIdeaListViewModel
     {
         public int BigIdeaId { get; set; }
         public string BigIdeaName { get; set; }
