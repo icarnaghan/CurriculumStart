@@ -10,7 +10,7 @@ namespace Mapper21.BE.Domain
         public int Id { get; set; }
         public int Year { get; set; }
         public string GradeLevelId { get; set; }
-        public int SectionTypeId { get; set; }
+        public string SectionTypeId { get; set; }
         public int? SubjectAreaId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

@@ -67,12 +67,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201408120214445_InitialCreate.cs" />
-    <Compile Include="Migrations\201408120214445_InitialCreate.Designer.cs">
-      <DependentUpon>201408120214445_InitialCreate.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Interfaces\ILookupRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Provider\Mapper21Context.cs" />
+    <Compile Include="Repositories\LookupRepository.cs" />
     <Compile Include="Repositories\SubSectionRepository.cs" />
     <Compile Include="Repositories\SectionRepository.cs" />
     <Compile Include="Interfaces\ISubSectionRepository.cs" />
@@ -84,11 +82,6 @@
       <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
       <Name>Mapper21.BE</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408120214445_InitialCreate.resx">
-      <DependentUpon>201408120214445_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

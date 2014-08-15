@@ -31,8 +31,7 @@ namespace Mapper21.UI.Controllers
         public ActionResult FallExpedition()
         {
             var sectionId = 0;
-            var gradeLevelId = PermissionHelpers.GetCurrentGradeLevel(User);
-            sectionId = _sectionRepository.GetFallExpeditionByGrade(gradeLevelId, _currentYear).Id;
+            sectionId = _sectionRepository.GetFallExpeditionByGrade(CurrentGradeLevel, CurrentYear).Id;
 
             return RedirectToAction("Overview", "Expedition", new { id = sectionId });
         }

@@ -40,11 +40,11 @@ namespace Mapper21.DAL.Migrations
 
             var sectionTypes = new List<SectionType>
             {
-                new SectionType {Id = 1, Name = "First Six Weeks"},
-                new SectionType {Id = 2, Name = "Fall Expedition"},
-                new SectionType {Id = 3, Name = "Mini Mester"},
-                new SectionType {Id = 4, Name = "Spring Expedition"},
-                new SectionType {Id = 5, Name = "Strand"},
+                new SectionType {Id = "FirstSixWeeks", Name = "First Six Weeks"},
+                new SectionType {Id = "FallExpedition", Name = "Fall Expedition"},
+                new SectionType {Id = "MiniMester", Name = "Mini Mester"},
+                new SectionType {Id = "SpringExpedition", Name = "Spring Expedition"},
+                new SectionType {Id = "Strand", Name = "Strand"},
             };
             sectionTypes.ForEach(s => context.SectionTypes.AddOrUpdate(s));
             context.SaveChanges();
@@ -89,7 +89,7 @@ namespace Mapper21.DAL.Migrations
                 FinalProductDescription =
                     "Civilization or civilisation generally refers to state polities which combine these basic institutions: " +
                     "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. ",
-                SectionTypeId = 2
+                SectionTypeId = "FallExpedition"
             };
             context.Sections.AddOrUpdate(section);
             context.SaveChanges();
@@ -106,7 +106,7 @@ namespace Mapper21.DAL.Migrations
                 FinalProductName = "",
                 FinalProductDescription =
                     "",
-                SectionTypeId = 4
+                SectionTypeId = "SpringExpedition"
             };
             context.Sections.AddOrUpdate(section2);
             context.SaveChanges();
@@ -119,7 +119,7 @@ namespace Mapper21.DAL.Migrations
                 GradeLevelId = "2",
                 Name = "First Six Weeks",
                 Description = "TBD",
-                SectionTypeId = 1
+                SectionTypeId = "FirstSixWeeks"
             };
             context.Sections.AddOrUpdate(section3);
             context.SaveChanges();
@@ -136,7 +136,7 @@ namespace Mapper21.DAL.Migrations
                 FinalProductName = "",
                 FinalProductDescription =
                     "",
-                SectionTypeId = 3
+                SectionTypeId = "MiniMester"
             };
             context.Sections.AddOrUpdate(section4);
             context.SaveChanges();
@@ -150,7 +150,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Art",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 1
             };
             context.Sections.AddOrUpdate(section5);
@@ -165,7 +165,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Foreign Languages",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 2
             };
             context.Sections.AddOrUpdate(section6);
@@ -180,7 +180,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Language Arts",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 3
             };
             context.Sections.AddOrUpdate(section7);
@@ -195,7 +195,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Mathematics",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 4
             };
             context.Sections.AddOrUpdate(section8);
@@ -210,7 +210,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Media",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 5
             };
             context.Sections.AddOrUpdate(section9);
@@ -225,7 +225,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Music",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 6
             };
             context.Sections.AddOrUpdate(section10);
@@ -240,7 +240,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Physical Education",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 7
             };
             context.Sections.AddOrUpdate(section11);
@@ -255,7 +255,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Science",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 8
             };
             context.Sections.AddOrUpdate(section12);
@@ -270,7 +270,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Social Skills",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 9
             };
             context.Sections.AddOrUpdate(section13);
@@ -285,7 +285,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Social Studies",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 10
             };
             context.Sections.AddOrUpdate(section14);
@@ -300,7 +300,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Technology",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 11
             };
             context.Sections.AddOrUpdate(section15);
@@ -315,7 +315,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Second Grade Writing",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = 5,
+                SectionTypeId = "Strand",
                 SubjectAreaId = 12
             };
             context.Sections.AddOrUpdate(section16);

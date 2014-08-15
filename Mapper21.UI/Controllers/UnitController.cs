@@ -80,14 +80,15 @@ namespace Mapper21.UI.Controllers
         public int GetSubSectionType(int sectionId)
         {
             var section = _sectionRepository.Find(sectionId);
+
             switch (section.SectionTypeId)
             {
-                case 1: // First Six Weeks
-                    return 1; // Return Week Type
-                case 5: // Strand
-                    return 3; // Return Unit Type
-                default: 
-                    return 2; // Return Case Study Type
+                case "FirstSixWeeks":
+                    return 1;
+                case "Strand":
+                    return 3;
+                default:
+                    return 2;
             }
         }
 

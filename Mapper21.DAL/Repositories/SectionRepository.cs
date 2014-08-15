@@ -18,57 +18,11 @@ namespace Mapper21.DAL.Repositories
             return db.Sections.ToList();
         }
 
-        public IEnumerable<Habit> GetHabits()
-        {
-            return db.Habits.ToList();
-        }
-
-        public IEnumerable<ScienceBigIdea> GetBigIdeaForSciences()
-        {
-            return db.ScienceBigIdeas.ToList();
-        }
-
-        public IEnumerable<SocialStudiesBigIdea> GetBigIdeaForSocialStudies()
-        {
-            return db.SocialStudiesBigIdeas.ToList();
-        }
-
-        public Section GetSectionByGrade(string id, string year)
+        public Section GetSection(string gradeLevel, string year, string sectionType)
         {
             int currentYear = int.Parse(year);
-            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear);
+            return db.Sections.SingleOrDefault(s => s.GradeLevelId == gradeLevel && s.Year == currentYear && s.SectionTypeId == sectionType);
         }
-
-        public Section GetFirstSixWeeksByGrade(string id, string year)
-        {
-            int currentYear = int.Parse(year);
-            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 1);
-        }
-
-        public Section GetFallExpeditionByGrade(string id, string year)
-        {
-            int currentYear = int.Parse(year);
-            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 2);
-        }
-
-        public Section GetMiniMesterByGrade(string id, string year)
-        {
-            int currentYear = int.Parse(year);
-            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 3);
-        }
-
-        public Section GetSpringExpeditionByGrade(string id, string year)
-        {
-            int currentYear = int.Parse(year);
-            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SectionTypeId == 4);
-        }
-
-        public Section GetSubjectAreaByGrade(string id, string year, int subjectAreaId)
-        {
-            int currentYear = int.Parse(year);
-            return db.Sections.SingleOrDefault(s => s.GradeLevelId == id && s.Year == currentYear && s.SubjectAreaId == subjectAreaId);
-        }
-
 
         public Section Find(int? id)
         {

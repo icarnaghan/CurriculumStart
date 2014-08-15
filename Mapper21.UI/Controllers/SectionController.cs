@@ -6,31 +6,32 @@ using Mapper21.DAL.Interfaces;
 
 namespace Mapper21.UI.Controllers
 {
-    public class ExpeditionController : BaseController
+    public class SectionController : BaseController
     {
         private readonly ISectionRepository _sectionRepository;
-        private readonly ISubSectionRepository _caseStudyRepository;
+        private readonly ILookupRepository _lookupRepository;
 
-        public ExpeditionController(ISectionRepository sectionRepository, ISubSectionRepository caseStudyRepository)
+        public SectionController(ISectionRepository sectionRepository, 
+                                 ILookupRepository lookupRepository)
         {
             _sectionRepository = sectionRepository;
-            _caseStudyRepository = caseStudyRepository;
+            _lookupRepository = lookupRepository;
         }
 
         // GET: /Expedition/CaseStudy/5
-        public ActionResult CaseStudy(int? id)
+        public ActionResult CaseStudy(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.Find(id);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, id);
             if (section == null) return HttpNotFound();
             return View(section);
         }
 
         // GET: /Expedition/FinalProduct/5
-        public ActionResult FinalProduct(int? id)
+        public ActionResult FinalProduct(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.Find(id);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, id);
             if (section == null) return HttpNotFound();
             return View(section);
         }
@@ -50,11 +51,11 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/Overview/5
-        public ActionResult Overview(int? id)
+        // GET: /Expedition/Overview/id
+        public ActionResult Overview(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.Find(id);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, id);
             if (section == null) return HttpNotFound();
 
             ViewBag.Title = section.Name;
@@ -75,51 +76,51 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Expedition/GuidingQuestions/5
-        public ActionResult GuidingQuestions(int? id)
+        public ActionResult GuidingQuestions(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.Find(id);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, id);
             if (section == null) return HttpNotFound();
             return View(section);
         }
 
         // GET: /Expedition/Habits/5
-        public ActionResult Habits(int? id)
+        public ActionResult Habits(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.Find(id);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, id);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
-            var habit = _sectionRepository.GetHabits();
+            var habit = _lookupRepository.GetHabits();
             ViewData["HabitList"] = new SelectList(habit, "Id", "Name");
 
             return View(section);
         }
 
         // GET: /Expedition/ScienceBigIdeas/5
-        public ActionResult ScienceBigIdeas(int? id)
+        public ActionResult ScienceBigIdeas(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.Find(id);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, id);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
-            var bigIdeaForScience = _sectionRepository.GetBigIdeaForSciences();
+            var bigIdeaForScience = _lookupRepository.GetBigIdeaForSciences();
             ViewData["BigIdeaForScienceList"] = new SelectList(bigIdeaForScience, "Id", "Name");
 
             return View(section);
         }
 
         // GET: /Expedition/SocialStudiesBigIdeas/5
-        public ActionResult SocialStudiesBigIdeas(int? id)
+        public ActionResult SocialStudiesBigIdeas(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.Find(id);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, id);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
-            var bigIdeaForSocialStudies = _sectionRepository.GetBigIdeaForSocialStudies();
+            var bigIdeaForSocialStudies = _lookupRepository.GetBigIdeaForSocialStudies();
             ViewData["BigIdeaForSocialStudiesList"] = new SelectList(bigIdeaForSocialStudies, "Id", "Name");
 
             return View(section);
