@@ -61,6 +61,8 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/EditSubSection/5
         public ActionResult EditSubSection(int? id)
         {
+            var ian = new ViewContext();
+
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             var subSection = _subSectionRepository.Find(id);
