@@ -32,7 +32,7 @@
                             <!-- Primary box -->
                             <div class="box box-solid box-primary">
                                 <div class="box-header" data-toggle="tooltip" title="" data-original-title="Header tooltip">
-                                    <h3 class="box-title"><a style="color: #fff;" href="~/SubSection/Edit/@item.Id">@item.Name</a></h3>
+                                    <h3 class="box-title"><a style="color: #fff;" href="~/Section/EditSubSection/@Model.SectionTypeId/@item.Id">@item.Name</a></h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-primary btn-xs" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-primary btn-xs" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -44,7 +44,7 @@
                                     </p>
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <a href="~/CaseStudy/Edit/@item.Id">Edit @item.Name @subSectionType</a>
+                                    <a href="~/Section/EditSubSection/@Model.SectionTypeId/@item.Id">Edit @item.Name @subSectionType</a>
                                 </div><!-- /.box-footer-->
                             </div><!-- /.box -->
                         </div>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <a class="btn btn-primary" href="~/CaseStudy/Create/?sectionId=@Model.Id">Add a New @subSectionType</a>
+                <a class="btn btn-primary" href="~/Section/CreateSubSection/@Model.SectionTypeId">Add a New @subSectionType</a>
             </div>
         </div>
         

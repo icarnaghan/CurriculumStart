@@ -7,7 +7,7 @@ namespace Mapper21.BE.Domain.LookUps
 {
     public class SubSectionType
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
     }
 }

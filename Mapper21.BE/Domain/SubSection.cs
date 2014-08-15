@@ -8,7 +8,7 @@ namespace Mapper21.BE.Domain
     {
         public int Id { get; set; }
         public int SectionId { get; set; }
-        public int SubSectionTypeId { get; set; }
+        public string SubSectionTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int? LastUpdatedBy { get; set; }

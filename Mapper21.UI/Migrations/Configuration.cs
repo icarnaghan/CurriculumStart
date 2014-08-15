@@ -99,7 +99,7 @@ namespace Mapper21.UI.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "kindergarten" };
+                var user = new ApplicationUser { UserName = "kindergarten@monarchcharter.edu", Email = "kindergarten@monarchcharter.edu" };
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "Kindergarten");
@@ -109,7 +109,7 @@ namespace Mapper21.UI.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "firstgrade" };
+                var user = new ApplicationUser { UserName = "firstgrade@monarchcharter.edu", Email = "firstgrade@monarchcharter.edu" };
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "First Grade");
@@ -119,7 +119,7 @@ namespace Mapper21.UI.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "secondgrade" };
+                var user = new ApplicationUser { UserName = "secondgrade@monarchcharter.edu", Email = "secondgrade@monarchcharter.edu" };
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "Second Grade");
@@ -129,7 +129,7 @@ namespace Mapper21.UI.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "thirdgrade" };
+                var user = new ApplicationUser { UserName = "thirdgrade@monarchcharter.edu", Email = "thirdgrade@monarchcharter.edu" };
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "Third Grade");
@@ -139,7 +139,7 @@ namespace Mapper21.UI.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "fourthgrade" };
+                var user = new ApplicationUser { UserName = "fourthgrade@monarchcharter.edu", Email = "fourthgrade@monarchcharter.edu" };
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "Fourth Grade");
@@ -149,17 +149,17 @@ namespace Mapper21.UI.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "fifthgrade" };
+                var user = new ApplicationUser { UserName = "fifthgrade@monarchcharter.edu", Email = "fifthgrade@monarchcharter.edu" };
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "Fifth Grade");
             }
 
-            if (!context.Users.Any(u => u.UserName == "sixthgrade"))
+            if (!context.Users.Any(u => u.UserName == "sixthgrade@monarchcharter.edu"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "sixthgrade" };
+                var user = new ApplicationUser { UserName = "sixthgrade", Email = "sixthgrade@monarchcharter.edu" };
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "Sixth Grade");

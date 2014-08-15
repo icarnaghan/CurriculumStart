@@ -196,11 +196,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
-    <Compile Include="Controllers\CaseStudyController.cs" />
-    <Compile Include="Controllers\UnitController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
-    <Compile Include="Controllers\WeekController.cs" />
-    <Compile Include="Controllers\SubSectionController.cs" />
     <Compile Include="Controllers\AssessmentController.cs" />
     <Compile Include="Controllers\StrandController.cs" />
     <Compile Include="Controllers\FirstSixWeeksController.cs" />
@@ -1703,11 +1699,6 @@
     <Content Include="Views\Shared\_ExpeditionNavigation.cshtml" />
     <Content Include="Views\Shared\_StrandNavigation.cshtml" />
     <Content Include="Views\Shared\_FirstSixWeeksNavigation.cshtml" />
-    <Content Include="Views\CaseStudy\Create.cshtml" />
-    <Content Include="Views\CaseStudy\Edit.cshtml" />
-    <Content Include="Views\CaseStudy\Partials\_Expert.cshtml" />
-    <Content Include="Views\CaseStudy\Partials\_Fieldwork.cshtml" />
-    <Content Include="Views\CaseStudy\Partials\_ServiceLearning.cshtml" />
     <Content Include="Views\Week\Create.cshtml" />
     <Content Include="Views\Week\Edit.cshtml" />
     <Content Include="Views\Week\Partials\_Expert.cshtml" />
@@ -1748,7 +1739,11 @@
     <Content Include="Views\UsersAdmin\Details.cshtml" />
     <Content Include="Views\UsersAdmin\Edit.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
-    <Content Include="Views\Shared\_NavigationLogic.cshtml" />
+    <Content Include="Views\Section\Partials\_Expert.cshtml" />
+    <Content Include="Views\Section\Partials\_Fieldwork.cshtml" />
+    <Content Include="Views\Section\Partials\_ServiceLearning.cshtml" />
+    <Content Include="Views\Section\CreateSubSection.cshtml" />
+    <Content Include="Views\Section\EditSubSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

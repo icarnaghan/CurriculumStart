@@ -51,9 +51,9 @@ namespace Mapper21.DAL.Migrations
 
             var subSectionTypes = new List<SubSectionType>
             {
-                new SubSectionType {Id = 1, Name = "Week"},
-                new SubSectionType {Id = 1, Name = "Case Study"},
-                new SubSectionType {Id = 1, Name = "Unit"},
+                new SubSectionType {Id = "Week", Name = "Week"},
+                new SubSectionType {Id = "CaseStudy", Name = "Case Study"},
+                new SubSectionType {Id = "Unit", Name = "Unit"},
             };
             subSectionTypes.ForEach(s => context.SubSectionTypes.AddOrUpdate(s));
             context.SaveChanges();
@@ -328,7 +328,7 @@ namespace Mapper21.DAL.Migrations
                 Name = "Ancient Greece",
                 Description =
                     "The ancient Greece case study encompasses several tasks associated with ancient civilizations.",
-                SubSectionTypeId = 2
+                SubSectionTypeId = "CaseStudy"
             };
             context.SubSections.AddOrUpdate(caseStudy);
             context.SaveChanges();

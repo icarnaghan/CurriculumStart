@@ -34,5 +34,18 @@
             if (subjectArea == "Writing") subjectAreaId = 12;
             return subjectAreaId;
         }
+
+        public static string GetSubSectionType(string sectionTypeId)
+        {
+            switch (sectionTypeId)
+            {
+                case "FirstSixWeeks":
+                    return "Week"; // Return Week Type
+                case "Strand": // Strand
+                    return "Unit"; // Return Unit Type
+                default:
+                    return "CaseStudy"; // Return Case Study Type
+            }
+        }
     }
 }
