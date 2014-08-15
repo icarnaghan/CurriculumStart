@@ -1683,7 +1683,7 @@
     <Content Include="Views\Section\Partials\_SocialStudiesBigIdea.cshtml" />
     <Content Include="Views\Section\ScienceBigIdeas.cshtml" />
     <Content Include="Views\Section\SocialStudiesBigIdeas.cshtml" />
-    <Content Include="Views\Section\CaseStudy.cshtml" />
+    <Content Include="Views\Section\SubSection.cshtml" />
     <Content Include="Views\Strand\Unit.cshtml" />
     <Content Include="Views\Strand\EditorTemplates\HabitDropDownList.cshtml" />
     <Content Include="Views\Strand\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
@@ -1748,6 +1748,7 @@
     <Content Include="Views\UsersAdmin\Details.cshtml" />
     <Content Include="Views\UsersAdmin\Edit.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\Shared\_NavigationLogic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

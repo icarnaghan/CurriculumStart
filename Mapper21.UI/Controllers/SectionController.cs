@@ -18,8 +18,8 @@ namespace Mapper21.UI.Controllers
             _lookupRepository = lookupRepository;
         }
 
-        // GET: /Expedition/CaseStudy/5
-        public ActionResult CaseStudy(string id)
+        // GET: /Expedition/SubSection/SectionType
+        public ActionResult SubSection(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, id);
@@ -27,7 +27,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/FinalProduct/5
+        // GET: /Expedition/FinalProduct/SectionType
         public ActionResult FinalProduct(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -36,7 +36,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // POST: /Expedition/FinalProduct/5
+        // POST: /Expedition/FinalProduct/SectionType
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult FinalProduct(Section section)
@@ -51,7 +51,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/Overview/id
+        // GET: /Expedition/Overview/SectionType
         public ActionResult Overview(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -62,7 +62,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // POST: /Expedition/Overview/5
+        // POST: /Expedition/Overview/SectionType
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Overview(Section section)
@@ -75,7 +75,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/GuidingQuestions/5
+        // GET: /Expedition/GuidingQuestions/SectionType
         public ActionResult GuidingQuestions(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -84,7 +84,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/Habits/5
+        // GET: /Expedition/Habits/SectionType
         public ActionResult Habits(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -98,7 +98,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/ScienceBigIdeas/5
+        // GET: /Expedition/ScienceBigIdeas/SectionType
         public ActionResult ScienceBigIdeas(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -112,7 +112,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/SocialStudiesBigIdeas/5
+        // GET: /Expedition/SocialStudiesBigIdeas/SectionType
         public ActionResult SocialStudiesBigIdeas(string id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
