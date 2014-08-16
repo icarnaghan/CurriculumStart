@@ -1,46 +1,35 @@
 ﻿@{
     // Top Level Nav
-    var firstSixWeeksNav = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks") || (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "FirstSixWeeks") ? "active" : "";
-    var fallExpeditionNav = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition") || (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "FallExpedition") ? "active" : "";
-    var miniMesterNav = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester") || (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "MiniMester") ? "active" : "";
-    var springExpeditionNav = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition") || (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "SpringExpedition") ? "active" : "";
-    var subjectAreaNav = (ViewContext.RouteData.Values["action"].ToString() == "Strand") || (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "Strand") ? "active" : "";
-
-    // First Six Weeks Nav
-    var firstSixWeeksOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
-    var firstSixWeeksHabits = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
-    var firstSixWeeksGuidingQuestions = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
-    var firstSixWeeksScienceBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "ScienceBigIdeas" ? "active" : "";
-    var firstSixWeeksSocialStudiesBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "SocialStudiesBigIdeas" ? "active" : "";
-    var firstSixWeeksSubSections = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
-                                    ((ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") && (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "FirstSixWeeks")) ? "active" : "";
-
-    // Fall Expedition Nav
-    var fallExpeditionOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
-    var fallExpeditionHabits = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
-    var fallExpeditionGuidingQuestions = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
-    var fallExpeditionScienceBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "ScienceBigIdeas" ? "active" : "";
-    var fallExpeditionSocialStudiesBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "SocialStudiesBigIdeas" ? "active" : "";
-    var fallExpeditionSubSections = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
-                                    ((ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") && (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "FallExpedition")) ? "active" : "";
-
-    // Mini-Mester Nav
-    var miniMesterOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
-    var miniMesterHabits = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
-    var miniMesterGuidingQuestions = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
-    var miniMesterScienceBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "ScienceBigIdeas" ? "active" : "";
-    var miniMesterSocialStudiesBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "SocialStudiesBigIdeas" ? "active" : "";
-    var miniMesterSubSections = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
-                                    ((ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") && (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "MiniMester")) ? "active" : "";
-
-    // Spring Expedition Nav
-    var springExpeditionOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition" && ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
-    var springExpeditionHabits = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition" && ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
-    var springExpeditionGuidingQuestions = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition" && ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
-    var springExpeditionScienceBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition" && ViewContext.RouteData.Values["action"].ToString() == "ScienceBigIdeas" ? "active" : "";
-    var springExpeditionSocialStudiesBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition" && ViewContext.RouteData.Values["action"].ToString() == "SocialStudiesBigIdeas" ? "active" : "";
-    var springExpeditionSubSections = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition" && ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
-                                    ((ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") && (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "SpringExpedition")) ? "active" : "";
+    var semesterNav = (ViewContext.RouteData.Values.ContainsKey("id") && 
+        (ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" ||
+         ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" ||
+         ViewContext.RouteData.Values["id"].ToString() == "MiniMester" ||
+         ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition")) ? "active" : "";
+    
+    var subjectAreaNav = (semesterNav != "active") ? "active" : "";
+    
+    // Semester Nav
+    var firstSixWeeksOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" ? "active" : "";
+    var fallExpeditionOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" ? "active" : "";
+    var miniMesterOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" ? "active" : "";
+    var springExpeditionOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition" ? "active" : "";
+    
+    //Subject Area Nav
+    var artOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Art" ? "active" : "";
+    var foreignLanguagesOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "ForeignLanguages" ? "active" : "";
+    var languageArtsOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "LanguageArts" ? "active" : "";
+    var mathematicsOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Mathematics" ? "active" : "";
+    var mediaOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Media" ? "active" : "";
+    var musicOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Music" ? "active" : "";
+    var peHealthOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "PeHealth" ? "active" : "";
+    var scienceOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Science" ? "active" : "";
+    var socialSkillsOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SoclaiSkills" ? "active" : "";
+    var socialStudiesOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SocialStudies" ? "active" : "";
+    var technologyOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Technology" ? "active" : "";
+    var writingOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Writing" ? "active" : "";
+    var clubcOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "ClubC" ? "active" : "";
+    var crewOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Crew" ? "active" : "";
+    var sasOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "Sas" ? "active" : "";
 }
 <ul class="sidebar-menu">
     <li class="active">
@@ -49,68 +38,20 @@
         </a>
     </li>
 
-    <li class="treeview @firstSixWeeksNav">
+    <li class="treeview @semesterNav">
         <a href="#">
             <i class="fa fa-bar-chart-o"></i>
-            <span>First Six Weeks</span>
+            <span>Semesters</span>
             <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-            <li class="@firstSixWeeksOverview"><a href="~/Section/Overview/FirstSixWeeks"><i class="fa fa-angle-double-right"></i> Overview</a></li>
-            <li class="@firstSixWeeksHabits"><a href="~/Section/Habits/FirstSixWeeks"><i class="fa fa-angle-double-right"></i> Habits</a></li>
-            <li class="@firstSixWeeksGuidingQuestions"><a href="~/Section/GuidingQuestions/FirstSixWeeks"><i class="fa fa-angle-double-right"></i> Guiding Questions</a></li>
-            <li class="@firstSixWeeksScienceBigIdeas"><a href="~/Section/ScienceBigIdeas/FirstSixWeeks"><i class="fa fa-angle-double-right"></i> Big Ideas for Science</a></li>
-            <li class="@firstSixWeeksSocialStudiesBigIdeas"><a href="~/Section/SocialStudiesBigIdeas/FirstSixWeeks"><i class="fa fa-angle-double-right"></i> Big Ideas for Social Studies</a></li>
-            <li class="@firstSixWeeksSubSections"><a href="~/Section/SubSection/FirstSixWeeks"><i class="fa fa-angle-double-right"></i> Weeks</a></li>
+            <li class="@firstSixWeeksOverview"><a href="~/Section/Overview/FirstSixWeeks"><i class="fa fa-angle-double-right"></i> First Six Weeks</a></li>
+            <li class="@fallExpeditionOverview"><a href="~/Section/Overview/FallExpedition"><i class="fa fa-angle-double-right"></i> Fall Expedition</a></li>
+            <li class="@miniMesterOverview"><a href="~/Section/Overview/MiniMester"><i class="fa fa-angle-double-right"></i> MiniMester</a></li>
+            <li class="@springExpeditionOverview"><a href="~/Section/Overview/SpringExpedition"><i class="fa fa-angle-double-right"></i> Spring Expedition</a></li>
         </ul>
     </li>
     
-    <li class="treeview @fallExpeditionNav">
-        <a href="#">
-            <i class="fa fa-leaf"></i>
-            <span>Fall Expedition</span>
-            <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <li class="@fallExpeditionOverview"><a href="~/Section/Overview/FallExpedition"><i class="fa fa-angle-double-right"></i> Overview</a></li>
-            <li class="@fallExpeditionHabits"><a href="~/Section/Habits/FallExpedition"><i class="fa fa-angle-double-right"></i> Habits</a></li>
-            <li class="@fallExpeditionGuidingQuestions"><a href="~/Section/GuidingQuestions/FallExpedition"><i class="fa fa-angle-double-right"></i> Guiding Questions</a></li>
-            <li class="@fallExpeditionScienceBigIdeas"><a href="~/Section/ScienceBigIdeas/FallExpedition"><i class="fa fa-angle-double-right"></i> Big Ideas for Science</a></li>
-            <li class="@fallExpeditionSocialStudiesBigIdeas"><a href="~/Section/SocialStudiesBigIdeas/FallExpedition"><i class="fa fa-angle-double-right"></i> Big Ideas for Social Studies</a></li>
-            <li class="@fallExpeditionSubSections"><a href="~/Section/SubSection/FallExpedition"><i class="fa fa-angle-double-right"></i> Case Studies</a></li>
-        </ul>
-    </li>
-    <li class="treeview @miniMesterNav">
-        <a href="#">
-            <i class="fa fa-cloud"></i>
-            <span>Mini-Mester</span>
-            <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <li class="@miniMesterOverview"><a href="~/Section/Overview/MiniMester"><i class="fa fa-angle-double-right"></i> Overview</a></li>
-            <li class="@miniMesterHabits"><a href="~/Section/Habits/MiniMester"><i class="fa fa-angle-double-right"></i> Habits</a></li>
-            <li class="@miniMesterGuidingQuestions"><a href="~/Section/GuidingQuestions/MiniMester"><i class="fa fa-angle-double-right"></i> Guiding Questions</a></li>
-            <li class="@miniMesterScienceBigIdeas"><a href="~/Section/ScienceBigIdeas/MiniMester"><i class="fa fa-angle-double-right"></i> Big Ideas for Science</a></li>
-            <li class="@miniMesterSocialStudiesBigIdeas"><a href="~/Section/SocialStudiesBigIdeas/MiniMester"><i class="fa fa-angle-double-right"></i> Big Ideas for Social Studies</a></li>
-            <li class="@miniMesterSubSections"><a href="~/Section/SubSection/MiniMester"><i class="fa fa-angle-double-right"></i> Case Studies</a></li>
-        </ul>
-    </li>
-    <li class="treeview @springExpeditionNav">
-        <a href="#">
-            <i class="fa fa-sun-o"></i>
-            <span>Spring Expedition</span>
-            <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <li class="@springExpeditionOverview"><a href="~/Section/Overview/SpringExpedition"><i class="fa fa-angle-double-right"></i> Overview</a></li>
-            <li class="@springExpeditionHabits"><a href="~/Section/Habits/SpringExpedition"><i class="fa fa-angle-double-right"></i> Habits</a></li>
-            <li class="@springExpeditionGuidingQuestions"><a href="~/Section/GuidingQuestions/SpringExpedition"><i class="fa fa-angle-double-right"></i> Mini-Mester</a></li>
-            <li class="@springExpeditionScienceBigIdeas"><a href="~/Section/ScienceBigIdeas/SpringExpedition"><i class="fa fa-angle-double-right"></i> Big Ideas for Science</a></li>
-            <li class="@springExpeditionSocialStudiesBigIdeas"><a href="~/Section/SocialStudiesBigIdeas/SpringExpedition"><i class="fa fa-angle-double-right"></i> Big Ideas for Social Studies</a></li>
-            <li class="@springExpeditionSubSections"><a href="~/Section/SubSection/SpringExpedition"><i class="fa fa-angle-double-right"></i> Case Studies</a></li>
-        </ul>
-    </li>
-
     <li class="treeview @subjectAreaNav">
         <a href="#">
             <i class="fa fa-leaf"></i>
@@ -118,18 +59,21 @@
             <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-            <li><a href="~/Navigation/SubjectArea/Art"><i class="fa fa-angle-double-right"></i> Art</a></li>
-            <li><a href="~/Navigation/SubjectArea/ForeignLanguages"><i class="fa fa-angle-double-right"></i> Foreign Languages</a></li>
-            <li><a href="~/Navigation/SubjectArea/LanguageArts"><i class="fa fa-angle-double-right"></i> Language Arts</a></li>
-            <li><a href="~/Navigation/SubjectArea/Mathematics"><i class="fa fa-angle-double-right"></i> Mathematics</a></li>
-            <li><a href="~/Navigation/SubjectArea/Media"><i class="fa fa-angle-double-right"></i> Media</a></li>
-            <li><a href="~/Navigation/SubjectArea/Music"><i class="fa fa-angle-double-right"></i> Music</a></li>
-            <li><a href="~/Navigation/SubjectArea/PhysicalEducation"><i class="fa fa-angle-double-right"></i> Physical Education</a></li>
-            <li><a href="~/Navigation/SubjectArea/Science"><i class="fa fa-angle-double-right"></i> Science</a></li>
-            <li><a href="~/Navigation/SubjectArea/SocialSkills"><i class="fa fa-angle-double-right"></i> Soclai Skills</a></li>
-            <li><a href="~/Navigation/SubjectArea/SocialStudies"><i class="fa fa-angle-double-right"></i> Social Studies</a></li>
-            <li><a href="~/Navigation/SubjectArea/Technology"><i class="fa fa-angle-double-right"></i> Technology</a></li>
-            <li><a href="~/Navigation/SubjectArea/Writing"><i class="fa fa-angle-double-right"></i> Writing</a></li>
+            <li class="@artOverview"><a href="~/Section/Overview/Art"><i class="fa fa-angle-double-right"></i> Art</a></li>
+            <li class="@foreignLanguagesOverview"><a href="~/Section/Overview/ForeignLanguages"><i class="fa fa-angle-double-right"></i> Foreign Languages</a></li>
+            <li class="@languageArtsOverview"><a href="~/Section/Overview/LanguageArts"><i class="fa fa-angle-double-right"></i> Language Arts</a></li>
+            <li class="@mathematicsOverview"><a href="~/Section/Overview/Mathematics"><i class="fa fa-angle-double-right"></i> Mathematics</a></li>
+            <li class="@mediaOverview"><a href="~/Section/Overview/Media"><i class="fa fa-angle-double-right"></i> Media</a></li>
+            <li class="@musicOverview"><a href="~/Section/Overview/Music"><i class="fa fa-angle-double-right"></i> Music</a></li>
+            <li class="@peHealthOverview"><a href="~/Section/Overview/PhysicalEducation"><i class="fa fa-angle-double-right"></i> Physical Education</a></li>
+            <li class="@scienceOverview"><a href="~/Section/Overview/Science"><i class="fa fa-angle-double-right"></i> Science</a></li>
+            <li class="@socialSkillsOverview"><a href="~/Section/Overview/SocialSkills"><i class="fa fa-angle-double-right"></i> Soclai Skills</a></li>
+            <li class="@socialStudiesOverview"><a href="~/Section/Overview/SocialStudies"><i class="fa fa-angle-double-right"></i> Social Studies</a></li>
+            <li class="@technologyOverview"><a href="~/Section/Overview/Technology"><i class="fa fa-angle-double-right"></i> Technology</a></li>
+            <li class="@writingOverview"><a href="~/Section/Overview/Writing"><i class="fa fa-angle-double-right"></i> Writing</a></li>
+            <li class="@clubcOverview"><a href="~/Section/Overview/ClubC"><i class="fa fa-angle-double-right"></i> Club C</a></li>
+            <li class="@crewOverview"><a href="~/Section/Overview/Crew"><i class="fa fa-angle-double-right"></i> Crew</a></li>
+            <li class="@sasOverview"><a href="~/Section/Overview/Sas"><i class="fa fa-angle-double-right"></i> Sas</a></li>
         </ul>
     </li>
     <li class="treeview">

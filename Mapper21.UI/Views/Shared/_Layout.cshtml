@@ -92,16 +92,26 @@
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Monarch Academy
-                        <small>Curriculum  Mapping</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                </section>
+                @if (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition")
+                {
+                    @RenderPage("~/Views/Shared/SubNavigation/_FallExpeditionNavigation.cshtml")
+                }
+                else if (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester")
+                {
+                    @RenderPage("~/Views/Shared/SubNavigation/_MiniMesterNavigation.cshtml")
+                }
+                else if (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition")
+                {
+                    @RenderPage("~/Views/Shared/SubNavigation/_SpringExpeditionNavigation.cshtml")
+                }
+                else if (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks")
+                {
+                    @RenderPage("~/Views/Shared/SubNavigation/_FirstSixWeeksNavigation.cshtml")
+                }
+                else
+                {
+                    @RenderPage("~/Views/Shared/SubNavigation/_HomeNavigation.cshtml")
+                }
 
                 <!-- Main content -->
                 <section class="content">

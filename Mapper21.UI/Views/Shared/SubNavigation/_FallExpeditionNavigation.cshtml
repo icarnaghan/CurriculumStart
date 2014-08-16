@@ -1,0 +1,22 @@
+﻿@{
+    var fallExpeditionOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
+    var fallExpeditionHabits = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
+    var fallExpeditionGuidingQuestions = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
+    var fallExpeditionScienceBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "ScienceBigIdeas" ? "active" : "";
+    var fallExpeditionSocialStudiesBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "SocialStudiesBigIdeas" ? "active" : "";
+    var fallExpeditionSubSections = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
+                                    ((ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") && (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "FallExpedition")) ? "active" : "";
+    var fallExpeditionFinalProduct = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition" && ViewContext.RouteData.Values["action"].ToString() == "FinalProduct" ? "active" : "";
+}
+
+<section class="content-header">
+    <ul class="nav nav-pills">
+        <li class="@fallExpeditionOverview"><a href="~/Section/Overview/FallExpedition">Overview</a></li>
+        <li class="@fallExpeditionHabits"><a href="~/Section/Habits/FallExpedition/">Habits</a></li>
+        <li class="@fallExpeditionGuidingQuestions"><a href="~/Section/GuidingQuestions/FallExpedition">Guiding Questions</a></li>   
+        <li class="@fallExpeditionScienceBigIdeas"><a href="~/Section/ScienceBigIdeas/FallExpedition">Big Ideas for Science</a></li>
+        <li class="@fallExpeditionSocialStudiesBigIdeas"><a href="~/Section/SocialStudiesBigIdeas/FallExpedition">Big Ideas for Social Studies</a></li>
+        <li class="@fallExpeditionSubSections"><a href="~/Section/SubSection/FallExpedition">Case Studies</a></li>
+        <li class="@fallExpeditionFinalProduct"><a href="/Section/FinalProduct/FallExpedition">Final Product</a></li>
+    </ul>
+</section>

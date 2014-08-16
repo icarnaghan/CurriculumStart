@@ -44,7 +44,21 @@ namespace Mapper21.DAL.Migrations
                 new SectionType {Id = "FallExpedition", Name = "Fall Expedition"},
                 new SectionType {Id = "MiniMester", Name = "Mini Mester"},
                 new SectionType {Id = "SpringExpedition", Name = "Spring Expedition"},
-                new SectionType {Id = "Strand", Name = "Strand"},
+                new SectionType {Id = "Art", Name = "Strand"},
+                new SectionType {Id = "ForeignLanguages", Name = "ForeignLanguages"},
+                new SectionType {Id = "LanguageArts", Name = "Language Arts"},
+                new SectionType {Id = "Mathematics", Name = "Mathematics"},
+                new SectionType {Id = "Media", Name = "Media"},
+                new SectionType {Id = "Music", Name = "Music"},
+                new SectionType {Id = "PeHealth", Name = "PE / Health"},
+                new SectionType {Id = "Science", Name = "Science"},
+                new SectionType {Id = "SocialSkills", Name = "Social Skills"},
+                new SectionType {Id = "SocialStudiesHumanities", Name = "Social Studies / Humanities"},
+                new SectionType {Id = "Technology", Name = "Technology"},
+                new SectionType {Id = "Writing", Name = "Writing"},
+                new SectionType {Id = "ClubC", Name = "Club C"},
+                new SectionType {Id = "Crew", Name = "Crew"},
+                new SectionType {Id = "Sas", Name = "SAS"},
             };
             sectionTypes.ForEach(s => context.SectionTypes.AddOrUpdate(s));
             context.SaveChanges();
@@ -56,24 +70,6 @@ namespace Mapper21.DAL.Migrations
                 new SubSectionType {Id = "Unit", Name = "Unit"},
             };
             subSectionTypes.ForEach(s => context.SubSectionTypes.AddOrUpdate(s));
-            context.SaveChanges();
-
-            var subjectArea = new List<SubjectArea>
-            {
-                new SubjectArea {Id = 1, Name = "Art"},
-                new SubjectArea {Id = 2, Name = "Foreign Languages"},
-                new SubjectArea {Id = 3, Name = "Language Arts"},
-                new SubjectArea {Id = 4, Name = "Mathematics"},
-                new SubjectArea {Id = 5, Name = "Media"},
-                new SubjectArea {Id = 6, Name = "Music"},
-                new SubjectArea {Id = 7, Name = "Physical Education"},
-                new SubjectArea {Id = 8, Name = "Science"},
-                new SubjectArea {Id = 9, Name = "Social Skills"},
-                new SubjectArea {Id = 10, Name = "Social Studies"},
-                new SubjectArea {Id = 11, Name = "Technology"},
-                new SubjectArea {Id = 12, Name = "Writing"},
-            };
-            subjectArea.ForEach(s => context.SubjectAreas.AddOrUpdate(s));
             context.SaveChanges();
 
             // Fall Expedition
@@ -147,11 +143,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 5,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Art",
+                Name = "Art",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 1
+                SectionTypeId = "Art"
             };
             context.Sections.AddOrUpdate(section5);
             context.SaveChanges();
@@ -162,11 +157,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 6,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Foreign Languages",
+                Name = "Foreign Languages",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 2
+                SectionTypeId = "ForeignLanguages"
             };
             context.Sections.AddOrUpdate(section6);
             context.SaveChanges();
@@ -177,11 +171,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 7,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Language Arts",
+                Name = "Language Arts",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 3
+                SectionTypeId = "LanguageArts"
             };
             context.Sections.AddOrUpdate(section7);
             context.SaveChanges();
@@ -192,11 +185,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 8,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Mathematics",
+                Name = "Mathematics",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 4
+                SectionTypeId = "Mathematics"
             };
             context.Sections.AddOrUpdate(section8);
             context.SaveChanges();
@@ -207,11 +199,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 9,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Media",
+                Name = "Media",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 5
+                SectionTypeId = "Media"
             };
             context.Sections.AddOrUpdate(section9);
             context.SaveChanges();
@@ -222,11 +213,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 10,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Music",
+                Name = "Music",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 6
+                SectionTypeId = "Music"
             };
             context.Sections.AddOrUpdate(section10);
             context.SaveChanges();
@@ -237,11 +227,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 11,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Physical Education",
+                Name = "PE / Health",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 7
+                SectionTypeId = "PeHealth"
             };
             context.Sections.AddOrUpdate(section11);
             context.SaveChanges();
@@ -252,11 +241,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 12,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Science",
+                Name = "Science",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 8
+                SectionTypeId = "Science"
             };
             context.Sections.AddOrUpdate(section12);
             context.SaveChanges();
@@ -267,11 +255,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 13,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Social Skills",
+                Name = "Social Skills",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 9
+                SectionTypeId = "SocialSkills"
             };
             context.Sections.AddOrUpdate(section13);
             context.SaveChanges();
@@ -282,11 +269,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 14,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Social Studies",
+                Name = "Social Studies",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 10
+                SectionTypeId = "SocialStudiesHumanities"
             };
             context.Sections.AddOrUpdate(section14);
             context.SaveChanges();
@@ -297,11 +283,10 @@ namespace Mapper21.DAL.Migrations
                 Id = 15,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Technology",
+                Name = "Technology",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 11
+                SectionTypeId = "Technology"
             };
             context.Sections.AddOrUpdate(section15);
             context.SaveChanges();
@@ -312,11 +297,52 @@ namespace Mapper21.DAL.Migrations
                 Id = 16,
                 Year = 2013,
                 GradeLevelId = "2",
-                Name = "Second Grade Writing",
+                Name = "Writing",
                 Description = "TBD",
                 KickOff = "",
-                SectionTypeId = "Strand",
-                SubjectAreaId = 12
+                SectionTypeId = "Writing"
+            };
+            context.Sections.AddOrUpdate(section16);
+            context.SaveChanges();
+
+            // Subject
+            var section17 = new Section
+            {
+                Id = 17,
+                Year = 2013,
+                GradeLevelId = "2",
+                Name = "Club C",
+                Description = "TBD",
+                KickOff = "",
+                SectionTypeId = "ClubC"
+            };
+            context.Sections.AddOrUpdate(section16);
+            context.SaveChanges();
+
+            // Subject
+            var section18 = new Section
+            {
+                Id = 18,
+                Year = 2013,
+                GradeLevelId = "2",
+                Name = "Crew",
+                Description = "TBD",
+                KickOff = "",
+                SectionTypeId = "Crew"
+            };
+            context.Sections.AddOrUpdate(section16);
+            context.SaveChanges();
+
+            // Subject
+            var section19 = new Section
+            {
+                Id = 19,
+                Year = 2013,
+                GradeLevelId = "2",
+                Name = "SAS",
+                Description = "TBD",
+                KickOff = "",
+                SectionTypeId = "Sas"
             };
             context.Sections.AddOrUpdate(section16);
             context.SaveChanges();

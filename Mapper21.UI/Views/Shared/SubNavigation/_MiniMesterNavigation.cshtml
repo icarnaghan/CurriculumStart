@@ -1,0 +1,22 @@
+﻿@{
+    var miniMesterOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
+    var miniMesterHabits = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
+    var miniMesterGuidingQuestions = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
+    var miniMesterScienceBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "ScienceBigIdeas" ? "active" : "";
+    var miniMesterSocialStudiesBigIdeas = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "SocialStudiesBigIdeas" ? "active" : "";
+    var miniMesterSubSections = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
+                                    ((ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") && (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "MiniMester")) ? "active" : "";
+    var miniMesterFinalProduct = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester" && ViewContext.RouteData.Values["action"].ToString() == "FinalProduct" ? "active" : "";
+}
+
+<section class="content-header">
+    <ul class="nav nav-pills">
+        <li class="@miniMesterOverview"><a href="~/Section/Overview/MiniMester">Overview</a></li>
+        <li class="@miniMesterHabits"><a href="~/Section/Habits/MiniMester/">Habits</a></li>
+        <li class="@miniMesterGuidingQuestions"><a href="~/Section/GuidingQuestions/MiniMester">Guiding Questions</a></li>
+        <li class="@miniMesterScienceBigIdeas"><a href="~/Section/ScienceBigIdeas/MiniMester">Big Ideas for Science</a></li>
+        <li class="@miniMesterSocialStudiesBigIdeas"><a href="~/Section/SocialStudiesBigIdeas/MiniMester">Big Ideas for Social Studies</a></li>
+        <li class="@miniMesterSubSections"><a href="~/Section/SubSection/MiniMester">Case Studies</a></li>
+        <li class="@miniMesterFinalProduct"><a href="/Section/FinalProduct/MiniMester">Final Product</a></li>
+    </ul>
+</section>

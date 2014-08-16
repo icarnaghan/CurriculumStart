@@ -63,7 +63,6 @@
     <Compile Include="Domain\LookUps\ScienceBigIdea.cs" />
     <Compile Include="Domain\LookUps\SocialStudiesBigIdea.cs" />
     <Compile Include="Domain\LookUps\SectionType.cs" />
-    <Compile Include="Domain\LookUps\SubjectArea.cs" />
     <Compile Include="Domain\LookUps\SubSectionType.cs" />
     <Compile Include="Domain\LookUps\CommonCoreStandard.cs" />
     <Compile Include="Domain\SubSection.cs" />

@@ -198,8 +198,6 @@
     <Compile Include="Controllers\StandardController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Controllers\AssessmentController.cs" />
-    <Compile Include="Controllers\StrandController.cs" />
-    <Compile Include="Controllers\FirstSixWeeksController.cs" />
     <Compile Include="Controllers\ShortTermTargetController.cs" />
     <Compile Include="Controllers\LongTermTargetController.cs" />
     <Compile Include="Controllers\ExpertController.cs" />
@@ -1680,35 +1678,11 @@
     <Content Include="Views\Section\ScienceBigIdeas.cshtml" />
     <Content Include="Views\Section\SocialStudiesBigIdeas.cshtml" />
     <Content Include="Views\Section\SubSection.cshtml" />
-    <Content Include="Views\Strand\Unit.cshtml" />
-    <Content Include="Views\Strand\EditorTemplates\HabitDropDownList.cshtml" />
-    <Content Include="Views\Strand\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
-    <Content Include="Views\Strand\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
-    <Content Include="Views\Strand\FinalProduct.cshtml" />
-    <Content Include="Views\Strand\GuidingQuestions.cshtml" />
-    <Content Include="Views\Strand\Habits.cshtml" />
-    <Content Include="Views\Strand\Overview.cshtml" />
-    <Content Include="Views\Strand\Partials\_GuidingQuestion.cshtml" />
-    <Content Include="Views\Strand\Partials\_Habit.cshtml" />
-    <Content Include="Views\Strand\Partials\_ScienceBigIdea.cshtml" />
-    <Content Include="Views\Strand\Partials\_SocialStudiesBigIdea.cshtml" />
-    <Content Include="Views\Strand\ScienceBigIdeas.cshtml" />
-    <Content Include="Views\Strand\SocialStudiesBigIdeas.cshtml" />
     <Content Include="Views\Sta\Partials\_Standard.cshtml" />
     <Content Include="Views\Sta\EditorTemplates\StandardDropDownList.cshtml" />
     <Content Include="Views\Shared\_ExpeditionNavigation.cshtml" />
     <Content Include="Views\Shared\_StrandNavigation.cshtml" />
     <Content Include="Views\Shared\_FirstSixWeeksNavigation.cshtml" />
-    <Content Include="Views\Week\Create.cshtml" />
-    <Content Include="Views\Week\Edit.cshtml" />
-    <Content Include="Views\Week\Partials\_Expert.cshtml" />
-    <Content Include="Views\Week\Partials\_Fieldwork.cshtml" />
-    <Content Include="Views\Week\Partials\_ServiceLearning.cshtml" />
-    <Content Include="Views\Unit\Create.cshtml" />
-    <Content Include="Views\Unit\Edit.cshtml" />
-    <Content Include="Views\Unit\Partials\_Expert.cshtml" />
-    <Content Include="Views\Unit\Partials\_Fieldwork.cshtml" />
-    <Content Include="Views\Unit\Partials\_ServiceLearning.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\DisplayEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -1744,6 +1718,10 @@
     <Content Include="Views\Section\Partials\_ServiceLearning.cshtml" />
     <Content Include="Views\Section\CreateSubSection.cshtml" />
     <Content Include="Views\Section\EditSubSection.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_FallExpeditionNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_HomeNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_MiniMesterNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_SpringExpeditionNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

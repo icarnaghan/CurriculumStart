@@ -1,0 +1,16 @@
+﻿@{
+    var firstSixWeeksOverview = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
+    var firstSixWeeksHabits = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
+    var firstSixWeeksGuidingQuestions = ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
+    var firstSixWeeksSubSections = (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks" && ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
+                                    ((ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") && (ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "FirstSixWeeks")) ? "active" : "";
+}
+
+<section class="content-header">
+    <ul class="nav nav-pills">
+        <li class="@firstSixWeeksOverview"><a href="~/Section/Overview/FirstSixWeeks">Overview</a></li>
+        <li class="@firstSixWeeksHabits"><a href="~/Section/Habits/FirstSixWeeks/">Habits</a></li>
+        <li class="@firstSixWeeksGuidingQuestions"><a href="~/Section/GuidingQuestions/FirstSixWeeks">Guiding Questions</a></li>
+        <li class="@firstSixWeeksSubSections"><a href="~/Section/SubSection/FirstSixWeeks">Weeks</a></li>
+    </ul>
+</section>

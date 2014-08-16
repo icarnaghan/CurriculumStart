@@ -6,26 +6,21 @@
 }
 
 <script src="~/Scripts/Mapper21.js"> </script>
-<div class="col-md-9">
-    <div class="form-horizontal">
-        <div class="box box-primary">
-            <div class="box-header">
-                <i class="fa fa-edit"></i>
-                <h3 class="box-title">Guiding Questions</h3>
-            </div>
-            <div class="box-body">
-                @Html.ValidationSummary(true)
-                @Html.HiddenFor(model => model.Id)
+<div class="form-horizontal">
+    <div class="box box-primary">
+        <div class="box-header">
+            <i class="fa fa-edit"></i>
+            <h3 class="box-title">Guiding Questions</h3>
+        </div>
+        <div class="box-body">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
 
-                <div id="guidingQuestions">
-                    @Html.Partial("~/Views/Section/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel { SectionId = Model.Id })
-                </div>
+            <div id="guidingQuestions">
+                @Html.Partial("~/Views/Section/Partials/_GuidingQuestion.cshtml", new GuidingQuestionViewModel {SectionId = Model.Id})
             </div>
         </div>
     </div>
-</div>
-<div class="col-md-3">
-    @Html.Partial("~/Views/Shared/_ExpeditionNavigation.cshtml")
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
