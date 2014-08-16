@@ -1,0 +1,19 @@
+﻿@{
+    var overview = ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
+    var habits = ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
+    var guidingQuestions = ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
+    var subSections = (ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
+                                 (ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection") || 
+                                 (ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") ? "active" : "";
+
+    var subjectArea = ViewContext.RouteData.Values["sectionType"].ToString();
+}
+
+<section class="content-header">
+    <ul class="nav nav-pills">
+        <li class="@overview"><a href="~/Section/Overview/@subjectArea">Overview</a></li>
+        <li class="@habits"><a href="~/Section/Habits/@subjectArea/">Habits</a></li>
+        <li class="@guidingQuestions"><a href="~/Section/GuidingQuestions/@subjectArea">Guiding Questions</a></li>
+        <li class="@subSections"><a href="~/Section/SubSection/@subjectArea">Units</a></li>
+    </ul>
+</section>

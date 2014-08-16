@@ -30,7 +30,7 @@ namespace Mapper21.UI.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    SubSectionId = fieldwork.CaseStudyId
+                    SubSectionId = fieldwork.SubSectionId
                 };
                 // Add the entity
                 db.SubSectionFieldworks.Add(entity);
@@ -53,7 +53,7 @@ namespace Mapper21.UI.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    SubSectionId = fieldwork.CaseStudyId
+                    SubSectionId = fieldwork.SubSectionId
                 };
                 // Attach the entity
                 db.SubSectionFieldworks.Attach(entity);
@@ -77,7 +77,7 @@ namespace Mapper21.UI.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    SubSectionId = fieldwork.CaseStudyId
+                    SubSectionId = fieldwork.SubSectionId
                 };
                 // Attach the entity
                 db.SubSectionFieldworks.Attach(entity);

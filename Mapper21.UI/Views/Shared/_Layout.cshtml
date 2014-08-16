@@ -92,27 +92,28 @@
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-                @if (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FallExpedition")
+                @if (ViewContext.RouteData.Values.ContainsKey("sectionType"))
                 {
-                    @RenderPage("~/Views/Shared/SubNavigation/_FallExpeditionNavigation.cshtml")
-                }
-                else if (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "MiniMester")
-                {
-                    @RenderPage("~/Views/Shared/SubNavigation/_MiniMesterNavigation.cshtml")
-                }
-                else if (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "SpringExpedition")
-                {
-                    @RenderPage("~/Views/Shared/SubNavigation/_SpringExpeditionNavigation.cshtml")
-                }
-                else if (ViewContext.RouteData.Values.ContainsKey("id") && ViewContext.RouteData.Values["id"].ToString() == "FirstSixWeeks")
-                {
-                    @RenderPage("~/Views/Shared/SubNavigation/_FirstSixWeeksNavigation.cshtml")
+                    switch (ViewContext.RouteData.Values["sectionType"].ToString())
+                    {
+                        case "MiniMester":
+                        case "SpringExpedition":
+                        case "FallExpedition":
+                            @RenderPage("~/Views/Shared/SubNavigation/_ExpeditionNavigation.cshtml")
+                            break;
+                        case "FirstSixWeeks":
+                            @RenderPage("~/Views/Shared/SubNavigation/_FirstSixWeeksNavigation.cshtml")
+                            break;
+                        default:
+                            @RenderPage("~/Views/Shared/SubNavigation/_SubjectAreaNavigation.cshtml")
+                            break;
+                    }
                 }
                 else
                 {
                     @RenderPage("~/Views/Shared/SubNavigation/_HomeNavigation.cshtml")
                 }
-
+            
                 <!-- Main content -->
                 <section class="content">
 

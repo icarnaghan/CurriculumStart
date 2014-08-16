@@ -30,7 +30,7 @@ namespace Mapper21.UI.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    SubSectionId = expert.CaseStudyId
+                    SubSectionId = expert.SubSectionId
                 };
                 // Add the entity
                 db.SubSectionExperts.Add(entity);
@@ -53,7 +53,7 @@ namespace Mapper21.UI.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    SubSectionId = expert.CaseStudyId
+                    SubSectionId = expert.SubSectionId
                 };
                 // Attach the entity
                 db.SubSectionExperts.Attach(entity);
@@ -76,7 +76,7 @@ namespace Mapper21.UI.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    SubSectionId = expert.CaseStudyId
+                    SubSectionId = expert.SubSectionId
                 };
                 // Attach the entity
                 db.SubSectionExperts.Attach(entity);

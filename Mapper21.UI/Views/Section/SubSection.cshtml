@@ -7,9 +7,20 @@
     ViewBag.SectionId = Model.Id;
 
     var subSectionType = "";
-    if (Model.SectionTypeId == "FallExpedition" || Model.SectionTypeId == "MiniMester" || Model.SectionTypeId == "SpringExpedition") { subSectionType = "Case Study"; }
-    if (Model.SectionTypeId == "FirstSixWeeks") { subSectionType = "Week"; }
-    if (Model.SectionTypeId == "Strand") { subSectionType = "Unit"; }
+    switch (Model.SectionTypeId)
+    {
+        case "SpringExpedition":
+        case "MiniMester":
+        case "FallExpedition":
+            subSectionType = "Case Study";
+            break;
+        case "FirstSixWeeks":
+            subSectionType = "Week";
+            break;
+        default:
+            subSectionType = "Unit";
+            break;
+    }
 }
 
 <script src="~/Scripts/Mapper21.js"> </script>

@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "Edit";
-    ViewBag.CaseStudyId = Model.Id;
+    ViewBag.SubSectionId = Model.Id;
     ViewBag.SectionId = Model.SectionId;
 }
 <div class="nav-tabs-custom">
@@ -91,17 +91,17 @@
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_3">
             <div id="fieldwork">
-                @Html.Partial("~/Views/Section/Partials/_Fieldwork.cshtml", new FieldworkViewModel {CaseStudyId = Model.Id})
+                @Html.Partial("~/Views/Section/Partials/_Fieldwork.cshtml", new FieldworkViewModel {SubSectionId = Model.Id})
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_4">
             <div id="expert">
-                @Html.Partial("~/Views/Section/Partials/_Expert.cshtml", new ExpertViewModel {CaseStudyId = Model.Id})
+                @Html.Partial("~/Views/Section/Partials/_Expert.cshtml", new ExpertViewModel { SubSectionId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_5">
             <div id="serviceLearning">
-                @Html.Partial("~/Views/Section/Partials/_ServiceLearning.cshtml", new ExpertViewModel {CaseStudyId = Model.Id})
+                @Html.Partial("~/Views/Section/Partials/_ServiceLearning.cshtml", new ExpertViewModel { SubSectionId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
     </div><!-- /.tab-content -->

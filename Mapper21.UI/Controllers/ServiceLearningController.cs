@@ -31,7 +31,7 @@ namespace Mapper21.UI.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    SubSectionId = serviceLearning.CaseStudyId
+                    SubSectionId = serviceLearning.SubSectionId
                 };
                 // Add the entity
                 db.SubSectionServiceLearnings.Add(entity);
@@ -55,7 +55,7 @@ namespace Mapper21.UI.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    SubSectionId = serviceLearning.CaseStudyId
+                    SubSectionId = serviceLearning.SubSectionId
                 };
                 // Attach the entity
                 db.SubSectionServiceLearnings.Attach(entity);
@@ -79,7 +79,7 @@ namespace Mapper21.UI.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    SubSectionId = serviceLearning.CaseStudyId
+                    SubSectionId = serviceLearning.SubSectionId
                 };
 
                 // Attach the entity

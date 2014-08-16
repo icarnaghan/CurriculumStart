@@ -1,0 +1,25 @@
+﻿@{
+    var overview = ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
+    var habits = ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
+    var guidingQuestions = ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
+    var scienceBigIdeas = ViewContext.RouteData.Values["action"].ToString() == "ScienceBigIdeas" ? "active" : "";
+    var socialStudiesBigIdeas = ViewContext.RouteData.Values["action"].ToString() == "SocialStudiesBigIdeas" ? "active" : "";
+    var subSections = (ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
+                                      (ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || 
+                                       ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") ? "active" : "";
+    var finalProduct = ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "SpringExpedition" && ViewContext.RouteData.Values["action"].ToString() == "FinalProduct" ? "active" : "";
+
+    var sectionType = ViewContext.RouteData.Values["sectionType"].ToString();
+}
+
+<section class="content-header">
+    <ul class="nav nav-pills">
+        <li class="@overview"><a href="~/Section/Overview/@sectionType">Overview</a></li>
+        <li class="@habits"><a href="~/Section/Habits/@sectionType/">Habits</a></li>
+        <li class="@guidingQuestions"><a href="~/Section/GuidingQuestions/@sectionType">Guiding Questions</a></li>
+        <li class="@scienceBigIdeas"><a href="~/Section/ScienceBigIdeas/@sectionType">Big Ideas for Science</a></li>
+        <li class="@socialStudiesBigIdeas"><a href="~/Section/SocialStudiesBigIdeas/@sectionType">Big Ideas for Social Studies</a></li>
+        <li class="@subSections"><a href="~/Section/SubSection/@sectionType">Case Studies</a></li>
+        <li class="@finalProduct"><a href="/Section/FinalProduct/@sectionType">Final Product</a></li>
+    </ul>
+</section>

@@ -227,7 +227,6 @@
     <Compile Include="Models\SocialStudiesBigIdeaListViewModel.cs" />
     <Compile Include="Models\StandardListViewModel.cs" />
     <Compile Include="Models\HabitListViewModel.cs" />
-    <Compile Include="Models\NavigationViewModel.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\AssessmentViewModel.cs" />
     <Compile Include="Models\HabitViewModel.cs" />
@@ -1718,10 +1717,10 @@
     <Content Include="Views\Section\Partials\_ServiceLearning.cshtml" />
     <Content Include="Views\Section\CreateSubSection.cshtml" />
     <Content Include="Views\Section\EditSubSection.cshtml" />
-    <Content Include="Views\Shared\SubNavigation\_FallExpeditionNavigation.cshtml" />
     <Content Include="Views\Shared\SubNavigation\_HomeNavigation.cshtml" />
-    <Content Include="Views\Shared\SubNavigation\_MiniMesterNavigation.cshtml" />
-    <Content Include="Views\Shared\SubNavigation\_SpringExpeditionNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_ExpeditionNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_FirstSixWeeksNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_SubjectAreaNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
