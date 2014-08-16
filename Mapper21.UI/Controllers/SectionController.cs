@@ -184,6 +184,15 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
+        // GET: /Section/OtherBigIdeas/SectionType
+        public ActionResult OtherBigIdeas(string sectionType)
+        {
+            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (section == null) return HttpNotFound();
+            return View(section);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

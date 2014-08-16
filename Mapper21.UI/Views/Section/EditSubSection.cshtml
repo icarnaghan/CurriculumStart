@@ -13,6 +13,8 @@
         <li class=""><a href="#tab_3" data-toggle="tab">Fieldwork</a></li>
         <li class=""><a href="#tab_4" data-toggle="tab">Experts</a></li>
         <li class=""><a href="#tab_5" data-toggle="tab">Service Learning</a></li>
+        <li class=""><a href="#tab_6" data-toggle="tab">Guiding Questions</a></li>
+        <li class=""><a href="#tab_7" data-toggle="tab">Big Ideas</a></li>
         <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
     </ul>
     <div class="tab-content">
@@ -102,6 +104,16 @@
         <div class="tab-pane" id="tab_5">
             <div id="serviceLearning">
                 @Html.Partial("~/Views/Section/Partials/_ServiceLearning.cshtml", new ExpertViewModel { SubSectionId = Model.Id })
+            </div>
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_6">
+            <div id="guidingQuestions">
+                @Html.Partial("~/Views/Section/Partials/_SubSectionGuidingQuestion.cshtml", new GuidingQuestionSubSectionViewModel { SubSectionId = Model.Id })
+            </div>
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_7">
+            <div id="otherBigIdeas">
+                @Html.Partial("~/Views/Section/Partials/_SubSectionOtherBigIdea.cshtml", new OtherBigIdeaSubSectionViewModel { SubSectionId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
     </div><!-- /.tab-content -->

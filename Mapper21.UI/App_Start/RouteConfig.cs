@@ -29,6 +29,10 @@ namespace Mapper21.UI
                 new { controller = "Section", action = "SocialStudiesBigIdeas", sectionType = UrlParameter.Optional }
             );
 
+            routes.MapRoute("SectionOtherBigIdeas", "Section/OtherBigIdeas/{sectionType}",
+                new { controller = "Section", action = "OtherBigIdeas", sectionType = UrlParameter.Optional }
+            );
+
             routes.MapRoute("SectionFinalProduct", "Section/FinalProduct/{sectionType}",
                 new { controller = "Section", action = "FinalProduct", sectionType = UrlParameter.Optional }
             );

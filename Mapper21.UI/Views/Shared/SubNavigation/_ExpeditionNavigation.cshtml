@@ -4,6 +4,7 @@
     var guidingQuestions = ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
     var scienceBigIdeas = ViewContext.RouteData.Values["action"].ToString() == "ScienceBigIdeas" ? "active" : "";
     var socialStudiesBigIdeas = ViewContext.RouteData.Values["action"].ToString() == "SocialStudiesBigIdeas" ? "active" : "";
+    var otherBigIdeas = ViewContext.RouteData.Values["action"].ToString() == "OtherBigIdeas" ? "active" : "";
     var subSections = (ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
                                       (ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" || 
                                        ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") ? "active" : "";
@@ -19,6 +20,7 @@
         <li class="@guidingQuestions"><a href="~/Section/GuidingQuestions/@sectionType">Guiding Questions</a></li>
         <li class="@scienceBigIdeas"><a href="~/Section/ScienceBigIdeas/@sectionType">Big Ideas for Science</a></li>
         <li class="@socialStudiesBigIdeas"><a href="~/Section/SocialStudiesBigIdeas/@sectionType">Big Ideas for Social Studies</a></li>
+        <li class="@otherBigIdeas"><a href="~/Section/OtherBigIdeas/@sectionType">Other Big Ideas</a></li>
         <li class="@subSections"><a href="~/Section/SubSection/@sectionType">Case Studies</a></li>
         <li class="@finalProduct"><a href="/Section/FinalProduct/@sectionType">Final Product</a></li>
     </ul>

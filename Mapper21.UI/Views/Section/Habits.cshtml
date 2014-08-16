@@ -16,8 +16,8 @@
             @Html.ValidationSummary(true)
             @Html.HiddenFor(model => model.Id)
 
-            <div id="guidingQuestions">
-                @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel {SectionId = Model.Id})
+            <div id="habits">
+                @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel { SectionId = Model.Id} )
             </div>
         </div>
     </div>

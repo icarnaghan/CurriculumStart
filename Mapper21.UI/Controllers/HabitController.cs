@@ -9,7 +9,7 @@ using Mapper21.UI.Models;
 
 namespace Mapper21.UI.Controllers
 {
-    public class SectionHabitController : BaseController
+    public class HabitController : BaseController
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
@@ -21,7 +21,7 @@ namespace Mapper21.UI.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Habit_Create([DataSourceRequest] DataSourceRequest request,
-            HabitSectionViewModel habit)
+            HabitViewModel habit)
         {
             if (ModelState.IsValid)
             {
@@ -41,11 +41,11 @@ namespace Mapper21.UI.Controllers
                 habit.Id = entity.Id;
             }
             // Return the inserted entities. The grid needs the generated ID. Also return any validation errors.
-            return Json(new[] {habit}.ToDataSourceResult(request, ModelState));
+            return Json(new[] { habit }.ToDataSourceResult(request, ModelState));
         }
 
         public ActionResult Habit_Update([DataSourceRequest] DataSourceRequest request,
-            HabitSectionViewModel habit)
+            HabitViewModel habit)
         {
             if (ModelState.IsValid)
             {
@@ -65,11 +65,11 @@ namespace Mapper21.UI.Controllers
                 db.SaveChanges();
             }
             // Return the updated entities. Also return any validation errors.
-            return Json(new[] {habit}.ToDataSourceResult(request, ModelState));
+            return Json(new[] { habit }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Habit_Destroy(int sectionId, [DataSourceRequest] DataSourceRequest request,
-            HabitSectionViewModel habit)
+        public ActionResult Habit_Destroy([DataSourceRequest] DataSourceRequest request,
+            HabitViewModel habit)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace Mapper21.UI.Controllers
                 db.SaveChanges();
             }
             // Return the removed product. Also return any validation errors.
-            return Json(new[] {habit}.ToDataSourceResult(request, ModelState));
+            return Json(new[] { habit }.ToDataSourceResult(request, ModelState));
         }
     }
 }
