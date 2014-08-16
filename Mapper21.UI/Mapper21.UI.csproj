@@ -195,6 +195,10 @@
     <Compile Include="Controllers\ImageBrowserController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\SubSectionOtherbigIdeaController.cs" />
+    <Compile Include="Controllers\SectionOtherBigIdeaController.cs" />
+    <Compile Include="Controllers\SubSectionGuidingQuestionController.cs" />
+    <Compile Include="Controllers\SubSectionHabitController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Controllers\AssessmentController.cs" />
@@ -205,22 +209,26 @@
     <Compile Include="Controllers\FieldworkController.cs" />
     <Compile Include="Controllers\SocialStudiesBigIdeaController.cs" />
     <Compile Include="Controllers\ScienceBigIdeaController.cs" />
-    <Compile Include="Controllers\HabitController.cs" />
-    <Compile Include="Controllers\GuidingQuestionController.cs" />
+    <Compile Include="Controllers\SectionHabitController.cs" />
+    <Compile Include="Controllers\SectionGuidingQuestionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PermissionHelpers.cs" />
-    <Compile Include="Migrations\201408141546120_InitialCreate.cs" />
-    <Compile Include="Migrations\201408141546120_InitialCreate.Designer.cs">
-      <DependentUpon>201408141546120_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201408162120204_InitialCreate.cs" />
+    <Compile Include="Migrations\201408162120204_InitialCreate.Designer.cs">
+      <DependentUpon>201408162120204_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\CommonCoreViewModel.cs" />
+    <Compile Include="Models\GuidingQuestionSubSectionViewModel.cs" />
+    <Compile Include="Models\HabitSubSectionViewModel.cs" />
+    <Compile Include="Models\OtherBigIdeaSubSectionViewModel.cs" />
+    <Compile Include="Models\OtherBigIdeaSectionViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModel.cs" />
     <Compile Include="Models\ScienceBigIdeaListViewModel.cs" />
@@ -229,11 +237,11 @@
     <Compile Include="Models\HabitListViewModel.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\AssessmentViewModel.cs" />
-    <Compile Include="Models\HabitViewModel.cs" />
+    <Compile Include="Models\HabitSectionViewModel.cs" />
     <Compile Include="Models\SectionViewModel.cs" />
     <Compile Include="Models\ExpertViewModel.cs" />
     <Compile Include="Models\FieldworkViewModel.cs" />
-    <Compile Include="Models\GuidingQuestionViewModel.cs" />
+    <Compile Include="Models\GuidingQuestionSectionViewModel.cs" />
     <Compile Include="Models\LongTermTargetViewModel.cs" />
     <Compile Include="Models\ServiceLearningViewModel.cs" />
     <Compile Include="Models\ShortTermTargetViewModel.cs" />
@@ -1654,15 +1662,6 @@
     <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Attachments.cshtml" />
-    <Content Include="Views\FirstSixWeeks\EditorTemplates\HabitDropDownList.cshtml" />
-    <Content Include="Views\FirstSixWeeks\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
-    <Content Include="Views\FirstSixWeeks\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
-    <Content Include="Views\FirstSixWeeks\GuidingQuestions.cshtml" />
-    <Content Include="Views\FirstSixWeeks\Habits.cshtml" />
-    <Content Include="Views\FirstSixWeeks\Overview.cshtml" />
-    <Content Include="Views\FirstSixWeeks\Partials\_GuidingQuestion.cshtml" />
-    <Content Include="Views\FirstSixWeeks\Partials\_Habit.cshtml" />
-    <Content Include="Views\FirstSixWeeks\Week.cshtml" />
     <Content Include="Views\Section\EditorTemplates\HabitDropDownList.cshtml" />
     <Content Include="Views\Section\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
     <Content Include="Views\Section\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
@@ -1670,8 +1669,8 @@
     <Content Include="Views\Section\GuidingQuestions.cshtml" />
     <Content Include="Views\Section\Habits.cshtml" />
     <Content Include="Views\Section\Overview.cshtml" />
-    <Content Include="Views\Section\Partials\_GuidingQuestion.cshtml" />
-    <Content Include="Views\Section\Partials\_Habit.cshtml" />
+    <Content Include="Views\Section\Partials\_SectionGuidingQuestion.cshtml" />
+    <Content Include="Views\Section\Partials\_SectionHabit.cshtml" />
     <Content Include="Views\Section\Partials\_ScienceBigIdea.cshtml" />
     <Content Include="Views\Section\Partials\_SocialStudiesBigIdea.cshtml" />
     <Content Include="Views\Section\ScienceBigIdeas.cshtml" />
@@ -1721,6 +1720,11 @@
     <Content Include="Views\Shared\SubNavigation\_ExpeditionNavigation.cshtml" />
     <Content Include="Views\Shared\SubNavigation\_FirstSixWeeksNavigation.cshtml" />
     <Content Include="Views\Shared\SubNavigation\_SubjectAreaNavigation.cshtml" />
+    <Content Include="Views\Section\Partials\_SectionOtherBigIdea.cshtml" />
+    <Content Include="Views\Section\Partials\_SubSectionOtherBigIdea.cshtml" />
+    <Content Include="Views\Section\Partials\_SubSectionHabit.cshtml" />
+    <Content Include="Views\Section\Partials\_SubSectionGuidingQuestion.cshtml" />
+    <Content Include="Views\Section\OtherBigIdeas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1739,6 +1743,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201408162120204_InitialCreate.resx">
+      <DependentUpon>201408162120204_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Mapper21.BE\Mapper21.BE.csproj">
       <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
       <Name>Mapper21.BE</Name>
@@ -1747,11 +1756,6 @@
       <Project>{f4f0e122-29b3-44b2-8074-c08345cb2c96}</Project>
       <Name>Mapper21.DAL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408141546120_InitialCreate.resx">
-      <DependentUpon>201408141546120_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

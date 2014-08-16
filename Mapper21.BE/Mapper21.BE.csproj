@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\LookUps\Habit.cs" />
+    <Compile Include="Domain\SubSectionGuidingQuestion.cs" />
+    <Compile Include="Domain\SubSectionHabit.cs" />
+    <Compile Include="Domain\SubSectionOtherBigIdea.cs" />
     <Compile Include="Domain\SectionOtherBigIdea.cs" />
     <Compile Include="Domain\SubSectionAssessment.cs" />
     <Compile Include="Domain\LookUps\ScienceBigIdea.cs" />

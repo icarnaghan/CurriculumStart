@@ -1,6 +1,6 @@
 ﻿@using Mapper21.UI.Models
 
-@(Html.Kendo().Grid<GuidingQuestionViewModel>
+@(Html.Kendo().Grid<OtherBigIdeaSectionViewModel>
       ()
       .Name("grid")
       .Columns(columns =>
@@ -26,12 +26,12 @@
               {
                   model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
                   model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
-                  model.Field(g => g.SectionId).DefaultValue(@ViewBag.SectionId);
+                  model.Field(g => g.SectionId).DefaultValue(@ViewBag.ParentId);
               })
-              .Create(create => create.Action("GuidingQuestion_Create", "GuidingQuestion")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("GuidingQuestion_Read", "GuidingQuestion", new {sectionId = ViewBag.SectionId})) // Action method invoked when the grid needs data
-              .Update(update => update.Action("GuidingQuestion_Update", "GuidingQuestion")) // Action method invoked when the user saves an updated data item
-              .Destroy(destroy => destroy.Action("GuidingQuestion_Destroy", "GuidingQuestion")) // Action method invoked when the user removes a data item
+              .Create(create => create.Action("OtherBigIdea_Create", "SectionOtherBigIdea")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("OtherBigIdea_Read", "SectionOtherBigIdea", new { parentId = ViewBag.SectionId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("OtherBigIdea_Update", "SectionOtherBigIdea")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("OtherBigIdea_Destroy", "SectionOtherBigIdea")) // Action method invoked when the user removes a data item
       )
       .Pageable()
       )

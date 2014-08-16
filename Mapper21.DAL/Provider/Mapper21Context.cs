@@ -16,9 +16,13 @@ namespace Mapper21.DAL.Provider
         public DbSet<SectionGuidingQuestion> SectionGuidingQuestions { get; set; }
         public DbSet<SectionScienceBigIdea> SectionScienceBigIdeas { get; set; }
         public DbSet<SectionSocialStudiesBigIdea> SectionSocialStudiesBigIdeas { get; set; }
+        public DbSet<SectionOtherBigIdea> SectionOtherBigIdeas { get; set; }
 
         public DbSet<SubSection> SubSections { get; set; }
         public DbSet<SubSectionType> SubSectionTypes { get; set; }
+        public DbSet<SubSectionHabit> SubSectionHabits { get; set; }
+        public DbSet<SubSectionGuidingQuestion> SubSectionGuidingQuestions { get; set; }
+        public DbSet<SubSectionOtherBigIdea> SubSectionOtherBigIdeas { get; set; }
         public DbSet<SubSectionFieldwork> SubSectionFieldworks { get; set; }
         public DbSet<SubSectionExpert> SubSectionExperts { get; set; }
         public DbSet<SubSectionServiceLearning> SubSectionServiceLearnings { get; set; }
