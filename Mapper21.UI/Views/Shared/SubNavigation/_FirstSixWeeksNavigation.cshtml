@@ -1,6 +1,5 @@
 ﻿@{
     var overview = ViewContext.RouteData.Values["action"].ToString() == "Overview" ? "active" : "";
-    var habits = ViewContext.RouteData.Values["action"].ToString() == "Habits" ? "active" : "";
     var guidingQuestions = ViewContext.RouteData.Values["action"].ToString() == "GuidingQuestions" ? "active" : "";
     var subSections = (ViewContext.RouteData.Values["action"].ToString() == "SubSection") ||
                       (ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection" ||
@@ -12,7 +11,6 @@
 <section class="content-header">
     <ul class="nav nav-pills">
         <li class="@overview"><a href="~/Section/Overview/@sectionType">Overview</a></li>
-        <li class="@habits"><a href="~/Section/Habits/@sectionType/">Habits</a></li>
         <li class="@guidingQuestions"><a href="~/Section/GuidingQuestions/@sectionType">Guiding Questions</a></li>
         <li class="@subSections"><a href="~/Section/SubSection/@sectionType">Weeks</a></li>
     </ul>
