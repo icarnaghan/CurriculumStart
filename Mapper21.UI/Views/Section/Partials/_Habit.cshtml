@@ -3,7 +3,7 @@
 
 @(Html.Kendo().Grid<HabitViewModel>
       ()
-      .Name("grid2")
+      .Name("grid45")
       .Columns(columns =>
       {
           columns.ForeignKey(h => h.HabitId, (IEnumerable)ViewData["HabitList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("HabitDropDownList");

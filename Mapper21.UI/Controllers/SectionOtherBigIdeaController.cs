@@ -13,14 +13,14 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult OtherBigIdea_Read(int parentId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult OtherBigIdea_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IQueryable<SectionOtherBigIdea> otherBigIdeas = db.SectionOtherBigIdeas.Where(g => g.SectionId == parentId);
+            IQueryable<SectionOtherBigIdea> otherBigIdeas = db.SectionOtherBigIdeas.Where(g => g.SectionId == sectionId);
             return Json(otherBigIdeas.ToDataSourceResult(request));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult OtherBigIdea_Create(int parentId, [DataSourceRequest] DataSourceRequest request,
+        public ActionResult OtherBigIdea_Create(int sectionId, [DataSourceRequest] DataSourceRequest request,
             OtherBigIdeaSectionViewModel otherBigIdea)
         {
             if (ModelState.IsValid)

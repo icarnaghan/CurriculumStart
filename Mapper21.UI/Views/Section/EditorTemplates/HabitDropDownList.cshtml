@@ -1,6 +1,6 @@
 ﻿@(Html.Kendo().DropDownList()
     .Name("HabitId") //Important, must match the column's name
-    .BindTo(ViewBag.HabitList as SelectList)
+    .BindTo(ViewData["HabitList"] as SelectList)
     .OptionLabel("- Select Habit - ")
     .DataValueField("Value")
     .DataTextField("Text")

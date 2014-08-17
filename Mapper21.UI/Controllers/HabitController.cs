@@ -41,21 +41,21 @@ namespace Mapper21.UI.Controllers
                 habit.Id = entity.Id;
             }
             // Return the inserted entities. The grid needs the generated ID. Also return any validation errors.
-            return Json(new[] { habit }.ToDataSourceResult(request, ModelState));
+            return Json(new[] {habit}.ToDataSourceResult(request, ModelState));
         }
 
         public ActionResult Habit_Update([DataSourceRequest] DataSourceRequest request,
-            HabitViewModel habit)
+            HabitViewModel updateHabit)
         {
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted Section Model
                 var entity = new SectionHabit
                 {
-                    Id = habit.Id,
-                    HabitId = habit.HabitId,
-                    Context = habit.Context,
-                    SectionId = habit.SectionId
+                    Id = updateHabit.Id,
+                    HabitId = updateHabit.HabitId,
+                    Context = updateHabit.Context,
+                    SectionId = updateHabit.SectionId
                 };
                 // Attach the entity
                 db.SectionHabits.Attach(entity);
@@ -65,21 +65,21 @@ namespace Mapper21.UI.Controllers
                 db.SaveChanges();
             }
             // Return the updated entities. Also return any validation errors.
-            return Json(new[] { habit }.ToDataSourceResult(request, ModelState));
+            return Json(new[] { updateHabit }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Habit_Destroy([DataSourceRequest] DataSourceRequest request,
-            HabitViewModel habit)
+        public ActionResult Habit_Destroy(int sectionId, [DataSourceRequest] DataSourceRequest request,
+            HabitViewModel deleteHabit)
         {
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
                 var entity = new SectionHabit
                 {
-                    Id = habit.Id,
-                    HabitId = habit.HabitId,
-                    Context = habit.Context,
-                    SectionId = habit.SectionId
+                    Id = deleteHabit.Id,
+                    HabitId = deleteHabit.HabitId,
+                    Context = deleteHabit.Context,
+                    SectionId = deleteHabit.SectionId
                 };
                 // Attach the entity
                 db.SectionHabits.Attach(entity);
@@ -89,7 +89,7 @@ namespace Mapper21.UI.Controllers
                 db.SaveChanges();
             }
             // Return the removed product. Also return any validation errors.
-            return Json(new[] { habit }.ToDataSourceResult(request, ModelState));
+            return Json(new[] { deleteHabit }.ToDataSourceResult(request, ModelState));
         }
     }
 }

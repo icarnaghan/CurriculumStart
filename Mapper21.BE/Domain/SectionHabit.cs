@@ -15,7 +15,6 @@ namespace Mapper21.BE.Domain
         public Section Section { get; set; }
 
         [ForeignKey("HabitId")]
-        [UIHint("HabitDropDownList")]
         public Habit Habit { get; set; }
     }
 }

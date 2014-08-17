@@ -12,13 +12,8 @@
             <i class="fa fa-edit"></i>
             <h3 class="box-title">Habits</h3>
         </div>
-        <div class="box-body">
-            @Html.ValidationSummary(true)
-            @Html.HiddenFor(model => model.Id)
-
-            <div id="habits">
-                @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel { SectionId = Model.Id} )
-            </div>
+        <div id="habits">
+            @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel {SectionId = Model.Id})
         </div>
     </div>
 </div>

@@ -198,7 +198,6 @@
     <Compile Include="Controllers\SubSectionOtherbigIdeaController.cs" />
     <Compile Include="Controllers\SectionOtherBigIdeaController.cs" />
     <Compile Include="Controllers\SubSectionGuidingQuestionController.cs" />
-    <Compile Include="Controllers\SubSectionHabitController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Controllers\AssessmentController.cs" />

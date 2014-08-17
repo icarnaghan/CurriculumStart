@@ -9,6 +9,7 @@ namespace Mapper21.UI.Models
         public int HabitId { get; set; }
         public string Context { get; set; }
         public int SectionId { get; set; }
+        public bool DeleteHabit { get; set; }
 
         [UIHint("HabitDropDownList")]
         public HabitListViewModel Habit { get; set; }
