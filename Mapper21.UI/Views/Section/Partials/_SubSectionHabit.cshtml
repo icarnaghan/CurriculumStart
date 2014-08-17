@@ -1,0 +1,39 @@
+﻿@using System.Collections
+@using Mapper21.UI.Models
+
+@(Html.Kendo().Grid<HabitSubSectionViewModel>
+      ()
+      .Name("grid45")
+      .Columns(columns =>
+      {
+          columns.ForeignKey(h => h.HabitId, (IEnumerable)ViewData["HabitList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("HabitDropDownList");
+          columns.Bound(h => h.Context);
+          columns.Command(commands =>
+          {
+              commands.Edit(); // The "edit" command will edit and update data items
+              commands.Destroy(); // The "destroy" command removes data items
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create(); // The "create" command adds new data items
+          //toolbar.Save(); // The "save" command saves the changed data items
+      })
+        // .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+              // .Batch(true) // Enable batch updates
+              .Model(model =>
+              {
+                  model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
+                  model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
+                  model.Field(g => g.SubSectionId).DefaultValue(@ViewBag.SubSectionId);
+              })
+              .Create(create => create.Action("Habit_Create", "SubSectionHabit")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("Habit_Read", "SubSectionHabit", new { subSectionId = ViewBag.SectionId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("Habit_Update", "SubSectionHabit")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("Habit_Destroy", "SubSectionHabit")) // Action method invoked when the user removes a data item
+      )
+      .Pageable()
+)

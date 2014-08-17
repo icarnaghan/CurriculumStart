@@ -64,9 +64,14 @@ namespace Mapper21.UI.Controllers
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             var subSection = _subSectionRepository.Find(id);
-
+            
+            // Get SelectLists
             List<SubSectionStaGrid> staGrid = _subSectionRepository.GetStaGrids(id).ToList();
             ViewBag.staGrid = staGrid;
+
+            var habit = _lookupRepository.GetHabits();
+            ViewData["HabitList"] = new SelectList(habit, "Id", "Name");
+
 
             return View(subSection);
         }
