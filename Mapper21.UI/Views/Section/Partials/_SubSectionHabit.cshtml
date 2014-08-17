@@ -31,7 +31,7 @@
                   model.Field(g => g.SubSectionId).DefaultValue(@ViewBag.SubSectionId);
               })
               .Create(create => create.Action("Habit_Create", "SubSectionHabit")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("Habit_Read", "SubSectionHabit", new { subSectionId = ViewBag.SectionId })) // Action method invoked when the grid needs data
+              .Read(read => read.Action("Habit_Read", "SubSectionHabit", new { subSectionId = ViewBag.SubSectionId })) // Action method invoked when the grid needs data
               .Update(update => update.Action("Habit_Update", "SubSectionHabit")) // Action method invoked when the user saves an updated data item
               .Destroy(destroy => destroy.Action("Habit_Destroy", "SubSectionHabit")) // Action method invoked when the user removes a data item
       )
