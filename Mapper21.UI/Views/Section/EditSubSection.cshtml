@@ -112,12 +112,12 @@
                             <td>@item.LongTermTargets</td>
                             <td>@item.ShortTermTargets</td>
                             <td>@item.Assessments</td>
-                            <td><a href="/Sta/Edit/@item.SubSectionStaId">Edit</a></td>
+                            <td><a href="/Sta/Edit/@Model.Section.SectionTypeId/@ViewBag.SubSectionId/@item.SubSectionStaId">Edit</a></td>
                         </tr>
                     }
                 </tbody>
             </table>
-            <a href="/Sta/Create/@Model.Id">Add new set of Standards, Targets and Assessments</a>
+            <a href="/Sta/Create/@Model.Section.SectionTypeId/@Model.Id">Add new set of Standards, Targets and Assessments</a>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_3">
             <div id="fieldwork">

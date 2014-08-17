@@ -5,52 +5,64 @@
     ViewBag.Title = "Edit";
     ViewBag.SubSectionStaId = Model.SubSectionSta.Id;
     ViewBag.CommonCoreList = Model.CommonCoreStandards;
+    var subSectionType = "Case Study";
+    if (ViewContext.RouteData.Values["sectionType"].ToString() == "FirstSixWeeks") { subSectionType = "Week"; }
+    if (ViewContext.RouteData.Values["sectionType"].ToString() != "FirstSixWeeks" &&
+        ViewContext.RouteData.Values["sectionType"].ToString() != "FallExpedition" &&
+        ViewContext.RouteData.Values["sectionType"].ToString() != "MiniMester" &&
+        ViewContext.RouteData.Values["sectionType"].ToString() != "SpringExpedition") { subSectionType = "Unit"; }
 }
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        <div class="box box-primary">
-            <div class="box-header">
-                <i class="fa fa-edit"></i>
-                <h3 class="box-title">Standards, Targets, and Assessments</h3>
-            </div>
-            <div class="box-body">
-                <div class="form-horizontal">
-                    @Html.ValidationSummary(true)
-                    @Html.HiddenFor(model => model.SubSectionSta.Id)
-                    @Html.HiddenFor(model => model.SubSectionSta.SubSectionId)
-                    @Html.HiddenFor(model => model.SubSectionLongTermTarget.Id)
-        
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <h4><label>Long Term Target</label></h4>
-                            @Html.TextBoxFor(model => model.SubSectionLongTermTarget.Name, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.SubSectionLongTermTarget.Name)
+<div class="nav-tabs-custom">
+<ul class="nav nav-tabs">
+    <li><a href="/Section/EditSubSection/@ViewContext.RouteData.Values["sectionType"].ToString()/@ViewContext.RouteData.Values["subSectionId"].ToString()#tab_2">Return to @subSectionType</a></li>
+</ul>
+    </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <i class="fa fa-edit"></i>
+                        <h3 class="box-title">Standards, Targets, and Assessments</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-horizontal">
+                            @Html.ValidationSummary(true)
+                            @Html.HiddenFor(model => model.SubSectionSta.Id)
+                            @Html.HiddenFor(model => model.SubSectionSta.SubSectionId)
+                            @Html.HiddenFor(model => model.SubSectionLongTermTarget.Id)
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <h4><label>Long Term Target</label></h4>
+                                    @Html.TextBoxFor(model => model.SubSectionLongTermTarget.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.SubSectionLongTermTarget.Name)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <input type="submit" value="Update" class="btn btn-primary" />
+                                </div>
+                            </div>
+
+                            <div id="standard">
+                                @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new StandardViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+                            </div>
+
+                            <div id="short-term-target">
+                                @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new ShortTermTargetViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+                            </div>
+
+                            <div id="assessment">
+                                @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new AssessmentViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+                            </div>
                         </div>
-                    </div>    
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            <input type="submit" value="Update" class="btn btn-primary" />
-                        </div>
-                    </div>
-
-                    <div id="standard">
-                        @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new StandardViewModel { SubSectionStaId = Model.SubSectionSta.Id })
-                    </div>
-
-                    <div id="short-term-target">
-                        @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new ShortTermTargetViewModel { SubSectionStaId = Model.SubSectionSta.Id })
-                    </div>
-
-                    <div id="assessment">
-                        @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new AssessmentViewModel { SubSectionStaId = Model.SubSectionSta.Id })
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-}
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        }
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

@@ -2,7 +2,19 @@
 
 @{
     ViewBag.Title = "Create";
+    var subSectionType = "Case Study";
+    if (ViewContext.RouteData.Values["sectionType"].ToString() == "FirstSixWeeks") { subSectionType = "Week"; }
+    if (ViewContext.RouteData.Values["sectionType"].ToString() != "FirstSixWeeks" &&
+        ViewContext.RouteData.Values["sectionType"].ToString() != "FallExpedition" &&
+        ViewContext.RouteData.Values["sectionType"].ToString() != "MiniMester" &&
+        ViewContext.RouteData.Values["sectionType"].ToString() != "SpringExpedition") { subSectionType = "Unit"; }
 }
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li><a href="/Section/EditSubSection/@ViewContext.RouteData.Values["sectionType"].ToString()/@ViewContext.RouteData.Values["subSectionId"].ToString()#tab_2">Return to @subSectionType</a></li>
+    </ul>
+</div>
+
 
 @using (Html.BeginForm())
 {

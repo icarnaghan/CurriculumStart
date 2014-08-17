@@ -7,7 +7,7 @@
       .Name("grid1")
       .Columns(columns =>
       {
-          columns.ForeignKey(s => s.CommonCoreStandardId, (IEnumerable)ViewData["StandardList"], dataFieldText: "Text", dataFieldValue: "Value"); //.EditorTemplateName("StandardDropDownList")
+          columns.ForeignKey(s => s.CommonCoreStandardId, (IEnumerable)ViewData["StandardList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("StandardDropDownList");
           columns.Command(commands =>
           {
               commands.Edit(); // The "edit" command will edit and update data items

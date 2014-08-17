@@ -23,8 +23,8 @@ select
 	cast(ROW_NUMBER() OVER(ORDER BY a.id) as int) AS Id,
 	a.id as SubSectionStaId,
 	c.id as SubSectionId,
-	substring((select (', ' + rtrim(c.name)) from CommonCoreStandards c join SubSectionStandards s on c.Id = s.CommonCoreStandardId where s.subSectionStaid = a.id
-		order by c.name for xml path('')),3,500) as Standards,
+	substring((select (', ' + rtrim(c.subject) + (c.code)) from CommonCoreStandards c join SubSectionStandards s on c.Id = s.CommonCoreStandardId where s.subSectionStaid = a.id
+		order by c.code for xml path('')),3,500) as Standards,
 	substring((select (', ' + rtrim(s.name)) from SubSectionLongTermTargets s where s.subSectionStaid = a.id
 		order by s.name for xml path('')),3,500) as LongTermTargets,
 	substring((select (', ' + rtrim(s.name)) from SubSectionShortTermTargets s where s.subSectionStaid = a.id

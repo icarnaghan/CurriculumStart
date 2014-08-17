@@ -9,6 +9,14 @@ namespace Mapper21.UI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("StaEdit", "Sta/Edit/{sectionType}/{subSectionId}/{id}",
+                new { controller = "Sta", action = "Edit", sectionType = UrlParameter.Optional, subSectionId = UrlParameter.Optional, id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute("StaCreate", "Sta/Create/{sectionType}/{subSectionId}",
+                new { controller = "Sta", action = "Create", sectionType = UrlParameter.Optional, subSectionId = UrlParameter.Optional }
+            );
+            
             routes.MapRoute( "SectionOverview", "Section/Overview/{sectionType}",
                 new { controller = "Section", action = "Overview", sectionType = UrlParameter.Optional }
             );
