@@ -10,5 +10,6 @@ namespace Mapper21.DAL.Interfaces
         IEnumerable<Habit> GetHabits();
         IEnumerable<ScienceBigIdea> GetBigIdeaForSciences();
         IEnumerable<SocialStudiesBigIdea> GetBigIdeaForSocialStudies();
+        IEnumerable<CommonCoreStandard> GetCommonCoreStandards();
     }
 }

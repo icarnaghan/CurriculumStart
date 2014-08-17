@@ -42,9 +42,11 @@ namespace Mapper21.UI
 
             container.RegisterType<ISectionRepository, SectionRepository>();
             container.RegisterType<ISubSectionRepository, SubSectionRepository>();
+            container.RegisterType<ISubSectionStaRepository, SubSectionStaRepository>();
+            container.RegisterType<ISubSectionLongTermTargetRepository, SubSectionLongTermTargetRepository>();
             container.RegisterType<ILookupRepository, LookupRepository>();
 
-            // Needed for account controller - http://stackoverflow.com/questions/20023065/how-to-add-mvc-5-authentication-to-unity-ioc
+            // Needed for Identity - http://stackoverflow.com/questions/20023065/how-to-add-mvc-5-authentication-to-unity-ioc
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
             container.RegisterType<RolesAdminController>(new InjectionConstructor());

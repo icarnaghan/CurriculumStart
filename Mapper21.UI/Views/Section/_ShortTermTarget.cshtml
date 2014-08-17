@@ -1,13 +1,12 @@
-﻿@using System.Collections
-@using Mapper21.UI.Models
-<h4><label>Common Core Standards</label></h4>
+﻿@using Mapper21.UI.Models
+<h4><label>Short Term Targets</label></h4>
 
-@(Html.Kendo().Grid<StandardViewModel>
+@(Html.Kendo().Grid<ShortTermTargetViewModel>
       ()
-      .Name("grid1")
+      .Name("grid3")
       .Columns(columns =>
       {
-          columns.ForeignKey(s => s.CommonCoreStandardId, (IEnumerable)ViewData["StandardList"], dataFieldText: "Text", dataFieldValue: "Value"); //.EditorTemplateName("StandardDropDownList")
+          columns.Bound(s => s.Name);
           columns.Command(commands =>
           {
               commands.Edit(); // The "edit" command will edit and update data items
@@ -19,7 +18,7 @@
           toolbar.Create(); // The "create" command adds new data items
           //toolbar.Save(); // The "save" command saves the changed data items
       })
-        // .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
+      // .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
       .Editable(editable => editable.Mode(GridEditMode.InLine))
       .DataSource(dataSource =>
           dataSource.Ajax()
@@ -30,10 +29,10 @@
                   model.Field(s => s.Id).Editable(false); // Make the ProductID property not editable
                   model.Field(s => s.SubSectionStaId).DefaultValue(@ViewBag.SubSectionStaId);
               })
-              .Create(create => create.Action("Standard_Create", "Standard")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("Standard_Read", "Standard", new { subSectionStaId = ViewBag.SubSectionStaId })) // Action method invoked when the grid needs data
-              .Update(update => update.Action("Standard_Update", "Standard")) // Action method invoked when the user saves an updated data item
-              .Destroy(destroy => destroy.Action("Standard_Destroy", "Standard")) // Action method invoked when the user removes a data item
+              .Create(create => create.Action("ShortTermTarget_Create", "ShortTermTarget")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("ShortTermTarget_Read", "ShortTermTarget", new { SubSectionStaId = ViewBag.SubSectionStaId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("ShortTermTarget_Update", "ShortTermTarget")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("ShortTermTarget_Destroy", "ShortTermTarget")) // Action method invoked when the user removes a data item
       )
       .Pageable()
-)
+      )

@@ -6,7 +6,6 @@
     ViewBag.SubSectionStaId = Model.SubSectionSta.Id;
     ViewBag.CommonCoreList = Model.CommonCoreStandards;
 }
-<div class="col-md-9">
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -52,10 +51,6 @@
         </div>
     </div>
 }
-</div>
-<div class="col-md-3">
-    @Html.Partial("~/Views/Shared/_ExpeditionNavigation.cshtml")
-</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

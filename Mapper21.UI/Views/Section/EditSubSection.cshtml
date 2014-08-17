@@ -1,4 +1,5 @@
-﻿@using Mapper21.UI.Models
+﻿@using Mapper21.BE.Domain
+@using Mapper21.UI.Models
 @model Mapper21.BE.Domain.SubSection
 
 @{
@@ -6,8 +7,22 @@
     ViewBag.SubSectionId = Model.Id;
     ViewBag.SectionId = Model.SectionId;
 }
+<script>
+    $(document).ready(function () {
+        if (location.hash) {
+            $('a[href=' + location.hash + ']').tab('show');
+        }
+        $(document.body).on("click", "a[data-toggle]", function (event) {
+            location.hash = this.getAttribute("href");
+        });
+    });
+    $(window).on('popstate', function () {
+        var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
+        $('a[href=' + anchor + ']').tab('show');
+    });
+</script>
 <div class="nav-tabs-custom">
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a href="#tab_1" data-toggle="tab">Overview</a></li>
         <li class=""><a href="#tab_2" data-toggle="tab">STA</a></li>
         @if (Model.Section.SectionTypeId != "FirstSixWeeks" &&

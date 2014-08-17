@@ -27,6 +27,11 @@ namespace Mapper21.DAL.Repositories
             return db.SocialStudiesBigIdeas.ToList();
         }
 
+        public IEnumerable<CommonCoreStandard> GetCommonCoreStandards()
+        {
+            return db.CommonCoreStandards.ToList();
+        }
+
         public void Dispose()
         {
             db.Dispose();

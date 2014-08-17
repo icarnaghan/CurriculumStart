@@ -4,6 +4,7 @@ using System.Net;
 using System.Web.Mvc;
 using Mapper21.BE.Domain;
 using Mapper21.DAL.Interfaces;
+using Mapper21.UI.Models;
 
 namespace Mapper21.UI.Controllers
 {
@@ -11,18 +12,24 @@ namespace Mapper21.UI.Controllers
     {
         private readonly ISectionRepository _sectionRepository;
         private readonly ISubSectionRepository _subSectionRepository;
+        private readonly ISubSectionStaRepository _subSectionStaRepository;
+        private readonly ISubSectionLongTermTargetRepository _subSectionLongTermTargetRepository;
         private readonly ILookupRepository _lookupRepository;
 
         public SectionController(ISectionRepository sectionRepository,
                                  ISubSectionRepository subSectionRepository,
+                                 ISubSectionStaRepository subSectionStaRepository,
+                                 ISubSectionLongTermTargetRepository subSectionLongTermTargetRepository,
                                  ILookupRepository lookupRepository)
         {
             _sectionRepository = sectionRepository;
             _subSectionRepository = subSectionRepository;
+            _subSectionStaRepository = subSectionStaRepository;
+            _subSectionLongTermTargetRepository = subSectionLongTermTargetRepository;
             _lookupRepository = lookupRepository;
         }
 
-        // GET: /Expedition/SubSection/SectionType
+        // GET: /Section/SubSection/SectionType
         public ActionResult SubSection(string sectionType)
         {
             if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -90,7 +97,7 @@ namespace Mapper21.UI.Controllers
             return View(subSection);
         }
 
-        // GET: /Expedition/FinalProduct/SectionType
+        // GET: /Section/FinalProduct/SectionType
         public ActionResult FinalProduct(string sectionType)
         {
             if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -99,7 +106,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // POST: /Expedition/FinalProduct/SectionType
+        // POST: /Section/FinalProduct/SectionType
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult FinalProduct(Section section)
@@ -114,7 +121,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/Overview/SectionType
+        // GET: /Section/Overview/SectionType
         public ActionResult Overview(string sectionType)
         {
             if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -125,7 +132,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // POST: /Expedition/Overview/SectionType
+        // POST: /Section/Overview/SectionType
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Overview(Section section)
@@ -138,7 +145,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/GuidingQuestions/SectionType
+        // GET: /Section/GuidingQuestions/SectionType
         public ActionResult GuidingQuestions(string sectionType)
         {
             if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -147,7 +154,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/Habits/SectionType
+        // GET: /Section/Habits/SectionType
         public ActionResult Habits(string sectionType)
         {
             if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -161,7 +168,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/ScienceBigIdeas/SectionType
+        // GET: /Section/ScienceBigIdeas/SectionType
         public ActionResult ScienceBigIdeas(string sectionType)
         {
             if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -175,7 +182,7 @@ namespace Mapper21.UI.Controllers
             return View(section);
         }
 
-        // GET: /Expedition/SocialStudiesBigIdeas/SectionType
+        // GET: /Section/SocialStudiesBigIdeas/SectionType
         public ActionResult SocialStudiesBigIdeas(string sectionType)
         {
             if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

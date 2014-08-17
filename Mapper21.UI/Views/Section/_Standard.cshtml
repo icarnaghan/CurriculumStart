@@ -7,7 +7,7 @@
       .Name("grid1")
       .Columns(columns =>
       {
-          columns.ForeignKey(s => s.CommonCoreStandardId, (IEnumerable)ViewData["StandardList"], dataFieldText: "Text", dataFieldValue: "Value"); //.EditorTemplateName("StandardDropDownList")
+          columns.ForeignKey(s => s.StandardId, (IEnumerable)ViewData["StandardList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("StandardDropDownList");
           columns.Command(commands =>
           {
               commands.Edit(); // The "edit" command will edit and update data items
@@ -31,7 +31,7 @@
                   model.Field(s => s.SubSectionStaId).DefaultValue(@ViewBag.SubSectionStaId);
               })
               .Create(create => create.Action("Standard_Create", "Standard")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("Standard_Read", "Standard", new { subSectionStaId = ViewBag.SubSectionStaId })) // Action method invoked when the grid needs data
+              .Read(read => read.Action("Standard_Read", "Standard", new { SubSectionStaId = ViewBag.SubSectionStaId })) // Action method invoked when the grid needs data
               .Update(update => update.Action("Standard_Update", "Standard")) // Action method invoked when the user saves an updated data item
               .Destroy(destroy => destroy.Action("Standard_Destroy", "Standard")) // Action method invoked when the user removes a data item
       )

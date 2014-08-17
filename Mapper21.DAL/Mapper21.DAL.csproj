@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\ILookupRepository.cs" />
+    <Compile Include="Interfaces\ISubSectionLongTermTargetRepository.cs" />
+    <Compile Include="Interfaces\ISubSectionStaRepository.cs" />
     <Compile Include="Migrations\201408162118255_InitialCreate.cs" />
     <Compile Include="Migrations\201408162118255_InitialCreate.Designer.cs">
       <DependentUpon>201408162118255_InitialCreate.cs</DependentUpon>
@@ -75,6 +77,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Provider\Mapper21Context.cs" />
     <Compile Include="Repositories\LookupRepository.cs" />
+    <Compile Include="Repositories\SubSectionLongTermTargetRepository.cs" />
+    <Compile Include="Repositories\SubSectionStaRepository.cs" />
     <Compile Include="Repositories\SubSectionRepository.cs" />
     <Compile Include="Repositories\SectionRepository.cs" />
     <Compile Include="Interfaces\ISubSectionRepository.cs" />

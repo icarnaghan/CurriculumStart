@@ -1725,6 +1725,12 @@
     <Content Include="Views\Section\Partials\_SubSectionGuidingQuestion.cshtml" />
     <Content Include="Views\Section\OtherBigIdeas.cshtml" />
     <Content Include="Views\Section\Partials\_SubSectionHabit.cshtml" />
+    <Content Include="Views\Section\Partials\_SubSectionSta.cshtml" />
+    <Content Include="Views\Section\EditorTemplates\StandardDropdownList.cshtml" />
+    <Content Include="Views\Section\_Assessment.cshtml" />
+    <Content Include="Views\Section\_LongTermTarget.cshtml" />
+    <Content Include="Views\Section\_ShortTermTarget.cshtml" />
+    <Content Include="Views\Section\_Standard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

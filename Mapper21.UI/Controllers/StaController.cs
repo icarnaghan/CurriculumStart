@@ -1,27 +1,43 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using Kendo.Mvc.Extensions;
 using Mapper21.BE.Domain;
 using Mapper21.BE.Domain.LookUps;
-using Mapper21.DAL.Provider;
+using Mapper21.DAL.Interfaces;
 using Mapper21.UI.Models;
-using WebGrease;
 
 namespace Mapper21.UI.Controllers
 {
-    public class StaController : Controller
+    public class StaController : BaseController
     {
-        private readonly Mapper21Context db = new Mapper21Context();
+        private readonly ISubSectionRepository _subSectionRepository;
+        private readonly ISubSectionStaRepository _subSectionStaRepository;
+        private readonly ISubSectionLongTermTargetRepository _subSectionLongTermTargetRepository;
+        private readonly ILookupRepository _lookupRepository;
+
+        public StaController(ISubSectionRepository subSectionRepository,
+                                 ISubSectionStaRepository subSectionStaRepository,
+                                 ISubSectionLongTermTargetRepository subSectionLongTermTargetRepository,
+                                 ILookupRepository lookupRepository)
+        {
+            _subSectionRepository = subSectionRepository;
+            _subSectionStaRepository = subSectionStaRepository;
+            _subSectionLongTermTargetRepository = subSectionLongTermTargetRepository;
+            _lookupRepository = lookupRepository;
+        }
 
         // GET: /Sta/Create
-        public ActionResult Create(int id)
+        public ActionResult Create(int subSectionId)
         {
-            ViewBag.SubSectionId = id;
-            ViewBag.SectionId = db.SubSections.Find(id).SectionId;
-            return View();
+            var subSectionSta = new SubSectionSta
+            {
+                SubSectionId = subSectionId,
+            };
+
+            ViewBag.SectionId = _subSectionRepository.Find(subSectionId).SectionId;
+            return View(subSectionSta);
         }
 
         // POST: /Sta/Create
@@ -33,46 +49,35 @@ namespace Mapper21.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var subSectionLongTermTarget = new SubSectionLongTermTarget {SubSectionStaId = subSectionSta.Id};
-                db.SubSectionStas.Add(subSectionSta);
-                db.SubSectionLongTermTargets.Add(subSectionLongTermTarget);
-                db.SaveChanges();
+                _subSectionStaRepository.InsertorUpdate(subSectionSta);
+                _subSectionStaRepository.Save();
+
+                var subSectionLongTermTarget = new SubSectionLongTermTarget { SubSectionStaId = subSectionSta.Id };
+                _subSectionLongTermTargetRepository.InsertorUpdate(subSectionLongTermTarget);
+                _subSectionLongTermTargetRepository.Save();
                 return RedirectToAction("Edit", "Sta", new {id = subSectionSta.Id});
             }
-
-            ViewBag.CaseStudyId = new SelectList(db.SubSections, "Id", "Name", subSectionSta.SubSectionId);
             return View(subSectionSta);
         }
 
         // GET: /Sta/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var subSectionSta = _subSectionStaRepository.Find(id);
+            if (subSectionSta == null) return HttpNotFound();
             
-            SubSectionSta subSectionSta = db.SubSectionStas.Find(id);
-            SubSectionLongTermTarget longTermTarget = db.SubSectionLongTermTargets.FirstOrDefault(l => l.SubSectionStaId == subSectionSta.Id);
-            ICollection<CommonCoreStandard> commonCore = db.CommonCoreStandards.ToList();
-
-            if (subSectionSta == null)
-            {
-                return HttpNotFound();
-            }
-
+            var longTermTarget = _subSectionLongTermTargetRepository.GetAll().FirstOrDefault(l => l.SubSectionStaId == subSectionSta.Id);
+            ICollection<CommonCoreStandard> standard = _lookupRepository.GetCommonCoreStandards().Where(s => s.GradeLevelId == CurrentGradeLevel).ToList();
             var subSectionStaViewModel = new SubSectionStaViewModel
             {
                 SubSectionSta = new SubSectionSta {Id = subSectionSta.Id, SubSectionId = subSectionSta.SubSectionId},
                 SubSectionLongTermTarget = longTermTarget,
-                CommonCoreStandards = commonCore
+                CommonCoreStandards = standard
             };
 
             // Get SelectList
-            var currentGrade = "2";
-            var standard = db.CommonCoreStandards.Where(s => s.GradeLevelId == currentGrade);
             ViewData["StandardList"] = new SelectList(standard, "Id", "Name");
-            ViewBag.SectionId = db.SubSections.Find(subSectionSta.SubSectionId).SectionId;
 
             return View(subSectionStaViewModel);
         }
@@ -86,15 +91,12 @@ namespace Mapper21.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                subSectionStaViewModel.SubSectionLongTermTarget.SubSectionStaId =
-                    subSectionStaViewModel.SubSectionSta.Id;
-                db.Entry(subSectionStaViewModel.SubSectionLongTermTarget).State = EntityState.Modified;
-                //db.SubSectionLongTermTargets.Add(subSectionStaViewModel.SubSectionLongTermTarget);
-                db.SaveChanges();
+                subSectionStaViewModel.SubSectionLongTermTarget.SubSectionStaId = subSectionStaViewModel.SubSectionSta.Id;
+                _subSectionLongTermTargetRepository.InsertorUpdate(subSectionStaViewModel.SubSectionLongTermTarget);
+                _subSectionLongTermTargetRepository.Save();
                 return RedirectToAction("Edit", "Sta", new { id = subSectionStaViewModel.SubSectionSta.Id });
             }
-
-            return RedirectToAction("Edit", "SubSection", new {id = subSectionStaViewModel.SubSectionSta.SubSectionId});
+            return RedirectToAction("Edit", "Sta", new { id = subSectionStaViewModel.SubSectionSta.Id });
         }
 
         // GET: /Sta/Delete/5
@@ -104,7 +106,7 @@ namespace Mapper21.UI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SubSectionSta subSectionSta = db.SubSectionStas.Find(id);
+            SubSectionSta subSectionSta = _subSectionStaRepository.Find(id);
             if (subSectionSta == null)
             {
                 return HttpNotFound();
@@ -117,19 +119,8 @@ namespace Mapper21.UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SubSectionSta subSectionSta = db.SubSectionStas.Find(id);
-            db.SubSectionStas.Remove(subSectionSta);
-            db.SaveChanges();
+            _subSectionStaRepository.Delete(id);
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
