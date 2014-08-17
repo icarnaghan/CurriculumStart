@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using Mapper21.BE.Domain;
 using Mapper21.DAL.Interfaces;
@@ -12,39 +13,33 @@ namespace Mapper21.UI.Controllers
     {
         private readonly ISectionRepository _sectionRepository;
         private readonly ISubSectionRepository _subSectionRepository;
-        private readonly ISubSectionStaRepository _subSectionStaRepository;
-        private readonly ISubSectionLongTermTargetRepository _subSectionLongTermTargetRepository;
         private readonly ILookupRepository _lookupRepository;
 
         public SectionController(ISectionRepository sectionRepository,
                                  ISubSectionRepository subSectionRepository,
-                                 ISubSectionStaRepository subSectionStaRepository,
-                                 ISubSectionLongTermTargetRepository subSectionLongTermTargetRepository,
                                  ILookupRepository lookupRepository)
         {
             _sectionRepository = sectionRepository;
             _subSectionRepository = subSectionRepository;
-            _subSectionStaRepository = subSectionStaRepository;
-            _subSectionLongTermTargetRepository = subSectionLongTermTargetRepository;
             _lookupRepository = lookupRepository;
         }
 
         // GET: /Section/SubSection/SectionType
-        public ActionResult SubSection(string sectionType)
+        public ActionResult SubSection(string currentSectionType)
         {
-            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
 
         // GET: /Section/CreateSubSection
-        public ActionResult CreateSubSection(string sectionType)
+        public ActionResult CreateSubSection(string currentSectionType)
         {
             var newSubSection = new SubSection()
             {
-                SectionId = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType).Id,
-                SubSectionTypeId = Helpers.PermissionHelpers.GetSubSectionType(sectionType),
+                SectionId = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType).Id,
+                SubSectionTypeId = Helpers.PermissionHelpers.GetSubSectionType(currentSectionType),
             };
 
             return View(newSubSection);
@@ -90,6 +85,7 @@ namespace Mapper21.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                subSection.Description = HttpUtility.HtmlDecode(subSection.Description);
                 _subSectionRepository.InsertorUpdate(subSection);
                 _subSectionRepository.Save();
                 return RedirectToAction("EditSubSection", "Section", new { id = subSection.Id });
@@ -98,10 +94,10 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Section/FinalProduct/SectionType
-        public ActionResult FinalProduct(string sectionType)
+        public ActionResult FinalProduct(string currentSectionType)
         {
-            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
@@ -122,10 +118,10 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Section/Overview/SectionType
-        public ActionResult Overview(string sectionType)
+        public ActionResult Overview(string currentSectionType)
         {
-            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             ViewBag.Title = section.Name;
@@ -139,6 +135,7 @@ namespace Mapper21.UI.Controllers
         {
             if (ModelState.IsValid)
             {
+                section.Description = HttpUtility.HtmlDecode(section.Description);
                 _sectionRepository.InsertorUpdate(section);
                 _sectionRepository.Save();
             }
@@ -146,19 +143,19 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Section/GuidingQuestions/SectionType
-        public ActionResult GuidingQuestions(string sectionType)
+        public ActionResult GuidingQuestions(string currentSectionType)
         {
-            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
 
         // GET: /Section/Habits/SectionType
-        public ActionResult Habits(string sectionType)
+        public ActionResult Habits(string currentSectionType)
         {
-            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -169,10 +166,10 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Section/ScienceBigIdeas/SectionType
-        public ActionResult ScienceBigIdeas(string sectionType)
+        public ActionResult ScienceBigIdeas(string currentSectionType)
         {
-            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -183,10 +180,10 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Section/SocialStudiesBigIdeas/SectionType
-        public ActionResult SocialStudiesBigIdeas(string sectionType)
+        public ActionResult SocialStudiesBigIdeas(string currentSectionType)
         {
-            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -197,10 +194,10 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Section/OtherBigIdeas/SectionType
-        public ActionResult OtherBigIdeas(string sectionType)
+        public ActionResult OtherBigIdeas(string currentSectionType)
         {
-            if (sectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, sectionType);
+            if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }

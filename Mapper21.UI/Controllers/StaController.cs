@@ -29,7 +29,7 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Sta/Create
-        public ActionResult Create(string sectionType, int subSectionId)
+        public ActionResult Create(string currentSectionType, int subSectionId)
         {
             var subSectionSta = new SubSectionSta
             {
@@ -61,7 +61,7 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Sta/Edit/5
-        public ActionResult Edit(string sectionType, int subsectionId, int? id)
+        public ActionResult Edit(string currentSectionType, int subsectionId, int? id)
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var subSectionSta = _subSectionStaRepository.Find(id);

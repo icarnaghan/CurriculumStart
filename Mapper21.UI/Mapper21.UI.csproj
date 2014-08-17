@@ -1678,9 +1678,6 @@
     <Content Include="Views\Section\SubSection.cshtml" />
     <Content Include="Views\Sta\Partials\_Standard.cshtml" />
     <Content Include="Views\Sta\EditorTemplates\StandardDropDownList.cshtml" />
-    <Content Include="Views\Shared\_ExpeditionNavigation.cshtml" />
-    <Content Include="Views\Shared\_StrandNavigation.cshtml" />
-    <Content Include="Views\Shared\_FirstSixWeeksNavigation.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\DisplayEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />

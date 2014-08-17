@@ -7,7 +7,7 @@
                                  (ViewContext.RouteData.Values["action"].ToString() == "CreateSubSection") || 
                                  (ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") ? "active" : "";
 
-    var subjectArea = ViewContext.RouteData.Values["sectionType"].ToString();
+    var subjectArea = ViewContext.RouteData.Values["currentSectionType"].ToString();
 }
 
 <section class="content-header">

@@ -9,52 +9,52 @@ namespace Mapper21.UI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("StaEdit", "Sta/Edit/{sectionType}/{subSectionId}/{id}",
-                new { controller = "Sta", action = "Edit", sectionType = UrlParameter.Optional, subSectionId = UrlParameter.Optional, id = UrlParameter.Optional }
+            routes.MapRoute("StaEdit", "Sta/Edit/{currentSectionType}/{subSectionId}/{id}",
+                new { controller = "Sta", action = "Edit", currentSectionType = UrlParameter.Optional, subSectionId = UrlParameter.Optional, id = UrlParameter.Optional }
             );
 
-            routes.MapRoute("StaCreate", "Sta/Create/{sectionType}/{subSectionId}",
-                new { controller = "Sta", action = "Create", sectionType = UrlParameter.Optional, subSectionId = UrlParameter.Optional }
-            );
-            
-            routes.MapRoute( "SectionOverview", "Section/Overview/{sectionType}",
-                new { controller = "Section", action = "Overview", sectionType = UrlParameter.Optional }
+            routes.MapRoute("StaCreate", "Sta/Create/{currentSectionType}/{subSectionId}",
+                new { controller = "Sta", action = "Create", currentSectionType = UrlParameter.Optional, subSectionId = UrlParameter.Optional }
             );
 
-            routes.MapRoute("SectionHabits", "Section/Habits/{sectionType}",
-                new { controller = "Section", action = "Habits", sectionType = UrlParameter.Optional }
+            routes.MapRoute("SectionOverview", "Section/Overview/{currentSectionType}",
+                new { controller = "Section", action = "Overview", currentSectionType = UrlParameter.Optional }
             );
 
-            routes.MapRoute("SectionGuidingQuestions", "Section/GuidingQuestions/{sectionType}",
-                new { controller = "Section", action = "GuidingQuestions", sectionType = UrlParameter.Optional }
+            routes.MapRoute("SectionHabits", "Section/Habits/{currentSectionType}",
+                new { controller = "Section", action = "Habits", currentSectionType = UrlParameter.Optional }
             );
 
-            routes.MapRoute("SectionScienceBigIdeas", "Section/ScienceBigIdeas/{sectionType}",
-                new { controller = "Section", action = "ScienceBigIdeas", sectionType = UrlParameter.Optional }
+            routes.MapRoute("SectionGuidingQuestions", "Section/GuidingQuestions/{currentSectionType}",
+                new { controller = "Section", action = "GuidingQuestions", currentSectionType = UrlParameter.Optional }
             );
 
-            routes.MapRoute("SectionSocialStudiesBigIdeas", "Section/SocialStudiesBigIdeas/{sectionType}",
-                new { controller = "Section", action = "SocialStudiesBigIdeas", sectionType = UrlParameter.Optional }
+            routes.MapRoute("SectionScienceBigIdeas", "Section/ScienceBigIdeas/{currentSectionType}",
+                new { controller = "Section", action = "ScienceBigIdeas", currentSectionType = UrlParameter.Optional }
             );
 
-            routes.MapRoute("SectionOtherBigIdeas", "Section/OtherBigIdeas/{sectionType}",
-                new { controller = "Section", action = "OtherBigIdeas", sectionType = UrlParameter.Optional }
+            routes.MapRoute("SectionSocialStudiesBigIdeas", "Section/SocialStudiesBigIdeas/{currentSectionType}",
+                new { controller = "Section", action = "SocialStudiesBigIdeas", currentSectionType = UrlParameter.Optional }
             );
 
-            routes.MapRoute("SectionFinalProduct", "Section/FinalProduct/{sectionType}",
-                new { controller = "Section", action = "FinalProduct", sectionType = UrlParameter.Optional }
+            routes.MapRoute("SectionOtherBigIdeas", "Section/OtherBigIdeas/{currentSectionType}",
+                new { controller = "Section", action = "OtherBigIdeas", currentSectionType = UrlParameter.Optional }
             );
 
-            routes.MapRoute("SectionSubSection", "Section/SubSection/{sectionType}",
-                new { controller = "Section", action = "SubSection", sectionType = UrlParameter.Optional }
+            routes.MapRoute("SectionFinalProduct", "Section/FinalProduct/{currentSectionType}",
+                new { controller = "Section", action = "FinalProduct", currentSectionType = UrlParameter.Optional }
             );
 
-            routes.MapRoute("CreateSubSection", "Section/CreateSubSection/{sectionType}",
-                new { controller = "Section", action = "CreateSubSection", sectionType = UrlParameter.Optional }
+            routes.MapRoute("SectionSubSection", "Section/SubSection/{currentSectionType}",
+                new { controller = "Section", action = "SubSection", currentSectionType = UrlParameter.Optional }
             );
 
-            routes.MapRoute("EditSubSection", "Section/EditSubSection/{sectionType}/{id}",
-                new { controller = "Section", action = "EditSubSection", sectionType = UrlParameter.Optional, id = UrlParameter.Optional }
+            routes.MapRoute("CreateSubSection", "Section/CreateSubSection/{currentSectionType}",
+                new { controller = "Section", action = "CreateSubSection", currentSectionType = UrlParameter.Optional }
+            );
+
+            routes.MapRoute("EditSubSection", "Section/EditSubSection/{currentSectionType}/{id}",
+                new { controller = "Section", action = "EditSubSection", currentSectionType = UrlParameter.Optional, id = UrlParameter.Optional }
             );
 
             routes.MapRoute("Default", "{controller}/{action}/{id}",

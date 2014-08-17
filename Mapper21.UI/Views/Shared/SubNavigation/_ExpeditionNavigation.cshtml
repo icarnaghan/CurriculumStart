@@ -10,7 +10,7 @@
                                        ViewContext.RouteData.Values["action"].ToString() == "EditSubSection") ? "active" : "";
     var finalProduct = ViewContext.RouteData.Values.ContainsKey("sectionType") && ViewContext.RouteData.Values["sectionType"].ToString() == "SpringExpedition" && ViewContext.RouteData.Values["action"].ToString() == "FinalProduct" ? "active" : "";
 
-    var sectionType = ViewContext.RouteData.Values["sectionType"].ToString();
+    var sectionType = ViewContext.RouteData.Values["currentSectionType"].ToString();
 }
 
 <section class="content-header">

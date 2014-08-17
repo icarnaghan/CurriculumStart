@@ -1,38 +1,38 @@
 ﻿@{
     var semesterNav = ""; var subjectAreaNav = ""; var firstSixWeeksOverview = ""; var fallExpeditionOverview = ""; var miniMesterOverview = ""; var springExpeditionOverview = ""; var artOverview = ""; var foreignLanguagesOverview = ""; var languageArtsOverview = ""; var mathematicsOverview = ""; var mediaOverview = ""; var musicOverview = ""; var scienceOverview = ""; var peHealthOverview = ""; var socialSkillsOverview = ""; var socialStudiesOverview = ""; var technologyOverview = ""; var writingOverview = ""; var clubcOverview = ""; var crewOverview = ""; var sasOverview = "";
 
-    if (ViewContext.RouteData.Values.ContainsKey("sectionType"))
+    if (ViewContext.RouteData.Values.ContainsKey("currentSectionType"))
     {
         // Top Level Nav
-        semesterNav = (ViewContext.RouteData.Values["sectionType"].ToString() == "FirstSixWeeks" ||
-                       ViewContext.RouteData.Values["sectionType"].ToString() == "FallExpedition" ||
-                       ViewContext.RouteData.Values["sectionType"].ToString() == "MiniMester" ||
-                       ViewContext.RouteData.Values["sectionType"].ToString() == "SpringExpedition") ? "active" : "";
+        semesterNav = (ViewContext.RouteData.Values["currentSectionType"].ToString() == "FirstSixWeeks" ||
+                       ViewContext.RouteData.Values["currentSectionType"].ToString() == "FallExpedition" ||
+                       ViewContext.RouteData.Values["currentSectionType"].ToString() == "MiniMester" ||
+                       ViewContext.RouteData.Values["currentSectionType"].ToString() == "SpringExpedition") ? "active" : "";
 
         subjectAreaNav = (semesterNav != "active") ? "active" : "";
 
         // Semester Nav
-        firstSixWeeksOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "FirstSixWeeks" ? "active" : "";
-        fallExpeditionOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "FallExpedition" ? "active" : "";
-        miniMesterOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "MiniMester" ? "active" : "";
-        springExpeditionOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "SpringExpedition" ? "active" : "";
+        firstSixWeeksOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "FirstSixWeeks" ? "active" : "";
+        fallExpeditionOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "FallExpedition" ? "active" : "";
+        miniMesterOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "MiniMester" ? "active" : "";
+        springExpeditionOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "SpringExpedition" ? "active" : "";
 
         //Subject Area Nav
-        artOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Art" ? "active" : "";
-        foreignLanguagesOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "ForeignLanguages" ? "active" : "";
-        languageArtsOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "LanguageArts" ? "active" : "";
-        mathematicsOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Mathematics" ? "active" : "";
-        mediaOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Media" ? "active" : "";
-        musicOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Music" ? "active" : "";
-        peHealthOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "PeHealth" ? "active" : "";
-        scienceOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Science" ? "active" : "";
-        socialSkillsOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "SoclaiSkills" ? "active" : "";
-        socialStudiesOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "SocialStudies" ? "active" : "";
-        technologyOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Technology" ? "active" : "";
-        writingOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Writing" ? "active" : "";
-        clubcOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "ClubC" ? "active" : "";
-        crewOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Crew" ? "active" : "";
-        sasOverview = ViewContext.RouteData.Values["sectionType"].ToString() == "Sas" ? "active" : "";
+        artOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Art" ? "active" : "";
+        foreignLanguagesOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "ForeignLanguages" ? "active" : "";
+        languageArtsOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "LanguageArts" ? "active" : "";
+        mathematicsOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Mathematics" ? "active" : "";
+        mediaOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Media" ? "active" : "";
+        musicOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Music" ? "active" : "";
+        peHealthOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "PeHealth" ? "active" : "";
+        scienceOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Science" ? "active" : "";
+        socialSkillsOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "SoclaiSkills" ? "active" : "";
+        socialStudiesOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "SocialStudies" ? "active" : "";
+        technologyOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Technology" ? "active" : "";
+        writingOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Writing" ? "active" : "";
+        clubcOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "ClubC" ? "active" : "";
+        crewOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Crew" ? "active" : "";
+        sasOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Sas" ? "active" : "";
     }
 }
 <ul class="sidebar-menu">

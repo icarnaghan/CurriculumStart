@@ -92,9 +92,9 @@
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-                @if (ViewContext.RouteData.Values.ContainsKey("sectionType"))
+                @if (ViewContext.RouteData.Values.ContainsKey("currentSectionType"))
                 {
-                    switch (ViewContext.RouteData.Values["sectionType"].ToString())
+                    switch (ViewContext.RouteData.Values["currentSectionType"].ToString())
                     {
                         case "MiniMester":
                         case "SpringExpedition":
