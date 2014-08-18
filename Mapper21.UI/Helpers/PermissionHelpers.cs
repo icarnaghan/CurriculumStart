@@ -12,8 +12,9 @@
             if (user.IsInRole("Fourth Grade")) gradeLevelId = "4";
             if (user.IsInRole("Fifth Grade")) gradeLevelId = "5";
             if (user.IsInRole("Sixth Grade")) gradeLevelId = "6";
-            if (user.IsInRole("Sixth Grade")) gradeLevelId = "7";
-            if (user.IsInRole("Sixth Grade")) gradeLevelId = "8";
+            if (user.IsInRole("Seventh Grade")) gradeLevelId = "7";
+            if (user.IsInRole("Eight Grade")) gradeLevelId = "8";
+            if (user.IsInRole("Ninth Grade")) gradeLevelId = "9"; // Grade Level for Testing Purposes only
             return gradeLevelId;
         }
 
