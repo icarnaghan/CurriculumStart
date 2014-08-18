@@ -26,12 +26,13 @@
                 <h3 class="box-title">Standards, Targets, and Assessments</h3>
             </div>
             <div class="box-body">
-                <p>This section allows you create a new set of Standards, Targets and Assessments which are aligned to this case study.</p><br />
+                <p>This section allows you create a new set of Standards, Targets and Assessments which are aligned to this @ViewContext.RouteData.Values["currentSectionType"].ToString().</p>
+                <p>If you wish to proceed, <strong>click the Confirm button below</strong>.</p>
                 <div class="form-horizontal">
                     @Html.ValidationSummary(true)
                     <div class="form-group">
                         <div class="col-md-10">
-                            <input type="submit" value="Create" class="btn btn-primary" />
+                            <input type="submit" value="Confirm" class="btn btn-primary" />
                         </div>
                     </div>
                 </div>
