@@ -27,3 +27,18 @@ input[type="checkbox"].input-validation-error { border: 0 none; }
 
 /* Admin LTE Overrides*/
 
+.iconbar { margin-top: 40px !important; }
+
+.btn-wide { width: 100%; }
+
+.btn { margin-bottom: 20px; }
+
+.bottom-menu { padding: 20px 0 20px !important; }
+
+h3 a { color: #34495e; }
+
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}

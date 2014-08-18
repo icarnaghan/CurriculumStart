@@ -21,6 +21,12 @@
                 @Html.HiddenFor(model => model.GradeLevelId)
                 @Html.HiddenFor(model => model.SectionTypeId)
                 @Html.HiddenFor(model => model.Year)
+                if (!String.IsNullOrEmpty((string) TempData["SuccessMessage"]))
+                {
+                    <div class="alert alert-success">
+                        <p>@TempData["SuccessMessage"]</p>
+                    </div>
+                }
                 <div class="box-body">
                     <div class="form-group">
                         <div class="col-md-12">
@@ -50,7 +56,7 @@
                 <div class="box-footer">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <input type="submit" value="Save" class="btn btn-primary" />
+                            <input type="submit" value="Update" class="btn btn-primary" />
                         </div>
                     </div>
                 </div>

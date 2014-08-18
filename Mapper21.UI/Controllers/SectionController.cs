@@ -111,8 +111,9 @@ namespace Mapper21.UI.Controllers
             {
                 _sectionRepository.InsertorUpdate(section);
                 _sectionRepository.Save();
-
-                return RedirectToAction("Index", "Home");
+                
+                TempData["SuccessMessage"] = "Final Product has been updated";
+                return RedirectToAction("FinalProduct", "Section");
             }
             return View(section);
         }
@@ -138,6 +139,9 @@ namespace Mapper21.UI.Controllers
                 section.Description = HttpUtility.HtmlDecode(section.Description);
                 _sectionRepository.InsertorUpdate(section);
                 _sectionRepository.Save();
+
+                TempData["SuccessMessage"] = "Overview has been updated";
+                return RedirectToAction("Overview", "Section");
             }
             return View(section);
         }

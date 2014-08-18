@@ -44,7 +44,7 @@ namespace Mapper21.DAL.Migrations
                 new SectionType {Id = "FallExpedition", Name = "Fall Expedition"},
                 new SectionType {Id = "MiniMester", Name = "Mini Mester"},
                 new SectionType {Id = "SpringExpedition", Name = "Spring Expedition"},
-                new SectionType {Id = "Art", Name = "Strand"},
+                new SectionType {Id = "Art", Name = "Art"},
                 new SectionType {Id = "ForeignLanguages", Name = "ForeignLanguages"},
                 new SectionType {Id = "LanguageArts", Name = "Language Arts"},
                 new SectionType {Id = "Mathematics", Name = "Mathematics"},
@@ -73,279 +73,373 @@ namespace Mapper21.DAL.Migrations
             context.SaveChanges();
 
             // Fall Expedition
-            var section = new Section
+            var sections = new List<Section>
             {
-                Id = 1,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Ancient Civilizations",
-                Description = "Summary Information",
-                KickOff = "Ancient Civilizations Summary information",
-                FinalProductName = "Civilizations of the early years",
-                FinalProductDescription =
-                    "Civilization or civilisation generally refers to state polities which combine these basic institutions: " +
-                    "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. ",
-                SectionTypeId = "FallExpedition"
+                new Section
+                {
+                    Year = 2014,
+                    GradeLevelId = "9",
+                    Name = "Ancient Civilizations",
+                    Description = "Summary Information",
+                    KickOff = "Ancient Civilizations Summary information",
+                    FinalProductName = "Civilizations of the early years",
+                    FinalProductDescription =
+                        "Civilization or civilisation generally refers to state polities which combine these basic institutions: " +
+                        "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. ",
+                    SectionTypeId = "FallExpedition"
+                },
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
             };
-            context.Sections.AddOrUpdate(section);
+            sections.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Spring Expedition
-            var section2 = new Section
+            var sections2 = new List<Section>
             {
-                Id = 2,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Spring Expedition",
-                Description = "TBD",
-                KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    "",
-                SectionTypeId = "SpringExpedition"
+                new Section
+                {
+                    Year = 2014,
+                    GradeLevelId = "9",
+                    Name = "Spring Expedition",
+                    Description = "TBD",
+                    KickOff = "",
+                    FinalProductName = "",
+                    FinalProductDescription =
+                        "",
+                    SectionTypeId = "SpringExpedition"
+                },
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
             };
-            context.Sections.AddOrUpdate(section2);
+            sections2.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // FSW
-            var section3 = new Section
+            var sections3 = new List<Section>
             {
-                Id = 3,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "First Six Weeks",
-                Description = "TBD",
-                SectionTypeId = "FirstSixWeeks"
+                new Section
+                {
+                    Year = 2014,
+                    GradeLevelId = "9",
+                    Name = "First Six Weeks",
+                    Description = "TBD",
+                    SectionTypeId = "FirstSixWeeks"
+                },
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
             };
-            context.Sections.AddOrUpdate(section3);
+            sections3.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Mini-Mester
-            var section4 = new Section
+            var sections4 = new List<Section>
             {
-                Id = 4,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Mini-Semester - Fall",
-                Description = "TBD",
-                KickOff = "",
-                FinalProductName = "",
-                FinalProductDescription =
-                    "",
-                SectionTypeId = "MiniMester"
+                new Section
+                {
+                    Year = 2014,
+                    GradeLevelId = "9",
+                    Name = "Mini-Semester - Fall",
+                    Description = "TBD",
+                    KickOff = "",
+                    FinalProductName = "",
+                    FinalProductDescription =
+                        "",
+                    SectionTypeId = "MiniMester"
+                },
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
             };
-            context.Sections.AddOrUpdate(section4);
+            sections4.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section5 = new Section
+            var sections5 = new List<Section>
             {
-                Id = 5,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Art",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Art"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
             };
-            context.Sections.AddOrUpdate(section5);
+            sections5.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section6 = new Section
+            var sections6 = new List<Section>
             {
-                Id = 6,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Foreign Languages",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "ForeignLanguages"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
             };
-            context.Sections.AddOrUpdate(section6);
+            sections6.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section7 = new Section
+            var sections7 = new List<Section>
             {
-                Id = 7,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Language Arts",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "LanguageArts"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
             };
-            context.Sections.AddOrUpdate(section7);
+            sections7.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section8 = new Section
+            var sections8 = new List<Section>
             {
-                Id = 8,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Mathematics",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Mathematics"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
             };
-            context.Sections.AddOrUpdate(section8);
+            sections8.ForEach(s => context.Sections.AddOrUpdate(s));
+            context.SaveChanges();
+
+
+            // Subject
+            var sections9 = new List<Section>
+            {
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+            };
+            sections9.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section9 = new Section
+            var sections10 = new List<Section>
             {
-                Id = 9,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Media",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Media"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
             };
-            context.Sections.AddOrUpdate(section9);
+            sections10.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section10 = new Section
+            // Subject
+            var sections11 = new List<Section>
             {
-                Id = 10,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Music",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Music"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
             };
-            context.Sections.AddOrUpdate(section10);
+            sections11.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section11 = new Section
+            var sections12 = new List<Section>
             {
-                Id = 11,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "PE / Health",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "PeHealth"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
             };
-            context.Sections.AddOrUpdate(section11);
+            sections12.ForEach(s => context.Sections.AddOrUpdate(s));
+            context.SaveChanges();
+
+
+            // Subject
+            var sections13 = new List<Section>
+            {
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+            };
+            sections13.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section12 = new Section
+            var sections14 = new List<Section>
             {
-                Id = 12,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Science",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Science"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
             };
-            context.Sections.AddOrUpdate(section12);
+            sections14.ForEach(s => context.Sections.AddOrUpdate(s));
+            context.SaveChanges();
+
+
+            // Subject
+            var sections15 = new List<Section>
+            {
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+            };
+            sections15.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section13 = new Section
+            var sections16 = new List<Section>
             {
-                Id = 13,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Social Skills",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "SocialSkills"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
             };
-            context.Sections.AddOrUpdate(section13);
+            sections16.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section14 = new Section
+            var sections17 = new List<Section>
             {
-                Id = 14,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Social Studies",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "SocialStudiesHumanities"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
             };
-            context.Sections.AddOrUpdate(section14);
+            sections17.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section15 = new Section
+            var sections18 = new List<Section>
             {
-                Id = 15,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Technology",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Technology"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
             };
-            context.Sections.AddOrUpdate(section15);
+            sections18.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
             // Subject
-            var section16 = new Section
+            var sections19 = new List<Section>
             {
-                Id = 16,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Writing",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Writing"
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
             };
-            context.Sections.AddOrUpdate(section16);
+            sections19.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
-            // Subject
-            var section17 = new Section
-            {
-                Id = 17,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Club C",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "ClubC"
-            };
-            context.Sections.AddOrUpdate(section16);
-            context.SaveChanges();
-
-            // Subject
-            var section18 = new Section
-            {
-                Id = 18,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "Crew",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Crew"
-            };
-            context.Sections.AddOrUpdate(section16);
-            context.SaveChanges();
-
-            // Subject
-            var section19 = new Section
-            {
-                Id = 19,
-                Year = 2013,
-                GradeLevelId = "2",
-                Name = "SAS",
-                Description = "TBD",
-                KickOff = "",
-                SectionTypeId = "Sas"
-            };
-            context.Sections.AddOrUpdate(section16);
-            context.SaveChanges();
 
             var caseStudy = new SubSection
             {

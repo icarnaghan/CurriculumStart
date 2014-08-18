@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace Mapper21.UI.Controllers
 {
@@ -6,6 +7,9 @@ namespace Mapper21.UI.Controllers
     {
         public ActionResult Index()
         {
+            int year = Int32.Parse(CurrentYear);
+            ViewBag.Grade = CurrentGradeLevel;
+            ViewBag.Year = year  + " - " + (year + 1);
             return View();
         }
 

@@ -76,6 +76,12 @@ namespace Mapper21.UI.Controllers
                 CommonCoreStandards = standard
             };
 
+            foreach (var item in standard)
+            {
+                if (item.Name.Length >= 70) item.Name.Substring(0, 70);
+                item.Name = item.Subject + item.Code + " (" + item.Name + ")";
+            }
+
             // Get SelectList
             ViewData["StandardList"] = new SelectList(standard, "Id", "Name");
 

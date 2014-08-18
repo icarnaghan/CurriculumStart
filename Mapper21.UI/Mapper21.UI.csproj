@@ -457,8 +457,8 @@
     <Content Include="Content\Libraries\AdminLTE\img\user-bg.png" />
     <Content Include="Content\Libraries\AdminLTE\img\user.jpg" />
     <Content Include="Content\Libraries\AdminLTE\img\user2.jpg" />
-    <Content Include="Content\Libraries\bootstrap.css" />
-    <Content Include="Content\Libraries\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Libraries\KendoUI\Black\editor.png" />
     <Content Include="Content\Libraries\KendoUI\Black\imagebrowser.png" />
     <Content Include="Content\Libraries\KendoUI\Black\indeterminate.gif" />
@@ -1743,7 +1743,6 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201408162120204_InitialCreate.resx">
