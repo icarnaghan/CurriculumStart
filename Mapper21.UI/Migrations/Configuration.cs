@@ -76,6 +76,30 @@ namespace Mapper21.UI.Migrations
                 manager.Create(role);
             }
 
+            if (!context.Roles.Any(r => r.Name == "Seventh Grade"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Seventh Grade" };
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Eigth Grade"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Eigth Grade" };
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(r => r.Name == "Ninth Grade"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Ninth Grade" };
+                manager.Create(role);
+            }
+
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {
                 var store = new RoleStore<IdentityRole>(context);
@@ -163,6 +187,36 @@ namespace Mapper21.UI.Migrations
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "Sixth Grade");
+            }
+
+            if (!context.Users.Any(u => u.UserName == "seventhgrade@monarchcharter.edu"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "seventhgrade", Email = "seventhgrade@monarchcharter.edu" };
+
+                manager.Create(user, "111111");
+                manager.AddToRole(user.Id, "Seventh Grade");
+            }
+
+            if (!context.Users.Any(u => u.UserName == "eighthgrade@monarchcharter.edu"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "eighthgrade", Email = "eigthgrade@monarchcharter.edu" };
+
+                manager.Create(user, "111111");
+                manager.AddToRole(user.Id, "Eigth Grade");
+            }
+
+            if (!context.Users.Any(u => u.UserName == "ninthgrade@monarchcharter.edu"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "ninthgrade", Email = "ninthgrade@monarchcharter.edu" };
+
+                manager.Create(user, "111111");
+                manager.AddToRole(user.Id, "Ninth Grade");
             }
         }
     }
