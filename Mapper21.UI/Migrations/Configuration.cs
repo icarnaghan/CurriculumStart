@@ -366,7 +366,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "turcottem@monarchcharter.org", Email = "turcottem@monarchcharter.org" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "Forth Grade");
+                manager.AddToRole(user.Id, "Fourth Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "uddemet@monarchcharter.org"))
@@ -376,7 +376,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "uddemet@monarchcharter.org", Email = "uddemet@monarchcharter.org" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "Forth Grade");
+                manager.AddToRole(user.Id, "Fourth Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "wollschlagerj@monarchcharter.org"))
@@ -386,7 +386,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "wollschlagerj@monarchcharter.org", Email = "wollschlagerj@monarchcharter.org" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "Forth Grade");
+                manager.AddToRole(user.Id, "Fourth Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "brayl@monarchcharter.org"))
@@ -396,7 +396,7 @@ namespace Mapper21.UI.Migrations
                 var user = new ApplicationUser { UserName = "brayl@monarchcharter.org", Email = "brayl@monarchcharter.org" };
 
                 manager.Create(user, "111111");
-                manager.AddToRole(user.Id, "Forth Grade");
+                manager.AddToRole(user.Id, "Fourth Grade");
             }
 
             if (!context.Users.Any(u => u.UserName == "brunek@monarchcharter.org"))
