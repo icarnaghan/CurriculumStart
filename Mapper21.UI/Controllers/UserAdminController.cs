@@ -56,10 +56,6 @@ namespace Mapper21.UI.Controllers
         // GET: /Users/
         public async Task<ActionResult> Index()
         {
-            if (User.IsInRole("Admin"))
-            {
-                var ian = "carnaghan";
-            }
             return View(await UserManager.Users.ToListAsync());
         }
 

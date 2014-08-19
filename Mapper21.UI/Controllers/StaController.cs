@@ -78,8 +78,9 @@ namespace Mapper21.UI.Controllers
 
             foreach (var item in standard)
             {
-                if (item.Name.Length >= 70) item.Name.Substring(0, 70);
-                item.Name = item.Subject + item.Code + " (" + item.Name + ")";
+                var newName = item.Name;
+                if (item.Name.Length >= 70) newName = item.Name.Substring(0, 70);
+                item.Name = item.Subject + item.Code + " (" + newName + " . . . )";
             }
 
             // Get SelectList
