@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -13,14 +14,14 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult OtherBigIdea_Read(int subSectionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult OtherBigIdea_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SubSectionOtherBigIdea> otherBigIdeas = db.SubSectionOtherBigIdeas.Where(g => g.SubSectionId == subSectionId);
             return Json(otherBigIdeas.ToDataSourceResult(request));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult OtherBigIdea_Create(int subSectionId, [DataSourceRequest] DataSourceRequest request,
+        public ActionResult OtherBigIdea_Create(Guid subSectionId, [DataSourceRequest] DataSourceRequest request,
             OtherBigIdeaSubSectionViewModel otherBigIdea)
         {
             if (ModelState.IsValid)

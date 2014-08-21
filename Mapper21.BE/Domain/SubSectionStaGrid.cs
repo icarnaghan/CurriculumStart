@@ -1,10 +1,12 @@
-﻿namespace Mapper21.BE.Domain
+﻿using System;
+
+namespace Mapper21.BE.Domain
 {
     public class SubSectionStaGrid
     {
-        public int Id { get; set; }
-        public int SubSectionStaId { get; set; }
-        public int SubSectionId { get; set; }
+        public Guid Id { get; set; }
+        public Guid SubSectionStaId { get; set; }
+        public Guid SubSectionId { get; set; }
         public string Standards { get; set; }
         public string LongTermTargets { get; set; }
         public string ShortTermTargets { get; set; }

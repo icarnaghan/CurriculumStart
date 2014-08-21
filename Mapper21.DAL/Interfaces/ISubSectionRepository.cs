@@ -7,11 +7,11 @@ namespace Mapper21.DAL.Interfaces
     public interface ISubSectionRepository : IDisposable
     {
         IEnumerable<SubSection> GetAll();
-        IEnumerable<SubSection> GetAllBySection(int? id);
-        IEnumerable<SubSectionStaGrid> GetStaGrids(int? id);
+        IEnumerable<SubSection> GetAllBySection(Guid id);
+        IEnumerable<SubSectionStaGrid> GetStaGrids(Guid id);
         void InsertorUpdate(SubSection caseStudy);
-        SubSection Find(int? id);
-        bool Delete(int id);
+        SubSection Find(Guid id);
+        bool Delete(Guid id);
         void Save();
     }
 }

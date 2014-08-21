@@ -27,7 +27,7 @@
               .Model(model =>
               {
                   model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
-                  model.Field(g => g.Id).Editable(false); // Make the ProductID property not editable
+                  model.Field(g => g.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
                   model.Field(g => g.SectionId).DefaultValue(@ViewBag.SectionId);
               })
               .Create(create => create.Action("SocialStudiesBigIdea_Create", "SocialStudiesBigIdea")) // Action method invoked when the user saves a new data item

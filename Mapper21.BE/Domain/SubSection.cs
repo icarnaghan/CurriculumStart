@@ -6,8 +6,8 @@ namespace Mapper21.BE.Domain
 {
     public class SubSection
     {
-        public int Id { get; set; }
-        public int SectionId { get; set; }
+        public Guid Id { get; set; }
+        public Guid SectionId { get; set; }
         public string SubSectionTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

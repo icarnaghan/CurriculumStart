@@ -17,22 +17,22 @@ namespace Mapper21.DAL.Repositories
             return db.SubSections.ToList();
         }
 
-        public IEnumerable<SubSection> GetAllBySection(int? id)
+        public IEnumerable<SubSection> GetAllBySection(Guid id)
         {
             return db.SubSections.Where(s => s.SectionId == id);
         }
 
-        public IEnumerable<SubSectionStaGrid> GetStaGrids(int? id)
+        public IEnumerable<SubSectionStaGrid> GetStaGrids(Guid id)
         {
             return db.SubSectionStaGrid.Where(s => s.SubSectionId == id).ToList();
         }
 
-        public SubSection Find(int? id)
+        public SubSection Find(Guid id)
         {
             return db.SubSections.Find(id);
         }
 
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             try
             {
@@ -49,9 +49,10 @@ namespace Mapper21.DAL.Repositories
 
         public void InsertorUpdate(SubSection subSection)
         {
-            if (subSection.Id == default(int))
+            if (subSection.Id == default(Guid))
             {
                 // New entity
+                subSection.Id = Guid.NewGuid();
                 db.SubSections.Add(subSection);
             }
             else

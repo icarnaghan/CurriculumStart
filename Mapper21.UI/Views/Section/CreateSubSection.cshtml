@@ -10,6 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.Hidden("Id")
     @Html.Hidden("SectionId")
     @Html.Hidden("SubSectionTypeId")
     <div class="box box-primary">

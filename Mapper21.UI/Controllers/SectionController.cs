@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -36,7 +37,7 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/CreateSubSection
         public ActionResult CreateSubSection(string currentSectionType)
         {
-            var newSubSection = new SubSection()
+            var newSubSection = new SubSection
             {
                 SectionId = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType).Id,
                 SubSectionTypeId = Helpers.PermissionHelpers.GetSubSectionType(currentSectionType),
@@ -61,10 +62,8 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Section/EditSubSection/5
-        public ActionResult EditSubSection(int? id)
+        public ActionResult EditSubSection(Guid id)
         {
-            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
             var subSection = _subSectionRepository.Find(id);
             
             // Get SelectLists

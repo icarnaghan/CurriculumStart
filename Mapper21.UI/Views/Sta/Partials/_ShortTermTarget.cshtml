@@ -26,11 +26,11 @@
               .Model(model =>
               {
                   model.Id(s => s.Id); // Specify the property which is the unique identifier of the model
-                  model.Field(s => s.Id).Editable(false); // Make the ProductID property not editable
+                  model.Field(s => s.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
                   model.Field(s => s.SubSectionStaId).DefaultValue(@ViewBag.SubSectionStaId);
               })
               .Create(create => create.Action("ShortTermTarget_Create", "ShortTermTarget")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("ShortTermTarget_Read", "ShortTermTarget", new { SubSectionStaId = ViewBag.SubSectionStaId })) // Action method invoked when the grid needs data
+              .Read(read => read.Action("ShortTermTarget_Read", "ShortTermTarget", new { subSectionStaId = ViewBag.SubSectionStaId })) // Action method invoked when the grid needs data
               .Update(update => update.Action("ShortTermTarget_Update", "ShortTermTarget")) // Action method invoked when the user saves an updated data item
               .Destroy(destroy => destroy.Action("ShortTermTarget_Destroy", "ShortTermTarget")) // Action method invoked when the user removes a data item
       )
