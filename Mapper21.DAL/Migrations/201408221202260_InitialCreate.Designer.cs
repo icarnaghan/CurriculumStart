@@ -13,7 +13,7 @@ namespace Mapper21.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201408212002407_InitialCreate"; }
+            get { return "201408221202260_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

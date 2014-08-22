@@ -29,7 +29,7 @@ namespace Mapper21.UI.Controllers
                 // Create a new Section entity and set its properties from the posted Section Model
                 var entity = new SectionOtherBigIdea
                 {
-                    Id = otherBigIdea.Id,
+                    Id = Guid.NewGuid(),
                     Name = otherBigIdea.Name,
                     SectionId = otherBigIdea.SectionId
                 };

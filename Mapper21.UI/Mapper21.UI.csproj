@@ -223,10 +223,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PermissionHelpers.cs" />
-    <Compile Include="Migrations\201408162120204_InitialCreate.cs" />
-    <Compile Include="Migrations\201408162120204_InitialCreate.Designer.cs">
-      <DependentUpon>201408162120204_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -237,7 +233,6 @@
     <Compile Include="Models\OtherBigIdeaSectionViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModel.cs" />
-    <Compile Include="Models\ScienceBigIdeaListViewModel.cs" />
     <Compile Include="Models\SocialStudiesBigIdeaListViewModel.cs" />
     <Compile Include="Models\StandardListViewModel.cs" />
     <Compile Include="Models\HabitListViewModel.cs" />
@@ -1749,11 +1744,6 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408162120204_InitialCreate.resx">
-      <DependentUpon>201408162120204_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mapper21.BE\Mapper21.BE.csproj">

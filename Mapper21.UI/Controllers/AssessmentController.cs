@@ -77,7 +77,7 @@ namespace Mapper21.UI.Controllers
                 // Create a new Product entity and set its properties from the posted ProductViewModel
                 var entity = new SubSectionAssessment
                 {
-                    Id = assessment.Id,
+                    Id = Guid.NewGuid(),
                     Name = assessment.Name,
                     Description = assessment.Description,
                     SubSectionStaId = assessment.SubSectionStaId

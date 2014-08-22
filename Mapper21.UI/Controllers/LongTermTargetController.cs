@@ -30,7 +30,7 @@ namespace Mapper21.UI.Controllers
                 // Create a new Section entity and set its properties from the posted Section Model
                 var entity = new SubSectionLongTermTarget
                 {
-                    Id = longTermTarget.Id,
+                    Id = Guid.NewGuid(),
                     Name = longTermTarget.Name,
                     SubSectionStaId = longTermTarget.SubSectionStaId
                 };

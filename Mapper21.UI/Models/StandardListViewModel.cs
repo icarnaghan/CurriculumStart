@@ -7,8 +7,8 @@ namespace Mapper21.UI.Models
 {
     public class StandardListViewModel
     {
-        public int StandardId { get; set; }
-        public string StandardName { get; set; }
+        public int CommonCoreStandardId { get; set; }
+        public string CommonCoreStandardName { get; set; }
 
     }
 }

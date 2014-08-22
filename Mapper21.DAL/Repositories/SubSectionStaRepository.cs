@@ -42,6 +42,7 @@ namespace Mapper21.DAL.Repositories
             if (subSectionSta.Id == default(Guid))
             {
                 // New entity
+                subSectionSta.Id = Guid.NewGuid();
                 db.SubSectionStas.Add(subSectionSta);
             }
             else

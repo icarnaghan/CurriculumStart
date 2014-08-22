@@ -6,7 +6,8 @@
       .Name("grid3")
       .Columns(columns =>
       {
-          columns.ForeignKey(h => h. BigIdeaForScienceId, (IEnumerable)ViewData["BigIdeaForScienceList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("ScienceBigIdeaDropDownList");
+          //columns.ForeignKey(h => h.BigIdeaForScienceId, (IEnumerable) ViewData["BigIdeaForScienceList"], dataFieldText: "Text", dataFieldValue: "Value");//.EditorTemplateName("ScienceBigIdeaDropDownList");
+          columns.ForeignKey(s => s.BigIdeaForScienceId, (System.Collections.IEnumerable)ViewData["BigIdeaForScienceList"], "Value", "Text");  
           columns.Bound(b => b.Context);
           columns.Command(commands =>
           {

@@ -29,7 +29,7 @@ namespace Mapper21.UI.Controllers
                 // Create a new Section entity and set its properties from the posted Section Model
                 var entity = new SubSectionStandard
                 {
-                    Id = createStandard.Id,
+                    Id = Guid.NewGuid(),
                     CommonCoreStandardId = createStandard.CommonCoreStandardId,
                     SubSectionStaId = createStandard.SubSectionStaId
                 };
