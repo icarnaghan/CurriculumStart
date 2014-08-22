@@ -20,7 +20,7 @@ CREATE view [dbo].[SubSectionStaGrids]
 as
 
 select
-	cast(ROW_NUMBER() OVER(ORDER BY a.id) as int) AS Id,
+	newid() AS Id,
 	a.id as SubSectionStaId,
 	c.id as SubSectionId,
 	substring((select (', ' + rtrim(c.subject) + (c.code)) from CommonCoreStandards c join SubSectionStandards s on c.Id = s.CommonCoreStandardId where s.subSectionStaid = a.id
