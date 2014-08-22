@@ -29,7 +29,7 @@ namespace Mapper21.UI.Controllers
                 // Create a new Section entity and set its properties from the posted SectionViewModel
                 var entity = new SubSectionAssessment
                 {
-                    Id = assessment.Id,
+                    Id = Guid.NewGuid(),
                     Name = assessment.Name,
                     Description = assessment.Description,
                     SubSectionStaId = assessment.SubSectionStaId

@@ -6,7 +6,7 @@
       .Name("grid45")
       .Columns(columns =>
       {
-          columns.ForeignKey(h => h.HabitId, (IEnumerable)ViewData["HabitList"], dataFieldText: "Text", dataFieldValue: "Value");//.EditorTemplateName("HabitDropDownList");
+          columns.ForeignKey(h => h.HabitId, (IEnumerable)ViewData["HabitList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("HabitDropDownList");
           columns.Bound(h => h.Context);
           columns.Command(commands =>
           {

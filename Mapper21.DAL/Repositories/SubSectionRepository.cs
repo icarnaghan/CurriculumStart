@@ -22,9 +22,9 @@ namespace Mapper21.DAL.Repositories
             return db.SubSections.Where(s => s.SectionId == id);
         }
 
-        public IEnumerable<SubSectionStaGrid> GetStaGrids(Guid id)
+        public IEnumerable<SubSectionStaGrid> GetStaGrids(Guid subSectionId)
         {
-            return db.SubSectionStaGrid.Where(s => s.SubSectionId == id).ToList();
+            return db.SubSectionStaGrid.Where(s => s.SubSectionId == subSectionId).ToList();
         }
 
         public SubSection Find(Guid id)
