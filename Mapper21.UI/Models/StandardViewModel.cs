@@ -10,6 +10,6 @@ namespace Mapper21.UI.Models
         public Guid SubSectionStaId { get; set; }
 
         [UIHint("StandardDropDownList")]
-        public StandardListViewModel Standard { get; set; }
+        public StandardListViewModel CommonCoreStandard { get; set; }
     }
 }

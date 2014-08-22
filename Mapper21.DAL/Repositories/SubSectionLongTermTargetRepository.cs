@@ -42,6 +42,7 @@ namespace Mapper21.DAL.Repositories
             if (subSectionLongTermTarget.Id == default(Guid))
             {
                 // New entity
+                subSectionLongTermTarget.Id = Guid.NewGuid();
                 db.SubSectionLongTermTargets.Add(subSectionLongTermTarget);
             }
             else
