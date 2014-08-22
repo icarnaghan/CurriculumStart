@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -13,14 +14,14 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult GuidingQuestion_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult GuidingQuestion_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SectionGuidingQuestion> guidingQuestions = db.SectionGuidingQuestions.Where(g => g.SectionId == sectionId);
             return Json(guidingQuestions.ToDataSourceResult(request));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult GuidingQuestion_Create(int sectionId, [DataSourceRequest] DataSourceRequest request,
+        public ActionResult GuidingQuestion_Create(Guid sectionId, [DataSourceRequest] DataSourceRequest request,
             GuidingQuestionSectionViewModel guidingQuestion)
         {
             if (ModelState.IsValid)

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -13,7 +14,7 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult ServiceLearning_Read(int caseStudyId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult ServiceLearning_Read(Guid caseStudyId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SubSectionServiceLearning> serviceLearning = db.SubSectionServiceLearnings.Where(f => f.SubSectionId == caseStudyId);
             return Json(serviceLearning.ToDataSourceResult(request));

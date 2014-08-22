@@ -26,7 +26,7 @@
               .Model(model =>
               {
                   model.Id(s => s.Id); // Specify the property which is the unique identifier of the model
-                  model.Field(s => s.Id).Editable(false); // Make the ProductID property not editable
+                  model.Field(s => s.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
                   model.Field(s => s.SubSectionStaId).DefaultValue(@ViewBag.SubSectionStaId);
               })
               .Create(create => create.Action("LongTermTarget_Create", "LongTermTarget")) // Action method invoked when the user saves a new data item

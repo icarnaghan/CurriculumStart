@@ -57,9 +57,9 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SectionGuidingQuestions",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
-                        SectionId = c.Int(nullable: false),
+                        SectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Sections", t => t.SectionId, cascadeDelete: true)
@@ -69,7 +69,7 @@ namespace Mapper21.DAL.Migrations
                 "dbo.Sections",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Year = c.Int(nullable: false),
                         GradeLevelId = c.String(maxLength: 128),
                         SectionTypeId = c.String(maxLength: 128),
@@ -93,10 +93,10 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SectionHabits",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         HabitId = c.Int(nullable: false),
                         Context = c.String(),
-                        SectionId = c.Int(nullable: false),
+                        SectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Habits", t => t.HabitId, cascadeDelete: true)
@@ -108,10 +108,10 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SectionScienceBigIdeas",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         BigIdeaForScienceId = c.Int(nullable: false),
                         Context = c.String(),
-                        SectionId = c.Int(nullable: false),
+                        SectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.ScienceBigIdeas", t => t.BigIdeaForScienceId, cascadeDelete: true)
@@ -132,10 +132,10 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SectionSocialStudiesBigIdeas",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         BigIdeaForSocialStudiesId = c.Int(nullable: false),
                         Context = c.String(),
-                        SectionId = c.Int(nullable: false),
+                        SectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SocialStudiesBigIdeas", t => t.BigIdeaForSocialStudiesId, cascadeDelete: true)
@@ -157,8 +157,8 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSections",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        SectionId = c.Int(nullable: false),
+                        Id = c.Guid(nullable: false),
+                        SectionId = c.Guid(nullable: false),
                         SubSectionTypeId = c.String(maxLength: 128),
                         Name = c.String(),
                         Description = c.String(),
@@ -186,10 +186,10 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SectionOtherBigIdeas",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         Context = c.String(),
-                        SectionId = c.Int(nullable: false),
+                        SectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Sections", t => t.SectionId, cascadeDelete: true)
@@ -199,10 +199,10 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionAssessments",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         Description = c.String(),
-                        SubSectionStaId = c.Int(nullable: false),
+                        SubSectionStaId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSectionStas", t => t.SubSectionStaId, cascadeDelete: true)
@@ -212,8 +212,8 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionStas",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        SubSectionId = c.Int(nullable: false),
+                        Id = c.Guid(nullable: false),
+                        SubSectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSections", t => t.SubSectionId, cascadeDelete: true)
@@ -223,9 +223,9 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionLongTermTargets",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
-                        SubSectionStaId = c.Int(nullable: false),
+                        SubSectionStaId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSectionStas", t => t.SubSectionStaId, cascadeDelete: true)
@@ -235,9 +235,9 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionShortTermTargets",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
-                        SubSectionStaId = c.Int(nullable: false),
+                        SubSectionStaId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSectionStas", t => t.SubSectionStaId, cascadeDelete: true)
@@ -247,8 +247,8 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionStandards",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        SubSectionStaId = c.Int(nullable: false),
+                        Id = c.Guid(nullable: false),
+                        SubSectionStaId = c.Guid(nullable: false),
                         CommonCoreStandardId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -261,11 +261,11 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionExperts",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         Description = c.String(),
                         Notes = c.String(),
-                        SubSectionId = c.Int(nullable: false),
+                        SubSectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSections", t => t.SubSectionId, cascadeDelete: true)
@@ -275,11 +275,11 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionFieldworks",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         Description = c.String(),
                         Notes = c.String(),
-                        SubSectionId = c.Int(nullable: false),
+                        SubSectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSections", t => t.SubSectionId, cascadeDelete: true)
@@ -289,9 +289,9 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionGuidingQuestions",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
-                        SubSectionId = c.Int(nullable: false),
+                        SubSectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSections", t => t.SubSectionId, cascadeDelete: true)
@@ -301,10 +301,10 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionHabits",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         HabitId = c.Int(nullable: false),
                         Context = c.String(),
-                        SubSectionId = c.Int(nullable: false),
+                        SubSectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Habits", t => t.HabitId, cascadeDelete: true)
@@ -316,10 +316,10 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionOtherBigIdeas",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         Context = c.String(),
-                        SubSectionId = c.Int(nullable: false),
+                        SubSectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSections", t => t.SubSectionId, cascadeDelete: true)
@@ -329,11 +329,11 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionServiceLearnings",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Guid(nullable: false),
                         Name = c.String(),
                         Description = c.String(),
                         Notes = c.String(),
-                        SubSectionId = c.Int(nullable: false),
+                        SubSectionId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SubSections", t => t.SubSectionId, cascadeDelete: true)
@@ -343,9 +343,9 @@ namespace Mapper21.DAL.Migrations
                 "dbo.SubSectionStaGrids",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        SubSectionStaId = c.Int(nullable: false),
-                        SubSectionId = c.Int(nullable: false),
+                        Id = c.Guid(nullable: false),
+                        SubSectionStaId = c.Guid(nullable: false),
+                        SubSectionId = c.Guid(nullable: false),
                         Standards = c.String(),
                         LongTermTargets = c.String(),
                         ShortTermTargets = c.String(),

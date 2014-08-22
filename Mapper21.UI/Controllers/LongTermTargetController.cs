@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -13,7 +14,7 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult LongTermTarget_Read(int subSectionStaId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult LongTermTarget_Read(Guid subSectionStaId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SubSectionLongTermTarget> longTermTargets =
                 db.SubSectionLongTermTargets.Where(h => h.SubSectionStaId == subSectionStaId);

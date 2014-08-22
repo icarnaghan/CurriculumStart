@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -13,7 +14,7 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult ScienceBigIdea_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult ScienceBigIdea_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SectionScienceBigIdea> scienceBigIdeas = db.SectionScienceBigIdeas.Where(b => b.SectionId == sectionId);
             return Json(scienceBigIdeas.ToDataSourceResult(request));

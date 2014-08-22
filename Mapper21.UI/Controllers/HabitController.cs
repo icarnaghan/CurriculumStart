@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -13,7 +14,7 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult Habit_Read(int sectionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult Habit_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SectionHabit> habits = db.SectionHabits.Where(h => h.SectionId == sectionId);
             return Json(habits.ToDataSourceResult(request));
@@ -68,7 +69,7 @@ namespace Mapper21.UI.Controllers
             return Json(new[] { updateHabit }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Habit_Destroy(int sectionId, [DataSourceRequest] DataSourceRequest request,
+        public ActionResult Habit_Destroy(Guid sectionId, [DataSourceRequest] DataSourceRequest request,
             HabitViewModel deleteHabit)
         {
             if (ModelState.IsValid)

@@ -17,12 +17,12 @@ namespace Mapper21.DAL.Repositories
             return db.SubSectionStas.ToList();
         }
 
-        public SubSectionSta Find(int? id)
+        public SubSectionSta Find(Guid id)
         {
             return db.SubSectionStas.Find(id);
         }
 
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Mapper21.DAL.Repositories
 
         public void InsertorUpdate(SubSectionSta subSectionSta)
         {
-            if (subSectionSta.Id == default(int))
+            if (subSectionSta.Id == default(Guid))
             {
                 // New entity
                 db.SubSectionStas.Add(subSectionSta);

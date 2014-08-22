@@ -1,13 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mapper21.BE.Domain
 {
     public class SectionOtherBigIdea
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Context { get; set; }
-        public int SectionId { get; set; }
+        public Guid SectionId { get; set; }
         
         [ForeignKey("SectionId")]
         public Section Section { get; set; }
