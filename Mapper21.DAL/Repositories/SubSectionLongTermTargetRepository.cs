@@ -17,12 +17,12 @@ namespace Mapper21.DAL.Repositories
             return db.SubSectionLongTermTargets.ToList();
         }
 
-        public SubSectionLongTermTarget Find(Guid id)
+        public SubSectionLongTermTarget Find(int? id)
         {
             return db.SubSectionLongTermTargets.Find(id);
         }
 
-        public bool Delete(Guid id)
+        public bool Delete(int id)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Mapper21.DAL.Repositories
 
         public void InsertorUpdate(SubSectionLongTermTarget subSectionLongTermTarget)
         {
-            if (subSectionLongTermTarget.Id == default(Guid))
+            if (subSectionLongTermTarget.Id == default(int))
             {
                 // New entity
                 db.SubSectionLongTermTargets.Add(subSectionLongTermTarget);

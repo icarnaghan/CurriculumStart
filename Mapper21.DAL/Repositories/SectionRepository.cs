@@ -24,12 +24,12 @@ namespace Mapper21.DAL.Repositories
             return db.Sections.SingleOrDefault(s => s.GradeLevelId == gradeLevel && s.Year == currentYear && s.SectionTypeId == sectionType);
         }
 
-        public Section Find(Guid id)
+        public Section Find(int? id)
         {
             return db.Sections.Find(id);
         }
 
-        public bool Delete(Guid id)
+        public bool Delete(int id)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace Mapper21.DAL.Repositories
 
         public void InsertorUpdate(Section section)
         {
-            if (section.Id == default(Guid))
+            if (section.Id == default(int))
             {
                 // New entity
                 db.Sections.Add(section);

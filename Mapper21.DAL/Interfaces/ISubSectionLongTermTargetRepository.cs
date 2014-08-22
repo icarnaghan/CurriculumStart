@@ -8,8 +8,8 @@ namespace Mapper21.DAL.Interfaces
     {
         IEnumerable<SubSectionLongTermTarget> GetAll();
         void InsertorUpdate(SubSectionLongTermTarget subSectionLongTermTarget);
-        SubSectionLongTermTarget Find(Guid id);
-        bool Delete(Guid id);
+        SubSectionLongTermTarget Find(int? id);
+        bool Delete(int id);
         void Save();
     }
 }

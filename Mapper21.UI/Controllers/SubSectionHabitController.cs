@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -14,7 +13,7 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult Habit_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult Habit_Read(int subSectionId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SubSectionHabit> habits = db.SubSectionHabits.Where(h => h.SubSectionId == subSectionId);
             return Json(habits.ToDataSourceResult(request));

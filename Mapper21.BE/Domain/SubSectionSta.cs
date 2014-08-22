@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mapper21.BE.Domain
 {
     public class SubSectionSta
     {
-        public Guid Id { get; set; }
-        public Guid SubSectionId { get; set; }
+        public int Id { get; set; }
+        public int SubSectionId { get; set; }
 
         [ForeignKey("SubSectionId")]
         public SubSection SubSection { get; set; }

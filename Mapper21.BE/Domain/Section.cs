@@ -7,7 +7,7 @@ namespace Mapper21.BE.Domain
 {
     public class Section
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public int Year { get; set; }
         public string GradeLevelId { get; set; }
         public string SectionTypeId { get; set; }

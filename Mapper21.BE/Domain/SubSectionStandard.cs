@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Mapper21.BE.Domain.LookUps;
 
@@ -7,8 +6,8 @@ namespace Mapper21.BE.Domain
 {
     public class SubSectionStandard
     {
-        public Guid Id { get; set; }
-        public Guid SubSectionStaId { get; set; }
+        public int Id { get; set; }
+        public int SubSectionStaId { get; set; }
         public int CommonCoreStandardId { get; set; }
 
         [ForeignKey("SubSectionStaId")]

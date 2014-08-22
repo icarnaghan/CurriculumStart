@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -30,7 +29,7 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Sta/Create
-        public ActionResult Create(string currentSectionType, Guid subSectionId)
+        public ActionResult Create(string currentSectionType, int subSectionId)
         {
             var subSectionSta = new SubSectionSta
             {
@@ -62,8 +61,9 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Sta/Edit/5
-        public ActionResult Edit(string currentSectionType, Guid subsectionId, Guid id)
+        public ActionResult Edit(string currentSectionType, int subsectionId, int? id)
         {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             var subSectionSta = _subSectionStaRepository.Find(id);
             if (subSectionSta == null) return HttpNotFound();
             
@@ -107,8 +107,12 @@ namespace Mapper21.UI.Controllers
         }
 
         // GET: /Sta/Delete/5
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             SubSectionSta subSectionSta = _subSectionStaRepository.Find(id);
             if (subSectionSta == null)
             {
@@ -120,7 +124,7 @@ namespace Mapper21.UI.Controllers
         // POST: /Sta/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(Guid id)
+        public ActionResult DeleteConfirmed(int id)
         {
             _subSectionStaRepository.Delete(id);
             return RedirectToAction("Index");

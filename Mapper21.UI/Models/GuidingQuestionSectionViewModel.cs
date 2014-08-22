@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace Mapper21.UI.Models
+﻿namespace Mapper21.UI.Models
 {
     public class GuidingQuestionSectionViewModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public Guid SectionId { get; set; }
+        public int SectionId { get; set; }
         public bool DeleteGuidingQuestion { get; set; }
     }
 }

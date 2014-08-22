@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -14,7 +13,7 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult ShortTermTarget_Read(Guid subSectionStaId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult ShortTermTarget_Read(int subSectionStaId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SubSectionShortTermTarget> shortTermTargets =
                 db.SubSectionShortTermTargets.Where(h => h.SubSectionStaId == subSectionStaId);

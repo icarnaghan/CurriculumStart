@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace Mapper21.UI.Models
+﻿namespace Mapper21.UI.Models
 {
     public class SectionViewModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public int Year { get; set; }
         public int GradeLevelId { get; set; }
         public string Name { get; set; }

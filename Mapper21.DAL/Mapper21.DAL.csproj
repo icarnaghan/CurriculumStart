@@ -70,9 +70,9 @@
     <Compile Include="Interfaces\ILookupRepository.cs" />
     <Compile Include="Interfaces\ISubSectionLongTermTargetRepository.cs" />
     <Compile Include="Interfaces\ISubSectionStaRepository.cs" />
-    <Compile Include="Migrations\201408212002407_InitialCreate.cs" />
-    <Compile Include="Migrations\201408212002407_InitialCreate.Designer.cs">
-      <DependentUpon>201408212002407_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201408162118255_InitialCreate.cs" />
+    <Compile Include="Migrations\201408162118255_InitialCreate.Designer.cs">
+      <DependentUpon>201408162118255_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Provider\Mapper21Context.cs" />
@@ -92,8 +92,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408212002407_InitialCreate.resx">
-      <DependentUpon>201408212002407_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201408162118255_InitialCreate.resx">
+      <DependentUpon>201408162118255_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

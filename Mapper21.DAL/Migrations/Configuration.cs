@@ -75,15 +75,28 @@ namespace Mapper21.DAL.Migrations
             // Fall Expedition
             var sections = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section
+                {
+                    Year = 2014,
+                    GradeLevelId = "9",
+                    Name = "Ancient Civilizations",
+                    Description = "Summary Information",
+                    KickOff = "Ancient Civilizations Summary information",
+                    FinalProductName = "Civilizations of the early years",
+                    FinalProductDescription =
+                        "Civilization or civilisation generally refers to state polities which combine these basic institutions: " +
+                        "a ceremonial centre (a formal gathering place for social and cultural activities), a system of writing, and a city. ",
+                    SectionTypeId = "FallExpedition"
+                },
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FallExpedition"},
             };
             sections.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -91,15 +104,27 @@ namespace Mapper21.DAL.Migrations
             // Spring Expedition
             var sections2 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section
+                {
+                    Year = 2014,
+                    GradeLevelId = "9",
+                    Name = "Spring Expedition",
+                    Description = "TBD",
+                    KickOff = "",
+                    FinalProductName = "",
+                    FinalProductDescription =
+                        "",
+                    SectionTypeId = "SpringExpedition"
+                },
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SpringExpedition"},
             };
             sections2.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -107,15 +132,23 @@ namespace Mapper21.DAL.Migrations
             // FSW
             var sections3 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section
+                {
+                    Year = 2014,
+                    GradeLevelId = "9",
+                    Name = "First Six Weeks",
+                    Description = "TBD",
+                    SectionTypeId = "FirstSixWeeks"
+                },
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "FirstSixWeeks"},
             };
             sections3.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -123,15 +156,27 @@ namespace Mapper21.DAL.Migrations
             // Mini-Mester
             var sections4 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section
+                {
+                    Year = 2014,
+                    GradeLevelId = "9",
+                    Name = "Mini-Semester - Fall",
+                    Description = "TBD",
+                    KickOff = "",
+                    FinalProductName = "",
+                    FinalProductDescription =
+                        "",
+                    SectionTypeId = "MiniMester"
+                },
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "MiniMester"},
             };
             sections4.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -139,16 +184,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections5 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Art"},
             };
             sections5.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -156,16 +201,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections6 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ForeignLanguages"},
             };
             sections6.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -173,16 +218,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections7 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "LanguageArts"},
             };
             sections7.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -190,16 +235,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections8 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Mathematics"},
             };
             sections8.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -208,16 +253,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections9 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Media"},
             };
             sections9.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -225,16 +270,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections10 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Music"},
             };
             sections10.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -243,16 +288,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections11 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "PeHealth"},
             };
             sections11.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -260,16 +305,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections12 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Science"},
             };
             sections12.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -278,16 +323,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections13 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialSkills"},
             };
             sections13.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -295,33 +340,34 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections14 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "SocialStudiesHumanities"},
             };
             sections14.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
 
+
             // Subject
             var sections15 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Technology"},
             };
             sections15.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -329,16 +375,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections16 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Writing"},
             };
             sections16.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -346,16 +392,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections17 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "ClubC"},
             };
             sections17.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -363,16 +409,16 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections18 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Crew"},
             };
             sections18.ForEach(s => context.Sections.AddOrUpdate(s));
             context.SaveChanges();
@@ -380,18 +426,94 @@ namespace Mapper21.DAL.Migrations
             // Subject
             var sections19 = new List<Section>
             {
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
-                new Section { Id = Guid.NewGuid(), Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "K", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "1", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "2", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "3", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "4", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "5", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "6", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "7", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "8", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
+                new Section { Year = 2014, GradeLevelId = "9", Name = "", Description = "", KickOff = "", FinalProductName = "", FinalProductDescription = "", SectionTypeId = "Sas"},
             };
             sections19.ForEach(s => context.Sections.AddOrUpdate(s));
+            context.SaveChanges();
+
+
+            var caseStudy = new SubSection
+            {
+                Id = 1,
+                SectionId = 1,
+                Name = "Ancient Greece",
+                Description =
+                    "The ancient Greece case study encompasses several tasks associated with ancient civilizations.",
+                SubSectionTypeId = "CaseStudy"
+            };
+            context.SubSections.AddOrUpdate(caseStudy);
+            context.SaveChanges();
+
+            var experts = new List<SubSectionExpert>
+            {
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Tom Baker", Description = "Field Architect"},
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Steven Smith", Description = "Historical Professional"},
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Janet Fayhe", Description = "Interpreter"},
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Chris Appleson", Description = "Biologist"},
+                new SubSectionExpert {Id = 1, SubSectionId = 1, Name = "Susan Johnson", Description = "Archaeologist"}
+            };
+            experts.ForEach(g => context.SubSectionExperts.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var fieldworks = new List<SubSectionFieldwork>
+            {
+                new SubSectionFieldwork {Id = 1, SubSectionId = 1, Name = "Anarundel Park Visit ", Description = "Exploratory"},
+                new SubSectionFieldwork {Id = 1, SubSectionId = 1, Name = "Baltimore Aquarium", Description = "Scientific"},
+            };
+            fieldworks.ForEach(g => context.SubSectionFieldworks.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var serviceLearnings = new List<SubSectionServiceLearning>
+            {
+                new SubSectionServiceLearning
+                {
+                    Id = 1,
+                    SubSectionId = 1,
+                    Name = "Natural Disasters",
+                    Description = "Studied the consequences of natural disasters"
+                },
+                new SubSectionServiceLearning
+                {
+                    Id = 1,
+                    SubSectionId = 1,
+                    Name = "Health",
+                    Description = "Learned about the health consequences of poor nutrition"
+                },
+                new SubSectionServiceLearning
+                {
+                    Id = 1,
+                    SubSectionId = 1,
+                    Name = "Wetlands",
+                    Description = "Investigated the biological complexity and diversity of wetlands"
+                },
+                new SubSectionServiceLearning
+                {
+                    Id = 1,
+                    SubSectionId = 1,
+                    Name = "Non-Profit Organizations",
+                    Description = "Looked for ways to support struggling local non-profit organizations"
+                },
+            };
+            serviceLearnings.ForEach(g => context.SubSectionServiceLearnings.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var guidingQuestions = new List<SectionGuidingQuestion>
+            {
+                new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "Who will survive? or, What is waste?"},
+                new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "Where do waves come from?"},
+                new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "What is health?"},
+                new SectionGuidingQuestion {Id = 1, SectionId = 1, Name = "When are laws fair?"},
+            };
+            guidingQuestions.ForEach(g => context.SectionGuidingQuestions.AddOrUpdate(g));
             context.SaveChanges();
 
             var bigIdeasForScience = new List<ScienceBigIdea>
@@ -607,6 +729,60 @@ namespace Mapper21.DAL.Migrations
             bigIdeasForSocialStudies.ForEach(g => context.SocialStudiesBigIdeas.AddOrUpdate(g));
             context.SaveChanges();
 
+            var scienceBigIdeas = new List<SectionScienceBigIdea>
+            {
+                new SectionScienceBigIdea
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Promotes learning about environmental changes.",
+                    BigIdeaForScienceId = 1
+                },
+                new SectionScienceBigIdea
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Learn about organisms.",
+                    BigIdeaForScienceId = 2
+                },
+                new SectionScienceBigIdea
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Understanding size and scale.",
+                    BigIdeaForScienceId = 3
+                },
+            };
+            scienceBigIdeas.ForEach(g => context.SectionScienceBigIdeas.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var socialStudiesBigIdeas = new List<SectionSocialStudiesBigIdea>
+            {
+                new SectionSocialStudiesBigIdea
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Understand importance of migration.",
+                    BigIdeaForSocialStudiesId = 1
+                },
+                new SectionSocialStudiesBigIdea
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Promote understanding of different cultures.",
+                    BigIdeaForSocialStudiesId = 2
+                },
+                new SectionSocialStudiesBigIdea
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context = "Raise awareness of regional change",
+                    BigIdeaForSocialStudiesId = 3
+                },
+            };
+            socialStudiesBigIdeas.ForEach(g => context.SectionSocialStudiesBigIdeas.AddOrUpdate(g));
+            context.SaveChanges();
+
             var habit = new List<Habit>
             {
                 new Habit()
@@ -641,6 +817,28 @@ namespace Mapper21.DAL.Migrations
                 },
             };
             habit.ForEach(g => context.Habits.AddOrUpdate(g));
+            context.SaveChanges();
+
+            var expeditionHabits = new List<SectionHabit>
+            {
+                new SectionHabit
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context =
+                        "Synergy is achieved when two or more people work together to create something better than either could alone.",
+                    HabitId = 1
+                },
+                new SectionHabit
+                {
+                    Id = 1,
+                    SectionId = 1,
+                    Context =
+                        "Creates a personal mission statement which will act as a road map and direct and guide decision-making.",
+                    HabitId = 2
+                },
+            };
+            expeditionHabits.ForEach(g => context.SectionHabits.AddOrUpdate(g));
             context.SaveChanges();
         }
     }

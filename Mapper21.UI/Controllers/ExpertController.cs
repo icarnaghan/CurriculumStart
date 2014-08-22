@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
@@ -14,7 +13,7 @@ namespace Mapper21.UI.Controllers
     {
         private readonly Mapper21Context db = new Mapper21Context();
 
-        public ActionResult Expert_Read(Guid caseStudyId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult Expert_Read(int caseStudyId, [DataSourceRequest] DataSourceRequest request)
         {
             IQueryable<SubSectionExpert> expert = db.SubSectionExperts.Where(f => f.SubSectionId == caseStudyId);
             return Json(expert.ToDataSourceResult(request));
