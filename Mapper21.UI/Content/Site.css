@@ -42,3 +42,7 @@ h3 a { color: #34495e; }
      -moz-border-radius: 0 !important;
           border-radius: 0 !important;
 }
+
+.gear {
+    display: none;
+}
