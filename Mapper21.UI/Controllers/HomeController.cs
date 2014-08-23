@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using Mapper21.UI.Helpers;
 
 namespace Mapper21.UI.Controllers
 {
@@ -10,6 +11,7 @@ namespace Mapper21.UI.Controllers
             int year = Int32.Parse(CurrentYear);
             ViewBag.Grade = CurrentGradeLevel;
             ViewBag.Year = year  + " - " + (year + 1);
+            if (User.IsInRole("Support")) return RedirectToAction("Index", "Support");
             return View();
         }
 

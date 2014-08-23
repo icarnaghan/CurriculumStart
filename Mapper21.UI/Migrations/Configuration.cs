@@ -100,6 +100,14 @@ namespace Mapper21.UI.Migrations
                 manager.Create(role);
             }
 
+            if (!context.Roles.Any(r => r.Name == "Support"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Support" };
+                manager.Create(role);
+            }
+
             if (!context.Roles.Any(r => r.Name == "Admin"))
             {
                 var store = new RoleStore<IdentityRole>(context);
@@ -109,11 +117,21 @@ namespace Mapper21.UI.Migrations
             }
 
             // Populate User Accounts
-            if (!context.Users.Any(u => u.UserName == "admin"))
+            if (!context.Users.Any(u => u.UserName == "support@monarchcharter.org"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "admin" };
+                var user = new ApplicationUser { UserName = "support@monarchcharter.org" };
+
+                manager.Create(user, "111111");
+                manager.AddToRole(user.Id, "Support");
+            }
+
+            if (!context.Users.Any(u => u.UserName == "admin@monarchcharter.org"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser { UserName = "admin@monarchcharter.org" };
 
                 manager.Create(user, "111111");
                 manager.AddToRole(user.Id, "Admin");

@@ -206,6 +206,7 @@
     <Compile Include="Controllers\SectionOtherBigIdeaController.cs" />
     <Compile Include="Controllers\SubSectionGuidingQuestionController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
+    <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Controllers\AssessmentController.cs" />
     <Compile Include="Controllers\ShortTermTargetController.cs" />
@@ -1729,6 +1730,7 @@
     <Content Include="Views\Section\_LongTermTarget.cshtml" />
     <Content Include="Views\Section\_ShortTermTarget.cshtml" />
     <Content Include="Views\Section\_Standard.cshtml" />
+    <Content Include="Views\Support\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

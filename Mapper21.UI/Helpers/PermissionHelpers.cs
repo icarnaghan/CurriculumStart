@@ -1,4 +1,6 @@
-﻿namespace Mapper21.UI.Helpers
+﻿using System;
+
+namespace Mapper21.UI.Helpers
 {
     public class PermissionHelpers
     {

@@ -120,8 +120,9 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/Overview/SectionType
         public ActionResult Overview(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             ViewBag.Title = section.Name;
