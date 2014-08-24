@@ -12,13 +12,17 @@ namespace Mapper21.UI.Controllers
         // GET: /Support/
         public ActionResult Index()
         {
+            if(Session != null && Session["GradeLevel"] == null)
+            {
+                Session["GradeLevel"] = "K";
+            }
             return View();
         }
 
         public ActionResult GetGrade(string gradeLevel)
         {
             Session["GradeLevel"] = gradeLevel; 
-            return RedirectToAction("Overview", "Section");
+            return RedirectToAction("Overview", "Section", new { currentSectionType = "Overview" });
         }
 	}
 }

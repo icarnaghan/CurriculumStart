@@ -1,3 +1,54 @@
-﻿
-@Html.ActionLink("Second Grade", "GetGrade", "Support", new { gradeLevel="2"}, null)
-@Html.ActionLink("Third Grade", "GetGrade", "Support", new { gradeLevel = "3" }, null)
+﻿@if (!String.IsNullOrEmpty((string)TempData["SuccessMessage"]))
+{
+    <div class="alert alert-success">
+        <p>@TempData["SuccessMessage"]</p>
+    </div>
+}
+<div class="box box-primary">
+    <div class="box-header">
+        <i class="fa fa-edit"></i>
+        <h3 class="box-title">Overview</h3>
+    </div>
+<div class="box-body">
+
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                @Html.ActionLink("Kindergarten", "GetGrade", "Support", new { gradeLevel = "K" }, null)
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("First Grade", "GetGrade", "Support", new { gradeLevel = "1" }, null)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.ActionLink("Second Grade", "GetGrade", "Support", new { gradeLevel = "2" }, null)
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("Third Grade", "GetGrade", "Support", new { gradeLevel = "3" }, null)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.ActionLink("Forth Grade", "GetGrade", "Support", new { gradeLevel = "4" }, null)
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("Fifth Grade", "GetGrade", "Support", new { gradeLevel = "5" }, null)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @Html.ActionLink("Sixth Grade", "GetGrade", "Support", new { gradeLevel = "6" }, null)
+            </div>
+            <div class="col-md-6">
+                @Html.ActionLink("Seventh Grade", "GetGrade", "Support", new { gradeLevel = "7" }, null)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.ActionLink("Eigth Grade", "GetGrade", "Support", new { gradeLevel = "8" }, null)
+            </div>
+        </div>
+    </div>
+</div>
+</div>
