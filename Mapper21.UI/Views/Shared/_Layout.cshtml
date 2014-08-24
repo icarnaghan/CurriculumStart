@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mapper21 - Monarch Academy</title>
-    @Styles.Render("~/Content/kendo/css")
+    @Styles.Render("~/Content/Libraries/KendoUI/kendo")
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/AdminLTE/plugins")
     @Styles.Render("~/Content/AdminLTE")
+    @Scripts.Render("~/bundles/jquery")
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
@@ -114,7 +115,6 @@
         {
             @RenderBody()
         }
-        @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/kendo")
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/bootstrap")

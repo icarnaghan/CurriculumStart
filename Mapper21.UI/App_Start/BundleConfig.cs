@@ -70,7 +70,7 @@ namespace Mapper21.UI
                 "~/Content/Libraries/AdminLTE/css/AdminLTE.css"
                 ));
 
-            bundles.Add(new StyleBundle("~/Content/kendo").Include(
+            bundles.Add(new StyleBundle("~/Content/Libraries/KendoUI/kendo").Include(
                 "~/Content/Libraries/KendoUI/kendo.common.min.css",
                 "~/Content/Libraries/KendoUI/kendo.bootstrap.min.css"));
 

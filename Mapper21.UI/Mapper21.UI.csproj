@@ -256,6 +256,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\ionicons.svg" />
     <Content Include="Content\Libraries\AdminLTE\css\AdminLTE.css" />
     <Content Include="Content\Libraries\AdminLTE\css\bootstrap-slider\slider.css" />
     <Content Include="Content\Libraries\AdminLTE\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
@@ -1021,6 +1023,13 @@
     <Content Include="Content\Libraries\AdminLTE\less\small-box.less" />
     <Content Include="Content\Libraries\AdminLTE\less\timeline.less" />
     <Content Include="Content\Libraries\AdminLTE\less\vars.less" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\ionicons.eot" />
+    <Content Include="Content\fonts\ionicons.woff" />
+    <Content Include="Content\fonts\ionicons.ttf" />
     <None Include="Properties\PublishProfiles\Dev.pubxml" />
     <Content Include="Scripts\Libraries\AdminLTE\.DS_Store" />
     <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\CHANGES.md" />
