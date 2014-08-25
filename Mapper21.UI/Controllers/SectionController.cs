@@ -149,8 +149,9 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/GuidingQuestions/SectionType
         public ActionResult GuidingQuestions(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
@@ -158,8 +159,9 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/Habits/SectionType
         public ActionResult Habits(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -172,8 +174,9 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/ScienceBigIdeas/SectionType
         public ActionResult ScienceBigIdeas(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -186,8 +189,9 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/SocialStudiesBigIdeas/SectionType
         public ActionResult SocialStudiesBigIdeas(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -200,8 +204,9 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/OtherBigIdeas/SectionType
         public ActionResult OtherBigIdeas(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }

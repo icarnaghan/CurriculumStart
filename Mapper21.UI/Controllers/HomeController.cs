@@ -8,10 +8,9 @@ namespace Mapper21.UI.Controllers
     {
         public ActionResult Index()
         {
-            int year = Int32.Parse(CurrentYear);
-            ViewBag.Grade = CurrentGradeLevel;
+            var year = Int32.Parse(CurrentYear);
+            if (Session != null) ViewBag.Grade = CurrentGradeLevel == "" ? Session["GradeLevel"] : CurrentGradeLevel;
             ViewBag.Year = year  + " - " + (year + 1);
-            if (User.IsInRole("Support")) return RedirectToAction("Index", "Support");
             return View();
         }
 

@@ -73,6 +73,10 @@ namespace Mapper21.UI.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    if (Session != null && Session["GradeLevel"] == null)
+                    {
+                        Session["GradeLevel"] = "K";
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

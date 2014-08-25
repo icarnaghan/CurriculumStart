@@ -64,11 +64,12 @@ namespace Mapper21.UI.Controllers
         // GET: /Sta/Edit/5
         public ActionResult Edit(string currentSectionType, Guid subsectionId, Guid id)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             var subSectionSta = _subSectionStaRepository.Find(id);
             if (subSectionSta == null) return HttpNotFound();
             
             var longTermTarget = _subSectionLongTermTargetRepository.GetAll().FirstOrDefault(l => l.SubSectionStaId == subSectionSta.Id);
-            ICollection<CommonCoreStandard> standard = _lookupRepository.GetCommonCoreStandards().Where(s => s.GradeLevelId == CurrentGradeLevel).ToList();
+            ICollection<CommonCoreStandard> standard = _lookupRepository.GetCommonCoreStandards().Where(s => s.GradeLevelId == currentGradeLevel).ToList();
             var subSectionStaViewModel = new SubSectionStaViewModel
             {
                 SubSectionSta = new SubSectionSta {Id = subSectionSta.Id, SubSectionId = subSectionSta.SubSectionId},
