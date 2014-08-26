@@ -28,8 +28,9 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/SubSection/SectionType
         public ActionResult SubSection(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
@@ -37,9 +38,10 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/CreateSubSection
         public ActionResult CreateSubSection(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             var newSubSection = new SubSection
             {
-                SectionId = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType).Id,
+                SectionId = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType).Id,
                 SubSectionTypeId = Helpers.PermissionHelpers.GetSubSectionType(currentSectionType),
             };
 
@@ -95,8 +97,9 @@ namespace Mapper21.UI.Controllers
         // GET: /Section/FinalProduct/SectionType
         public ActionResult FinalProduct(string currentSectionType)
         {
+            var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(CurrentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
