@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
-using Mapper21.BE.Domain;
-using Mapper21.BE.Domain.LookUps;
+using Mapper21.Domain;
+using Mapper21.Domain.LookUps;
 
 namespace Mapper21.UI.Models
 {

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
-using Mapper21.BE.Domain;
-using Mapper21.DAL.Provider;
+using Mapper21.Data.Provider;
+using Mapper21.Domain;
 using Mapper21.UI.Models;
 
 namespace Mapper21.UI.Controllers

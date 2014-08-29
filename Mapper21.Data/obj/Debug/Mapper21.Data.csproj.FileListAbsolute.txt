@@ -1,0 +1,13 @@
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\Mapper21.Data.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\Mapper21.Data.pdb
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\EntityFramework.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\EntityFramework.SqlServer.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\EntityFramework.xml
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\EntityFramework.SqlServer.xml
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.csprojResolveAssemblyReference.cache
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.Migrations.InitialCreate.resources
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.csproj.GenerateResource.Cache
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.pdb
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\Mapper21.Domain.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\Mapper21.Domain.pdb

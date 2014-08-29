@@ -4,8 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Mapper21.BE.Domain;
 using Mapper21.Data.Interfaces;
+using Mapper21.Domain;
 using Mapper21.UI.Models;
 
 namespace Mapper21.UI.Controllers

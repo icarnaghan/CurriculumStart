@@ -1757,13 +1757,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mapper21.BE\Mapper21.BE.csproj">
+    <ProjectReference Include="..\Mapper21.BE\Mapper21.Domain.csproj">
       <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
-      <Name>Mapper21.BE</Name>
+      <Name>Mapper21.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mapper21.DAL\Mapper21.DAL.csproj">
+    <ProjectReference Include="..\Mapper21.Data\Mapper21.Data.csproj">
       <Project>{f4f0e122-29b3-44b2-8074-c08345cb2c96}</Project>
-      <Name>Mapper21.DAL</Name>
+      <Name>Mapper21.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

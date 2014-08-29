@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Mapper21.BE.Domain.LookUps;
 
 namespace Mapper21.UI.Models
 {
