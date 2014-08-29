@@ -1,0 +1,4 @@
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\bin\Mapper21.Domain.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\bin\Mapper21.Domain.pdb
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\obj\Debug\Mapper21.Domain.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\obj\Debug\Mapper21.Domain.pdb

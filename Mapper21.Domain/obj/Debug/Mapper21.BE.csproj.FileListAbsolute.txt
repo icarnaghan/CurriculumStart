@@ -1,0 +1,5 @@
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\bin\Mapper21.BE.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\bin\Mapper21.BE.pdb
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\obj\Debug\Mapper21.BE.csprojResolveAssemblyReference.cache
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\obj\Debug\Mapper21.BE.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.BE\obj\Debug\Mapper21.BE.pdb
