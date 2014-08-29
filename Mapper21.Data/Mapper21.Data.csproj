@@ -86,7 +86,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mapper21.BE\Mapper21.Domain.csproj">
+    <ProjectReference Include="..\Mapper21.Domain\Mapper21.Domain.csproj">
       <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
       <Name>Mapper21.Domain</Name>
     </ProjectReference>

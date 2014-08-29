@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mapper21 - Monarch Academy</title>
+    @Styles.Render("~/Content/Libraries/KendoUI/kendo")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/AdminLTE/plugins")
+    @Styles.Render("~/Content/AdminLTE")
+    @Scripts.Render("~/bundles/jquery")
+
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="skin-blue">
+        @if (User.Identity.IsAuthenticated)
+        {
+        <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            <a href="/" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                Mapper21
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        @if (User.IsInRole("Support"))
+                        {
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-book"></i>
+                                    <span class="label label-warning">@Session["GradeLevel"]</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">Change Grade Level</li>
+                                    <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="~/Support/GetGrade/K">
+                                                    <i class="fa fa-edit info"></i> Kindergarten
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Support/GetGrade/1">
+                                                    <i class="fa fa-edit info"></i> First Grade
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Support/GetGrade/2">
+                                                    <i class="fa fa-edit info"></i> Second Grade
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Support/GetGrade/3">
+                                                    <i class="fa fa-edit info"></i> Third Grade
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Support/GetGrade/4">
+                                                    <i class="fa fa-edit info"></i> Forth Grade
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Support/GetGrade/5">
+                                                    <i class="fa fa-edit info"></i> Fifth Grade
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Support/GetGrade/6">
+                                                    <i class="fa fa-edit info"></i> Sixth Grade
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Support/GetGrade/7">
+                                                    <i class="fa fa-edit info"></i> Seventh Grade
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Support/GetGrade/8">
+                                                    <i class="fa fa-edit danger"></i> Eigth Grade
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="footer"><a href="~/">Return Home</a></li>
+                                </ul>
+                            </li>
+                        }
+                        @Html.Partial("~/Views/shared/_LoginPartial.cshtml")
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search..." />
+                            <span class="input-group-btn">
+                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat" style="margin-bottom:0px;"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    @RenderPage("~/Views/Shared/_TeacherNavigation.cshtml")
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                @if (ViewContext.RouteData.Values.ContainsKey("currentSectionType"))
+                {
+                    switch (ViewContext.RouteData.Values["currentSectionType"].ToString())
+                    {
+                        case "MiniMester":
+                        case "SpringExpedition":
+                        case "FallExpedition":
+                            @RenderPage("~/Views/Shared/SubNavigation/_ExpeditionNavigation.cshtml")
+                            break;
+                        case "FirstSixWeeks":
+                            @RenderPage("~/Views/Shared/SubNavigation/_FirstSixWeeksNavigation.cshtml")
+                            break;
+                        default:
+                            @RenderPage("~/Views/Shared/SubNavigation/_SubjectAreaNavigation.cshtml")
+                            break;
+                    }
+                }
+                else
+                {
+                    @RenderPage("~/Views/Shared/SubNavigation/_HomeNavigation.cshtml")
+                }
+            
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            @RenderBody()
+                        </div>
+                        </div><!-- /.row -->
+                    <!-- top row -->
+                    <div class="row">
+                        <div class="col-xs-12 connectedSortable">
+
+                        </div><!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+        }
+            else
+        {
+            @RenderBody()
+        }
+        @Scripts.Render("~/bundles/kendo")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/AdminLTE/plugins")
+        @Scripts.Render("~/bundles/AdminLTE")
+        @RenderSection("scripts", false)
+    </body>
+</html>

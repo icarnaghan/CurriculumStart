@@ -1,0 +1,1802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EEE4C528-961E-4A13-A554-BB1A031641CE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mapper21.Site</RootNamespace>
+    <AssemblyName>Mapper21.Site</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kendo.Mvc, Version=2014.2.716.545, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\KendoUI\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc">
+      <HintPath>..\packages\Unity.Mvc.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.4\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Config\SiteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BrowseController.cs" />
+    <Compile Include="Controllers\SubSectionHabitController.cs" />
+    <Compile Include="Controllers\SectionController.cs" />
+    <Compile Include="Controllers\FileBrowserController.cs" />
+    <Compile Include="Controllers\ImageBrowserController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\SubSectionOtherbigIdeaController.cs" />
+    <Compile Include="Controllers\SectionOtherBigIdeaController.cs" />
+    <Compile Include="Controllers\SubSectionGuidingQuestionController.cs" />
+    <Compile Include="Controllers\StandardController.cs" />
+    <Compile Include="Controllers\SupportController.cs" />
+    <Compile Include="Controllers\UserAdminController.cs" />
+    <Compile Include="Controllers\AssessmentController.cs" />
+    <Compile Include="Controllers\ShortTermTargetController.cs" />
+    <Compile Include="Controllers\LongTermTargetController.cs" />
+    <Compile Include="Controllers\ExpertController.cs" />
+    <Compile Include="Controllers\ServiceLearningController.cs" />
+    <Compile Include="Controllers\FieldworkController.cs" />
+    <Compile Include="Controllers\SocialStudiesBigIdeaController.cs" />
+    <Compile Include="Controllers\ScienceBigIdeaController.cs" />
+    <Compile Include="Controllers\HabitController.cs" />
+    <Compile Include="Controllers\SectionGuidingQuestionController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StaController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PermissionHelpers.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\CommonCoreViewModel.cs" />
+    <Compile Include="Models\GuidingQuestionSubSectionViewModel.cs" />
+    <Compile Include="Models\HabitSubSectionViewModel.cs" />
+    <Compile Include="Models\OtherBigIdeaSubSectionViewModel.cs" />
+    <Compile Include="Models\OtherBigIdeaSectionViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModel.cs" />
+    <Compile Include="Models\SocialStudiesBigIdeaListViewModel.cs" />
+    <Compile Include="Models\StandardListViewModel.cs" />
+    <Compile Include="Models\HabitListViewModel.cs" />
+    <Compile Include="Models\HtmlHelpers.cs" />
+    <Compile Include="Models\AssessmentViewModel.cs" />
+    <Compile Include="Models\HabitViewModel.cs" />
+    <Compile Include="Models\SectionViewModel.cs" />
+    <Compile Include="Models\ExpertViewModel.cs" />
+    <Compile Include="Models\FieldworkViewModel.cs" />
+    <Compile Include="Models\GuidingQuestionSectionViewModel.cs" />
+    <Compile Include="Models\LongTermTargetViewModel.cs" />
+    <Compile Include="Models\ServiceLearningViewModel.cs" />
+    <Compile Include="Models\ShortTermTargetViewModel.cs" />
+    <Compile Include="Models\SocialStudiesBigIdeaViewModel.cs" />
+    <Compile Include="Models\ScienceBigIdeaViewModel.cs" />
+    <Compile Include="Models\StaGridViewModel.cs" />
+    <Compile Include="Models\StandardViewModel.cs" />
+    <Compile Include="Models\SubSectionStaViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\ionicons.svg" />
+    <Content Include="Content\Libraries\AdminLTE\css\AdminLTE.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\bootstrap-slider\slider.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\bootstrap.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\bootstrap.min.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\colorpicker\bootstrap-colorpicker.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\datatables\dataTables.bootstrap.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\datatables\images\sort_asc.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\datatables\images\sort_both.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\datatables\images\sort_desc.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\font-awesome.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\font-awesome.min.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\all.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\aero%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\aero.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\aero.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\blue%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\blue.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\blue.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\flat%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\flat.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\flat.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\green%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\green.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\green.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\grey%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\grey.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\grey.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\orange%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\orange.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\orange.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\pink%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\pink.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\pink.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\purple%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\purple.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\purple.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\red%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\red.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\red.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\yellow%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\yellow.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\yellow.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\flat\_all.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\futurico\futurico.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\futurico\futurico.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\aero.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\blue.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\green.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\grey.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\line%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\line.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\line.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\orange.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\pink.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\purple.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\red.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\yellow.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\line\_all.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\aero%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\aero.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\aero.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\blue%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\blue.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\blue.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\green%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\green.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\green.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\grey%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\grey.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\grey.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\minimal.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\minimal.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\orange%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\orange.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\orange.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\pink%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\pink.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\pink.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\purple%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\purple.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\purple.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\red%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\red.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\red.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\yellow.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\yellow.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\minimal\_all.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\polaris\polaris.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\polaris\polaris.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\aero%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\aero.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\aero.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\blue%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\blue.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\blue.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\green%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\green.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\green.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\grey%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\grey.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\grey.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\orange%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\orange.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\orange.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\pink%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\pink.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\pink.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\purple%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\purple.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\purple.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\red%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\red.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\red.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\square%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\square.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\square.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\yellow%402x.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\yellow.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\yellow.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\square\_all.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\animated-overlay.gif" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\ionicons.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\ionicons.min.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\ionslider\ion.rangeSlider.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\ionslider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\ionslider\ion.rangeSlider.skinNice.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\animated-overlay.gif" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-bg_flat_100_e6e7e8_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-bg_flat_100_f56954_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-bg_flat_55_f39c12_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-bg_flat_75_dadada_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-bg_flat_75_e6e6e6_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\jQueryUI\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\morris\morris.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Content\Libraries\AdminLTE\css\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\ionicons.svg" />
+    <Content Include="Content\Libraries\AdminLTE\img\ajax-loader.gif" />
+    <Content Include="Content\Libraries\AdminLTE\img\ajax-loader1.gif" />
+    <Content Include="Content\Libraries\AdminLTE\img\avatar.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\avatar04.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\avatar2.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\avatar3.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\avatar5.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\blur-background04.jpg" />
+    <Content Include="Content\Libraries\AdminLTE\img\blur-background08.jpg" />
+    <Content Include="Content\Libraries\AdminLTE\img\blur-background09.jpg" />
+    <Content Include="Content\Libraries\AdminLTE\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\credit\american-express.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\credit\cirrus.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\credit\mastercard.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\credit\mestro.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\credit\paypal.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\credit\paypal2.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\credit\visa.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\icons.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\sprite-skin-flat.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\sprite-skin-nice.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\user-bg.png" />
+    <Content Include="Content\Libraries\AdminLTE\img\user.jpg" />
+    <Content Include="Content\Libraries\AdminLTE\img\user2.jpg" />
+    <Content Include="Content\Libraries\bootstrap.css" />
+    <Content Include="Content\Libraries\bootstrap.min.css" />
+    <Content Include="Content\Libraries\KendoUI\Black\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\Black\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\Black\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\Black\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\Black\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\Black\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\Black\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\Black\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Black\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\Black\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\Black\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\Black\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\BlueOpal\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Default\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\Default\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\Default\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\Default\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\Default\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\Default\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\Default\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\Default\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Default\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\Default\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\Default\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\Default\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Flat\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\Flat\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\Flat\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\Flat\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\Flat\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\Flat\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\Flat\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\Flat\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Flat\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\Flat\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\Flat\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\Flat\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\HighContrast\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\images\back.png" />
+    <Content Include="Content\Libraries\KendoUI\images\wp8_icons.png" />
+    <Content Include="Content\Libraries\KendoUI\images\wp8_inverseicons.png" />
+    <Content Include="Content\Libraries\KendoUI\kendo.black.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.black.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.blueopal.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.blueopal.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.bootstrap.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.bootstrap.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.common-bootstrap.core.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.common.core.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.common.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.black.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.blueopal.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.default.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.flat.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.highcontrast.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.metro.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.metroblack.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.moonlight.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.silver.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.dataviz.uniform.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.default.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.default.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.flat.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.flat.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.highcontrast.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.highcontrast.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.metro.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.metro.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.metroblack.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.metroblack.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.all.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.android.dark.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.android.light.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.blackberry.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.common.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.flat.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.ios.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.meego.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.mobile.wp8.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.moonlight.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.moonlight.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.rtl.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.silver.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.silver.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.uniform.min.css" />
+    <Content Include="Content\Libraries\KendoUI\kendo.uniform.mobile.min.css" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\MetroBlack\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Metro\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\Metro\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\Metro\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\Metro\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\Metro\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\Metro\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\Metro\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\Metro\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Metro\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\Metro\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\Metro\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\Metro\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\Moonlight\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Silver\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\Silver\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\Silver\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\Silver\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\Silver\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\Silver\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\Silver\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\Silver\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Silver\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\Silver\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\Silver\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\Silver\sprite_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\brushed-metal.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots1.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots10.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots11.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots12.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots13.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots2.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots3.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots4.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots5.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots6.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots7.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots8.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\dots9.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\glass-lighter.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\glass.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\highlight.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\hsv-gradient.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\hue.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\leather1.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\leather2.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\noise.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\stripe1.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\stripe2.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\stripe3.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\stripe4.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\stripe5.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\stripe6.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\transparency.png" />
+    <Content Include="Content\Libraries\KendoUI\textures\transtexture.png" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\editor.png" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\imagebrowser.png" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\indeterminate.gif" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\loading-image.gif" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\loading.gif" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\loading_2x.gif" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\markers.png" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\markers_2x.png" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\slider-h.gif" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\slider-v.gif" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\sprite.png" />
+    <Content Include="Content\Libraries\KendoUI\Uniform\sprite_2x.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\coloricons-sprite.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\AdminLTE\app.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\AdminLTE\dashboard.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\bootstrap.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\bootstrap.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\bootstrap-slider\bootstrap-slider.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\adapters\jquery.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\build-config.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\config.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\contents.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\af.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ar.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\bg.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\bn.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\bs.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ca.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\cs.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\cy.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\da.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\de.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\el.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\en-au.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\en-ca.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\en-gb.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\en.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\eo.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\es.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\et.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\eu.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\fa.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\fi.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\fo.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\fr-ca.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\fr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\gl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\gu.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\he.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\hi.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\hr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\hu.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\id.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\is.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\it.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ja.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ka.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\km.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ko.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ku.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\lt.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\lv.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\mk.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\mn.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ms.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\nb.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\nl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\no.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\pl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\pt-br.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\pt.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ro.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ru.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\si.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\sk.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\sl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\sq.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\sr-latn.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\sr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\sv.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\th.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\tr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\ug.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\uk.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\vi.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\zh-cn.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\lang\zh.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\icons.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\tmp.html" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\editor.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\icons.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\icons_hidpi.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\hidpi\close.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\hidpi\lock.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\hidpi\refresh.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\lock-open.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\lock.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\images\refresh.png" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\styles.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\colorpicker\bootstrap-colorpicker.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\datatables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\datatables\jquery.dataTables.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\excanvas.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\excanvas.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\iCheck\icheck.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\iCheck\icheck.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\jquery.inputmask.date.extensions.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\jquery.inputmask.extensions.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\jquery.inputmask.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\jquery.inputmask.numeric.extensions.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\jquery.inputmask.phone.extensions.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\jquery.inputmask.regex.extensions.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\phone-codes\readme.txt" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ionslider\ion.rangeSlider.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\jqueryKnob\jquery.knob.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\misc\html5shiv.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\misc\jquery.ba-resize.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\misc\jquery.placeholder.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\misc\modernizr.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\misc\respond.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\morris\morris.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\morris\morris.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\slimScroll\jquery.slimscroll.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\sparkline\jquery.sparkline.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Libraries\KendoUI\images\kendoui.ttf" />
+    <Content Include="Content\Libraries\KendoUI\images\kendoui.woff" />
+    <Content Include="Content\Libraries\AdminLTE\css\.DS_Store" />
+    <Content Include="Content\Libraries\AdminLTE\css\iCheck\.DS_Store" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\FontAwesome.otf" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\ionicons.eot" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\ionicons.ttf" />
+    <Content Include="Content\Libraries\AdminLTE\fonts\ionicons.woff" />
+    <Content Include="Content\Libraries\AdminLTE\img\.DS_Store" />
+    <Content Include="Content\Libraries\AdminLTE\less\404_500_errors.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\AdminLTE.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\alerts.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\bootstrap-social.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\boxes.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\buttons.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\callout.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\core.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\dropdown.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\forms.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\header.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\iCheck.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\invoice.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\lockscreen.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\login_and_register.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\mailbox.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\mixins.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\navs.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\pace.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\progress-bars.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\sidebar.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\skins.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\small-box.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\timeline.less" />
+    <Content Include="Content\Libraries\AdminLTE\less\vars.less" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\ionicons.eot" />
+    <Content Include="Content\fonts\ionicons.woff" />
+    <Content Include="Content\fonts\ionicons.ttf" />
+    <None Include="Properties\PublishProfiles\Dev.pubxml" />
+    <Content Include="Scripts\Libraries\AdminLTE\.DS_Store" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\CHANGES.md" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\LICENSE.md" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\README.md" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\ckeditor\skins\moono\readme.md" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\phone-codes\phone-be.json" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\jqueryKnob\.DS_Store" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\jvectormap\.DS_Store" />
+    <Content Include="Scripts\Libraries\AdminLTE\plugins\slimScroll\slimScroll.jquery.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\angular.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.af-ZA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.af.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.am-ET.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.am.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-AE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-BH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-DZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-EG.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-IQ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-JO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-KW.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-LB.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-LY.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-MA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-OM.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-QA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-SA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-SY.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-TN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar-YE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ar.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.arn-CL.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.arn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.as-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.as.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.az-Cyrl-AZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.az-Cyrl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.az-Latn-AZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.az-Latn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.az.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ba-RU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ba.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.be-BY.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.be.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bg.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bn-BD.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bn-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bo-CN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bo.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.br-FR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.br.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bs-Cyrl-BA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bs-Cyrl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bs-Latn-BA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bs-Latn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.bs.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ca-ES.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ca.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.co-FR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.co.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.cs-CZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.cs.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.cy-GB.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.cy.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.da-DK.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.da.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.de-AT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.de-CH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.de-DE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.de-LI.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.de-LU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.de.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.dsb-DE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.dsb.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.dv-MV.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.dv.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.el-GR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.el.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-AU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-BZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-CA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-GB.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-IE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-JM.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-NZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-PH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-SG.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-TT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-ZA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en-ZW.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.en.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-BO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-CL.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-CO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-CR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-DO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-EC.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-GT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-HN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-MX.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-NI.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-PA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-PE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-PR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-PY.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-SV.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-UY.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es-VE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.es.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.et-EE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.et.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.eu-ES.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.eu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fa-IR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fa.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fi-FI.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fi.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fil-PH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fil.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fo-FO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fo.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fr-BE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fr-CA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fr-CH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fr-FR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fr-LU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fr-MC.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fr.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fy-NL.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.fy.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ga-IE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ga.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.gd-GB.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.gd.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.gl-ES.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.gl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.gsw-FR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.gsw.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.gu-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.gu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ha-Latn-NG.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ha-Latn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ha.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.he-IL.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.he.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hi-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hi.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hr-BA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hr-HR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hr.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hsb-DE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hsb.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hu-HU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hy-AM.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.hy.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.id-ID.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.id.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ig-NG.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ig.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ii-CN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ii.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.is-IS.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.is.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.it-CH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.it-IT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.it.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.iu-Cans-CA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.iu-Cans.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.iu-Latn-CA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.iu-Latn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.iu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ja-JP.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ja.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ka-GE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ka.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.kk-KZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.kk.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.kl-GL.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.kl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.km-KH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.km.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.kn-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.kn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ko-KR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ko.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.kok-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.kok.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ky-KG.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ky.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.lb-LU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.lb.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.lo-LA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.lo.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.lt-LT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.lt.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.lv-LV.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.lv.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mi-NZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mi.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mk-MK.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mk.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ml-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ml.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mn-Cyrl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mn-MN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mn-Mong-CN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mn-Mong.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.moh-CA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.moh.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mr-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mr.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ms-BN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ms.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mt-MT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.mt.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nb-NO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nb.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ne-NP.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ne.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nl-BE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nn-NO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.no.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nso-ZA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.nso.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.oc-FR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.oc.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.or-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.or.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.pa-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.pa.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.pl-PL.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.pl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.prs-AF.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.prs.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ps-AF.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ps.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.pt-BR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.pt-PT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.pt.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.qut-GT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.qut.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.quz-BO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.quz-EC.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.quz-PE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.quz.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.rm-CH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.rm.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ro-RO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ro.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ru-RU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ru-UA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ru.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.rw-RW.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.rw.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sa-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sa.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sah-RU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sah.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.se-FI.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.se-NO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.se-SE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.se.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.si-LK.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.si.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sk-SK.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sk.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sl-SI.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sma-NO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sma-SE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sma.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.smj-NO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.smj-SE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.smj.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.smn-FI.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.smn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sms-FI.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sms.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sq-AL.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sq.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Cyrl-BA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Cyrl-CS.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Cyrl-ME.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Cyrl-RS.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Cyrl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Latn-BA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Latn-CS.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Latn-ME.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Latn-RS.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr-Latn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sr.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sv-FI.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sv-SE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sv.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sw-KE.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.sw.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.syr-SY.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.syr.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ta-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ta.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.te-IN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.te.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tg-Cyrl-TJ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tg-Cyrl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tg.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.th-TH.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.th.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tk-TM.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tk.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tn-ZA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tr-TR.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tr.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tt-RU.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tt.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tzm-Latn-DZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tzm-Latn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.tzm.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ug-CN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ug.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.uk-UA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.uk.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ur-PK.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.ur.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.uz-Cyrl-UZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.uz-Cyrl.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.uz-Latn-UZ.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.uz-Latn.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.uz.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.vi-VN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.vi.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.wo-SN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.wo.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.xh-ZA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.xh.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.yo-NG.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.yo.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-CHS.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-CHT.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-HK.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-MO.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-SG.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh-TW.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zh.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zu-ZA.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\cultures\kendo.culture.zu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\jquery.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.all.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.angular.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.binder.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.button.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.calendar.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.colorpicker.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.columnmenu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.columnsorter.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.combobox.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.core.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.data.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.data.odata.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.data.signalr.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.data.xml.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\jquery.min.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.angular.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.columnsorter.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.barcode.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.canvas.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.chart.funnel.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.chart.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.chart.polar.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.core.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.diagram.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.drawing.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.gauge.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.map.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.drawing.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.mobile.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.qrcode.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.sparkline.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.stock.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.svg.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.themes.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.vml.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.datepicker.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.editable.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.editor.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.filebrowser.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.filtercell.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.filtermenu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.fx.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.gantt.list.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.gantt.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.gantt.timeline.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.grid.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.groupable.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.imagebrowser.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.list.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.listview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.maskedtextbox.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.menu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.actionsheet.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.application.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.button.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.buttongroup.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.drawer.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.listview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.loader.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.modalview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.navbar.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.pane.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.popover.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.scrollview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.shim.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.splitview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.switch.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.tabstrip.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.view.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.multiselect.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.notification.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.pager.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.panelbar.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.pivot.configurator.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.pivot.fieldmenu.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.pivotgrid.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.popup.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.progressbar.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.reorderable.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.resizable.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.router.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.agendaview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.dayview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.monthview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.recurrence.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.view.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.selectable.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.slider.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.sortable.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.splitter.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.timepicker.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.timezones.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.toolbar.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.tooltip.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.touch.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.treeview.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.upload.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.userevents.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.validator.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.view.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.mobile.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.filebrowser.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.filtercell.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.gantt.list.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.gantt.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.gantt.timeline.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.actionsheet.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.application.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.button.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.buttongroup.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.drawer.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.listview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.loader.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.modalview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.navbar.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.pane.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.popover.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.scroller.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.scrollview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.shim.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.splitview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.switch.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.tabstrip.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.mobile.view.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.pivot.configurator.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.pivot.fieldmenu.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.pivotgrid.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.toolbar.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.web.min.js" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.window.min.js" />
+    <Content Include="Scripts\Mapper21.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Shared\_TeacherNavigation.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Browse\Index.cshtml" />
+    <Content Include="Views\Browse\Results.cshtml" />
+    <Content Include="Views\Home\Support.cshtml" />
+    <Content Include="Views\Home\Unavailable.cshtml" />
+    <Content Include="Views\Sta\Create.cshtml" />
+    <Content Include="Views\Sta\Edit.cshtml" />
+    <Content Include="Views\Sta\Partials\_LongTermTarget.cshtml" />
+    <Content Include="Views\Sta\Partials\_ShortTermTarget.cshtml" />
+    <Content Include="Views\Sta\Partials\_Assessment.cshtml" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.all.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.autocomplete.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.binder.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.button.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.calendar.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.colorpicker.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.columnmenu.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.combobox.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.core.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.data.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.data.odata.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.data.signalr.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.data.xml.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.barcode.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.canvas.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.chart.funnel.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.chart.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.chart.polar.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.core.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.diagram.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.gauge.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.map.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.qrcode.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.sparkline.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.stock.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.svg.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.themes.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dataviz.vml.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.datepicker.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.datetimepicker.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.draganddrop.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.dropdownlist.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.editable.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.editor.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.filtermenu.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.fx.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.grid.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.groupable.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.imagebrowser.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.list.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.listview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.maskedtextbox.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.menu.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.multiselect.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.notification.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.numerictextbox.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.pager.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.panelbar.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.popup.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.progressbar.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.reorderable.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.resizable.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.router.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.agendaview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.dayview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.monthview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.recurrence.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.scheduler.view.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.selectable.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.slider.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.sortable.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.splitter.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.tabstrip.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.timepicker.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.tooltip.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.touch.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.treeview.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.upload.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.userevents.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.validator.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.view.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.web.min.js.map" />
+    <Content Include="Scripts\Libraries\KendoUI\kendo.window.min.js.map" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Email.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Attachments.cshtml" />
+    <Content Include="Views\Section\EditorTemplates\HabitDropDownList.cshtml" />
+    <Content Include="Views\Section\EditorTemplates\ScienceBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\Section\EditorTemplates\SocialStudiesBigIdeaDropDownList.cshtml" />
+    <Content Include="Views\Section\FinalProduct.cshtml" />
+    <Content Include="Views\Section\GuidingQuestions.cshtml" />
+    <Content Include="Views\Section\Habits.cshtml" />
+    <Content Include="Views\Section\Overview.cshtml" />
+    <Content Include="Views\Section\Partials\_SectionGuidingQuestion.cshtml" />
+    <Content Include="Views\Section\Partials\_Habit.cshtml" />
+    <Content Include="Views\Section\Partials\_ScienceBigIdea.cshtml" />
+    <Content Include="Views\Section\Partials\_SocialStudiesBigIdea.cshtml" />
+    <Content Include="Views\Section\ScienceBigIdeas.cshtml" />
+    <Content Include="Views\Section\SocialStudiesBigIdeas.cshtml" />
+    <Content Include="Views\Section\SubSection.cshtml" />
+    <Content Include="Views\Sta\Partials\_Standard.cshtml" />
+    <Content Include="Views\Sta\EditorTemplates\StandardDropDownList.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\UsersAdmin\Delete.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\Section\Partials\_Expert.cshtml" />
+    <Content Include="Views\Section\Partials\_Fieldwork.cshtml" />
+    <Content Include="Views\Section\Partials\_ServiceLearning.cshtml" />
+    <Content Include="Views\Section\CreateSubSection.cshtml" />
+    <Content Include="Views\Section\EditSubSection.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_HomeNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_ExpeditionNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_FirstSixWeeksNavigation.cshtml" />
+    <Content Include="Views\Shared\SubNavigation\_SubjectAreaNavigation.cshtml" />
+    <Content Include="Views\Section\Partials\_SectionOtherBigIdea.cshtml" />
+    <Content Include="Views\Section\Partials\_SubSectionOtherBigIdea.cshtml" />
+    <Content Include="Views\Section\Partials\_SubSectionGuidingQuestion.cshtml" />
+    <Content Include="Views\Section\OtherBigIdeas.cshtml" />
+    <Content Include="Views\Section\Partials\_SubSectionHabit.cshtml" />
+    <Content Include="Views\Section\Partials\_SubSectionSta.cshtml" />
+    <Content Include="Views\Section\EditorTemplates\StandardDropdownList.cshtml" />
+    <Content Include="Views\Section\_Assessment.cshtml" />
+    <Content Include="Views\Section\_LongTermTarget.cshtml" />
+    <Content Include="Views\Section\_ShortTermTarget.cshtml" />
+    <Content Include="Views\Section\_Standard.cshtml" />
+    <Content Include="Views\Support\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\shared\" />
+    <Folder Include="Content\UserFiles\Images\SubFolder\" />
+    <Folder Include="Views\ImageBrowser\" />
+    <Folder Include="Views\Standard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mapper21.Domain\Mapper21.Domain.csproj">
+      <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
+      <Name>Mapper21.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapper21.Data\Mapper21.Data.csproj">
+      <Project>{f4f0e122-29b3-44b2-8074-c08345cb2c96}</Project>
+      <Name>Mapper21.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62671</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62671/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,27 @@
+﻿@using Mapper21.Site.Models
+@model Mapper21.Domain.Section
+
+@{
+    ViewBag.SectionId = Model.Id;
+}
+
+<script src="~/Scripts/Mapper21.js"> </script>
+<div class="form-horizontal">
+    <div class="box box-primary">
+        <div class="box-header">
+            <i class="fa fa-edit"></i>
+            <h3 class="box-title">Big Ideas for Social Studies</h3>
+        </div>
+        <div class="box-body">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+
+            <div id="guidingQuestions">
+                @Html.Partial("~/Views/Section/Partials/_SocialStudiesBigIdea.cshtml", new SocialStudiesBigIdeaViewModel {SectionId = Model.Id})
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

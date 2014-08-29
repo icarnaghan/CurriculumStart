@@ -1,0 +1,40 @@
+﻿@using System.Collections
+@using Mapper21.Site.Models
+<h4><label>Common Core Standards</label></h4>
+
+@(Html.Kendo().Grid<StandardViewModel>
+      ()
+      .Name("grid1")
+      .Columns(columns =>
+      {
+          columns.ForeignKey(s => s.CommonCoreStandardId, (IEnumerable)ViewData["StandardList"], dataFieldText: "Text", dataFieldValue: "Value").EditorTemplateName("StandardDropDownList");
+                //.Title("Category").Width(150);
+          columns.Command(commands =>
+          {
+              commands.Edit(); // The "edit" command will edit and update data items
+              commands.Destroy(); // The "destroy" command removes data items
+          }).Title("Commands").Width(200);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create(); // The "create" command adds new data items
+          //toolbar.Save(); // The "save" command saves the changed data items
+      })
+        // .Editable(editable => editable.Mode(GridEditMode.InCell)) // Use in-cell editing mode
+      .Editable(editable => editable.Mode(GridEditMode.InLine))
+      .DataSource(dataSource =>
+          dataSource.Ajax()
+              // .Batch(true) // Enable batch updates
+              .Model(model =>
+              {
+                  model.Id(s => s.Id); // Specify the property which is the unique identifier of the model
+                  model.Field(s => s.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
+                  model.Field(s => s.SubSectionStaId).DefaultValue(@ViewBag.SubSectionStaId);
+              })
+              .Create(create => create.Action("Standard_Create", "Standard")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("Standard_Read", "Standard", new { subSectionStaId = ViewBag.SubSectionStaId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("Standard_Update", "Standard")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("Standard_Destroy", "Standard")) // Action method invoked when the user removes a data item
+      )
+      .Pageable()
+)

@@ -1,0 +1,150 @@
+﻿@using Mapper21.Site.Models
+@model Mapper21.Domain.SubSection
+
+@{
+    ViewBag.Title = "Edit";
+    ViewBag.SubSectionId = Model.Id;
+    ViewBag.SectionId = Model.SectionId;
+}
+<script>
+    $(document).ready(function () {
+        if (location.hash) {
+            $('a[href=' + location.hash + ']').tab('show');
+        }
+        $(document.body).on("click", "a[data-toggle]", function (event) {
+            location.hash = this.getAttribute("href");
+        });
+    });
+    $(window).on('popstate', function () {
+        var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
+        $('a[href=' + anchor + ']').tab('show');
+    });
+</script>
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="active"><a href="#tab_1" data-toggle="tab">Overview</a></li>
+        <li class=""><a href="#tab_2" data-toggle="tab">STA</a></li>
+        @if (Model.Section.SectionTypeId != "FirstSixWeeks" &&
+             Model.Section.SectionTypeId != "FallExpedition" &&
+             Model.Section.SectionTypeId != "MiniMester" &&
+             Model.Section.SectionTypeId != "SpringExpedition")
+        {
+            <li class=""><a href="#tab_6" data-toggle="tab">Guiding Questions</a></li>
+            <li class=""><a href="#tab_7" data-toggle="tab">Big Ideas</a></li>
+        }
+        @if (Model.Section.SectionTypeId != "FallExpedition" &&
+             Model.Section.SectionTypeId != "MiniMester" &&
+             Model.Section.SectionTypeId != "SpringExpedition")
+        {
+            <li class=""><a href="#tab_8" data-toggle="tab">Habits</a></li>
+        }
+        <li class=""><a href="#tab_3" data-toggle="tab">Fieldwork</a></li>
+        <li class=""><a href="#tab_4" data-toggle="tab">Experts</a></li>
+        <li class=""><a href="#tab_5" data-toggle="tab">Service Learning</a></li>
+
+        <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab_1">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.SectionId)
+                @Html.HiddenFor(model => model.SubSectionTypeId)
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @Html.LabelFor(model => model.Name, new {@class = "control-label"})
+                        @Html.TextBoxFor(model => model.Name, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="Description">Description</label>
+                            @(Html.Kendo().Editor()
+                                  .Name("Description")
+                                  .HtmlAttributes(new {style = "height:340px"})
+                                  .Value(@<text></text>)
+                                  .ImageBrowser(imageBrowser => imageBrowser
+                                      .Image("~/Content/UserFiles/Images/{0}")
+                                      .Read("Read", "ImageBrowser")
+                                      .Create("Create", "ImageBrowser")
+                                      .Destroy("Destroy", "ImageBrowser")
+                                      .Upload("Upload", "ImageBrowser")
+                                      .Thumbnail("Thumbnail", "ImageBrowser"))
+                                  )
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="submit" value="Update" class="btn btn-primary" />
+                    </div>
+                </div>
+            }
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_2">
+            <h4><label>Standards Targets Assessments</label></h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>Standards</td>
+                        <td>Long Term Targets</td>
+                        <td>Supporting Targets</td>
+                        <td>Assessments</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (dynamic item in ViewBag.StaGrid)
+                    {
+                        <tr>
+                            <td>@item.Standards</td>
+                            <td>@item.LongTermTargets</td>
+                            <td>@item.ShortTermTargets</td>
+                            <td>@item.Assessments</td>
+                            <td><a href="/Sta/Edit/@Model.Section.SectionTypeId/@ViewBag.SubSectionId/@item.SubSectionStaId">Edit</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/Sta/Create/@Model.Section.SectionTypeId/@Model.Id">Add new set of Standards, Targets and Assessments</a>
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_3">
+            <div id="fieldwork">
+                @Html.Partial("~/Views/Section/Partials/_Fieldwork.cshtml", new FieldworkViewModel {SubSectionId = Model.Id})
+            </div>
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_4">
+            <div id="expert">
+                @Html.Partial("~/Views/Section/Partials/_Expert.cshtml", new ExpertViewModel { SubSectionId = Model.Id })
+            </div>
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_5">
+            <div id="serviceLearning">
+                @Html.Partial("~/Views/Section/Partials/_ServiceLearning.cshtml", new ExpertViewModel { SubSectionId = Model.Id })
+            </div>
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_6">
+            <div id="guidingQuestions">
+                @Html.Partial("~/Views/Section/Partials/_SubSectionGuidingQuestion.cshtml", new GuidingQuestionSubSectionViewModel { SubSectionId = Model.Id })
+            </div>
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_7">
+            <div id="otherBigIdeas">
+                @Html.Partial("~/Views/Section/Partials/_SubSectionOtherBigIdea.cshtml", new OtherBigIdeaSubSectionViewModel { SubSectionId = Model.Id })
+            </div>
+        </div><!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_8">
+            <div id="otherBigIdeas">
+                @Html.Partial("~/Views/Section/Partials/_SubSectionHabit.cshtml", new HabitViewModel { SectionId = Model.Id })
+            </div>
+        </div><!-- /.tab-pane -->
+    </div><!-- /.tab-content -->
+</div>

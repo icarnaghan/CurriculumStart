@@ -1,0 +1,93 @@
+﻿@{
+    var semesterNav = ""; var subjectAreaNav = ""; var firstSixWeeksOverview = ""; var fallExpeditionOverview = ""; var miniMesterOverview = ""; var springExpeditionOverview = ""; var artOverview = ""; var foreignLanguagesOverview = ""; var languageArtsOverview = ""; var mathematicsOverview = ""; var mediaOverview = ""; var musicOverview = ""; var scienceOverview = ""; var peHealthOverview = ""; var socialSkillsOverview = ""; var socialStudiesOverview = ""; var technologyOverview = ""; var writingOverview = ""; var clubcOverview = ""; var crewOverview = ""; var sasOverview = "";
+
+    if (ViewContext.RouteData.Values.ContainsKey("currentSectionType"))
+    {
+        // Top Level Nav
+        semesterNav = (ViewContext.RouteData.Values["currentSectionType"].ToString() == "FirstSixWeeks" ||
+                       ViewContext.RouteData.Values["currentSectionType"].ToString() == "FallExpedition" ||
+                       ViewContext.RouteData.Values["currentSectionType"].ToString() == "MiniMester" ||
+                       ViewContext.RouteData.Values["currentSectionType"].ToString() == "SpringExpedition") ? "active" : "";
+
+        subjectAreaNav = (semesterNav != "active") ? "active" : "";
+
+        // Semester Nav
+        firstSixWeeksOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "FirstSixWeeks" ? "active" : "";
+        fallExpeditionOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "FallExpedition" ? "active" : "";
+        miniMesterOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "MiniMester" ? "active" : "";
+        springExpeditionOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "SpringExpedition" ? "active" : "";
+
+        //Subject Area Nav
+        artOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Art" ? "active" : "";
+        foreignLanguagesOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "ForeignLanguages" ? "active" : "";
+        languageArtsOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "LanguageArts" ? "active" : "";
+        mathematicsOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Mathematics" ? "active" : "";
+        mediaOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Media" ? "active" : "";
+        musicOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Music" ? "active" : "";
+        peHealthOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "PeHealth" ? "active" : "";
+        scienceOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Science" ? "active" : "";
+        socialSkillsOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "SoclaiSkills" ? "active" : "";
+        socialStudiesOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "SocialStudies" ? "active" : "";
+        technologyOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Technology" ? "active" : "";
+        writingOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Writing" ? "active" : "";
+        clubcOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "ClubC" ? "active" : "";
+        crewOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Crew" ? "active" : "";
+        sasOverview = ViewContext.RouteData.Values["currentSectionType"].ToString() == "Sas" ? "active" : "";
+    }
+}
+<ul class="sidebar-menu">
+    <li class="active">
+        <a href="/">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        </a>
+    </li>
+
+    <li class="treeview @semesterNav">
+        <a href="#">
+            <i class="fa fa-bar-chart-o"></i>
+            <span>Semesters</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li class="@firstSixWeeksOverview"><a href="~/Section/Overview/FirstSixWeeks"><i class="fa fa-angle-double-right"></i> First Six Weeks</a></li>
+            <li class="@fallExpeditionOverview"><a href="~/Section/Overview/FallExpedition"><i class="fa fa-angle-double-right"></i> Fall Expedition</a></li>
+            <li class="@miniMesterOverview"><a href="~/Section/Overview/MiniMester"><i class="fa fa-angle-double-right"></i> MiniMester</a></li>
+            <li class="@springExpeditionOverview"><a href="~/Section/Overview/SpringExpedition"><i class="fa fa-angle-double-right"></i> Spring Expedition</a></li>
+        </ul>
+    </li>
+    
+    <li class="treeview @subjectAreaNav">
+        <a href="#">
+            <i class="fa fa-leaf"></i>
+            <span>Subject Areas</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li class="@artOverview"><a href="~/Section/Overview/Art"><i class="fa fa-angle-double-right"></i> Art</a></li>
+            <li class="@clubcOverview"><a href="~/Section/Overview/ClubC"><i class="fa fa-angle-double-right"></i> Club C</a></li>
+            <li class="@crewOverview"><a href="~/Section/Overview/Crew"><i class="fa fa-angle-double-right"></i> Crew</a></li>
+            <li class="@foreignLanguagesOverview"><a href="~/Section/Overview/ForeignLanguages"><i class="fa fa-angle-double-right"></i> Foreign Languages</a></li>
+            <li class="@languageArtsOverview"><a href="~/Section/Overview/LanguageArts"><i class="fa fa-angle-double-right"></i> Language Arts</a></li>
+            <li class="@mathematicsOverview"><a href="~/Section/Overview/Mathematics"><i class="fa fa-angle-double-right"></i> Mathematics</a></li>
+            <li class="@mediaOverview"><a href="~/Section/Overview/Media"><i class="fa fa-angle-double-right"></i> Media</a></li>
+            <li class="@musicOverview"><a href="~/Section/Overview/Music"><i class="fa fa-angle-double-right"></i> Music</a></li>
+            <li class="@peHealthOverview"><a href="~/Section/Overview/PeHealth"><i class="fa fa-angle-double-right"></i> PE / Health</a></li>
+            <li class="@sasOverview"><a href="~/Section/Overview/Sas"><i class="fa fa-angle-double-right"></i> Sas</a></li>
+            <li class="@scienceOverview"><a href="~/Section/Overview/Science"><i class="fa fa-angle-double-right"></i> Science</a></li>
+            <li class="@socialSkillsOverview"><a href="~/Section/Overview/SocialSkills"><i class="fa fa-angle-double-right"></i> Social Skills</a></li>
+            <li class="@socialStudiesOverview"><a href="~/Section/Overview/SocialStudies"><i class="fa fa-angle-double-right"></i> Social Studies</a></li>
+            <li class="@technologyOverview"><a href="~/Section/Overview/Technology"><i class="fa fa-angle-double-right"></i> Technology</a></li>
+            <li class="@writingOverview"><a href="~/Section/Overview/Writing"><i class="fa fa-angle-double-right"></i> Writing</a></li>
+        </ul>
+    </li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-bar-chart-o"></i>
+            <span>Reports</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-angle-double-right"></i> Reports Page</a></li>
+        </ul>
+    </li>
+</ul>

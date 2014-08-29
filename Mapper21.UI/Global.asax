@@ -1,1 +1,0 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Mapper21.UI.MvcApplication" Language="C#" %>

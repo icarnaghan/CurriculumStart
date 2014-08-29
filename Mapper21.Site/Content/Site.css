@@ -1,0 +1,48 @@
+﻿body {
+    font-size: 15px !important;
+    padding-bottom: 20px;
+    padding-top: 0px;
+}
+
+/* Set padding to keep content from hitting the edges */
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* styles for validation helpers */
+
+.field-validation-error { color: #b94a48; }
+
+.field-validation-valid { display: none; }
+
+input.input-validation-error { border: 1px solid #b94a48; }
+
+input[type="checkbox"].input-validation-error { border: 0 none; }
+
+.validation-summary-errors { color: #b94a48; }
+
+.validation-summary-valid { display: none; }
+
+/* Admin LTE Overrides*/
+
+.iconbar { margin-top: 40px !important; }
+
+.btn-wide { width: 100%; }
+
+.btn { margin-bottom: 20px; }
+
+.bottom-menu { padding: 20px 0 20px !important; }
+
+h3 a { color: #34495e; }
+
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+.gear {
+    display: none;
+}
