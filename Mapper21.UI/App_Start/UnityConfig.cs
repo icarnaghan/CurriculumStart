@@ -1,6 +1,6 @@
 using System;
-using Mapper21.DAL.Interfaces;
-using Mapper21.DAL.Repositories;
+using Mapper21.Data.Interfaces;
+using Mapper21.Data.Repositories;
 using Mapper21.UI.Controllers;
 using Microsoft.Practices.Unity;
 
