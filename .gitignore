@@ -38,3 +38,9 @@
 
 /Mapper21.UI/obj
 /Mapper21.UI/Content/UserFiles
+/Mapper21.Site/bin
+/Mapper21.Site/obj
+/Mapper21.Domain/bin
+/Mapper21.Domain/obj
+/Mapper21.Data/bin
+/Mapper21.Data/obj
