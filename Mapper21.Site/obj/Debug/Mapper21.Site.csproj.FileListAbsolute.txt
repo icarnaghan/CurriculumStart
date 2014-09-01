@@ -86,3 +86,7 @@ E:\Code\ASP.NET\Mapper21\Mapper21.Site\bin\zh-CN\Kendo.Mvc.resources.dll
 E:\Code\ASP.NET\Mapper21\Mapper21.Site\obj\Debug\Mapper21.Site.csprojResolveAssemblyReference.cache
 E:\Code\ASP.NET\Mapper21\Mapper21.Site\obj\Debug\Mapper21.Site.dll
 E:\Code\ASP.NET\Mapper21\Mapper21.Site\obj\Debug\Mapper21.Site.pdb
+E:\Code\ASP.NET\Mapper21\Mapper21.Site\bin\log4net.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.Site\bin\log4net.xml
+E:\Code\ASP.NET\Mapper21\Mapper21.Site\bin\Mapper21.Business.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.Site\bin\Mapper21.Business.pdb

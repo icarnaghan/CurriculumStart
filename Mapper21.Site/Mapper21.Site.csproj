@@ -225,33 +225,12 @@
     </Compile>
     <Compile Include="Helpers\PermissionHelpers.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
-    <Compile Include="Models\CommonCoreViewModel.cs" />
-    <Compile Include="Models\GuidingQuestionSubSectionViewModel.cs" />
-    <Compile Include="Models\HabitSubSectionViewModel.cs" />
-    <Compile Include="Models\OtherBigIdeaSubSectionViewModel.cs" />
-    <Compile Include="Models\OtherBigIdeaSectionViewModel.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModel.cs" />
-    <Compile Include="Models\SocialStudiesBigIdeaListViewModel.cs" />
-    <Compile Include="Models\StandardListViewModel.cs" />
-    <Compile Include="Models\HabitListViewModel.cs" />
     <Compile Include="Models\HtmlHelpers.cs" />
-    <Compile Include="Models\AssessmentViewModel.cs" />
-    <Compile Include="Models\HabitViewModel.cs" />
-    <Compile Include="Models\SectionViewModel.cs" />
-    <Compile Include="Models\ExpertViewModel.cs" />
-    <Compile Include="Models\FieldworkViewModel.cs" />
-    <Compile Include="Models\GuidingQuestionSectionViewModel.cs" />
-    <Compile Include="Models\LongTermTargetViewModel.cs" />
-    <Compile Include="Models\ServiceLearningViewModel.cs" />
-    <Compile Include="Models\ShortTermTargetViewModel.cs" />
-    <Compile Include="Models\SocialStudiesBigIdeaViewModel.cs" />
-    <Compile Include="Models\ScienceBigIdeaViewModel.cs" />
-    <Compile Include="Models\StaGridViewModel.cs" />
-    <Compile Include="Models\StandardViewModel.cs" />
-    <Compile Include="Models\SubSectionStaViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Manage.cs" />
+    <Compile Include="Models\SubSectionStaDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1755,6 +1734,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Mapper21.Business\Mapper21.Business.csproj">
+      <Project>{add4edc0-5137-4931-b06a-a78ccd60732f}</Project>
+      <Name>Mapper21.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mapper21.Domain\Mapper21.Domain.csproj">
       <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
       <Name>Mapper21.Domain</Name>

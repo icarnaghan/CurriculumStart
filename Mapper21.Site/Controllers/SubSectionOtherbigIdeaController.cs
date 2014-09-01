@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Mapper21.Business.Dto;
 using Mapper21.Data.Provider;
 using Mapper21.Domain;
-using Mapper21.Site.Models;
 
 namespace Mapper21.Site.Controllers
 {
@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult OtherBigIdea_Create(Guid subSectionId, [DataSourceRequest] DataSourceRequest request,
-            OtherBigIdeaSubSectionViewModel otherBigIdea)
+            OtherBigIdeaSubSectionDto otherBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -45,7 +45,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult OtherBigIdea_Update([DataSourceRequest] DataSourceRequest request,
-            OtherBigIdeaSubSectionViewModel otherBigIdea)
+            OtherBigIdeaSubSectionDto otherBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult OtherBigIdea_Destroy([DataSourceRequest] DataSourceRequest request,
-            OtherBigIdeaSubSectionViewModel otherBigIdea)
+            OtherBigIdeaSubSectionDto otherBigIdea)
         {
             if (ModelState.IsValid)
             {

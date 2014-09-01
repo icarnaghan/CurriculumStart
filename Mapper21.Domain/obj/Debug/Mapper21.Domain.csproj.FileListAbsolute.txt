@@ -2,3 +2,4 @@ E:\Code\ASP.NET\Mapper21\Mapper21.Domain\bin\Mapper21.Domain.dll
 E:\Code\ASP.NET\Mapper21\Mapper21.Domain\bin\Mapper21.Domain.pdb
 E:\Code\ASP.NET\Mapper21\Mapper21.Domain\obj\Debug\Mapper21.Domain.dll
 E:\Code\ASP.NET\Mapper21\Mapper21.Domain\obj\Debug\Mapper21.Domain.pdb
+E:\Code\ASP.NET\Mapper21\Mapper21.Domain\obj\Debug\Mapper21.Domain.csprojResolveAssemblyReference.cache

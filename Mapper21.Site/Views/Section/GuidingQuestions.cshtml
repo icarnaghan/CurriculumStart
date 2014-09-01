@@ -1,5 +1,6 @@
-﻿@using Mapper21.Site.Models
-@model Mapper21.Domain.Section
+﻿@using Mapper21.Business.Dto
+@using Mapper21.Site.Models
+@model Mapper21.Business.Dto.SectionDto
 
 @{
     ViewBag.SectionId = Model.Id;
@@ -17,7 +18,7 @@
             @Html.HiddenFor(model => model.Id)
 
             <div id="guidingQuestions">
-                @Html.Partial("~/Views/Section/Partials/_SectionGuidingQuestion.cshtml", new GuidingQuestionSectionViewModel {SectionId = Model.Id})
+                @Html.Partial("~/Views/Section/Partials/_SectionGuidingQuestion.cshtml", new GuidingQuestionSectionDto {SectionId = Model.Id})
             </div>
         </div>
     </div>

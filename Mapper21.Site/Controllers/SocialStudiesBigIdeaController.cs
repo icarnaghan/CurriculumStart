@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Mapper21.Business.Dto;
 using Mapper21.Data.Provider;
 using Mapper21.Domain;
-using Mapper21.Site.Models;
 
 namespace Mapper21.Site.Controllers
 {
@@ -23,7 +23,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult SocialStudiesBigIdea_Create([DataSourceRequest] DataSourceRequest request,
-            SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
+            SocialStudiesBigIdeaDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -47,7 +47,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult SocialStudiesBigIdea_Update([DataSourceRequest] DataSourceRequest request,
-            SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
+            SocialStudiesBigIdeaDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult SocialStudiesBigIdea_Destroy([DataSourceRequest] DataSourceRequest request,
-            SocialStudiesBigIdeaViewModel socialStudiesBigIdea)
+            SocialStudiesBigIdeaDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {

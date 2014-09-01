@@ -1,5 +1,5 @@
-﻿@using Mapper21.Site.Models
-@model Mapper21.Domain.Section
+﻿@using Mapper21.Business.Dto
+@model SectionDto
 
 @{
     ViewBag.SectionId = Model.Id;
@@ -13,7 +13,7 @@
             <h3 class="box-title">Habits</h3>
         </div>
         <div id="habits">
-            @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitViewModel {SectionId = Model.Id})
+            @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitDto {SectionId = Model.Id})
         </div>
     </div>
 </div>

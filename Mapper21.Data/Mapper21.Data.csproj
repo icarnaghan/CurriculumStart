@@ -45,6 +45,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,6 +70,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IGenericDataRepository.cs" />
     <Compile Include="Interfaces\ILookupRepository.cs" />
     <Compile Include="Interfaces\ISubSectionLongTermTargetRepository.cs" />
     <Compile Include="Interfaces\ISubSectionStaRepository.cs" />
@@ -76,6 +80,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Provider\Mapper21Context.cs" />
+    <Compile Include="Repositories\GenericDataRepository.cs" />
     <Compile Include="Repositories\LookupRepository.cs" />
     <Compile Include="Repositories\SubSectionLongTermTargetRepository.cs" />
     <Compile Include="Repositories\SubSectionStaRepository.cs" />

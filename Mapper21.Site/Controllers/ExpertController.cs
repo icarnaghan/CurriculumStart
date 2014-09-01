@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Mapper21.Business.Dto;
 using Mapper21.Data.Provider;
 using Mapper21.Domain;
 using Mapper21.Site.Models;
@@ -21,7 +22,7 @@ namespace Mapper21.Site.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Expert_Create([DataSourceRequest] DataSourceRequest request, ExpertViewModel expert)
+        public ActionResult Expert_Create([DataSourceRequest] DataSourceRequest request, ExpertDto expert)
         {
             if (ModelState.IsValid)
             {
@@ -44,7 +45,7 @@ namespace Mapper21.Site.Controllers
             return Json(new[] {expert}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Expert_Update([DataSourceRequest] DataSourceRequest request, ExpertViewModel expert)
+        public ActionResult Expert_Update([DataSourceRequest] DataSourceRequest request, ExpertDto expert)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +68,7 @@ namespace Mapper21.Site.Controllers
             return Json(new[] {expert}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Expert_Destroy([DataSourceRequest] DataSourceRequest request, ExpertViewModel expert)
+        public ActionResult Expert_Destroy([DataSourceRequest] DataSourceRequest request, ExpertDto expert)
         {
             if (ModelState.IsValid)
             {

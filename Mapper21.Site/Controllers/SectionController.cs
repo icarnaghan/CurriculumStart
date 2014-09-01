@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Mapper21.Business.Dto;
+using Mapper21.Business.Interfaces;
 using Mapper21.Data.Interfaces;
 using Mapper21.Domain;
 using Mapper21.Site.Helpers;
@@ -12,17 +14,17 @@ namespace Mapper21.Site.Controllers
 {
     public class SectionController : BaseController
     {
-        private readonly ISectionRepository _sectionRepository;
         private readonly ISubSectionRepository _subSectionRepository;
         private readonly ILookupRepository _lookupRepository;
+        private readonly ISectionManager _sectionManager;
 
-        public SectionController(ISectionRepository sectionRepository,
-                                 ISubSectionRepository subSectionRepository,
-                                 ILookupRepository lookupRepository)
+        public SectionController(ISubSectionRepository subSectionRepository,
+                                 ILookupRepository lookupRepository,
+                                 ISectionManager sectionManager)
         {
-            _sectionRepository = sectionRepository;
             _subSectionRepository = subSectionRepository;
             _lookupRepository = lookupRepository;
+            _sectionManager = sectionManager;
         }
 
         // GET: /Section/SubSection/SectionType
@@ -30,7 +32,7 @@ namespace Mapper21.Site.Controllers
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
@@ -41,7 +43,7 @@ namespace Mapper21.Site.Controllers
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             var newSubSection = new SubSection
             {
-                SectionId = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType).Id,
+                SectionId = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType).Id,
                 SubSectionTypeId = PermissionHelpers.GetSubSectionType(currentSectionType),
             };
 
@@ -99,7 +101,7 @@ namespace Mapper21.Site.Controllers
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
@@ -107,12 +109,11 @@ namespace Mapper21.Site.Controllers
         // POST: /Section/FinalProduct/SectionType
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FinalProduct(Section section)
+        public ActionResult FinalProduct(SectionDto section)
         {
             if (ModelState.IsValid)
             {
-                _sectionRepository.InsertorUpdate(section);
-                _sectionRepository.Save();
+                _sectionManager.SaveOrUpdate(section);
                 
                 TempData["SuccessMessage"] = "Final Product has been updated";
                 return RedirectToAction("FinalProduct", "Section");
@@ -125,7 +126,7 @@ namespace Mapper21.Site.Controllers
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             ViewBag.Title = section.Name;
@@ -135,13 +136,12 @@ namespace Mapper21.Site.Controllers
         // POST: /Section/Overview/SectionType
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Overview(Section section)
+        public ActionResult Overview(SectionDto section)
         {
             if (ModelState.IsValid)
             {
                 section.Description = HttpUtility.HtmlDecode(section.Description);
-                _sectionRepository.InsertorUpdate(section);
-                _sectionRepository.Save();
+                _sectionManager.SaveOrUpdate(section);
 
                 TempData["SuccessMessage"] = "Overview has been updated";
                 return RedirectToAction("Overview", "Section");
@@ -154,7 +154,7 @@ namespace Mapper21.Site.Controllers
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
@@ -164,7 +164,7 @@ namespace Mapper21.Site.Controllers
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -179,7 +179,7 @@ namespace Mapper21.Site.Controllers
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -194,7 +194,7 @@ namespace Mapper21.Site.Controllers
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
 
             // Get SelectList
@@ -209,7 +209,7 @@ namespace Mapper21.Site.Controllers
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
             if (currentSectionType == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            var section = _sectionRepository.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
+            var section = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType);
             if (section == null) return HttpNotFound();
             return View(section);
         }
@@ -218,7 +218,7 @@ namespace Mapper21.Site.Controllers
         {
             if (disposing)
             {
-                _sectionRepository.Dispose();
+                _sectionManager.Dispose();
             }
             base.Dispose(disposing);
         }

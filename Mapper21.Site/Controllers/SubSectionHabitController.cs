@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Mapper21.Business.Dto;
 using Mapper21.Data.Provider;
 using Mapper21.Domain;
-using Mapper21.Site.Models;
 
 namespace Mapper21.Site.Controllers
 {
@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Habit_Create([DataSourceRequest] DataSourceRequest request,
-            HabitSubSectionViewModel habit)
+            HabitSubSectionDto habit)
         {
             if (ModelState.IsValid)
             {
@@ -46,7 +46,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Habit_Update([DataSourceRequest] DataSourceRequest request,
-            HabitSubSectionViewModel updateHabit)
+            HabitSubSectionDto updateHabit)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Habit_Destroy([DataSourceRequest] DataSourceRequest request,
-            HabitSubSectionViewModel deleteHabit)
+            HabitSubSectionDto deleteHabit)
         {
             if (ModelState.IsValid)
             {

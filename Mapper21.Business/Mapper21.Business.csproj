@@ -38,6 +38,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -57,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -68,7 +79,41 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperConfig.cs" />
+    <Compile Include="Dto\AssessmentDto.cs" />
+    <Compile Include="Dto\CommonCoreDto.cs" />
+    <Compile Include="Dto\ExpertDto.cs" />
+    <Compile Include="Dto\FieldworkDto.cs" />
+    <Compile Include="Dto\GuidingQuestionSectionDto.cs" />
+    <Compile Include="Dto\GuidingQuestionSubSection.cs" />
+    <Compile Include="Dto\HabitListDto.cs" />
+    <Compile Include="Dto\HabitSubSectionDto.cs" />
+    <Compile Include="Dto\HabitViewDto.cs" />
+    <Compile Include="Dto\LongTermTargetDto.cs" />
+    <Compile Include="Dto\OtherBigIdeaSectionDto.cs" />
+    <Compile Include="Dto\OtherBigIdeaSubSectionDto.cs" />
+    <Compile Include="Dto\ScienceBigIdeaDto.cs" />
+    <Compile Include="Dto\SectionDto.cs" />
+    <Compile Include="Dto\ServiceLearningDto.cs" />
+    <Compile Include="Dto\ShortTermTargetDto.cs" />
+    <Compile Include="Dto\SocialStudiesBigIdeaListDto.cs" />
+    <Compile Include="Dto\SocialStudiesBigIdeaDto.cs" />
+    <Compile Include="Dto\StaGridDto.cs" />
+    <Compile Include="Dto\StandardListDto.cs" />
+    <Compile Include="Dto\StandardDto.cs" />
+    <Compile Include="Interfaces\ISectionManager.cs" />
+    <Compile Include="Managers\SectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mapper21.Data\Mapper21.Data.csproj">
+      <Project>{f4f0e122-29b3-44b2-8074-c08345cb2c96}</Project>
+      <Name>Mapper21.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapper21.Domain\Mapper21.Domain.csproj">
+      <Project>{f80f2b22-aecf-48a8-b547-7bc1db343c4c}</Project>
+      <Name>Mapper21.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -95,6 +140,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

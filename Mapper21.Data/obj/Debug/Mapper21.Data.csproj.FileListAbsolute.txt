@@ -11,3 +11,5 @@ E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.Migrations.Initia
 E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.csproj.GenerateResource.Cache
 E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.dll
 E:\Code\ASP.NET\Mapper21\Mapper21.Data\obj\Debug\Mapper21.Data.pdb
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\log4net.dll
+E:\Code\ASP.NET\Mapper21\Mapper21.Data\bin\log4net.xml

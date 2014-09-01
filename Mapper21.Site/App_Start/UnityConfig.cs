@@ -1,6 +1,9 @@
 using System;
+using Mapper21.Business.Interfaces;
+using Mapper21.Business.Managers;
 using Mapper21.Data.Interfaces;
 using Mapper21.Data.Repositories;
+using Mapper21.Domain;
 using Mapper21.Site.Controllers;
 using Microsoft.Practices.Unity;
 
@@ -51,6 +54,10 @@ namespace Mapper21.Site
             container.RegisterType<ManageController>(new InjectionConstructor());
             container.RegisterType<RolesAdminController>(new InjectionConstructor());
             container.RegisterType<UsersAdminController>(new InjectionConstructor());
+
+            // Managers
+            container.RegisterType<IGenericDataRepository<Section>, GenericDataRepository<Section>>();
+            container.RegisterType<ISectionManager, SectionManager>();
         }
     }
 }
