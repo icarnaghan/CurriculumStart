@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.Data", "Mapper21.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.Business", "Mapper21.Business\Mapper21.Business.csproj", "{ADD4EDC0-5137-4931-B06A-A78CCD60732F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper21.Reporting", "Mapper21.Reporting\Mapper21.Reporting.csproj", "{06B834FF-8F66-4227-BD68-09DC9A31B7AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ADD4EDC0-5137-4931-B06A-A78CCD60732F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADD4EDC0-5137-4931-B06A-A78CCD60732F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADD4EDC0-5137-4931-B06A-A78CCD60732F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B834FF-8F66-4227-BD68-09DC9A31B7AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B834FF-8F66-4227-BD68-09DC9A31B7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B834FF-8F66-4227-BD68-09DC9A31B7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B834FF-8F66-4227-BD68-09DC9A31B7AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
