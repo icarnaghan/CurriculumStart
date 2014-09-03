@@ -24,14 +24,7 @@ namespace Mapper21.Site
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/AdminLTE/plugins").Include(
-                "~/Scripts/Libraries/AdminLTE/jquery-ui-1.10.3.min.js",
-                "~/Scripts/Libraries/AdminLTE/plugins/morris/morris.min.js",
-                "~/Scripts/Libraries/AdminLTE/plugins/sparkline/jquery.sparkline.min.js",
-                "~/Scripts/Libraries/AdminLTE/plugins/fullcalendar/fullcalendar.min.js",
-                "~/Scripts/Libraries/AdminLTE/plugins/jqueryKnob/jquery.knob.js",
-                "~/Scripts/Libraries/AdminLTE/plugins/daterangepicker/daterangepicker.js",
-                "~/Scripts/Libraries/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
-                "~/Scripts/Libraries/AdminLTE/plugins/iCheck/icheck.min.js"
+                "~/Scripts/Libraries/AdminLTE/jquery-ui-1.10.3.min.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/AdminLTE").Include(

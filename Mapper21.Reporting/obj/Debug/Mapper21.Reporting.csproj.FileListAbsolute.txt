@@ -1,0 +1,6 @@
+C:\Users\Ian\Code\Mapper21\Mapper21.Reporting\bin\Mapper21.Reporting.dll.config
+C:\Users\Ian\Code\Mapper21\Mapper21.Reporting\bin\Mapper21.Reporting.dll
+C:\Users\Ian\Code\Mapper21\Mapper21.Reporting\bin\Mapper21.Reporting.pdb
+C:\Users\Ian\Code\Mapper21\Mapper21.Reporting\obj\Debug\Mapper21.Reporting.csprojResolveAssemblyReference.cache
+C:\Users\Ian\Code\Mapper21\Mapper21.Reporting\obj\Debug\Mapper21.Reporting.dll
+C:\Users\Ian\Code\Mapper21\Mapper21.Reporting\obj\Debug\Mapper21.Reporting.pdb
