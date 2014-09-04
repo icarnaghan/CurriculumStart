@@ -58,12 +58,14 @@ namespace Mapper21.Site
 
             // Managers
             container.RegisterType<IGenericDataRepository<Section>, GenericDataRepository<Section>>();
+            container.RegisterType<IGenericDataRepository<SubSection>, GenericDataRepository<SubSection>>();
             container.RegisterType<IGenericDataRepository<Habit>, GenericDataRepository<Habit>>();
             container.RegisterType<IGenericDataRepository<ScienceBigIdea>, GenericDataRepository<ScienceBigIdea>>();
             container.RegisterType<IGenericDataRepository<SocialStudiesBigIdea>, GenericDataRepository<SocialStudiesBigIdea>>();
             container.RegisterType<IGenericDataRepository<CommonCoreStandard>, GenericDataRepository<CommonCoreStandard>>();
 
             container.RegisterType<ISectionManager, SectionManager>();
+            container.RegisterType<ISubSectionManager, SubSectionManager>();
             container.RegisterType<ILookupManager, LookupManager>();
         }
     }

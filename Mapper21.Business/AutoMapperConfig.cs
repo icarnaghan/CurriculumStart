@@ -21,6 +21,9 @@ namespace Mapper21.Business
                     cfg.CreateMap<Section, SectionDto>()
                         .ReverseMap();
 
+                    cfg.CreateMap<SubSection, SubSectionDto>()
+                        .ReverseMap();
+
                     cfg.CreateMap<Habit, HabitLookupDto>()
                         .ReverseMap();
 

@@ -47,7 +47,7 @@ namespace Mapper21.Business.Managers
         {
             IList<ScienceBigIdea> _list;
             _list = _scienceBigIdeaRepo.GetAll().ToList<ScienceBigIdea>();
-            return Mapper.Map<IList<ScienceBigIdeaLookupDto>>(_list);
+            return Mapper.Map<IList<ScienceBigIdea>, IList<ScienceBigIdeaLookupDto>>(_list);
         }
 
         public IList<SocialStudiesBigIdeaLookupDto> GetBigIdeaForSocialStudies()

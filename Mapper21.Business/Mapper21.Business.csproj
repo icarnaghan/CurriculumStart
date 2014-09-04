@@ -107,9 +107,12 @@
     <Compile Include="Dto\StaGridDto.cs" />
     <Compile Include="Dto\StandardListDto.cs" />
     <Compile Include="Dto\StandardDto.cs" />
+    <Compile Include="Dto\SubSectionDto.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
     <Compile Include="Interfaces\ISectionManager.cs" />
+    <Compile Include="Interfaces\ISubSectionManager.cs" />
     <Compile Include="Managers\LookupManager.cs" />
+    <Compile Include="Managers\SubSectionManager.cs" />
     <Compile Include="Managers\SectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

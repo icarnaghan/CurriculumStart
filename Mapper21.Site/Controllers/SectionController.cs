@@ -15,14 +15,17 @@ namespace Mapper21.Site.Controllers
     public class SectionController : BaseController
     {
         private readonly ISubSectionRepository _subSectionRepository;
+        private readonly ISubSectionManager _subSectionManager;
         private readonly ILookupManager _lookupManager;
         private readonly ISectionManager _sectionManager;
 
         public SectionController(ISubSectionRepository subSectionRepository,
+                                 ISubSectionManager subSectionManager,
                                  ILookupManager lookupManager,
                                  ISectionManager sectionManager)
         {
             _subSectionRepository = subSectionRepository;
+            _subSectionManager = subSectionManager;
             _lookupManager = lookupManager;
             _sectionManager = sectionManager;
         }
@@ -41,7 +44,7 @@ namespace Mapper21.Site.Controllers
         public ActionResult CreateSubSection(string currentSectionType)
         {
             var currentGradeLevel = CurrentGradeLevel == "" ? Session["GradeLevel"].ToString() : CurrentGradeLevel;
-            var newSubSection = new SubSection
+            var newSubSection = new SubSectionDto
             {
                 SectionId = _sectionManager.GetSection(currentGradeLevel, CurrentYear, currentSectionType).Id,
                 SubSectionTypeId = PermissionHelpers.GetSubSectionType(currentSectionType),
@@ -53,12 +56,11 @@ namespace Mapper21.Site.Controllers
         // POST: /Section/CreateSubSection
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateSubSection(SubSection subSection)
+        public ActionResult CreateSubSection(SubSectionDto subSection)
         {
             if (ModelState.IsValid)
             {
-                _subSectionRepository.InsertorUpdate(subSection);
-                _subSectionRepository.Save();
+                _subSectionManager.SaveOrUpdate(subSection);
                 return RedirectToAction("EditSubSection", "Section", new { subSection.Id });
             }
 
@@ -68,7 +70,7 @@ namespace Mapper21.Site.Controllers
         // GET: /Section/EditSubSection/5
         public ActionResult EditSubSection(Guid id)
         {
-            var subSection = _subSectionRepository.Find(id);
+            var subSection = _subSectionManager.Find(id);
             
             // Get SelectLists
             List<SubSectionStaGrid> staGrid = _subSectionRepository.GetStaGrids(id).ToList();
@@ -84,13 +86,12 @@ namespace Mapper21.Site.Controllers
         // POST: /Section/EditSubSection/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditSubSection(SubSection subSection)
+        public ActionResult EditSubSection(SubSectionDto subSection)
         {
             if (ModelState.IsValid)
             {
                 subSection.Description = HttpUtility.HtmlDecode(subSection.Description);
-                _subSectionRepository.InsertorUpdate(subSection);
-                _subSectionRepository.Save();
+                _subSectionManager.SaveOrUpdate(subSection);
                 return RedirectToAction("EditSubSection", "Section", new { id = subSection.Id });
             }
             return View(subSection);
