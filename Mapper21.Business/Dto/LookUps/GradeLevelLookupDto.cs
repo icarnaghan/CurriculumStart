@@ -1,8 +1,8 @@
 ﻿namespace Mapper21.Business.Dto.LookUps
 {
-    public class HabitDto
+    public class GradeLevelLookupDto
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
     }
 }

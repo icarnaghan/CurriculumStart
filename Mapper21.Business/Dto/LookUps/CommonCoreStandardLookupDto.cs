@@ -1,6 +1,6 @@
-﻿namespace Mapper21.Business.Dto
+﻿namespace Mapper21.Business.Dto.LookUps
 {
-    public class CommonCoreStandardDto
+    public class CommonCoreStandardLookupDto
     {
         public int Id { get; set; }
         public string Subject { get; set; }

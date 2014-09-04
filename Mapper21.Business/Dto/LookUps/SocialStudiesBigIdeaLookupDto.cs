@@ -1,6 +1,6 @@
 ﻿namespace Mapper21.Business.Dto.LookUps
 {
-    public class SocialStudiesBigIdeaDto
+    public class SocialStudiesBigIdeaLookupDto
     {
         public int Id { get; set; }
         public string Category { get; set; }

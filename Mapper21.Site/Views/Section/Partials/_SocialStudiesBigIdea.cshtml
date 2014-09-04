@@ -1,7 +1,8 @@
 ﻿@using System.Collections
+@using Mapper21.Business.Dto
 @using Mapper21.Site.Models
 
-@(Html.Kendo().Grid<SocialStudiesBigIdeaViewModel>
+@(Html.Kendo().Grid<SocialStudiesBigIdeaDto>
       ()
       .Name("grid4")
       .Columns(columns =>

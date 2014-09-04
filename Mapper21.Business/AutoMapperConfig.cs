@@ -2,6 +2,7 @@
 using AutoMapper;
 using AutoMapper.Mappers;
 using Mapper21.Business.Dto;
+using Mapper21.Business.Dto.LookUps;
 using Mapper21.Domain;
 using Mapper21.Domain.LookUps;
 
@@ -20,16 +21,16 @@ namespace Mapper21.Business
                     cfg.CreateMap<Section, SectionDto>()
                         .ReverseMap();
 
-                    cfg.CreateMap<Habit, HabitDto>()
+                    cfg.CreateMap<Habit, HabitLookupDto>()
                         .ReverseMap();
 
-                    cfg.CreateMap<ScienceBigIdea, ScienceBigIdeaDto>()
+                    cfg.CreateMap<ScienceBigIdea, ScienceBigIdeaLookupDto>()
                         .ReverseMap();
 
-                    cfg.CreateMap<SocialStudiesBigIdea, SocialStudiesBigIdeaDto>()
+                    cfg.CreateMap<SocialStudiesBigIdea, SocialStudiesBigIdeaLookupDto>()
                         .ReverseMap();
 
-                    cfg.CreateMap<CommonCoreStandard, CommonCoreStandardDto>()
+                    cfg.CreateMap<CommonCoreStandard, CommonCoreStandardLookupDto>()
                         .ReverseMap();
                 });
             }

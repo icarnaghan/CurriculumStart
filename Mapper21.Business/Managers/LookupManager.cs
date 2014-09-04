@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using AutoMapper;
 using log4net;
-using Mapper21.Business.Dto;
+using Mapper21.Business.Dto.LookUps;
 using Mapper21.Business.Interfaces;
 using Mapper21.Data.Interfaces;
 using Mapper21.Domain.LookUps;
@@ -36,32 +36,32 @@ namespace Mapper21.Business.Managers
         //more cleanly keep application layers clean.  
         //Developer may apply Linq Expressions as parameters to "GetAll" method to return child objects
         //or filter results to a subset of the list
-        public IList<HabitDto> GetHabits()
+        public IList<HabitLookupDto> GetHabits()
         {
             IList<Habit> _list;
             _list = _habitRepo.GetAll().ToList<Habit>();
-            return Mapper.Map<IList<Habit>, IList<HabitDto>>(_list);
+            return Mapper.Map<IList<Habit>, IList<HabitLookupDto>>(_list);
         }
 
-        public IList<ScienceBigIdeaDto> GetBigIdeaForSciences()
+        public IList<ScienceBigIdeaLookupDto> GetBigIdeaForSciences()
         {
             IList<ScienceBigIdea> _list;
             _list = _scienceBigIdeaRepo.GetAll().ToList<ScienceBigIdea>();
-            return Mapper.Map<IList<ScienceBigIdea>, IList<ScienceBigIdeaDto>>(_list);
+            return Mapper.Map<IList<ScienceBigIdeaLookupDto>>(_list);
         }
 
-        public IList<SocialStudiesBigIdeaDto> GetBigIdeaForSocialStudies()
+        public IList<SocialStudiesBigIdeaLookupDto> GetBigIdeaForSocialStudies()
         {
             IList<SocialStudiesBigIdea> _list;
             _list = _socialStudiesBigIdeaRepo.GetAll().ToList<SocialStudiesBigIdea>();
-            return Mapper.Map<IList<SocialStudiesBigIdea>, IList<SocialStudiesBigIdeaDto>>(_list);
+            return Mapper.Map<IList<SocialStudiesBigIdea>, IList<SocialStudiesBigIdeaLookupDto>>(_list);
         }
 
-        public IList<CommonCoreStandardDto> GetCommonCoreStandards()
+        public IList<CommonCoreStandardLookupDto> GetCommonCoreStandards()
         {
             IList<CommonCoreStandard> _list;
             _list = _commonCoreStandardRepo.GetAll().ToList<CommonCoreStandard>();
-            return Mapper.Map<IList<CommonCoreStandard>, IList<CommonCoreStandardDto>>(_list);
+            return Mapper.Map<IList<CommonCoreStandard>, IList<CommonCoreStandardLookupDto>>(_list);
         }
 
         public void Dispose()

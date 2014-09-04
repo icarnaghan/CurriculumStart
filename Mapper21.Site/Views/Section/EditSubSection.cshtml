@@ -1,4 +1,5 @@
-﻿@using Mapper21.Site.Models
+﻿@using Mapper21.Business.Dto
+@using Mapper21.Site.Models
 @model Mapper21.Domain.SubSection
 
 @{
@@ -118,32 +119,32 @@
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_3">
             <div id="fieldwork">
-                @Html.Partial("~/Views/Section/Partials/_Fieldwork.cshtml", new FieldworkViewModel {SubSectionId = Model.Id})
+                @Html.Partial("~/Views/Section/Partials/_Fieldwork.cshtml", new FieldworkDto {SubSectionId = Model.Id})
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_4">
             <div id="expert">
-                @Html.Partial("~/Views/Section/Partials/_Expert.cshtml", new ExpertViewModel { SubSectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_Expert.cshtml", new ExpertDto { SubSectionId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_5">
             <div id="serviceLearning">
-                @Html.Partial("~/Views/Section/Partials/_ServiceLearning.cshtml", new ExpertViewModel { SubSectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_ServiceLearning.cshtml", new ServiceLearningDto { SubSectionId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_6">
             <div id="guidingQuestions">
-                @Html.Partial("~/Views/Section/Partials/_SubSectionGuidingQuestion.cshtml", new GuidingQuestionSubSectionViewModel { SubSectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_SubSectionGuidingQuestion.cshtml", new GuidingQuestionSubSectionDto { SubSectionId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_7">
             <div id="otherBigIdeas">
-                @Html.Partial("~/Views/Section/Partials/_SubSectionOtherBigIdea.cshtml", new OtherBigIdeaSubSectionViewModel { SubSectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_SubSectionOtherBigIdea.cshtml", new OtherBigIdeaSubSectionDto { SubSectionId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_8">
             <div id="otherBigIdeas">
-                @Html.Partial("~/Views/Section/Partials/_SubSectionHabit.cshtml", new HabitViewModel { SectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_SubSectionHabit.cshtml", new HabitDto { SectionId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
     </div><!-- /.tab-content -->
