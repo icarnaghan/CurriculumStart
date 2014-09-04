@@ -39,13 +39,6 @@ namespace Mapper21.Site
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/Libraries/bootstrap.css",
                 "~/Content/site.css",
-                "~/Content/Libraries/AdminLTE/css/font-awesome.min.css",
-                "~/Content/Libraries/AdminLTE/css/ionicons.min.css",
-                "~/Content/Libraries/AdminLTE/css/morris/morris.css",
-                "~/Content/Libraries/AdminLTE/css/jvectormap/jquery-jvectormap-1.2.2.css",
-                "~/Content/Libraries/AdminLTE/css/fullcalendar/fullcalendar.css",
-                "~/Content/Libraries/AdminLTE/css/daterangepicker/daterangepicker-bs3.css",
-                "~/Content/Libraries/AdminLTE/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
                 "~/Content/Libraries/AdminLTE/css/AdminLTE.css"
                 ));
 
