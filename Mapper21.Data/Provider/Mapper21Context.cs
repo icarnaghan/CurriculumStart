@@ -8,6 +8,8 @@ namespace Mapper21.Data.Provider
     {
         public Mapper21Context() : base("Mapper21Context")
         {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Section> Sections { get; set; }
