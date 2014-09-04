@@ -15,15 +15,15 @@ namespace Mapper21.Site.Controllers
     public class SectionController : BaseController
     {
         private readonly ISubSectionRepository _subSectionRepository;
-        private readonly ILookupRepository _lookupRepository;
+        private readonly ILookupManager _lookupManager;
         private readonly ISectionManager _sectionManager;
 
         public SectionController(ISubSectionRepository subSectionRepository,
-                                 ILookupRepository lookupRepository,
+                                 ILookupManager lookupManager,
                                  ISectionManager sectionManager)
         {
             _subSectionRepository = subSectionRepository;
-            _lookupRepository = lookupRepository;
+            _lookupManager = lookupManager;
             _sectionManager = sectionManager;
         }
 
@@ -74,7 +74,7 @@ namespace Mapper21.Site.Controllers
             List<SubSectionStaGrid> staGrid = _subSectionRepository.GetStaGrids(id).ToList();
             ViewBag.staGrid = staGrid;
 
-            var habit = _lookupRepository.GetHabits();
+            var habit = _lookupManager.GetHabits();
             ViewData["HabitList"] = new SelectList(habit, "Id", "Name");
 
 
@@ -168,7 +168,7 @@ namespace Mapper21.Site.Controllers
             if (section == null) return HttpNotFound();
 
             // Get SelectList
-            var habit = _lookupRepository.GetHabits();
+            var habit = _lookupManager.GetHabits();
             ViewData["HabitList"] = new SelectList(habit, "Id", "Name");
 
             return View(section);
@@ -183,7 +183,7 @@ namespace Mapper21.Site.Controllers
             if (section == null) return HttpNotFound();
 
             // Get SelectList
-            var bigIdeaForScience = _lookupRepository.GetBigIdeaForSciences();
+            var bigIdeaForScience = _lookupManager.GetBigIdeaForSciences();
             ViewData["BigIdeaForScienceList"] = new SelectList(bigIdeaForScience, "Id", "Name");
 
             return View(section);
@@ -198,7 +198,7 @@ namespace Mapper21.Site.Controllers
             if (section == null) return HttpNotFound();
 
             // Get SelectList
-            var bigIdeaForSocialStudies = _lookupRepository.GetBigIdeaForSocialStudies();
+            var bigIdeaForSocialStudies = _lookupManager.GetBigIdeaForSocialStudies();
             ViewData["BigIdeaForSocialStudiesList"] = new SelectList(bigIdeaForSocialStudies, "Id", "Name");
 
             return View(section);

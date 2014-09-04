@@ -1,6 +1,6 @@
 ﻿namespace Mapper21.Business.Dto
 {
-    public class CommonCoreDto
+    public class CommonCoreStandardDto
     {
         public int Id { get; set; }
         public string Subject { get; set; }

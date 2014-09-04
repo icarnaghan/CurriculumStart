@@ -81,7 +81,7 @@
   <ItemGroup>
     <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="Dto\AssessmentDto.cs" />
-    <Compile Include="Dto\CommonCoreDto.cs" />
+    <Compile Include="Dto\LookUps\CommonCoreStandardDto.cs" />
     <Compile Include="Dto\ExpertDto.cs" />
     <Compile Include="Dto\FieldworkDto.cs" />
     <Compile Include="Dto\GuidingQuestionSectionDto.cs" />
@@ -90,6 +90,12 @@
     <Compile Include="Dto\HabitSubSectionDto.cs" />
     <Compile Include="Dto\HabitViewDto.cs" />
     <Compile Include="Dto\LongTermTargetDto.cs" />
+    <Compile Include="Dto\LookUps\GradeLevelDto.cs" />
+    <Compile Include="Dto\LookUps\HabitDto.cs" />
+    <Compile Include="Dto\LookUps\ScienceBigIdeaDto.cs" />
+    <Compile Include="Dto\LookUps\SectionTypeDto.cs" />
+    <Compile Include="Dto\LookUps\SocialStudiesBigIdeaDto.cs" />
+    <Compile Include="Dto\LookUps\SubSectionTypeDto.cs" />
     <Compile Include="Dto\OtherBigIdeaSectionDto.cs" />
     <Compile Include="Dto\OtherBigIdeaSubSectionDto.cs" />
     <Compile Include="Dto\ScienceBigIdeaDto.cs" />
@@ -101,7 +107,9 @@
     <Compile Include="Dto\StaGridDto.cs" />
     <Compile Include="Dto\StandardListDto.cs" />
     <Compile Include="Dto\StandardDto.cs" />
+    <Compile Include="Interfaces\ILookupManager.cs" />
     <Compile Include="Interfaces\ISectionManager.cs" />
+    <Compile Include="Managers\LookupManager.cs" />
     <Compile Include="Managers\SectionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

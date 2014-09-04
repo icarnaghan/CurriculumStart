@@ -1,6 +1,7 @@
-﻿@using Mapper21.Site.Models
+﻿@using Mapper21.Business.Dto
+@using Mapper21.Site.Models
 
-@(Html.Kendo().Grid<GuidingQuestionSectionViewModel>
+@(Html.Kendo().Grid<GuidingQuestionSectionDto>
       ()
       .Name("grid")
       .Columns(columns =>
