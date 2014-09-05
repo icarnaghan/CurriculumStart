@@ -50,6 +50,7 @@ namespace Mapper21.Business.Managers
             {
                 if (p.Id == default(Guid))
                 {
+                    p.Id = Guid.NewGuid();
                     _repo.Add(p);
                 }
                 else

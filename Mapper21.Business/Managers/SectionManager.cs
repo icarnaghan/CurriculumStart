@@ -37,7 +37,7 @@ namespace Mapper21.Business.Managers
         public SectionDto GetSection(string gradeLevel, string year, string sectionType)
         {
             int currentYear = int.Parse(year);
-            Section section = _repo.GetSingle(s => s.GradeLevelId == gradeLevel && s.Year == currentYear && s.SectionTypeId == sectionType);
+            Section section = _repo.GetSingle(s => s.GradeLevelId == gradeLevel && s.Year == currentYear && s.SectionTypeId == sectionType, s => s.SubSections);
             return Mapper.Map<SectionDto>(section);
         }
 
@@ -50,6 +50,7 @@ namespace Mapper21.Business.Managers
             {
                 if (p.Id == default(Guid))
                 {
+                    p.Id = Guid.NewGuid();
                     _repo.Add(p);
                 }
                 else

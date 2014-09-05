@@ -21,10 +21,10 @@ namespace Mapper21.Business.Dto
         public int? SubmittedBy { get; set; }
         public DateTime? SubmittedAt { get; set; }
 
-        public virtual ICollection<SubSection> SubSections { get; set; }
-        public virtual ICollection<SectionGuidingQuestion> GuidingQuestions { get; set; }
-        public virtual ICollection<SectionHabit> ExpeditionHabits { get; set; }
-        public virtual ICollection<SectionScienceBigIdea> ScienceBigIdeas { get; set; }
-        public virtual ICollection<SectionSocialStudiesBigIdea> SocialStudiesBigIdeas { get; set; }
+        public IList<SubSectionDto> SubSections { get; set; }
+        public IList<SectionGuidingQuestionDto> GuidingQuestions { get; set; }
+        public IList<SectionHabitDto> ExpeditionHabits { get; set; }
+        public IList<SectionScienceBigIdeaDto> ScienceBigIdeas { get; set; }
+        public IList<SectionSocialStudiesBigIdeaDto> SocialStudiesBigIdeas { get; set; }
     }
 }

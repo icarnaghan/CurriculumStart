@@ -100,6 +100,10 @@
     <Compile Include="Dto\OtherBigIdeaSubSectionDto.cs" />
     <Compile Include="Dto\ScienceBigIdeaDto.cs" />
     <Compile Include="Dto\SectionDto.cs" />
+    <Compile Include="Dto\SectionGuidingQuestionDto.cs" />
+    <Compile Include="Dto\SectionHabitDto.cs" />
+    <Compile Include="Dto\SectionScienceBigIdeaDto.cs" />
+    <Compile Include="Dto\SectionSocialStudiesBigIdeaDto.cs" />
     <Compile Include="Dto\ServiceLearningDto.cs" />
     <Compile Include="Dto\ShortTermTargetDto.cs" />
     <Compile Include="Dto\SocialStudiesBigIdeaListDto.cs" />

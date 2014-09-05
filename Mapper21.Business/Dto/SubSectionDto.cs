@@ -17,7 +17,7 @@ namespace Mapper21.Business.Dto
         public int? SubmittedBy { get; set; }
         public DateTime? SubmittedAt { get; set; }
 
-        public virtual Section Section { get; set; }
-        public virtual SubSectionType SubSectionType { get; set; }
+        public Section Section { get; set; }
+        public SubSectionType SubSectionType { get; set; }
     }
 }
