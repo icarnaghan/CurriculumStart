@@ -14,18 +14,18 @@ namespace Mapper21.Site.Controllers
 {
     public class SectionController : BaseController
     {
-        private readonly ISubSectionRepository _subSectionRepository;
         private readonly ISubSectionManager _subSectionManager;
+        private readonly IStaManager _staManager;
         private readonly ILookupManager _lookupManager;
         private readonly ISectionManager _sectionManager;
 
-        public SectionController(ISubSectionRepository subSectionRepository,
-                                 ISubSectionManager subSectionManager,
+        public SectionController(ISubSectionManager subSectionManager,
+                                 IStaManager staManager,
                                  ILookupManager lookupManager,
                                  ISectionManager sectionManager)
         {
-            _subSectionRepository = subSectionRepository;
             _subSectionManager = subSectionManager;
+            _staManager = staManager;
             _lookupManager = lookupManager;
             _sectionManager = sectionManager;
         }
@@ -73,7 +73,7 @@ namespace Mapper21.Site.Controllers
             var subSection = _subSectionManager.Find(id);
             
             // Get SelectLists
-            List<SubSectionStaGrid> staGrid = _subSectionRepository.GetStaGrids(id).ToList();
+            List<StaGridDto> staGrid = _staManager.GetStaGrids(id).ToList();
             ViewBag.staGrid = staGrid;
 
             var habit = _lookupManager.GetHabits();

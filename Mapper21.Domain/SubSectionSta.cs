@@ -12,9 +12,9 @@ namespace Mapper21.Domain
         [ForeignKey("SubSectionId")]
         public SubSection SubSection { get; set; }
 
-        public virtual ICollection<SubSectionStandard> Standards { get; set; }
-        public virtual ICollection<SubSectionLongTermTarget> LongTermTargets { get; set; }
-        public virtual ICollection<SubSectionShortTermTarget> ShortTermTargets { get; set; }
-        public virtual ICollection<SubSectionAssessment> Assessments { get; set; }
+        public IList<SubSectionStandard> Standards { get; set; }
+        public IList<SubSectionLongTermTarget> LongTermTargets { get; set; }
+        public IList<SubSectionShortTermTarget> ShortTermTargets { get; set; }
+        public IList<SubSectionAssessment> Assessments { get; set; }
     }
 }

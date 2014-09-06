@@ -35,6 +35,15 @@ namespace Mapper21.Business
 
                     cfg.CreateMap<CommonCoreStandard, CommonCoreStandardLookupDto>()
                         .ReverseMap();
+
+                    cfg.CreateMap<SubSectionSta, SubSectionStaDto>()
+                        .ReverseMap();
+
+                    cfg.CreateMap<SubSectionLongTermTarget, SubSectionLongTermTargetDto>()
+                        .ReverseMap();
+
+                    cfg.CreateMap<SubSectionStaGrid, StaGridDto>()
+                        .ReverseMap();
                 });
             }
             catch (AutoMapperConfigurationException ace)

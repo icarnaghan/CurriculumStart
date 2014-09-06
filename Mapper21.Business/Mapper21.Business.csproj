@@ -111,9 +111,12 @@
     <Compile Include="Dto\StaGridDto.cs" />
     <Compile Include="Dto\StandardListDto.cs" />
     <Compile Include="Dto\StandardDto.cs" />
+    <Compile Include="Dto\SubSectionAssessmentDto.cs" />
     <Compile Include="Dto\SubSectionDto.cs" />
     <Compile Include="Dto\SubSectionLongTermTargetDto.cs" />
+    <Compile Include="Dto\SubSectionShortTermTargetDto.cs" />
     <Compile Include="Dto\SubSectionStaDto.cs" />
+    <Compile Include="Dto\SubSectionStandardDto.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
     <Compile Include="Interfaces\ISectionManager.cs" />
     <Compile Include="Interfaces\IStaManager.cs" />
