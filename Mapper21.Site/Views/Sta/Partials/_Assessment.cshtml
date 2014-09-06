@@ -1,7 +1,7 @@
-﻿@using Mapper21.Site.Models
+﻿@using Mapper21.Business.Dto
 <h4><label>Assessments</label></h4>
 
-@(Html.Kendo().Grid<AssessmentViewModel>
+@(Html.Kendo().Grid<AssessmentDto>
       ()
       .Name("grid4")
       .Columns(columns =>

@@ -1,8 +1,8 @@
 ﻿@using System.Collections
-@using Mapper21.Site.Models
+@using Mapper21.Business.Dto
 <h4><label>Common Core Standards</label></h4>
 
-@(Html.Kendo().Grid<StandardViewModel>
+@(Html.Kendo().Grid<StandardDto>
       ()
       .Name("grid1")
       .Columns(columns =>

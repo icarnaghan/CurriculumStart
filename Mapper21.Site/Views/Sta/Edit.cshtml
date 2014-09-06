@@ -1,4 +1,5 @@
-﻿@using Mapper21.Site.Models
+﻿@using Mapper21.Business.Dto
+@using Mapper21.Site.Models
 @model SubSectionStaViewModel
 
 @{
@@ -48,15 +49,15 @@
                             </div>
 
                             <div id="standard">
-                                @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new StandardViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new StandardDto { SubSectionStaId = Model.SubSectionSta.Id })
                             </div>
 
                             <div id="short-term-target">
-                                @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new ShortTermTargetViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new ShortTermTargetDto { SubSectionStaId = Model.SubSectionSta.Id })
                             </div>
 
                             <div id="assessment">
-                                @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new AssessmentViewModel { SubSectionStaId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new AssessmentDto { SubSectionStaId = Model.SubSectionSta.Id })
                             </div>
                         </div>
                     </div>

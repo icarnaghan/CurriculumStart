@@ -68,7 +68,7 @@ namespace Mapper21.Business.Managers
 
         public SubSectionDto Find(Guid id)
         {
-            SubSection subSection = _repo.GetSingle(x => x.Id == id);
+            SubSection subSection = _repo.GetSingle(x => x.Id == id, x => x.Section);
             return Mapper.Map<SubSectionDto>(subSection);
         }
 
