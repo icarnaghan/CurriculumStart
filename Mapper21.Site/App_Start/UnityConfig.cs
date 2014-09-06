@@ -65,10 +65,12 @@ namespace Mapper21.Site
             container.RegisterType<IGenericDataRepository<CommonCoreStandard>, GenericDataRepository<CommonCoreStandard>>();
             container.RegisterType<IGenericDataRepository<SubSectionSta>, GenericDataRepository<SubSectionSta>>();
             container.RegisterType<IGenericDataRepository<SubSectionStaGrid>, GenericDataRepository<SubSectionStaGrid>>();
+            container.RegisterType<IGenericDataRepository<SubSectionLongTermTarget>, GenericDataRepository<SubSectionLongTermTarget>>();
 
             container.RegisterType<ISectionManager, SectionManager>();
             container.RegisterType<ISubSectionManager, SubSectionManager>();
             container.RegisterType<IStaManager, StaManager>();
+            container.RegisterType<ILongTermTargetManager, LongTermTargetManager>();
             container.RegisterType<ILookupManager, LookupManager>();
         }
     }

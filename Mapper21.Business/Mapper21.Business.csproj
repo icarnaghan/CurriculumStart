@@ -112,11 +112,14 @@
     <Compile Include="Dto\StandardListDto.cs" />
     <Compile Include="Dto\StandardDto.cs" />
     <Compile Include="Dto\SubSectionDto.cs" />
+    <Compile Include="Dto\SubSectionLongTermTargetDto.cs" />
     <Compile Include="Dto\SubSectionStaDto.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
     <Compile Include="Interfaces\ISectionManager.cs" />
     <Compile Include="Interfaces\IStaManager.cs" />
+    <Compile Include="Interfaces\ILongTermTargetManager.cs" />
     <Compile Include="Interfaces\ISubSectionManager.cs" />
+    <Compile Include="Managers\LongTermTargetManager.cs" />
     <Compile Include="Managers\StaManager.cs" />
     <Compile Include="Managers\LookupManager.cs" />
     <Compile Include="Managers\SubSectionManager.cs" />
