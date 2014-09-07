@@ -27,16 +27,16 @@ namespace Mapper21.Business.Managers
         //more cleanly keep application layers clean.  
         //Developer may apply Linq Expressions as parameters to "GetAll" method to return child objects
         //or filter results to a subset of the list
-        public IList<SubSectionLongTermTargetDto> GetAll()
+        public IList<LongTermTargetDto> GetAll()
         {
             IList<SubSectionLongTermTarget> _list;
             _list = _repo.GetAll().ToList<SubSectionLongTermTarget>();
-            return Mapper.Map<IList<SubSectionLongTermTarget>, IList<SubSectionLongTermTargetDto>>(_list);
+            return Mapper.Map<IList<SubSectionLongTermTarget>, IList<LongTermTargetDto>>(_list);
         }
 
         //Could be split into two methods.  Based on the database paradigm, an ID will
         //only exist after the object has been atomically saved once and persisted
-        public SubSectionLongTermTargetDto SaveOrUpdate(SubSectionLongTermTargetDto x)
+        public LongTermTargetDto SaveOrUpdate(LongTermTargetDto x)
         {
             SubSectionLongTermTarget p = Mapper.Map<SubSectionLongTermTarget>(x);
             try
@@ -56,20 +56,20 @@ namespace Mapper21.Business.Managers
             {
                 log.Error(e);
             }
-            return Mapper.Map<SubSectionLongTermTargetDto>(p);
+            return Mapper.Map<LongTermTargetDto>(p);
         }
 
-        public SubSectionLongTermTargetDto Find(Guid id)
+        public LongTermTargetDto Find(Guid id)
         {
             SubSectionLongTermTarget subSectionLongTermTarget = _repo.GetSingle(x => x.Id == id);
-            return Mapper.Map<SubSectionLongTermTargetDto>(subSectionLongTermTarget);
+            return Mapper.Map<LongTermTargetDto>(subSectionLongTermTarget);
         }
 
         public bool Delete(Guid id)
         {
             try
             {
-                SubSectionLongTermTargetDto subSectionLongTermTarget = Find(id);
+                LongTermTargetDto subSectionLongTermTarget = Find(id);
                 SubSectionLongTermTarget p = Mapper.Map<SubSectionLongTermTarget>(subSectionLongTermTarget);
                 _repo.Remove(p);
                 return true;

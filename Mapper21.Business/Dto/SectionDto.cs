@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Mapper21.Domain;
-
 
 namespace Mapper21.Business.Dto
 {
@@ -22,9 +20,9 @@ namespace Mapper21.Business.Dto
         public DateTime? SubmittedAt { get; set; }
 
         public IList<SubSectionDto> SubSections { get; set; }
-        public IList<SectionGuidingQuestionDto> GuidingQuestions { get; set; }
-        public IList<SectionHabitDto> ExpeditionHabits { get; set; }
-        public IList<SectionScienceBigIdeaDto> ScienceBigIdeas { get; set; }
-        public IList<SectionSocialStudiesBigIdeaDto> SocialStudiesBigIdeas { get; set; }
+        public IList<GuidingQuestionDto> GuidingQuestions { get; set; }
+        public IList<HabitDto> ExpeditionHabits { get; set; }
+        public IList<ScienceBigIdeaDto> ScienceBigIdeas { get; set; }
+        public IList<SocialStudiesBigIdeaDto> SocialStudiesBigIdeas { get; set; }
     }
 }

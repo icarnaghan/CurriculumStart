@@ -7,10 +7,10 @@ namespace Mapper21.Site.Models
 {
     public class SubSectionStaViewModel
     {
-        public SubSectionStaDto SubSectionSta { get; set; }
+        public StaDto SubSectionSta { get; set; }
         [DisplayName("Long Term Target")]
-        public SubSectionLongTermTargetDto SubSectionLongTermTarget { get; set; }
-        public IList<SubSectionStandardDto> SubSectionStandards { get; set; }
+        public LongTermTargetDto SubSectionLongTermTarget { get; set; }
+        public IList<StandardDto> SubSectionStandards { get; set; }
         public IList<CommonCoreStandardLookupDto> CommonCoreStandards { get; set; }
     }
 }

@@ -7,8 +7,8 @@ namespace Mapper21.Business.Interfaces
     public interface IStaManager
     {
         IList<StaGridDto> GetStaGrids(Guid id);
-        SubSectionStaDto SaveOrUpdate(SubSectionStaDto subSectionSta);
-        SubSectionStaDto Find(Guid id);
+        StaDto SaveOrUpdate(StaDto subSectionSta);
+        StaDto Find(Guid id);
         bool Delete(Guid id);
     }
 }

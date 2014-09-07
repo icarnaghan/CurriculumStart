@@ -36,10 +36,10 @@ namespace Mapper21.Business
                     cfg.CreateMap<CommonCoreStandard, CommonCoreStandardLookupDto>()
                         .ReverseMap();
 
-                    cfg.CreateMap<SubSectionSta, SubSectionStaDto>()
+                    cfg.CreateMap<SubSectionSta, StaDto>()
                         .ReverseMap();
 
-                    cfg.CreateMap<SubSectionLongTermTarget, SubSectionLongTermTargetDto>()
+                    cfg.CreateMap<SubSectionLongTermTarget, LongTermTargetDto>()
                         .ReverseMap();
 
                     cfg.CreateMap<SubSectionStaGrid, StaGridDto>()

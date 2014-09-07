@@ -39,7 +39,7 @@ namespace Mapper21.Business.Managers
 
         //Could be split into two methods.  Based on the database paradigm, an ID will
         //only exist after the object has been atomically saved once and persisted
-        public SubSectionStaDto SaveOrUpdate(SubSectionStaDto x)
+        public StaDto SaveOrUpdate(StaDto x)
         {
             SubSectionSta p = Mapper.Map<SubSectionSta>(x);
             try
@@ -59,20 +59,20 @@ namespace Mapper21.Business.Managers
             {
                 log.Error(e);
             }
-            return Mapper.Map<SubSectionStaDto>(p);
+            return Mapper.Map<StaDto>(p);
         }
 
-        public SubSectionStaDto Find(Guid id)
+        public StaDto Find(Guid id)
         {
             SubSectionSta section = _staRepo.GetSingle(x => x.Id == id);
-            return Mapper.Map<SubSectionStaDto>(section);
+            return Mapper.Map<StaDto>(section);
         }
 
         public bool Delete(Guid id)
         {
             try
             {
-                SubSectionStaDto section = Find(id);
+                StaDto section = Find(id);
                 SubSectionSta p = Mapper.Map<SubSectionSta>(section);
                 _staRepo.Remove(p);
                 return true;

@@ -30,7 +30,7 @@ namespace Mapper21.Site.Controllers
         // GET: /Sta/Create
         public ActionResult Create(string currentSectionType, Guid subSectionId)
         {
-            var subSectionSta = new SubSectionStaDto
+            var subSectionSta = new StaDto
             {
                 SubSectionId = subSectionId,
             };
@@ -44,13 +44,13 @@ namespace Mapper21.Site.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,SubSectionId")] SubSectionStaDto subSectionSta)
+        public ActionResult Create([Bind(Include = "Id,SubSectionId")] StaDto subSectionSta)
         {
             if (ModelState.IsValid)
             {
                 var newSubSectionSta = _staManager.SaveOrUpdate(subSectionSta);
 
-                var subSectionLongTermTarget = new SubSectionLongTermTargetDto { SubSectionStaId = newSubSectionSta.Id };
+                var subSectionLongTermTarget = new LongTermTargetDto { SubSectionStaId = newSubSectionSta.Id };
                 _longTermTargetManager.SaveOrUpdate(subSectionLongTermTarget);
                 return RedirectToAction("Edit", "Sta", new { id = newSubSectionSta.Id });
             }
@@ -68,7 +68,7 @@ namespace Mapper21.Site.Controllers
             ICollection<CommonCoreStandardLookupDto> standard = _lookupManager.GetCommonCoreStandards().Where(s => s.GradeLevelId == currentGradeLevel).ToList();
             var subSectionStaViewModel = new SubSectionStaViewModel
             {
-                SubSectionSta = new SubSectionStaDto {Id = subSectionSta.Id, SubSectionId = subSectionSta.SubSectionId},
+                SubSectionSta = new StaDto {Id = subSectionSta.Id, SubSectionId = subSectionSta.SubSectionId},
                 SubSectionLongTermTarget = longTermTarget,
                 CommonCoreStandards = standard.ToList()
             };
@@ -105,7 +105,7 @@ namespace Mapper21.Site.Controllers
         // GET: /Sta/Delete/5
         public ActionResult Delete(Guid id)
         {
-            SubSectionStaDto subSectionSta = _staManager.Find(id);
+            StaDto subSectionSta = _staManager.Find(id);
             if (subSectionSta == null)
             {
                 return HttpNotFound();

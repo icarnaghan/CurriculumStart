@@ -6,9 +6,9 @@ namespace Mapper21.Business.Interfaces
 {
     public interface ILongTermTargetManager
     {
-        IList<SubSectionLongTermTargetDto> GetAll();
-        SubSectionLongTermTargetDto SaveOrUpdate(SubSectionLongTermTargetDto subSectionLongTermTarget);
-        SubSectionLongTermTargetDto Find(Guid id);
+        IList<LongTermTargetDto> GetAll();
+        LongTermTargetDto SaveOrUpdate(LongTermTargetDto subSectionLongTermTarget);
+        LongTermTargetDto Find(Guid id);
         bool Delete(Guid id);
     }
 }

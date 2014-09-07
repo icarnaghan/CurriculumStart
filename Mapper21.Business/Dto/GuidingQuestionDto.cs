@@ -2,7 +2,7 @@
 
 namespace Mapper21.Business.Dto
 {
-    public class SectionGuidingQuestionDto
+    public class GuidingQuestionDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

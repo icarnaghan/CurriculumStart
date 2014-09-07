@@ -87,20 +87,20 @@
     <Compile Include="Dto\LookUps\ScienceBigIdeaLookupDto.cs" />
     <Compile Include="Dto\LookUps\SocialStudiesBigIdeaLookupDto.cs" />
     <Compile Include="Dto\SectionDto.cs" />
-    <Compile Include="Dto\SectionGuidingQuestionDto.cs" />
-    <Compile Include="Dto\SectionHabitDto.cs" />
-    <Compile Include="Dto\SectionScienceBigIdeaDto.cs" />
-    <Compile Include="Dto\SectionSocialStudiesBigIdeaDto.cs" />
-    <Compile Include="Dto\SubSectionAssessmentDto.cs" />
+    <Compile Include="Dto\GuidingQuestionDto.cs" />
+    <Compile Include="Dto\HabitDto.cs" />
+    <Compile Include="Dto\ScienceBigIdeaDto.cs" />
+    <Compile Include="Dto\SocialStudiesBigIdeaDto.cs" />
+    <Compile Include="Dto\AssessmentDto.cs" />
     <Compile Include="Dto\SubSectionDto.cs" />
-    <Compile Include="Dto\SubSectionLongTermTargetDto.cs">
+    <Compile Include="Dto\LongTermTargetDto.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Dto\SubSectionShortTermTargetDto.cs">
+    <Compile Include="Dto\ShortTermTargetDto.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Dto\SubSectionStaDto.cs" />
-    <Compile Include="Dto\SubSectionStandardDto.cs" />
+    <Compile Include="Dto\StaDto.cs" />
+    <Compile Include="Dto\StandardDto.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
     <Compile Include="Interfaces\ISectionManager.cs" />
     <Compile Include="Interfaces\IStaManager.cs" />
