@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 using Mapper21.Domain.LookUps;
 
 namespace Mapper21.Business.Dto

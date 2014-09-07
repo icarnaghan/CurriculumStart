@@ -7,7 +7,6 @@ using Kendo.Mvc.UI;
 using Mapper21.Business.Dto;
 using Mapper21.Data.Provider;
 using Mapper21.Domain;
-using Mapper21.Site.Models;
 
 namespace Mapper21.Site.Controllers
 {
@@ -23,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Habit_Create([DataSourceRequest] DataSourceRequest request,
-            HabitDto habit)
+            GridDto habit)
         {
             if (ModelState.IsValid)
             {
@@ -33,7 +32,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     HabitId = habit.HabitId,
                     Context = habit.Context,
-                    SectionId = habit.SectionId
+                    SectionId = habit.ParentId
                 };
                 // Add the entity
                 db.SectionHabits.Add(entity);
@@ -47,7 +46,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Habit_Update([DataSourceRequest] DataSourceRequest request,
-            HabitDto updateHabit)
+            GridDto updateHabit)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +56,7 @@ namespace Mapper21.Site.Controllers
                     Id = updateHabit.Id,
                     HabitId = updateHabit.HabitId,
                     Context = updateHabit.Context,
-                    SectionId = updateHabit.SectionId
+                    SectionId = updateHabit.ParentId
                 };
                 // Attach the entity
                 db.SectionHabits.Attach(entity);
@@ -70,18 +69,18 @@ namespace Mapper21.Site.Controllers
             return Json(new[] { updateHabit }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Habit_Destroy(Guid sectionId, [DataSourceRequest] DataSourceRequest request,
-            HabitDto deleteHabit)
+        public ActionResult Habit_Destroy([DataSourceRequest] DataSourceRequest request,
+            GridDto deleteHabit)
         {
             if (ModelState.IsValid)
             {
                 // Create a new Product entity and set its properties from the posted ProductViewModel
                 var entity = new SectionHabit
                 {
-                    Id = deleteHabit.Id,
+                    Id = deleteHabit.Id,    
                     HabitId = deleteHabit.HabitId,
                     Context = deleteHabit.Context,
-                    SectionId = deleteHabit.SectionId
+                    SectionId = deleteHabit.ParentId
                 };
                 // Attach the entity
                 db.SectionHabits.Attach(entity);

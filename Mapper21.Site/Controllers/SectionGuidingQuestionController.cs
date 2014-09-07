@@ -21,7 +21,7 @@ namespace Mapper21.Site.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult GuidingQuestion_Create(Guid sectionId, [DataSourceRequest] DataSourceRequest request,
+        public ActionResult GuidingQuestion_Create([DataSourceRequest] DataSourceRequest request,
             GridDto guidingQuestion)
         {
             if (ModelState.IsValid)

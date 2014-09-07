@@ -118,32 +118,32 @@
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_3">
             <div id="fieldwork">
-                @Html.Partial("~/Views/Section/Partials/_Fieldwork.cshtml", new FieldworkDto {SubSectionId = Model.Id})
+                @Html.Partial("~/Views/Section/Partials/_Fieldwork.cshtml", new GridDto {ParentId = Model.Id})
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_4">
             <div id="expert">
-                @Html.Partial("~/Views/Section/Partials/_Expert.cshtml", new ExpertDto { SubSectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_Expert.cshtml", new GridDto { ParentId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_5">
             <div id="serviceLearning">
-                @Html.Partial("~/Views/Section/Partials/_ServiceLearning.cshtml", new ServiceLearningDto { SubSectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_ServiceLearning.cshtml", new GridDto { ParentId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_6">
             <div id="guidingQuestions">
-                @Html.Partial("~/Views/Section/Partials/_SubSectionGuidingQuestion.cshtml", new GuidingQuestionSubSectionDto { SubSectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_SubSectionGuidingQuestion.cshtml", new GridDto { ParentId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_7">
             <div id="otherBigIdeas">
-                @Html.Partial("~/Views/Section/Partials/_SubSectionOtherBigIdea.cshtml", new OtherBigIdeaSubSectionDto { SubSectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_SubSectionOtherBigIdea.cshtml", new GridDto { ParentId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
         <div class="tab-pane" id="tab_8">
             <div id="otherBigIdeas">
-                @Html.Partial("~/Views/Section/Partials/_SubSectionHabit.cshtml", new HabitDto { SectionId = Model.Id })
+                @Html.Partial("~/Views/Section/Partials/_SubSectionHabit.cshtml", new GridDto { ParentId = Model.Id })
             </div>
         </div><!-- /.tab-pane -->
     </div><!-- /.tab-content -->

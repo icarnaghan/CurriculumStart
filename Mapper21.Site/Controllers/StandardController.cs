@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Standard_Create([DataSourceRequest] DataSourceRequest request,
-            StandardDto createStandard)
+            GridDto createStandard)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = Guid.NewGuid(),
                     CommonCoreStandardId = createStandard.CommonCoreStandardId,
-                    SubSectionStaId = createStandard.SubSectionStaId
+                    SubSectionStaId = createStandard.ParentId
                 };
                 // Add the entity
                 db.SubSectionStandards.Add(entity);
@@ -45,7 +45,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Standard_Update([DataSourceRequest] DataSourceRequest request,
-            StandardDto updateStandard)
+            GridDto updateStandard)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = updateStandard.Id,
                     CommonCoreStandardId = updateStandard.CommonCoreStandardId,
-                    SubSectionStaId = updateStandard.SubSectionStaId
+                    SubSectionStaId = updateStandard.ParentId
                 };
                 // Attach the entity
                 db.SubSectionStandards.Attach(entity);
@@ -68,7 +68,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Standard_Destroy([DataSourceRequest] DataSourceRequest request,
-            StandardDto deleteStandard)
+            GridDto deleteStandard)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = deleteStandard.Id,
                     CommonCoreStandardId = deleteStandard.CommonCoreStandardId,
-                    SubSectionStaId = deleteStandard.SubSectionStaId
+                    SubSectionStaId = deleteStandard.ParentId
                 };
                 // Attach the entity
                 db.SubSectionStandards.Attach(entity);

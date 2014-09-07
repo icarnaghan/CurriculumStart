@@ -49,15 +49,15 @@
                             </div>
 
                             <div id="standard">
-                                @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new StandardDto { SubSectionStaId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new GridDto { ParentId = Model.SubSectionSta.Id })
                             </div>
 
                             <div id="short-term-target">
-                                @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new ShortTermTargetDto { SubSectionStaId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new GridDto { ParentId = Model.SubSectionSta.Id })
                             </div>
 
                             <div id="assessment">
-                                @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new AssessmentDto { SubSectionStaId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new GridDto { ParentId = Model.SubSectionSta.Id })
                             </div>
                         </div>
                     </div>

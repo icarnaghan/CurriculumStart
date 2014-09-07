@@ -13,7 +13,7 @@
             <h3 class="box-title">Habits</h3>
         </div>
         <div id="habits">
-            @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new HabitDto {SectionId = Model.Id})
+            @Html.Partial("~/Views/Section/Partials/_Habit.cshtml", new GridDto {ParentId = Model.Id})
         </div>
     </div>
 </div>

@@ -21,7 +21,7 @@ namespace Mapper21.Site.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult OtherBigIdea_Create(Guid sectionId, [DataSourceRequest] DataSourceRequest request,
+        public ActionResult OtherBigIdea_Create([DataSourceRequest] DataSourceRequest request,
             GridDto otherBigIdea)
         {
             if (ModelState.IsValid)

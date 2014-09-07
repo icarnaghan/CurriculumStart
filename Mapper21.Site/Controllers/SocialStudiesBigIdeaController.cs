@@ -23,7 +23,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult SocialStudiesBigIdea_Create([DataSourceRequest] DataSourceRequest request,
-            SocialStudiesBigIdeaDto socialStudiesBigIdea)
+            GridDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -33,7 +33,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     BigIdeaForSocialStudiesId = socialStudiesBigIdea.BigIdeaForSocialStudiesId,
                     Context = socialStudiesBigIdea.Context,
-                    SectionId = socialStudiesBigIdea.SectionId
+                    SectionId = socialStudiesBigIdea.ParentId
                 };
                 // Add the entity
                 db.SectionSocialStudiesBigIdeas.Add(entity);
@@ -47,7 +47,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult SocialStudiesBigIdea_Update([DataSourceRequest] DataSourceRequest request,
-            SocialStudiesBigIdeaDto socialStudiesBigIdea)
+            GridDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace Mapper21.Site.Controllers
                     Id = socialStudiesBigIdea.Id,
                     BigIdeaForSocialStudiesId = socialStudiesBigIdea.BigIdeaForSocialStudiesId,
                     Context = socialStudiesBigIdea.Context,
-                    SectionId = socialStudiesBigIdea.SectionId
+                    SectionId = socialStudiesBigIdea.ParentId
                 };
                 // Attach the entity
                 db.SectionSocialStudiesBigIdeas.Attach(entity);
@@ -71,7 +71,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult SocialStudiesBigIdea_Destroy([DataSourceRequest] DataSourceRequest request,
-            SocialStudiesBigIdeaDto socialStudiesBigIdea)
+            GridDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace Mapper21.Site.Controllers
                     Id = socialStudiesBigIdea.Id,
                     BigIdeaForSocialStudiesId = socialStudiesBigIdea.BigIdeaForSocialStudiesId,
                     Context = socialStudiesBigIdea.Context,
-                    SectionId = socialStudiesBigIdea.SectionId
+                    SectionId = socialStudiesBigIdea.ParentId
                 };
                 // Attach the entity
                 db.SectionSocialStudiesBigIdeas.Attach(entity);

@@ -2,7 +2,7 @@
 @using Mapper21.Business.Dto
 <h4><label>Common Core Standards</label></h4>
 
-@(Html.Kendo().Grid<StandardDto>
+@(Html.Kendo().Grid<GridDto>
       ()
       .Name("grid1")
       .Columns(columns =>
@@ -29,7 +29,7 @@
               {
                   model.Id(s => s.Id); // Specify the property which is the unique identifier of the model
                   model.Field(s => s.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
-                  model.Field(s => s.SubSectionStaId).DefaultValue(@ViewBag.SubSectionStaId);
+                  model.Field(s => s.ParentId).DefaultValue(@ViewBag.SubSectionStaId);
               })
               .Create(create => create.Action("Standard_Create", "Standard")) // Action method invoked when the user saves a new data item
               .Read(read => read.Action("Standard_Read", "Standard", new { subSectionStaId = ViewBag.SubSectionStaId })) // Action method invoked when the grid needs data

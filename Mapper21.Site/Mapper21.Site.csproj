@@ -1414,10 +1414,6 @@
     <Content Include="Views\Section\Partials\_SubSectionHabit.cshtml" />
     <Content Include="Views\Section\Partials\_SubSectionSta.cshtml" />
     <Content Include="Views\Section\EditorTemplates\StandardDropdownList.cshtml" />
-    <Content Include="Views\Section\_Assessment.cshtml" />
-    <Content Include="Views\Section\_LongTermTarget.cshtml" />
-    <Content Include="Views\Section\_ShortTermTarget.cshtml" />
-    <Content Include="Views\Section\_Standard.cshtml" />
     <Content Include="Views\Support\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

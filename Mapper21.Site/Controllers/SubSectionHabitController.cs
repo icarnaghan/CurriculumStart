@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Habit_Create([DataSourceRequest] DataSourceRequest request,
-            HabitSubSectionDto habit)
+            SubSectionHabitDto habit)
         {
             if (ModelState.IsValid)
             {
@@ -46,7 +46,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Habit_Update([DataSourceRequest] DataSourceRequest request,
-            HabitSubSectionDto updateHabit)
+            SubSectionHabitDto updateHabit)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Habit_Destroy([DataSourceRequest] DataSourceRequest request,
-            HabitSubSectionDto deleteHabit)
+            SubSectionHabitDto deleteHabit)
         {
             if (ModelState.IsValid)
             {

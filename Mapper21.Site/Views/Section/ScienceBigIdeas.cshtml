@@ -17,7 +17,7 @@
             @Html.HiddenFor(model => model.Id)
 
             <div id="guidingQuestions">
-                @Html.Partial("~/Views/Section/Partials/_ScienceBigIdea.cshtml", new ScienceBigIdeaDto {SectionId = Model.Id})
+                @Html.Partial("~/Views/Section/Partials/_ScienceBigIdea.cshtml", new GridDto {ParentId = Model.Id})
             </div>
         </div>
     </div>

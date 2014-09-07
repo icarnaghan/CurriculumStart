@@ -23,7 +23,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult ScienceBigIdea_Create([DataSourceRequest] DataSourceRequest request,
-            ScienceBigIdeaDto scienceBigIdea)
+            GridDto scienceBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -33,7 +33,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     BigIdeaForScienceId = scienceBigIdea.BigIdeaForScienceId,
                     Context = scienceBigIdea.Context,
-                    SectionId = scienceBigIdea.SectionId
+                    SectionId = scienceBigIdea.ParentId
                 };
                 // Add the entity
                 db.SectionScienceBigIdeas.Add(entity);
@@ -47,7 +47,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult ScienceBigIdea_Update([DataSourceRequest] DataSourceRequest request,
-            ScienceBigIdeaDto scienceBigIdea)
+            GridDto scienceBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace Mapper21.Site.Controllers
                     Id = scienceBigIdea.Id,
                     BigIdeaForScienceId = scienceBigIdea.BigIdeaForScienceId,
                     Context = scienceBigIdea.Context,
-                    SectionId = scienceBigIdea.SectionId
+                    SectionId = scienceBigIdea.ParentId
                 };
                 // Attach the entity
                 db.SectionScienceBigIdeas.Attach(entity);
@@ -71,7 +71,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult ScienceBigIdea_Destroy([DataSourceRequest] DataSourceRequest request,
-            ScienceBigIdeaDto scienceBigIdea)
+            GridDto scienceBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace Mapper21.Site.Controllers
                     Id = scienceBigIdea.Id,
                     BigIdeaForScienceId = scienceBigIdea.BigIdeaForScienceId,
                     Context = scienceBigIdea.Context,
-                    SectionId = scienceBigIdea.SectionId
+                    SectionId = scienceBigIdea.ParentId
                 };
                 // Attach the entity
                 db.SectionScienceBigIdeas.Attach(entity);
