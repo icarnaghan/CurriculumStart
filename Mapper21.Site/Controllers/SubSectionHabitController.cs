@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Habit_Create([DataSourceRequest] DataSourceRequest request,
-            SubSectionHabitDto habit)
+            GridDto habit)
         {
             if (ModelState.IsValid)
             {
@@ -32,7 +32,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     HabitId = habit.HabitId,
                     Context = habit.Context,
-                    SubSectionId = habit.SubSectionId
+                    SubSectionId = habit.ParentId
                 };
                 // Add the entity
                 db.SubSectionHabits.Add(entity);
@@ -46,7 +46,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Habit_Update([DataSourceRequest] DataSourceRequest request,
-            SubSectionHabitDto updateHabit)
+            GridDto updateHabit)
         {
             if (ModelState.IsValid)
             {
@@ -56,7 +56,7 @@ namespace Mapper21.Site.Controllers
                     Id = updateHabit.Id,
                     HabitId = updateHabit.HabitId,
                     Context = updateHabit.Context,
-                    SubSectionId = updateHabit.SubSectionId
+                    SubSectionId = updateHabit.ParentId
                 };
                 // Attach the entity
                 db.SubSectionHabits.Attach(entity);
@@ -70,7 +70,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Habit_Destroy([DataSourceRequest] DataSourceRequest request,
-            SubSectionHabitDto deleteHabit)
+            GridDto deleteHabit)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace Mapper21.Site.Controllers
                     Id = deleteHabit.Id,
                     HabitId = deleteHabit.HabitId,
                     Context = deleteHabit.Context,
-                    SubSectionId = deleteHabit.SubSectionId
+                    SubSectionId = deleteHabit.ParentId
                 };
                 // Attach the entity
                 db.SubSectionHabits.Attach(entity);

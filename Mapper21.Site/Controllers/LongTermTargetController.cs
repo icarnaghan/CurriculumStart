@@ -23,7 +23,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult LongTermTarget_Create([DataSourceRequest] DataSourceRequest request,
-            LongTermTargetDto longTermTarget)
+            SubSectionLongTermTargetDto longTermTarget)
         {
             if (ModelState.IsValid)
             {
@@ -46,7 +46,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult LongTermTarget_Update([DataSourceRequest] DataSourceRequest request,
-            LongTermTargetDto longTermTarget)
+            SubSectionLongTermTargetDto longTermTarget)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +69,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult LongTermTarget_Destroy([DataSourceRequest] DataSourceRequest request,
-            LongTermTargetDto longTermTarget)
+            SubSectionLongTermTargetDto longTermTarget)
         {
             if (ModelState.IsValid)
             {

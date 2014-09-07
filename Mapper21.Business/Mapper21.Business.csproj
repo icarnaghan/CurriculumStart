@@ -83,8 +83,6 @@
     <Compile Include="Dto\GridDto.cs" />
     <Compile Include="Dto\LookUps\CommonCoreStandardLookupDto.cs" />
     <Compile Include="Dto\StaGridDto.cs" />
-    <Compile Include="Dto\SubSectionHabitDto.cs" />
-    <Compile Include="Dto\LongTermTargetDto.cs" />
     <Compile Include="Dto\LookUps\HabitLookupDto.cs" />
     <Compile Include="Dto\LookUps\ScienceBigIdeaLookupDto.cs" />
     <Compile Include="Dto\LookUps\SocialStudiesBigIdeaLookupDto.cs" />
@@ -95,8 +93,12 @@
     <Compile Include="Dto\SectionSocialStudiesBigIdeaDto.cs" />
     <Compile Include="Dto\SubSectionAssessmentDto.cs" />
     <Compile Include="Dto\SubSectionDto.cs" />
-    <Compile Include="Dto\SubSectionLongTermTargetDto.cs" />
-    <Compile Include="Dto\SubSectionShortTermTargetDto.cs" />
+    <Compile Include="Dto\SubSectionLongTermTargetDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dto\SubSectionShortTermTargetDto.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Dto\SubSectionStaDto.cs" />
     <Compile Include="Dto\SubSectionStandardDto.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
