@@ -7,7 +7,6 @@ using Kendo.Mvc.UI;
 using Mapper21.Business.Dto;
 using Mapper21.Data.Provider;
 using Mapper21.Domain;
-using Mapper21.Site.Models;
 
 namespace Mapper21.Site.Controllers
 {
@@ -22,7 +21,7 @@ namespace Mapper21.Site.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Expert_Create([DataSourceRequest] DataSourceRequest request, ExpertDto expert)
+        public ActionResult Expert_Create([DataSourceRequest] DataSourceRequest request, GridDto expert)
         {
             if (ModelState.IsValid)
             {
@@ -32,7 +31,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     Name = expert.Name,
                     Description = expert.Description,
-                    SubSectionId = expert.SubSectionId
+                    SubSectionId = expert.ParentId
                 };
                 // Add the entity
                 db.SubSectionExperts.Add(entity);
@@ -45,7 +44,7 @@ namespace Mapper21.Site.Controllers
             return Json(new[] {expert}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Expert_Update([DataSourceRequest] DataSourceRequest request, ExpertDto expert)
+        public ActionResult Expert_Update([DataSourceRequest] DataSourceRequest request, GridDto expert)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +54,7 @@ namespace Mapper21.Site.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    SubSectionId = expert.SubSectionId
+                    SubSectionId = expert.ParentId
                 };
                 // Attach the entity
                 db.SubSectionExperts.Attach(entity);
@@ -68,7 +67,7 @@ namespace Mapper21.Site.Controllers
             return Json(new[] {expert}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Expert_Destroy([DataSourceRequest] DataSourceRequest request, ExpertDto expert)
+        public ActionResult Expert_Destroy([DataSourceRequest] DataSourceRequest request, GridDto expert)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +77,7 @@ namespace Mapper21.Site.Controllers
                     Id = expert.Id,
                     Name = expert.Name,
                     Description = expert.Description,
-                    SubSectionId = expert.SubSectionId
+                    SubSectionId = expert.ParentId
                 };
                 // Attach the entity
                 db.SubSectionExperts.Attach(entity);

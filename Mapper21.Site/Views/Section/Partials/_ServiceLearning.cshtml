@@ -1,6 +1,6 @@
 ﻿@using Mapper21.Business.Dto
 
-@(Html.Kendo().Grid<ServiceLearningDto>
+@(Html.Kendo().Grid<GridDto>
       ()
       .Name("grid3")
       .Columns(columns =>
@@ -28,7 +28,7 @@
               {
                   model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
                   model.Field(g => g.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
-                  model.Field(g => g.SubSectionId).DefaultValue(@ViewBag.SubSectionId);
+                  model.Field(g => g.ParentId).DefaultValue(@ViewBag.SubSectionId);
               })
               .Create(create => create.Action("ServiceLearning_Create", "ServiceLearning")) // Action method invoked when the user saves a new data item
               .Read(read => read.Action("ServiceLearning_Read", "ServiceLearning", new { caseStudyId = ViewBag.SubSectionId })) // Action method invoked when the grid needs data

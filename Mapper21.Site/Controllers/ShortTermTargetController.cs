@@ -23,7 +23,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult ShortTermTarget_Create([DataSourceRequest] DataSourceRequest request,
-            ShortTermTargetDto shortTermTarget)
+            GridDto shortTermTarget)
         {
             if (ModelState.IsValid)
             {
@@ -32,7 +32,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = Guid.NewGuid(),
                     Name = shortTermTarget.Name,
-                    SubSectionStaId = shortTermTarget.SubSectionStaId
+                    SubSectionStaId = shortTermTarget.ParentId
                 };
                 // Add the entity
                 db.SubSectionShortTermTargets.Add(entity);
@@ -46,7 +46,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult ShortTermTarget_Update([DataSourceRequest] DataSourceRequest request,
-            ShortTermTargetDto shortTermTarget)
+            GridDto shortTermTarget)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = shortTermTarget.Id,
                     Name = shortTermTarget.Name,
-                    SubSectionStaId = shortTermTarget.SubSectionStaId
+                    SubSectionStaId = shortTermTarget.ParentId
                 };
                 // Attach the entity
                 db.SubSectionShortTermTargets.Attach(entity);
@@ -69,7 +69,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult ShortTermTarget_Destroy([DataSourceRequest] DataSourceRequest request,
-            ShortTermTargetDto shortTermTarget)
+            GridDto shortTermTarget)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = shortTermTarget.Id,
                     Name = shortTermTarget.Name,
-                    SubSectionStaId = shortTermTarget.SubSectionStaId
+                    SubSectionStaId = shortTermTarget.ParentId
                 };
                 // Attach the entity
                 db.SubSectionShortTermTargets.Attach(entity);

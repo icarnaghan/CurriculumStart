@@ -23,7 +23,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult ServiceLearning_Create([DataSourceRequest] DataSourceRequest request,
-            ServiceLearningDto serviceLearning)
+            GridDto serviceLearning)
         {
             if (ModelState.IsValid)
             {
@@ -33,7 +33,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    SubSectionId = serviceLearning.SubSectionId
+                    SubSectionId = serviceLearning.ParentId
                 };
                 // Add the entity
                 db.SubSectionServiceLearnings.Add(entity);
@@ -47,7 +47,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult ServiceLearning_Update([DataSourceRequest] DataSourceRequest request,
-            ServiceLearningDto serviceLearning)
+            GridDto serviceLearning)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace Mapper21.Site.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    SubSectionId = serviceLearning.SubSectionId
+                    SubSectionId = serviceLearning.ParentId
                 };
                 // Attach the entity
                 db.SubSectionServiceLearnings.Attach(entity);
@@ -71,7 +71,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult ServiceLearning_Destroy([DataSourceRequest] DataSourceRequest request,
-            ServiceLearningDto serviceLearning)
+            GridDto serviceLearning)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace Mapper21.Site.Controllers
                     Id = serviceLearning.Id,
                     Name = serviceLearning.Name,
                     Description = serviceLearning.Description,
-                    SubSectionId = serviceLearning.SubSectionId
+                    SubSectionId = serviceLearning.ParentId
                 };
 
                 // Attach the entity

@@ -229,7 +229,7 @@
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Manage.cs" />
-    <Compile Include="Models\SubSectionStaDto.cs" />
+    <Compile Include="Models\SubSectionStaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1260,7 +1260,6 @@
     <Content Include="Views\Home\Unavailable.cshtml" />
     <Content Include="Views\Sta\Create.cshtml" />
     <Content Include="Views\Sta\Edit.cshtml" />
-    <Content Include="Views\Sta\Partials\_LongTermTarget.cshtml" />
     <Content Include="Views\Sta\Partials\_ShortTermTarget.cshtml" />
     <Content Include="Views\Sta\Partials\_Assessment.cshtml" />
     <Content Include="Scripts\Libraries\KendoUI\kendo.all.min.js.map" />

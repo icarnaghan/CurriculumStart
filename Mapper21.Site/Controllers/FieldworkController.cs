@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Fieldwork_Create([DataSourceRequest] DataSourceRequest request, FieldworkDto fieldwork)
+        public ActionResult Fieldwork_Create([DataSourceRequest] DataSourceRequest request, GridDto fieldwork)
         {
             if (ModelState.IsValid)
             {
@@ -32,7 +32,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    SubSectionId = fieldwork.SubSectionId
+                    SubSectionId = fieldwork.ParentId
                 };
                 // Add the entity
                 db.SubSectionFieldworks.Add(entity);
@@ -45,7 +45,7 @@ namespace Mapper21.Site.Controllers
             return Json(new[] {fieldwork}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Fieldwork_Update([DataSourceRequest] DataSourceRequest request, FieldworkDto fieldwork)
+        public ActionResult Fieldwork_Update([DataSourceRequest] DataSourceRequest request, GridDto fieldwork)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace Mapper21.Site.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    SubSectionId = fieldwork.SubSectionId
+                    SubSectionId = fieldwork.ParentId
                 };
                 // Attach the entity
                 db.SubSectionFieldworks.Attach(entity);
@@ -69,7 +69,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Fieldwork_Destroy([DataSourceRequest] DataSourceRequest request,
-            FieldworkDto fieldwork)
+            GridDto fieldwork)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace Mapper21.Site.Controllers
                     Id = fieldwork.Id,
                     Name = fieldwork.Name,
                     Description = fieldwork.Description,
-                    SubSectionId = fieldwork.SubSectionId
+                    SubSectionId = fieldwork.ParentId
                 };
                 // Attach the entity
                 db.SubSectionFieldworks.Attach(entity);

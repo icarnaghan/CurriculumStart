@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult OtherBigIdea_Create(Guid sectionId, [DataSourceRequest] DataSourceRequest request,
-            OtherBigIdeaSectionDto otherBigIdea)
+            GridDto otherBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = Guid.NewGuid(),
                     Name = otherBigIdea.Name,
-                    SectionId = otherBigIdea.SectionId
+                    SectionId = otherBigIdea.ParentId
                 };
                 // Add the entity
                 db.SectionOtherBigIdeas.Add(entity);
@@ -45,7 +45,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult OtherBigIdea_Update([DataSourceRequest] DataSourceRequest request,
-            OtherBigIdeaSectionDto otherBigIdea)
+            GridDto otherBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = otherBigIdea.Id,
                     Name = otherBigIdea.Name,
-                    SectionId = otherBigIdea.SectionId
+                    SectionId = otherBigIdea.ParentId
                 };
                 // Attach the entity
                 db.SectionOtherBigIdeas.Attach(entity);
@@ -68,7 +68,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult OtherBigIdea_Destroy([DataSourceRequest] DataSourceRequest request,
-            OtherBigIdeaSectionDto otherBigIdea)
+            GridDto otherBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = otherBigIdea.Id,
                     Name = otherBigIdea.Name,
-                    SectionId = otherBigIdea.SectionId
+                    SectionId = otherBigIdea.ParentId
                 };
                 // Attach the entity
                 db.SectionOtherBigIdeas.Attach(entity);

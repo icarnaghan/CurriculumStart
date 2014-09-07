@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult GuidingQuestion_Create(Guid sectionId, [DataSourceRequest] DataSourceRequest request,
-            GuidingQuestionSectionDto guidingQuestion)
+            GridDto guidingQuestion)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = Guid.NewGuid(),
                     Name = guidingQuestion.Name,
-                    SectionId = guidingQuestion.SectionId
+                    SectionId = guidingQuestion.ParentId
                 };
                 // Add the entity
                 db.SectionGuidingQuestions.Add(entity);
@@ -45,7 +45,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult GuidingQuestion_Update([DataSourceRequest] DataSourceRequest request,
-            GuidingQuestionSectionDto guidingQuestion)
+            GridDto guidingQuestion)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = guidingQuestion.Id,
                     Name = guidingQuestion.Name,
-                    SectionId = guidingQuestion.SectionId
+                    SectionId = guidingQuestion.ParentId
                 };
                 // Attach the entity
                 db.SectionGuidingQuestions.Attach(entity);
@@ -68,7 +68,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult GuidingQuestion_Destroy([DataSourceRequest] DataSourceRequest request,
-            GuidingQuestionSectionDto guidingQuestion)
+            GridDto guidingQuestion)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace Mapper21.Site.Controllers
                 {
                     Id = guidingQuestion.Id,
                     Name = guidingQuestion.Name,
-                    SectionId = guidingQuestion.SectionId
+                    SectionId = guidingQuestion.ParentId
                 };
                 // Attach the entity
                 db.SectionGuidingQuestions.Attach(entity);

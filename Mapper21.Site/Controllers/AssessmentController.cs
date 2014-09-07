@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Assessment_Create([DataSourceRequest] DataSourceRequest request,
-            AssessmentDto assessment)
+            GridDto assessment)
         {
             if (ModelState.IsValid)
             {
@@ -32,7 +32,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     Name = assessment.Name,
                     Description = assessment.Description,
-                    SubSectionStaId = assessment.SubSectionStaId
+                    SubSectionStaId = assessment.ParentId
                 };
                 // Add the entity
                 db.SubSectionAssessments.Add(entity);
@@ -46,7 +46,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Assessment_Update([DataSourceRequest] DataSourceRequest request,
-            AssessmentDto assessment)
+            GridDto assessment)
         {
             if (ModelState.IsValid)
             {
@@ -56,7 +56,7 @@ namespace Mapper21.Site.Controllers
                     Id = assessment.Id,
                     Name = assessment.Name,
                     Description = assessment.Description,
-                    SubSectionStaId = assessment.SubSectionStaId
+                    SubSectionStaId = assessment.ParentId
                 };
                 // Attach the entity
                 db.SubSectionAssessments.Attach(entity);
@@ -70,7 +70,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Assessment_Destroy([DataSourceRequest] DataSourceRequest request,
-            AssessmentDto assessment)
+            GridDto assessment)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace Mapper21.Site.Controllers
                     Id = Guid.NewGuid(),
                     Name = assessment.Name,
                     Description = assessment.Description,
-                    SubSectionStaId = assessment.SubSectionStaId
+                    SubSectionStaId = assessment.ParentId
                 };
                 // Attach the entity
                 db.SubSectionAssessments.Attach(entity);
