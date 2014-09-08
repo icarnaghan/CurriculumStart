@@ -102,11 +102,13 @@
     <Compile Include="Dto\StaDto.cs" />
     <Compile Include="Dto\StandardDto.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
+    <Compile Include="Interfaces\IHabitManager.cs" />
     <Compile Include="Interfaces\ISectionManager.cs" />
     <Compile Include="Interfaces\IStaManager.cs" />
     <Compile Include="Interfaces\ILongTermTargetManager.cs" />
     <Compile Include="Interfaces\ISubSectionManager.cs" />
     <Compile Include="Managers\LongTermTargetManager.cs" />
+    <Compile Include="Managers\HabitManager.cs" />
     <Compile Include="Managers\StaManager.cs" />
     <Compile Include="Managers\LookupManager.cs" />
     <Compile Include="Managers\SubSectionManager.cs" />
