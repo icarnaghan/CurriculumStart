@@ -80,6 +80,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfig.cs" />
+    <Compile Include="Dto\GridSelectCommonCoreStandardDto.cs" />
+    <Compile Include="Dto\GridSelectSocialStudiesBigIdeaDto.cs" />
+    <Compile Include="Dto\GridSelectScienceBigIdeaDto.cs" />
+    <Compile Include="Dto\GridSelectHabitDto.cs" />
     <Compile Include="Dto\GridDto.cs" />
     <Compile Include="Dto\LookUps\CommonCoreStandardLookupDto.cs" />
     <Compile Include="Dto\StaGridDto.cs" />
@@ -88,9 +92,6 @@
     <Compile Include="Dto\LookUps\SocialStudiesBigIdeaLookupDto.cs" />
     <Compile Include="Dto\SectionDto.cs" />
     <Compile Include="Dto\GuidingQuestionDto.cs" />
-    <Compile Include="Dto\HabitDto.cs" />
-    <Compile Include="Dto\ScienceBigIdeaDto.cs" />
-    <Compile Include="Dto\SocialStudiesBigIdeaDto.cs" />
     <Compile Include="Dto\AssessmentDto.cs" />
     <Compile Include="Dto\SubSectionDto.cs" />
     <Compile Include="Dto\LongTermTargetDto.cs">
@@ -100,7 +101,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Dto\StaDto.cs" />
-    <Compile Include="Dto\StandardDto.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
     <Compile Include="Interfaces\IHabitManager.cs" />
     <Compile Include="Interfaces\ISectionManager.cs" />

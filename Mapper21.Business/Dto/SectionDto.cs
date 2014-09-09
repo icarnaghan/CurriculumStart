@@ -21,8 +21,8 @@ namespace Mapper21.Business.Dto
 
         public IList<SubSectionDto> SubSections { get; set; }
         public IList<GuidingQuestionDto> GuidingQuestions { get; set; }
-        public IList<HabitDto> ExpeditionHabits { get; set; }
-        public IList<ScienceBigIdeaDto> ScienceBigIdeas { get; set; }
-        public IList<SocialStudiesBigIdeaDto> SocialStudiesBigIdeas { get; set; }
+        public IList<GridSelectHabitDto> ExpeditionHabits { get; set; }
+        public IList<GridSelectScienceBigIdeaDto> ScienceBigIdeas { get; set; }
+        public IList<GridSelectSocialStudiesBigIdeaDto> SocialStudiesBigIdeas { get; set; }
     }
 }

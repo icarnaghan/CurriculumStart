@@ -22,20 +22,20 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<HabitDto> GetList(Guid id)
+        public IList<GridSelectHabitDto> GetList(Guid id)
         {
             IList<SectionHabit> _list;
             _list = _repo.GetList(s => s.SectionId == id).ToList<SectionHabit>();
-            return Mapper.Map<IList<SectionHabit>, IList<HabitDto>>(_list);
+            return Mapper.Map<IList<SectionHabit>, IList<GridSelectHabitDto>>(_list);
         }
 
-        public HabitDto Find(Guid id)
+        public GridSelectHabitDto Find(Guid id)
         {
             SectionHabit habit = _repo.GetSingle(x => x.Id == id);
-            return Mapper.Map<HabitDto>(habit);
+            return Mapper.Map<GridSelectHabitDto>(habit);
         }
 
-        public HabitDto SaveOrUpdate(HabitDto x)
+        public GridSelectHabitDto SaveOrUpdate(GridSelectHabitDto x)
         {
             SectionHabit p = Mapper.Map<SectionHabit>(x);
             try
@@ -55,14 +55,14 @@ namespace Mapper21.Business.Managers
             {
                 log.Error(e);
             }
-            return Mapper.Map<HabitDto>(p);
+            return Mapper.Map<GridSelectHabitDto>(p);
         }
 
         public bool Delete(Guid id)
         {
             try
             {
-                HabitDto habit = Find(id);
+                GridSelectHabitDto habit = Find(id);
                 SectionHabit p = Mapper.Map<SectionHabit>(habit);
                 _repo.Remove(p);
                 return true;

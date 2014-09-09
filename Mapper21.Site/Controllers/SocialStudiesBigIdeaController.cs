@@ -23,7 +23,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult SocialStudiesBigIdea_Create([DataSourceRequest] DataSourceRequest request,
-            GridDto socialStudiesBigIdea)
+            GridSelectSocialStudiesBigIdeaDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -47,7 +47,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult SocialStudiesBigIdea_Update([DataSourceRequest] DataSourceRequest request,
-            GridDto socialStudiesBigIdea)
+            GridSelectSocialStudiesBigIdeaDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult SocialStudiesBigIdea_Destroy([DataSourceRequest] DataSourceRequest request,
-            GridDto socialStudiesBigIdea)
+            GridSelectSocialStudiesBigIdeaDto socialStudiesBigIdea)
         {
             if (ModelState.IsValid)
             {

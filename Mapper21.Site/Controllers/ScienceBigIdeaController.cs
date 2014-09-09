@@ -23,7 +23,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult ScienceBigIdea_Create([DataSourceRequest] DataSourceRequest request,
-            GridDto scienceBigIdea)
+            GridSelectScienceBigIdeaDto scienceBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -47,7 +47,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult ScienceBigIdea_Update([DataSourceRequest] DataSourceRequest request,
-            GridDto scienceBigIdea)
+            GridSelectScienceBigIdeaDto scienceBigIdea)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult ScienceBigIdea_Destroy([DataSourceRequest] DataSourceRequest request,
-            GridDto scienceBigIdea)
+            GridSelectScienceBigIdeaDto scienceBigIdea)
         {
             if (ModelState.IsValid)
             {

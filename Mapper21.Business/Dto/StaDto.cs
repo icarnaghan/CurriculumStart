@@ -10,7 +10,7 @@ namespace Mapper21.Business.Dto
 
         public SubSectionDto SubSection { get; set; }
 
-        public IList<StandardDto> Standards { get; set; }
+        public IList<GridSelectCommonCoreStandardDto> Standards { get; set; }
         public IList<LongTermTargetDto> LongTermTargets { get; set; }
         public IList<ShortTermTargetDto> ShortTermTargets { get; set; }
         public IList<AssessmentDto> Assessments { get; set; }
