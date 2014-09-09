@@ -1,0 +1,83 @@
+=== SAAS Toolkit Release notes ===
+
+Thanks a lot for buying this library from Totalwireframe.com.
+
+=== Here is what's new ===
+
+**v1.6 - May 16, 2013**
+For this release, I've taken a drastic decision: remove the version number on each library. Even though this change is pretty violent, it will be much easier for people to update the libraries on their machine. With version numbers, you have to manually remove each library from Axure. Without version numbers, you just have to copy and paste the libraries in the Library folder on your computer, confirm the overwrite and launch Axure again - nothing more.
+	- There is also a new highly requested library in this version: Tabs. 30 new widgets.
+	- The Page modal library has been renamed Modals.
+	- 3 new modals have been added: Please wait, Delete and Billing information.
+
+**v1.5 - December 25, 2012**
+
+Introduction of one new library and lots of optimization of other libraries:
+	- New library: graphs.
+	- Form 1.5: Fixed Input fields in the Form library.
+	- Form 1.5: Country drop down
+	- Button 1.5: Button checkout added
+	- Button 1.5: Button Add to cart added
+	- Button 1.5:
+	- Button 1.5: Button Helpful
+	- Button 1.5: Button Not Helpful
+	- Button 1.5: Button Yes
+	- Button 1.5: Button No
+	- Button 1.5: Button Contact me
+	- Button 1.5: Button Search
+	- Added 3 new widgets in the Players library: Audio players.
+
+**v1.4 - December 02, 2012**
+
+Introduction of two new libraries:
+	- IAB ad unit,
+	- Calendar library: 8 nice calendars to play with.
+
+**v1.3 - September 23, 2012**
+
+Introduction of a new library:
+	- 15 nice ribbons that will make your wireframes shine.
+
+**v1.2 - July 13, 2012**
+
+Some small fixes for this version.
+	- Form 1.2: search is now grouped
+	- Base 1.2: include Image map region
+	- Base 1.2: h1, h2 and h3 are now in Helvetica (changed from Helvetica Neue)
+	- Button 1.2: new buttons for Mac App Store and iPhone app store
+
+**v1.1 - April 1st, 2012**
+
+Despite the date, this is not a joke.
+The library has been completely restructured. It is now seperated into multiple libraries in order for you to load only the ones you really want - and not have one unique library with hundred of elements in them.
+I've also taken the opportunity to add more elements to some libraries. Enjoy!
+The library is now 18 separate libraries.
+New documentation on the website to explain it
+38 widgets added - more to come!
+
+**v1.0 - March 1st, 2012**
+136 widgets are included in this first version of the library.
+	- All the defaults Axure components, but better
+	- Native headers like H1, H2, H3
+	- Better forms: input text, textareas, checkboxes,... everything has been rewritten to make it look very good, right out of the box.
+	- Helvetica is the default font of choice.
+	- Complete 12 columns grid system.
+	- Labels (New, Default, Warning,...)
+	- Thumbnails
+	- Avatars
+	- 5 kind of breadcrumbs
+	- A lot of different buttons style
+	- Different kind of notification and alert banners
+	- 8 different paginations
+	- Various size of graphs
+	- Pills
+	- A complete login page
+	- A forget password page
+	- Password strength indicators
+	- Modal window
+	- Tables
+	- 4 different types of map sizes
+
+=== I wish you all the best. ===
+
+I hope you will have fun with this library. If you want to be informed when I release new libraries, subscribe on http://eepurl.com/bXfAL.
