@@ -1,0 +1,37 @@
+1. Good Axure Resources / ok to use static pages?
+
+2. Focused on design - Axure - want to write chapter on back-end / design patterns / gang of four
+
+3. Multiple focuses
+ - Design / UC experience
+ - Agile approach to development
+ - Backend development / design patterns
+ - Educational theories
+
+4. Group interviews / Requirements Sprints (agile), Prototyping, Field Interviews, Observation, Usability Testing
+
+5. Qualitative Research frameworks:
+
+NARRATIVE RESEARCH (Stories of individuals)
+
+Experiences as expressed in lived and told stories of individuals.  “Inquires” into--or asks questions about & looks for deeper understanding of--particular aspects of life experience. Researchers base their inquiries on different theoretical and philosophical views of how people live and think narratively,
+
+PHENOMENOLOGICAL RESEARCH (Common based on some phenomenom - essence of experience)
+
+Describes the meaning for several individuals of their lived experiences of a concept or a phenomenon.  (What participants have in common).
+Researcher developes composite description of the essence of the experience.
+
+GROUNDED THEORY RESEARCH (Threory grounded in data)
+
+Generate or discover a theory “grounded” in data from participants who have experienced the process.
+Systematic Approach – Data driven Constructivist Approach – More emphasis on views, values, beliefs, feelings, assumptions.
+
+ETHNOGRAPHIC RESEARCH (Entire cultural group - researcher immersed)
+
+Focuses on entire cultural group (how it works) and looks for shared patterns. (Entire school vs. participant groups).  Involves extended observations, researcher immersed in day-to-day lives of the people he/she observes.
+
+CASE STUDY (Explores bounded system over time - multiple sources of data)
+
+A qualitative approach in which the investigator explores a bounded system (a case) or multiple bounded systems (cases) over time, through detailed, in-depth data collection involving multiple sources of information. (To understand an issue or problem).
+
+1:00 December 4th.
