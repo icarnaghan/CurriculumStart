@@ -45,8 +45,11 @@ namespace Mapper21.Business
                     cfg.CreateMap<SubSectionStaGrid, StaGridDto>()
                         .ReverseMap();
 
+                    cfg.CreateMap<GridSelectHabitDto, SectionHabit>()
+                        .ForMember(dest => dest.SectionId, opt => opt.MapFrom(src => src.ParentId));
+
                     cfg.CreateMap<SectionHabit, GridSelectHabitDto>()
-                        .ReverseMap();
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SectionId));
                 });
             }
             catch (AutoMapperConfigurationException ace)
