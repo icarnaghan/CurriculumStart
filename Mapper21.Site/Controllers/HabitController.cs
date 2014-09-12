@@ -17,41 +17,80 @@ namespace Mapper21.Site.Controllers
             _habitManager = habitManager;
         }
 
-        public ActionResult Habit_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
+        public ActionResult Section_Habit_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridSelectHabitDto> habits = _habitManager.GetList(sectionId);
+            IList<GridDto> habits = _habitManager.GetSectionHabitList(sectionId);
+            return Json(habits.ToDataSourceResult(request));
+        }
+
+        public ActionResult SubSection_Habit_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
+        {
+            IList<GridDto> habits = _habitManager.GetSubSectionHabitList(subSectionId);
             return Json(habits.ToDataSourceResult(request));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Habit_Create([DataSourceRequest] DataSourceRequest request,
-            GridSelectHabitDto habit)
+        public ActionResult Section_Habit_Create([DataSourceRequest] DataSourceRequest request,
+            GridDto habit)
         {
             if (ModelState.IsValid)
             {
-                var newHabit = _habitManager.SaveOrUpdate(habit);
+                var newHabit = _habitManager.SaveOrUpdateSectionHabit(habit);
 
                 habit.Id = newHabit.Id;
             }
             return Json(new[] {habit}.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Habit_Update([DataSourceRequest] DataSourceRequest request,
-            GridSelectHabitDto updateHabit)
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult SubSection_Habit_Create([DataSourceRequest] DataSourceRequest request,
+            GridDto habit)
         {
             if (ModelState.IsValid)
             {
-                _habitManager.SaveOrUpdate(updateHabit);
+                var newHabit = _habitManager.SaveOrUpdateSubSectionHabit(habit);
+
+                habit.Id = newHabit.Id;
+            }
+            return Json(new[] { habit }.ToDataSourceResult(request, ModelState));
+        }
+
+        public ActionResult Section_Habit_Update([DataSourceRequest] DataSourceRequest request,
+            GridDto updateHabit)
+        {
+            if (ModelState.IsValid)
+            {
+                _habitManager.SaveOrUpdateSectionHabit(updateHabit);
             }
             return Json(new[] { updateHabit }.ToDataSourceResult(request, ModelState));
         }
 
-        public ActionResult Habit_Destroy([DataSourceRequest] DataSourceRequest request,
-            GridSelectHabitDto deleteHabit)
+        public ActionResult SubSection_Habit_Update([DataSourceRequest] DataSourceRequest request,
+            GridDto updateHabit)
         {
             if (ModelState.IsValid)
             {
-                _habitManager.Delete(deleteHabit.Id);
+                _habitManager.SaveOrUpdateSubSectionHabit(updateHabit);
+            }
+            return Json(new[] { updateHabit }.ToDataSourceResult(request, ModelState));
+        }
+
+        public ActionResult Section_Habit_Destroy([DataSourceRequest] DataSourceRequest request,
+            GridDto deleteHabit)
+        {
+            if (ModelState.IsValid)
+            {
+                _habitManager.DeleteSectionHabit(deleteHabit.Id);
+            }
+            return Json(new[] { deleteHabit }.ToDataSourceResult(request, ModelState));
+        }
+
+        public ActionResult SubSection_Habit_Destroy([DataSourceRequest] DataSourceRequest request,
+            GridDto deleteHabit)
+        {
+            if (ModelState.IsValid)
+            {
+                _habitManager.DeleteSubSectionHabit(deleteHabit.Id);
             }
             return Json(new[] { deleteHabit }.ToDataSourceResult(request, ModelState));
         }

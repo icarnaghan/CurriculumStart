@@ -6,10 +6,14 @@ namespace Mapper21.Business.Interfaces
 {
     public interface IHabitManager
     {
-        IList<GridSelectHabitDto> GetList(Guid Id);
-        GridSelectHabitDto Find(Guid id);
-        GridSelectHabitDto SaveOrUpdate(GridSelectHabitDto section);
-        bool Delete(Guid id);
+        IList<GridDto> GetSectionHabitList(Guid Id);
+        IList<GridDto> GetSubSectionHabitList(Guid Id);
+        GridDto FindSectionHabit(Guid id);
+        GridDto FindSubSectionHabit(Guid id);
+        GridDto SaveOrUpdateSectionHabit(GridDto section);
+        GridDto SaveOrUpdateSubSectionHabit(GridDto section);
+        bool DeleteSectionHabit(Guid id);
+        bool DeleteSubSectionHabit(Guid id);
         void Dispose();
     }
 }

@@ -22,7 +22,7 @@ namespace Mapper21.Site.Controllers
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Standard_Create([DataSourceRequest] DataSourceRequest request,
-            GridSelectCommonCoreStandardDto createStandard)
+            GridDto createStandard)
         {
             if (ModelState.IsValid)
             {
@@ -45,7 +45,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Standard_Update([DataSourceRequest] DataSourceRequest request,
-            GridSelectCommonCoreStandardDto updateStandard)
+            GridDto updateStandard)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace Mapper21.Site.Controllers
         }
 
         public ActionResult Standard_Destroy([DataSourceRequest] DataSourceRequest request,
-            GridSelectCommonCoreStandardDto deleteStandard)
+            GridDto deleteStandard)
         {
             if (ModelState.IsValid)
             {

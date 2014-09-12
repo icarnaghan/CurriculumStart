@@ -61,6 +61,7 @@ namespace Mapper21.Site
             container.RegisterType<IGenericDataRepository<SubSectionStaGrid>, GenericDataRepository<SubSectionStaGrid>>();
             container.RegisterType<IGenericDataRepository<SubSectionLongTermTarget>, GenericDataRepository<SubSectionLongTermTarget>>();
             container.RegisterType<IGenericDataRepository<SectionHabit>, GenericDataRepository<SectionHabit>>();
+            container.RegisterType<IGenericDataRepository<SubSectionHabit>, GenericDataRepository<SubSectionHabit>>();
 
             container.RegisterType<ISectionManager, SectionManager>();
             container.RegisterType<ISubSectionManager, SubSectionManager>();

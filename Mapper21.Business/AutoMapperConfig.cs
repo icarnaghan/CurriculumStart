@@ -17,7 +17,7 @@ namespace Mapper21.Business
                 var useless = new ListSourceMapper();
                 Mapper.Initialize(cfg =>
                 {
-                    //Automapper config for Client section
+                    //Non-Grid Mappings
                     cfg.CreateMap<Section, SectionDto>()
                         .ReverseMap();
 
@@ -45,11 +45,61 @@ namespace Mapper21.Business
                     cfg.CreateMap<SubSectionStaGrid, StaGridDto>()
                         .ReverseMap();
 
-                    cfg.CreateMap<GridSelectHabitDto, SectionHabit>()
+                    //Grid Sections
+                    cfg.CreateMap<GridDto, SectionHabit>()
                         .ForMember(dest => dest.SectionId, opt => opt.MapFrom(src => src.ParentId));
-
-                    cfg.CreateMap<SectionHabit, GridSelectHabitDto>()
+                    cfg.CreateMap<SectionHabit, GridDto>()
                         .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SectionId));
+
+                    cfg.CreateMap<GridDto, SectionScienceBigIdea>()
+                        .ForMember(dest => dest.SectionId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SectionScienceBigIdea, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SectionId));
+
+                    cfg.CreateMap<GridDto, SectionSocialStudiesBigIdea>()
+                        .ForMember(dest => dest.SectionId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SectionSocialStudiesBigIdea, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SectionId));
+
+                    cfg.CreateMap<GridDto, SectionOtherBigIdea>()
+                        .ForMember(dest => dest.SectionId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SectionOtherBigIdea, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SectionId));
+
+
+                    // Grid SubSections
+                    cfg.CreateMap<GridDto, SubSectionHabit>()
+                        .ForMember(dest => dest.SubSectionId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SubSectionHabit, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SubSectionId));
+
+                    cfg.CreateMap<GridDto, SubSectionExpert>()
+                        .ForMember(dest => dest.SubSectionId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SubSectionExpert, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SubSectionId));
+
+                    cfg.CreateMap<GridDto, SubSectionFieldwork>()
+                        .ForMember(dest => dest.SubSectionId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SubSectionFieldwork, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SubSectionId));
+
+                    cfg.CreateMap<GridDto, SubSectionServiceLearning>()
+                        .ForMember(dest => dest.SubSectionId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SubSectionServiceLearning, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SubSectionId));
+
+                    // Grid STAs
+                    cfg.CreateMap<GridDto, SubSectionStandard>()
+                        .ForMember(dest => dest.SubSectionStaId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SubSectionStandard, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SubSectionStaId));
+
+                    cfg.CreateMap<GridDto, SubSectionShortTermTarget>()
+                        .ForMember(dest => dest.SubSectionStaId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SubSectionShortTermTarget, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SubSectionStaId));
+
+
                 });
             }
             catch (AutoMapperConfigurationException ace)

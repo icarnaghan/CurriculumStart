@@ -14,28 +14,44 @@ namespace Mapper21.Business.Managers
     public class HabitManager : IHabitManager
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        IGenericDataRepository<SectionHabit> _repo;
+        readonly IGenericDataRepository<SectionHabit> _sectionHabitRepo;
+        readonly IGenericDataRepository<SubSectionHabit> _subSectionHabitRepo;
 
-        public HabitManager(IGenericDataRepository<SectionHabit> repo)
+        public HabitManager(IGenericDataRepository<SectionHabit> sectionHabitRepo,
+                            IGenericDataRepository<SubSectionHabit> subSectionHabitRepo)
         {
-            this._repo = repo;
+            this._sectionHabitRepo = sectionHabitRepo;
+            this._subSectionHabitRepo = subSectionHabitRepo;
             AutoMapperConfig.Init();
         }
 
-        public IList<GridSelectHabitDto> GetList(Guid id)
+        public IList<GridDto> GetSectionHabitList(Guid id)
         {
             IList<SectionHabit> _list;
-            _list = _repo.GetList(s => s.SectionId == id).ToList<SectionHabit>();
-            return Mapper.Map<IList<SectionHabit>, IList<GridSelectHabitDto>>(_list);
+            _list = _sectionHabitRepo.GetList(s => s.SectionId == id).ToList<SectionHabit>();
+            return Mapper.Map<IList<SectionHabit>, IList<GridDto>>(_list);
         }
 
-        public GridSelectHabitDto Find(Guid id)
+        public IList<GridDto> GetSubSectionHabitList(Guid id)
         {
-            SectionHabit habit = _repo.GetSingle(x => x.Id == id);
-            return Mapper.Map<GridSelectHabitDto>(habit);
+            IList<SubSectionHabit> _list;
+            _list = _subSectionHabitRepo.GetList(s => s.SubSectionId == id).ToList<SubSectionHabit>();
+            return Mapper.Map<IList<SubSectionHabit>, IList<GridDto>>(_list);
         }
 
-        public GridSelectHabitDto SaveOrUpdate(GridSelectHabitDto x)
+        public GridDto FindSectionHabit(Guid id)
+        {
+            SectionHabit habit = _sectionHabitRepo.GetSingle(x => x.Id == id);
+            return Mapper.Map<GridDto>(habit);
+        }
+
+        public GridDto FindSubSectionHabit(Guid id)
+        {
+            SubSectionHabit habit = _subSectionHabitRepo.GetSingle(x => x.Id == id);
+            return Mapper.Map<GridDto>(habit);
+        }
+
+        public GridDto SaveOrUpdateSectionHabit(GridDto x)
         {
             SectionHabit p = Mapper.Map<SectionHabit>(x);
             try
@@ -43,11 +59,11 @@ namespace Mapper21.Business.Managers
                 if (p.Id == default(Guid))
                 {
                     p.Id = Guid.NewGuid();
-                    _repo.Add(p);
+                    _sectionHabitRepo.Add(p);
                 }
                 else
                 {
-                    _repo.Update(p);                 
+                    _sectionHabitRepo.Update(p);                 
                 }
 
             }
@@ -55,16 +71,54 @@ namespace Mapper21.Business.Managers
             {
                 log.Error(e);
             }
-            return Mapper.Map<GridSelectHabitDto>(p);
+            return Mapper.Map<GridDto>(p);
         }
 
-        public bool Delete(Guid id)
+        public GridDto SaveOrUpdateSubSectionHabit(GridDto x)
+        {
+            SubSectionHabit p = Mapper.Map<SubSectionHabit>(x);
+            try
+            {
+                if (p.Id == default(Guid))
+                {
+                    p.Id = Guid.NewGuid();
+                    _subSectionHabitRepo.Add(p);
+                }
+                else
+                {
+                    _subSectionHabitRepo.Update(p);
+                }
+
+            }
+            catch (Exception e)
+            {
+                log.Error(e);
+            }
+            return Mapper.Map<GridDto>(p);
+        }
+
+        public bool DeleteSectionHabit(Guid id)
         {
             try
             {
-                GridSelectHabitDto habit = Find(id);
+                GridDto habit = FindSectionHabit(id);
                 SectionHabit p = Mapper.Map<SectionHabit>(habit);
-                _repo.Remove(p);
+                _sectionHabitRepo.Remove(p);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteSubSectionHabit(Guid id)
+        {
+            try
+            {
+                GridDto habit = FindSubSectionHabit(id);
+                SubSectionHabit p = Mapper.Map<SubSectionHabit>(habit);
+                _subSectionHabitRepo.Remove(p);
                 return true;
             }
             catch (Exception)
@@ -75,7 +129,8 @@ namespace Mapper21.Business.Managers
 
         public void Dispose()
         {
-            _repo.Dispose();
+            _sectionHabitRepo.Dispose();
+            _subSectionHabitRepo.Dispose();
         }
     }
 }

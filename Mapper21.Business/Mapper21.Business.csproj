@@ -80,10 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfig.cs" />
-    <Compile Include="Dto\GridSelectCommonCoreStandardDto.cs" />
-    <Compile Include="Dto\GridSelectSocialStudiesBigIdeaDto.cs" />
-    <Compile Include="Dto\GridSelectScienceBigIdeaDto.cs" />
-    <Compile Include="Dto\GridSelectHabitDto.cs" />
+    <Compile Include="Dto\CommonCoreStandardDto.cs" />
     <Compile Include="Dto\GridDto.cs" />
     <Compile Include="Dto\LookUps\CommonCoreStandardLookupDto.cs" />
     <Compile Include="Dto\StaGridDto.cs" />
