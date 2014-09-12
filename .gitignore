@@ -57,3 +57,8 @@ obj
 /Mapper21.Reporting/obj
 /Mapper21.Reporting/bin
 /Mapper21.Reporting/obj
+/Mapper21.Business/Mapper21.Business.csproj.user
+/Mapper21.Data/Mapper21.Data.csproj.user
+/Mapper21.Domain/Mapper21.Domain.csproj.user
+/Mapper21.Reporting/Mapper21.Reporting.csproj.user
+/Mapper21.Site/Mapper21.Site.csproj.user
