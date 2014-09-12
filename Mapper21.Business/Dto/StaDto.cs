@@ -9,10 +9,5 @@ namespace Mapper21.Business.Dto
         public Guid SubSectionId { get; set; }
 
         public SubSectionDto SubSection { get; set; }
-
-        public IList<CommonCoreStandardDto> Standards { get; set; }
-        public IList<LongTermTargetDto> LongTermTargets { get; set; }
-        public IList<ShortTermTargetDto> ShortTermTargets { get; set; }
-        public IList<AssessmentDto> Assessments { get; set; }
     }                  
 }

@@ -80,23 +80,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfig.cs" />
-    <Compile Include="Dto\CommonCoreStandardDto.cs" />
     <Compile Include="Dto\GridDto.cs" />
+    <Compile Include="Dto\LongTermTargetDto.cs" />
     <Compile Include="Dto\LookUps\CommonCoreStandardLookupDto.cs" />
     <Compile Include="Dto\StaGridDto.cs" />
     <Compile Include="Dto\LookUps\HabitLookupDto.cs" />
     <Compile Include="Dto\LookUps\ScienceBigIdeaLookupDto.cs" />
     <Compile Include="Dto\LookUps\SocialStudiesBigIdeaLookupDto.cs" />
     <Compile Include="Dto\SectionDto.cs" />
-    <Compile Include="Dto\GuidingQuestionDto.cs" />
-    <Compile Include="Dto\AssessmentDto.cs" />
     <Compile Include="Dto\SubSectionDto.cs" />
-    <Compile Include="Dto\LongTermTargetDto.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Dto\ShortTermTargetDto.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Dto\StaDto.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
     <Compile Include="Interfaces\IHabitManager.cs" />

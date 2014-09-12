@@ -66,11 +66,10 @@ namespace Mapper21.Site.Controllers
             
             var longTermTarget = _longTermTargetManager.GetAll().FirstOrDefault(l => l.SubSectionStaId == subSectionSta.Id);
             ICollection<CommonCoreStandardLookupDto> standard = _lookupManager.GetCommonCoreStandards().Where(s => s.GradeLevelId == currentGradeLevel).ToList();
-            var subSectionStaViewModel = new SubSectionStaViewModel
+            var subSectionStaViewModel = new StaViewModel
             {
-                SubSectionSta = new StaDto {Id = subSectionSta.Id, SubSectionId = subSectionSta.SubSectionId},
+                Sta = new StaDto {Id = subSectionSta.Id, SubSectionId = subSectionSta.SubSectionId},
                 SubSectionLongTermTarget = longTermTarget,
-                CommonCoreStandards = standard.ToList()
             };
 
             foreach (var item in standard)
@@ -91,15 +90,15 @@ namespace Mapper21.Site.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(SubSectionStaViewModel subSectionStaViewModel)
+        public ActionResult Edit(StaViewModel subSectionStaViewModel)
         {
             if (ModelState.IsValid)
             {
-                subSectionStaViewModel.SubSectionLongTermTarget.SubSectionStaId = subSectionStaViewModel.SubSectionSta.Id;
+                subSectionStaViewModel.SubSectionLongTermTarget.SubSectionStaId = subSectionStaViewModel.Sta.Id;
                 _longTermTargetManager.SaveOrUpdate(subSectionStaViewModel.SubSectionLongTermTarget);
-                return RedirectToAction("Edit", "Sta", new { id = subSectionStaViewModel.SubSectionSta.Id });
+                return RedirectToAction("Edit", "Sta", new { id = subSectionStaViewModel.Sta.Id });
             }
-            return RedirectToAction("Edit", "Sta", new { id = subSectionStaViewModel.SubSectionSta.Id });
+            return RedirectToAction("Edit", "Sta", new { id = subSectionStaViewModel.Sta.Id });
         }
 
         // GET: /Sta/Delete/5

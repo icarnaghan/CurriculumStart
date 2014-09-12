@@ -1,11 +1,10 @@
 ﻿@using Mapper21.Business.Dto
 @using Mapper21.Site.Models
-@model SubSectionStaViewModel
+@model StaViewModel
 
 @{
     ViewBag.Title = "Edit";
-    ViewBag.SubSectionStaId = Model.SubSectionSta.Id;
-    ViewBag.CommonCoreList = Model.CommonCoreStandards;
+    ViewBag.SubSectionStaId = Model.Sta.Id;
     var subSectionType = "Case Study";
     if (ViewContext.RouteData.Values["currentSectionType"].ToString() == "FirstSixWeeks") { subSectionType = "Week"; }
     if (ViewContext.RouteData.Values["currentSectionType"].ToString() != "FirstSixWeeks" &&
@@ -31,8 +30,8 @@
                     <div class="box-body">
                         <div class="form-horizontal">
                             @Html.ValidationSummary(true)
-                            @Html.HiddenFor(model => model.SubSectionSta.Id)
-                            @Html.HiddenFor(model => model.SubSectionSta.SubSectionId)
+                            @Html.HiddenFor(model => model.Sta.Id)
+                            @Html.HiddenFor(model => model.Sta.SubSectionId)
                             @Html.HiddenFor(model => model.SubSectionLongTermTarget.Id)
 
                             <div class="form-group">
@@ -49,15 +48,15 @@
                             </div>
 
                             <div id="standard">
-                                @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new GridDto { ParentId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_Standard.cshtml", new GridDto { ParentId = Model.Sta.Id })
                             </div>
 
                             <div id="short-term-target">
-                                @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new GridDto { ParentId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_ShortTermTarget.cshtml", new GridDto { ParentId = Model.Sta.Id })
                             </div>
 
                             <div id="assessment">
-                                @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new GridDto { ParentId = Model.SubSectionSta.Id })
+                                @Html.Partial("~/Views/Sta/Partials/_Assessment.cshtml", new GridDto { ParentId = Model.Sta.Id })
                             </div>
                         </div>
                     </div>

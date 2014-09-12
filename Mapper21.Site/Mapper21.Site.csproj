@@ -228,7 +228,7 @@
     <Compile Include="Models\HtmlHelpers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Manage.cs" />
-    <Compile Include="Models\SubSectionStaViewModel.cs" />
+    <Compile Include="Models\StaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
