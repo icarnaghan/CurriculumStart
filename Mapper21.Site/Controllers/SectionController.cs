@@ -112,6 +112,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
+                section.FinalProductDescription = HttpUtility.HtmlDecode(section.FinalProductDescription);
                 _sectionManager.SaveOrUpdate(section);
                 
                 TempData["SuccessMessage"] = "Final Product has been updated";
