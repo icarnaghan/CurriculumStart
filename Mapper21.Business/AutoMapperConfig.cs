@@ -66,6 +66,10 @@ namespace Mapper21.Business
                     cfg.CreateMap<SectionOtherBigIdea, GridDto>()
                         .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SectionId));
 
+                    cfg.CreateMap<GridDto, SectionGuidingQuestion>()
+                        .ForMember(dest => dest.SectionId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SectionGuidingQuestion, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SectionId));
 
                     // Grid SubSections
                     cfg.CreateMap<GridDto, SubSectionHabit>()

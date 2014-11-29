@@ -63,6 +63,7 @@ namespace Mapper21.Site
             container.RegisterType<IGenericDataRepository<SectionHabit>, GenericDataRepository<SectionHabit>>();
             container.RegisterType<IGenericDataRepository<SectionScienceBigIdea>, GenericDataRepository<SectionScienceBigIdea>>();
             container.RegisterType<IGenericDataRepository<SectionSocialStudiesBigIdea>, GenericDataRepository<SectionSocialStudiesBigIdea>>();
+            container.RegisterType<IGenericDataRepository<SectionGuidingQuestion>, GenericDataRepository<SectionGuidingQuestion>>();
             container.RegisterType<IGenericDataRepository<SubSectionHabit>, GenericDataRepository<SubSectionHabit>>();
 
             container.RegisterType<ISectionManager, SectionManager>();
@@ -73,6 +74,7 @@ namespace Mapper21.Site
             container.RegisterType<IHabitManager, HabitManager>();
             container.RegisterType<IScienceBigIdeaManager, ScienceBigIdeaManager>();
             container.RegisterType<ISocialStudiesBigIdeaManager, SocialStudiesBigIdeaManager>();
+            container.RegisterType<IGuidingQuestionManager, GuidingQuestionManager>();
         }
     }
 }
