@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
 using Mapper21.Business.Dto;
 using Mapper21.Business.Interfaces;
-using Mapper21.Domain;
 using System.Collections.Generic;
 
 namespace Mapper21.Site.Controllers
