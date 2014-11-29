@@ -29,10 +29,10 @@
                   model.Field(g => g.Id).Editable(false).DefaultValue(new Guid()); // Make the Id property not editable
                   model.Field(g => g.ParentId).DefaultValue(@ViewBag.SectionId);
               })
-              .Create(create => create.Action("GuidingQuestion_Create", "SectionGuidingQuestion")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("GuidingQuestion_Read", "SectionGuidingQuestion", new { sectionId = ViewBag.SectionId })) // Action method invoked when the grid needs data
-              .Update(update => update.Action("GuidingQuestion_Update", "SectionGuidingQuestion")) // Action method invoked when the user saves an updated data item
-              .Destroy(destroy => destroy.Action("GuidingQuestion_Destroy", "SectionGuidingQuestion")) // Action method invoked when the user removes a data item
+              .Create(create => create.Action("Section_GuidingQuestion_Create", "GuidingQuestion")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("Section_GuidingQuestion_Read", "GuidingQuestion", new { sectionId = ViewBag.SectionId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("Section_GuidingQuestion_Update", "GuidingQuestion")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("Section_GuidingQuestion_Destroy", "GuidingQuestion")) // Action method invoked when the user removes a data item
       )
       .Pageable()
       )

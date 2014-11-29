@@ -57,11 +57,14 @@ namespace Mapper21.Site
             container.RegisterType<IGenericDataRepository<ScienceBigIdea>, GenericDataRepository<ScienceBigIdea>>();
             container.RegisterType<IGenericDataRepository<SocialStudiesBigIdea>, GenericDataRepository<SocialStudiesBigIdea>>();
             container.RegisterType<IGenericDataRepository<CommonCoreStandard>, GenericDataRepository<CommonCoreStandard>>();
+
             container.RegisterType<IGenericDataRepository<SubSectionSta>, GenericDataRepository<SubSectionSta>>();
             container.RegisterType<IGenericDataRepository<SubSectionStaGrid>, GenericDataRepository<SubSectionStaGrid>>();
             container.RegisterType<IGenericDataRepository<SubSectionLongTermTarget>, GenericDataRepository<SubSectionLongTermTarget>>();
             container.RegisterType<IGenericDataRepository<SubSectionHabit>, GenericDataRepository<SubSectionHabit>>();
             container.RegisterType<IGenericDataRepository<SubSectionOtherBigIdea>, GenericDataRepository<SubSectionOtherBigIdea>>();
+            container.RegisterType<IGenericDataRepository<SubSectionGuidingQuestion>, GenericDataRepository<SubSectionGuidingQuestion>>();
+
             container.RegisterType<IGenericDataRepository<SectionHabit>, GenericDataRepository<SectionHabit>>();
             container.RegisterType<IGenericDataRepository<SectionScienceBigIdea>, GenericDataRepository<SectionScienceBigIdea>>();
             container.RegisterType<IGenericDataRepository<SectionSocialStudiesBigIdea>, GenericDataRepository<SectionSocialStudiesBigIdea>>();

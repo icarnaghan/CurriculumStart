@@ -214,7 +214,7 @@
     <Compile Include="Controllers\SocialStudiesBigIdeaController.cs" />
     <Compile Include="Controllers\ScienceBigIdeaController.cs" />
     <Compile Include="Controllers\HabitController.cs" />
-    <Compile Include="Controllers\SectionGuidingQuestionController.cs" />
+    <Compile Include="Controllers\GuidingQuestionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StaController.cs" />
     <Compile Include="Global.asax.cs">
