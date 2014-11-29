@@ -195,6 +195,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
+    <Compile Include="Controllers\AssessmentController.cs" />
     <Compile Include="Controllers\ServiceLearningController.cs" />
     <Compile Include="Controllers\ExpertController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
@@ -203,11 +204,9 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\OtherBigIdeaController.cs" />
-    <Compile Include="Controllers\SubSectionGuidingQuestionController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
-    <Compile Include="Controllers\AssessmentController.cs" />
     <Compile Include="Controllers\ShortTermTargetController.cs" />
     <Compile Include="Controllers\LongTermTargetController.cs" />
     <Compile Include="Controllers\FieldworkController.cs" />
