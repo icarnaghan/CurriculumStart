@@ -61,6 +61,8 @@ namespace Mapper21.Site
             container.RegisterType<IGenericDataRepository<SubSectionStaGrid>, GenericDataRepository<SubSectionStaGrid>>();
             container.RegisterType<IGenericDataRepository<SubSectionLongTermTarget>, GenericDataRepository<SubSectionLongTermTarget>>();
             container.RegisterType<IGenericDataRepository<SectionHabit>, GenericDataRepository<SectionHabit>>();
+            container.RegisterType<IGenericDataRepository<SectionScienceBigIdea>, GenericDataRepository<SectionScienceBigIdea>>();
+            container.RegisterType<IGenericDataRepository<SectionSocialStudiesBigIdea>, GenericDataRepository<SectionSocialStudiesBigIdea>>();
             container.RegisterType<IGenericDataRepository<SubSectionHabit>, GenericDataRepository<SubSectionHabit>>();
 
             container.RegisterType<ISectionManager, SectionManager>();
@@ -69,6 +71,8 @@ namespace Mapper21.Site
             container.RegisterType<ILongTermTargetManager, LongTermTargetManager>();
             container.RegisterType<ILookupManager, LookupManager>();
             container.RegisterType<IHabitManager, HabitManager>();
+            container.RegisterType<IScienceBigIdeaManager, ScienceBigIdeaManager>();
+            container.RegisterType<ISocialStudiesBigIdeaManager, SocialStudiesBigIdeaManager>();
         }
     }
 }

@@ -2,7 +2,7 @@
 @using Mapper21.Business.Dto
 @using Mapper21.Site.Models
 
-@(Html.Kendo().Grid<GridSelectSocialStudiesBigIdeaDto>
+@(Html.Kendo().Grid<GridDto>
       ()
       .Name("grid4")
       .Columns(columns =>
@@ -28,7 +28,7 @@
               .Model(model =>
               {
                   model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
-                  model.Field(g => g.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
+                  model.Field(g => g.Id).Editable(false).DefaultValue(new Guid()); // Make the Id property not editable
                   model.Field(g => g.ParentId).DefaultValue(@ViewBag.SectionId);
               })
               .Create(create => create.Action("SocialStudiesBigIdea_Create", "SocialStudiesBigIdea")) // Action method invoked when the user saves a new data item

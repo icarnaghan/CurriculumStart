@@ -90,12 +90,16 @@
     <Compile Include="Dto\SectionDto.cs" />
     <Compile Include="Dto\SubSectionDto.cs" />
     <Compile Include="Dto\StaDto.cs" />
+    <Compile Include="Interfaces\ISocialStudiesBigIdeaManager.cs" />
+    <Compile Include="Interfaces\IScienceBigIdeaManager.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
     <Compile Include="Interfaces\IHabitManager.cs" />
     <Compile Include="Interfaces\ISectionManager.cs" />
     <Compile Include="Interfaces\IStaManager.cs" />
     <Compile Include="Interfaces\ILongTermTargetManager.cs" />
     <Compile Include="Interfaces\ISubSectionManager.cs" />
+    <Compile Include="Managers\SocialStudiesBigIdeaManager.cs" />
+    <Compile Include="Managers\ScienceBigIdeaManager.cs" />
     <Compile Include="Managers\LongTermTargetManager.cs" />
     <Compile Include="Managers\HabitManager.cs" />
     <Compile Include="Managers\StaManager.cs" />
