@@ -50,12 +50,12 @@ namespace Mapper21.Site
             container.RegisterType<RolesAdminController>(new InjectionConstructor());
             container.RegisterType<UsersAdminController>(new InjectionConstructor());
 
-            // Managers
+            // Generic Repository Calls
             container.RegisterType<IGenericDataRepository<Section>, GenericDataRepository<Section>>();
             container.RegisterType<IGenericDataRepository<SubSection>, GenericDataRepository<SubSection>>();
             container.RegisterType<IGenericDataRepository<Habit>, GenericDataRepository<Habit>>();
             container.RegisterType<IGenericDataRepository<ScienceBigIdea>, GenericDataRepository<ScienceBigIdea>>();
-            container.RegisterType<IGenericDataRepository<SocialStudiesBigIdea>, GenericDataRepository<SocialStudiesBigIdea>>();
+            container.RegisterType<IGenericDataRepository<SocialStudiesBigIdea>, GenericDataRepository<SocialStudiesBigIdea>>(); 
             container.RegisterType<IGenericDataRepository<CommonCoreStandard>, GenericDataRepository<CommonCoreStandard>>();
 
             container.RegisterType<IGenericDataRepository<SubSectionSta>, GenericDataRepository<SubSectionSta>>();
@@ -66,6 +66,7 @@ namespace Mapper21.Site
             container.RegisterType<IGenericDataRepository<SubSectionGuidingQuestion>, GenericDataRepository<SubSectionGuidingQuestion>>();
             container.RegisterType<IGenericDataRepository<SubSectionFieldwork>, GenericDataRepository<SubSectionFieldwork>>();
             container.RegisterType<IGenericDataRepository<SubSectionExpert>, GenericDataRepository<SubSectionExpert>>();
+            container.RegisterType<IGenericDataRepository<SubSectionServiceLearning>, GenericDataRepository<SubSectionServiceLearning>>();
 
             container.RegisterType<IGenericDataRepository<SectionHabit>, GenericDataRepository<SectionHabit>>();
             container.RegisterType<IGenericDataRepository<SectionScienceBigIdea>, GenericDataRepository<SectionScienceBigIdea>>();
@@ -74,6 +75,7 @@ namespace Mapper21.Site
             container.RegisterType<IGenericDataRepository<SectionOtherBigIdea>, GenericDataRepository<SectionOtherBigIdea>>();
             container.RegisterType<IGenericDataRepository<SubSectionHabit>, GenericDataRepository<SubSectionHabit>>();
 
+            // Managers
             container.RegisterType<ISectionManager, SectionManager>();
             container.RegisterType<ISubSectionManager, SubSectionManager>();
             container.RegisterType<IStaManager, StaManager>();
@@ -86,6 +88,7 @@ namespace Mapper21.Site
             container.RegisterType<IOtherBigIdeaManager, OtherBigIdeaManager>();
             container.RegisterType<IFieldworkManager, FieldworkManager>();
             container.RegisterType<IExpertManager, ExpertManager>();
+            container.RegisterType<IServiceLearningManager, ServiceLearningManager>();
         }
     }
 }
