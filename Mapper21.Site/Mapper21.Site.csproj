@@ -200,8 +200,7 @@
     <Compile Include="Controllers\ImageBrowserController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
-    <Compile Include="Controllers\SubSectionOtherbigIdeaController.cs" />
-    <Compile Include="Controllers\SectionOtherBigIdeaController.cs" />
+    <Compile Include="Controllers\OtherBigIdeaController.cs" />
     <Compile Include="Controllers\SubSectionGuidingQuestionController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
     <Compile Include="Controllers\SupportController.cs" />

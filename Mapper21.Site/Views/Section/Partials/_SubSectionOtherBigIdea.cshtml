@@ -25,13 +25,13 @@
               .Model(model =>
               {
                   model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
-                  model.Field(g => g.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
+                  model.Field(g => g.Id).Editable(false).DefaultValue(new Guid()); // Make the Id property not editable
                   model.Field(g => g.ParentId).DefaultValue(@ViewBag.SubSectionId);
               })
-              .Create(create => create.Action("OtherBigIdea_Create", "SubSectionOtherBigIdea")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("OtherBigIdea_Read", "SubSectionOtherBigIdea", new { subSectionId = ViewBag.SubSectionId })) // Action method invoked when the grid needs data
-              .Update(update => update.Action("OtherBigIdea_Update", "SubSectionOtherBigIdea")) // Action method invoked when the user saves an updated data item
-              .Destroy(destroy => destroy.Action("OtherBigIdea_Destroy", "SubSectionOtherBigIdea")) // Action method invoked when the user removes a data item
+              .Create(create => create.Action("SubSection_OtherBigIdea_Create", "OtherBigIdea")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("SubSection_OtherBigIdea_Read", "OtherBigIdea", new { subSectionId = ViewBag.SubSectionId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("SubSection_OtherBigIdea_Update", "OtherBigIdea")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("SubSection_OtherBigIdea_Destroy", "OtherBigIdea")) // Action method invoked when the user removes a data item
       )
       .Pageable()
       )

@@ -26,13 +26,13 @@
               .Model(model =>
               {
                   model.Id(g => g.Id); // Specify the property which is the unique identifier of the model
-                  model.Field(g => g.Id).Editable(false).DefaultValue(Guid.NewGuid()); // Make the Id property not editable
+                  model.Field(g => g.Id).Editable(false).DefaultValue(new Guid()); // Make the Id property not editable
                   model.Field(g => g.ParentId).DefaultValue(@ViewBag.SectionId);
               })
-              .Create(create => create.Action("OtherBigIdea_Create", "SectionOtherBigIdea")) // Action method invoked when the user saves a new data item
-              .Read(read => read.Action("OtherBigIdea_Read", "SectionOtherBigIdea", new { sectionId = ViewBag.SectionId })) // Action method invoked when the grid needs data
-              .Update(update => update.Action("OtherBigIdea_Update", "SectionOtherBigIdea")) // Action method invoked when the user saves an updated data item
-              .Destroy(destroy => destroy.Action("OtherBigIdea_Destroy", "SectionOtherBigIdea")) // Action method invoked when the user removes a data item
+              .Create(create => create.Action("Section_OtherBigIdea_Create", "OtherBigIdea")) // Action method invoked when the user saves a new data item
+              .Read(read => read.Action("Section_OtherBigIdea_Read", "OtherBigIdea", new { sectionId = ViewBag.SectionId })) // Action method invoked when the grid needs data
+              .Update(update => update.Action("Section_OtherBigIdea_Update", "OtherBigIdea")) // Action method invoked when the user saves an updated data item
+              .Destroy(destroy => destroy.Action("Section_OtherBigIdea_Destroy", "OtherBigIdea")) // Action method invoked when the user removes a data item
       )
       .Pageable()
       )

@@ -58,8 +58,8 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _subSectionManager.SaveOrUpdate(subSection);
-                return RedirectToAction("EditSubSection", "Section", new { subSection.Id });
+                var newSubSection = _subSectionManager.SaveOrUpdate(subSection);
+                return RedirectToAction("EditSubSection", "Section", new { newSubSection.Id });
             }
 
             return View(subSection);
