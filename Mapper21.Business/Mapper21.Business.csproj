@@ -90,9 +90,10 @@
     <Compile Include="Dto\SectionDto.cs" />
     <Compile Include="Dto\SubSectionDto.cs" />
     <Compile Include="Dto\StaDto.cs" />
+    <Compile Include="Interfaces\IExpertManager.cs" />
     <Compile Include="Interfaces\IGuidingQuestionManager.cs" />
     <Compile Include="Interfaces\IOtherBigIdeaManager.cs" />
-    <Compile Include="Interfaces\IFieldwork.cs" />
+    <Compile Include="Interfaces\IFieldworkManager.cs" />
     <Compile Include="Interfaces\ISocialStudiesBigIdeaManager.cs" />
     <Compile Include="Interfaces\IScienceBigIdeaManager.cs" />
     <Compile Include="Interfaces\ILookupManager.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Interfaces\IStaManager.cs" />
     <Compile Include="Interfaces\ILongTermTargetManager.cs" />
     <Compile Include="Interfaces\ISubSectionManager.cs" />
+    <Compile Include="Managers\ExpertManager.cs" />
     <Compile Include="Managers\GuidingQuestionManager.cs" />
     <Compile Include="Managers\OtherBigIdeaManager.cs" />
     <Compile Include="Managers\FieldworkManager.cs" />
