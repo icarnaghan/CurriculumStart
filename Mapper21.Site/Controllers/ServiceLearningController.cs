@@ -20,7 +20,7 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult ServiceLearning_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> serviceLearning = _serviceLearningManager.GetSubSectionServiceLearningList(subSectionId);
+            IList<GridDto> serviceLearning = _serviceLearningManager.GetList(subSectionId);
             return Json(serviceLearning.ToDataSourceResult(request));
         }
 
@@ -29,7 +29,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newServiceLearning = _serviceLearningManager.SaveOrUpdateSubSectionServiceLearning(serviceLearning);
+                var newServiceLearning = _serviceLearningManager.SaveOrUpdate(serviceLearning);
 
                 serviceLearning.Id = newServiceLearning.Id;
             }
@@ -40,7 +40,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _serviceLearningManager.SaveOrUpdateSubSectionServiceLearning(serviceLearning);
+                _serviceLearningManager.SaveOrUpdate(serviceLearning);
             }
             return Json(new[] { serviceLearning }.ToDataSourceResult(request, ModelState));
         }
@@ -50,7 +50,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _serviceLearningManager.DeleteSubSectionServiceLearning(serviceLearning.Id);
+                _serviceLearningManager.Delete(serviceLearning.Id);
             }
             return Json(new[] { serviceLearning }.ToDataSourceResult(request, ModelState));
         }

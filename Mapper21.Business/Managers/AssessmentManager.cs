@@ -22,20 +22,20 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSubSectionAssessmentList(Guid id)
+        public IList<GridDto> GetList(Guid id)
         {
             IList<SubSectionAssessment> _list;
             _list = _subSectionAssessmentRepo.GetList(s => s.SubSectionStaId == id).ToList<SubSectionAssessment>();
             return Mapper.Map<IList<SubSectionAssessment>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSubSectionAssessment(Guid id)
+        public GridDto Find(Guid id)
         {
             SubSectionAssessment assessment = _subSectionAssessmentRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(assessment);
         }
 
-        public GridDto SaveOrUpdateSubSectionAssessment(GridDto x)
+        public GridDto SaveOrUpdate(GridDto x)
         {
             SubSectionAssessment p = Mapper.Map<SubSectionAssessment>(x);
             try
@@ -58,11 +58,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSubSectionAssessment(Guid id)
+        public bool Delete(Guid id)
         {
             try
             {
-                GridDto assessment = FindSubSectionAssessment(id);
+                GridDto assessment = Find(id);
                 SubSectionAssessment p = Mapper.Map<SubSectionAssessment>(assessment);
                 _subSectionAssessmentRepo.Remove(p);
                 return true;

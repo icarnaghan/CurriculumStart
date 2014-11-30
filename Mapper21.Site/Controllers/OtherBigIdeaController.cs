@@ -20,13 +20,13 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult Section_OtherBigIdea_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> otherBigIdeas = _otherBigIdeaManager.GetSectionOtherBigIdeaList(sectionId);
+            IList<GridDto> otherBigIdeas = _otherBigIdeaManager.GetSectionList(sectionId);
             return Json(otherBigIdeas.ToDataSourceResult(request));
         }
 
         public ActionResult SubSection_OtherBigIdea_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> otherBigIdeas = _otherBigIdeaManager.GetSubSectionOtherBigIdeaList(subSectionId);
+            IList<GridDto> otherBigIdeas = _otherBigIdeaManager.GetSubSectionList(subSectionId);
             return Json(otherBigIdeas.ToDataSourceResult(request));
         }
 
@@ -36,7 +36,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newOtherBigIdea = _otherBigIdeaManager.SaveOrUpdateSectionOtherBigIdea(otherBigIdea);
+                var newOtherBigIdea = _otherBigIdeaManager.SaveOrUpdateSection(otherBigIdea);
 
                 otherBigIdea.Id = newOtherBigIdea.Id;
             }
@@ -50,7 +50,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newOtherBigIdea = _otherBigIdeaManager.SaveOrUpdateSubSectionOtherBigIdea(otherBigIdea);
+                var newOtherBigIdea = _otherBigIdeaManager.SaveOrUpdateSubSection(otherBigIdea);
 
                 otherBigIdea.Id = newOtherBigIdea.Id;
             }
@@ -63,7 +63,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _otherBigIdeaManager.SaveOrUpdateSectionOtherBigIdea(otherBigIdea);
+                _otherBigIdeaManager.SaveOrUpdateSection(otherBigIdea);
             }
             return Json(new[] { otherBigIdea }.ToDataSourceResult(request, ModelState));
         }
@@ -73,7 +73,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _otherBigIdeaManager.SaveOrUpdateSubSectionOtherBigIdea(otherBigIdea);
+                _otherBigIdeaManager.SaveOrUpdateSubSection(otherBigIdea);
             }
             return Json(new[] { otherBigIdea }.ToDataSourceResult(request, ModelState));
         }
@@ -83,7 +83,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _otherBigIdeaManager.DeleteSectionOtherBigIdea(otherBigIdea.Id);
+                _otherBigIdeaManager.DeleteSection(otherBigIdea.Id);
             }
             return Json(new[] { otherBigIdea }.ToDataSourceResult(request, ModelState));
         }
@@ -93,7 +93,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _otherBigIdeaManager.DeleteSubSectionOtherBigIdea(otherBigIdea.Id);
+                _otherBigIdeaManager.DeleteSubSection(otherBigIdea.Id);
             }
             return Json(new[] { otherBigIdea }.ToDataSourceResult(request, ModelState));
         }

@@ -25,27 +25,27 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSectionHabitList(Guid id)
+        public IList<GridDto> GetSectionList(Guid id)
         {
             IList<SectionHabit> _list;
             _list = _sectionHabitRepo.GetList(s => s.SectionId == id).ToList<SectionHabit>();
             return Mapper.Map<IList<SectionHabit>, IList<GridDto>>(_list);
         }
 
-        public IList<GridDto> GetSubSectionHabitList(Guid id)
+        public IList<GridDto> GetSubSectionList(Guid id)
         {
             IList<SubSectionHabit> _list;
             _list = _subSectionHabitRepo.GetList(s => s.SubSectionId == id).ToList<SubSectionHabit>();
             return Mapper.Map<IList<SubSectionHabit>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSectionHabit(Guid id)
+        public GridDto FindSection(Guid id)
         {
             SectionHabit habit = _sectionHabitRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(habit);
         }
 
-        public GridDto FindSubSectionHabit(Guid id)
+        public GridDto FindSubSection(Guid id)
         {
             SubSectionHabit habit = _subSectionHabitRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(habit);
@@ -74,7 +74,7 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public GridDto SaveOrUpdateSubSectionHabit(GridDto x)
+        public GridDto SaveOrUpdateSubSection(GridDto x)
         {
             SubSectionHabit p = Mapper.Map<SubSectionHabit>(x);
             try
@@ -97,11 +97,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSectionHabit(Guid id)
+        public bool DeleteSection(Guid id)
         {
             try
             {
-                GridDto habit = FindSectionHabit(id);
+                GridDto habit = FindSection(id);
                 SectionHabit p = Mapper.Map<SectionHabit>(habit);
                 _sectionHabitRepo.Remove(p);
                 return true;
@@ -112,11 +112,11 @@ namespace Mapper21.Business.Managers
             }
         }
 
-        public bool DeleteSubSectionHabit(Guid id)
+        public bool DeleteSubSection(Guid id)
         {
             try
             {
-                GridDto habit = FindSubSectionHabit(id);
+                GridDto habit = FindSubSection(id);
                 SubSectionHabit p = Mapper.Map<SubSectionHabit>(habit);
                 _subSectionHabitRepo.Remove(p);
                 return true;

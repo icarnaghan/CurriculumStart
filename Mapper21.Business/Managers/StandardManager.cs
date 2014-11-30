@@ -22,20 +22,20 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSubSectionStandardList(Guid id)
+        public IList<GridDto> GetList(Guid id)
         {
             IList<SubSectionStandard> _list;
             _list = _subSectionStandardRepo.GetList(s => s.SubSectionStaId == id).ToList<SubSectionStandard>();
             return Mapper.Map<IList<SubSectionStandard>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSubSectionStandard(Guid id)
+        public GridDto Find(Guid id)
         {
             SubSectionStandard standard = _subSectionStandardRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(standard);
         }
 
-        public GridDto SaveOrUpdateSubSectionStandard(GridDto x)
+        public GridDto SaveOrUpdate(GridDto x)
         {
             SubSectionStandard p = Mapper.Map<SubSectionStandard>(x);
             try
@@ -58,11 +58,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSubSectionStandard(Guid id)
+        public bool Delete(Guid id)
         {
             try
             {
-                GridDto standard = FindSubSectionStandard(id);
+                GridDto standard = Find(id);
                 SubSectionStandard p = Mapper.Map<SubSectionStandard>(standard);
                 _subSectionStandardRepo.Remove(p);
                 return true;

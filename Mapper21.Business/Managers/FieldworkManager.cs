@@ -22,20 +22,20 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSubSectionFieldworkList(Guid id)
+        public IList<GridDto> GetList(Guid id)
         {
             IList<SubSectionFieldwork> _list;
             _list = _subSectionFieldworkRepo.GetList(s => s.SubSectionId == id).ToList<SubSectionFieldwork>();
             return Mapper.Map<IList<SubSectionFieldwork>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSubSectionFieldwork(Guid id)
+        public GridDto Find(Guid id)
         {
             SubSectionFieldwork fieldwork = _subSectionFieldworkRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(fieldwork);
         }
 
-        public GridDto SaveOrUpdateSubSectionFieldwork(GridDto x)
+        public GridDto SaveOrUpdate(GridDto x)
         {
             SubSectionFieldwork p = Mapper.Map<SubSectionFieldwork>(x);
             try
@@ -58,11 +58,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSubSectionFieldwork(Guid id)
+        public bool Delete(Guid id)
         {
             try
             {
-                GridDto fieldwork = FindSubSectionFieldwork(id);
+                GridDto fieldwork = Find(id);
                 SubSectionFieldwork p = Mapper.Map<SubSectionFieldwork>(fieldwork);
                 _subSectionFieldworkRepo.Remove(p);
                 return true;

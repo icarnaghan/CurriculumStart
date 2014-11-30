@@ -6,10 +6,10 @@ namespace Mapper21.Business.Interfaces
 {
     public interface IExpertManager
     {
-        IList<GridDto> GetSubSectionExpertList(Guid Id);
-        GridDto FindSubSectionExpert(Guid id);
-        GridDto SaveOrUpdateSubSectionExpert(GridDto x);
-        bool DeleteSubSectionExpert(Guid id);
+        IList<GridDto> GetList(Guid Id);
+        GridDto Find(Guid id);
+        GridDto SaveOrUpdate(GridDto x);
+        bool Delete(Guid id);
         void Dispose();
     }
 }

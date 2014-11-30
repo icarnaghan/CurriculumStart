@@ -22,20 +22,20 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSubSectionExpertList(Guid id)
+        public IList<GridDto> GetList(Guid id)
         {
             IList<SubSectionExpert> _list;
             _list = _subSectionExpertRepo.GetList(s => s.SubSectionId == id).ToList<SubSectionExpert>();
             return Mapper.Map<IList<SubSectionExpert>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSubSectionExpert(Guid id)
+        public GridDto Find(Guid id)
         {
             SubSectionExpert expert = _subSectionExpertRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(expert);
         }
 
-        public GridDto SaveOrUpdateSubSectionExpert(GridDto x)
+        public GridDto SaveOrUpdate(GridDto x)
         {
             SubSectionExpert p = Mapper.Map<SubSectionExpert>(x);
             try
@@ -58,11 +58,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSubSectionExpert(Guid id)
+        public bool Delete(Guid id)
         {
             try
             {
-                GridDto expert = FindSubSectionExpert(id);
+                GridDto expert = Find(id);
                 SubSectionExpert p = Mapper.Map<SubSectionExpert>(expert);
                 _subSectionExpertRepo.Remove(p);
                 return true;

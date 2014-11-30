@@ -6,10 +6,10 @@ namespace Mapper21.Business.Interfaces
 {
     public interface IFieldworkManager
     {
-        IList<GridDto> GetSubSectionFieldworkList(Guid Id);
-        GridDto FindSubSectionFieldwork(Guid id);
-        GridDto SaveOrUpdateSubSectionFieldwork(GridDto x);
-        bool DeleteSubSectionFieldwork(Guid id);
+        IList<GridDto> GetList(Guid Id);
+        GridDto Find(Guid id);
+        GridDto SaveOrUpdate(GridDto x);
+        bool Delete(Guid id);
         void Dispose();
     }
 }

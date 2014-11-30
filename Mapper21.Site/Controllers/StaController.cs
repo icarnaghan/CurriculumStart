@@ -51,7 +51,7 @@ namespace Mapper21.Site.Controllers
                 var newSubSectionSta = _staManager.SaveOrUpdate(subSectionSta);
 
                 var subSectionLongTermTarget = new GridDto { ParentId = newSubSectionSta.Id };
-                _longTermTargetManager.SaveOrUpdateSubSectionLongTermTarget(subSectionLongTermTarget);
+                _longTermTargetManager.SaveOrUpdate(subSectionLongTermTarget);
                 return RedirectToAction("Edit", "Sta", new { id = newSubSectionSta.Id });
             }
             return View(subSectionSta);
@@ -64,7 +64,7 @@ namespace Mapper21.Site.Controllers
             var subSectionSta = _staManager.Find(id);
             if (subSectionSta == null) return HttpNotFound();
 
-            var longTermTarget = _longTermTargetManager.FindSubSectionLongTermTarget(subSectionSta.Id);
+            var longTermTarget = _longTermTargetManager.Find(subSectionSta.Id);
             ICollection<CommonCoreStandardLookupDto> standard = _lookupManager.GetCommonCoreStandards().Where(s => s.GradeLevelId == currentGradeLevel).ToList();
             var subSectionStaViewModel = new StaViewModel
             {
@@ -95,7 +95,7 @@ namespace Mapper21.Site.Controllers
             if (ModelState.IsValid)
             {
                 subSectionStaViewModel.SubSectionLongTermTarget.ParentId = subSectionStaViewModel.Sta.Id;
-                _longTermTargetManager.SaveOrUpdateSubSectionLongTermTarget(subSectionStaViewModel.SubSectionLongTermTarget);
+                _longTermTargetManager.SaveOrUpdate(subSectionStaViewModel.SubSectionLongTermTarget);
                 return RedirectToAction("Edit", "Sta", new { id = subSectionStaViewModel.Sta.Id });
             }
             return RedirectToAction("Edit", "Sta", new { id = subSectionStaViewModel.Sta.Id });

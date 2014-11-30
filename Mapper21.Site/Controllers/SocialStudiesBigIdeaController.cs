@@ -20,7 +20,7 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult SocialStudiesBigIdea_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> socialStudiesBigIdeas = _socialStudiesBigIdeaManager.GetSectionSocialStudiesBigIdeaList(sectionId);
+            IList<GridDto> socialStudiesBigIdeas = _socialStudiesBigIdeaManager.GetList(sectionId);
             return Json(socialStudiesBigIdeas.ToDataSourceResult(request));
         }
 
@@ -30,7 +30,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newScienceBigIdea = _socialStudiesBigIdeaManager.SaveOrUpdateSectionSocialStudiesBigIdea(socialStudiesBigIdea);
+                var newScienceBigIdea = _socialStudiesBigIdeaManager.SaveOrUpdate(socialStudiesBigIdea);
 
                 socialStudiesBigIdea.Id = newScienceBigIdea.Id;
             }
@@ -43,7 +43,7 @@ namespace Mapper21.Site.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _socialStudiesBigIdeaManager.SaveOrUpdateSectionSocialStudiesBigIdea(socialStudiesBigIdea);
+                    _socialStudiesBigIdeaManager.SaveOrUpdate(socialStudiesBigIdea);
                 }
                 return Json(new[] { socialStudiesBigIdea }.ToDataSourceResult(request, ModelState));
             }
@@ -55,7 +55,7 @@ namespace Mapper21.Site.Controllers
             if (ModelState.IsValid)
                 if (ModelState.IsValid)
                 {
-                    _socialStudiesBigIdeaManager.DeleteSectionSocialStudiesBigIdea(socialStudiesBigIdea.Id);
+                    _socialStudiesBigIdeaManager.Delete(socialStudiesBigIdea.Id);
                 }
             return Json(new[] { socialStudiesBigIdea }.ToDataSourceResult(request, ModelState));
         }

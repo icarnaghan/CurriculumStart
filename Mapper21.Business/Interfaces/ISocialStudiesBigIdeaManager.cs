@@ -6,10 +6,10 @@ namespace Mapper21.Business.Interfaces
 {
     public interface ISocialStudiesBigIdeaManager
     {
-        IList<GridDto> GetSectionSocialStudiesBigIdeaList(Guid Id);
-        GridDto FindSectionSocialStudiesBigIdea(Guid id);
-        GridDto SaveOrUpdateSectionSocialStudiesBigIdea(GridDto x);
-        bool DeleteSectionSocialStudiesBigIdea(Guid id);
+        IList<GridDto> GetList(Guid Id);
+        GridDto Find(Guid id);
+        GridDto SaveOrUpdate(GridDto x);
+        bool Delete(Guid id);
         void Dispose();
     }
 }

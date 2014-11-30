@@ -20,7 +20,7 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult Standard_Read(Guid subSectionStaId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> standard = _standardManager.GetSubSectionStandardList(subSectionStaId);
+            IList<GridDto> standard = _standardManager.GetList(subSectionStaId);
             return Json(standard.ToDataSourceResult(request));
         }
 
@@ -29,7 +29,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newStandard = _standardManager.SaveOrUpdateSubSectionStandard(standard);
+                var newStandard = _standardManager.SaveOrUpdate(standard);
 
                 standard.Id = newStandard.Id;
             }
@@ -40,7 +40,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _standardManager.SaveOrUpdateSubSectionStandard(standard);
+                _standardManager.SaveOrUpdate(standard);
             }
             return Json(new[] { standard }.ToDataSourceResult(request, ModelState));
         }
@@ -50,7 +50,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _standardManager.DeleteSubSectionStandard(standard.Id);
+                _standardManager.Delete(standard.Id);
             }
             return Json(new[] { standard }.ToDataSourceResult(request, ModelState));
         }

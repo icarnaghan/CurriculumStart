@@ -22,20 +22,20 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSubSectionShortTermTargetList(Guid id)
+        public IList<GridDto> GetList(Guid id)
         {
             IList<SubSectionShortTermTarget> _list;
             _list = _subSectionShortTermTargetRepo.GetList(s => s.SubSectionStaId == id).ToList<SubSectionShortTermTarget>();
             return Mapper.Map<IList<SubSectionShortTermTarget>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSubSectionShortTermTarget(Guid id)
+        public GridDto Find(Guid id)
         {
             SubSectionShortTermTarget shortTermTarget = _subSectionShortTermTargetRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(shortTermTarget);
         }
 
-        public GridDto SaveOrUpdateSubSectionShortTermTarget(GridDto x)
+        public GridDto SaveOrUpdate(GridDto x)
         {
             SubSectionShortTermTarget p = Mapper.Map<SubSectionShortTermTarget>(x);
             try
@@ -58,11 +58,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSubSectionShortTermTarget(Guid id)
+        public bool Delete(Guid id)
         {
             try
             {
-                GridDto shortTermTarget = FindSubSectionShortTermTarget(id);
+                GridDto shortTermTarget = Find(id);
                 SubSectionShortTermTarget p = Mapper.Map<SubSectionShortTermTarget>(shortTermTarget);
                 _subSectionShortTermTargetRepo.Remove(p);
                 return true;

@@ -22,13 +22,13 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public GridDto FindSubSectionLongTermTarget(Guid id)
+        public GridDto Find(Guid id)
         {
             SubSectionLongTermTarget longTermTarget = _subSectionLongTermTargetRepo.GetSingle(x => x.SubSectionStaId == id);
             return Mapper.Map<GridDto>(longTermTarget);
         }
 
-        public GridDto SaveOrUpdateSubSectionLongTermTarget(GridDto x)
+        public GridDto SaveOrUpdate(GridDto x)
         {
             SubSectionLongTermTarget p = Mapper.Map<SubSectionLongTermTarget>(x);
             try
@@ -51,11 +51,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSubSectionLongTermTarget(Guid id)
+        public bool Delete(Guid id)
         {
             try
             {
-                GridDto longTermTarget = FindSubSectionLongTermTarget(id);
+                GridDto longTermTarget = Find(id);
                 SubSectionLongTermTarget p = Mapper.Map<SubSectionLongTermTarget>(longTermTarget);
                 _subSectionLongTermTargetRepo.Remove(p);
                 return true;

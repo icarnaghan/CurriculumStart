@@ -20,7 +20,7 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult Expert_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> expert = _expertManager.GetSubSectionExpertList(subSectionId);
+            IList<GridDto> expert = _expertManager.GetList(subSectionId);
             return Json(expert.ToDataSourceResult(request));
         }
 
@@ -29,7 +29,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newExpert = _expertManager.SaveOrUpdateSubSectionExpert(expert);
+                var newExpert = _expertManager.SaveOrUpdate(expert);
 
                 expert.Id = newExpert.Id;
             }
@@ -40,7 +40,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _expertManager.SaveOrUpdateSubSectionExpert(expert);
+                _expertManager.SaveOrUpdate(expert);
             }
             return Json(new[] { expert }.ToDataSourceResult(request, ModelState));
         }
@@ -50,7 +50,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _expertManager.DeleteSubSectionExpert(expert.Id);
+                _expertManager.Delete(expert.Id);
             }
             return Json(new[] { expert }.ToDataSourceResult(request, ModelState));
         }

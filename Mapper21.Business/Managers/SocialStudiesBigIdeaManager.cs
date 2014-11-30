@@ -22,20 +22,20 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSectionSocialStudiesBigIdeaList(Guid id)
+        public IList<GridDto> GetList(Guid id)
         {
             IList<SectionSocialStudiesBigIdea> _list;
             _list = _sectionSocialStudiesBigIdeaRepo.GetList(s => s.SectionId == id).ToList<SectionSocialStudiesBigIdea>();
             return Mapper.Map<IList<SectionSocialStudiesBigIdea>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSectionSocialStudiesBigIdea(Guid id)
+        public GridDto Find(Guid id)
         {
             SectionSocialStudiesBigIdea socialStudiesBigIdea = _sectionSocialStudiesBigIdeaRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(socialStudiesBigIdea);
         }
 
-        public GridDto SaveOrUpdateSectionSocialStudiesBigIdea(GridDto x)
+        public GridDto SaveOrUpdate(GridDto x)
         {
             SectionSocialStudiesBigIdea p = Mapper.Map<SectionSocialStudiesBigIdea>(x);
             try
@@ -58,11 +58,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSectionSocialStudiesBigIdea(Guid id)
+        public bool Delete(Guid id)
         {
             try
             {
-                GridDto socialStudiesBigIdea = FindSectionSocialStudiesBigIdea(id);
+                GridDto socialStudiesBigIdea = Find(id);
                 SectionSocialStudiesBigIdea p = Mapper.Map<SectionSocialStudiesBigIdea>(socialStudiesBigIdea);
                 _sectionSocialStudiesBigIdeaRepo.Remove(p);
                 return true;

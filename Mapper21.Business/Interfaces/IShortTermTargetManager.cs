@@ -6,10 +6,10 @@ namespace Mapper21.Business.Interfaces
 {
     public interface IShortTermTargetManager
     {
-        IList<GridDto> GetSubSectionShortTermTargetList(Guid Id);
-        GridDto FindSubSectionShortTermTarget(Guid id);
-        GridDto SaveOrUpdateSubSectionShortTermTarget(GridDto x);
-        bool DeleteSubSectionShortTermTarget(Guid id);
+        IList<GridDto> GetList(Guid Id);
+        GridDto Find(Guid id);
+        GridDto SaveOrUpdate(GridDto x);
+        bool Delete(Guid id);
         void Dispose();
     }
 }

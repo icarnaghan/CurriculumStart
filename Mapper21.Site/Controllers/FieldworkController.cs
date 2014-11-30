@@ -20,7 +20,7 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult Fieldwork_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> fieldwork = _fieldworkManager.GetSubSectionFieldworkList(subSectionId);
+            IList<GridDto> fieldwork = _fieldworkManager.GetList(subSectionId);
             return Json(fieldwork.ToDataSourceResult(request));
         }
 
@@ -29,7 +29,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newFieldwork = _fieldworkManager.SaveOrUpdateSubSectionFieldwork(fieldwork);
+                var newFieldwork = _fieldworkManager.SaveOrUpdate(fieldwork);
 
                 fieldwork.Id = newFieldwork.Id;
             }
@@ -40,7 +40,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _fieldworkManager.SaveOrUpdateSubSectionFieldwork(fieldwork);
+                _fieldworkManager.SaveOrUpdate(fieldwork);
             }
             return Json(new[] { fieldwork }.ToDataSourceResult(request, ModelState));
         }
@@ -50,7 +50,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _fieldworkManager.DeleteSubSectionFieldwork(fieldwork.Id);
+                _fieldworkManager.Delete(fieldwork.Id);
             }
             return Json(new[] { fieldwork }.ToDataSourceResult(request, ModelState));
         }

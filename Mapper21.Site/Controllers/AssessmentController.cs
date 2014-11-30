@@ -20,7 +20,7 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult Assessment_Read(Guid subSectionStaId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> assessment = _assessmentManager.GetSubSectionAssessmentList(subSectionStaId);
+            IList<GridDto> assessment = _assessmentManager.GetList(subSectionStaId);
             return Json(assessment.ToDataSourceResult(request));
         }
 
@@ -29,7 +29,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newAssessment = _assessmentManager.SaveOrUpdateSubSectionAssessment(assessment);
+                var newAssessment = _assessmentManager.SaveOrUpdate(assessment);
 
                 assessment.Id = newAssessment.Id;
             }
@@ -40,7 +40,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _assessmentManager.SaveOrUpdateSubSectionAssessment(assessment);
+                _assessmentManager.SaveOrUpdate(assessment);
             }
             return Json(new[] { assessment }.ToDataSourceResult(request, ModelState));
         }
@@ -50,7 +50,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _assessmentManager.DeleteSubSectionAssessment(assessment.Id);
+                _assessmentManager.Delete(assessment.Id);
             }
             return Json(new[] { assessment }.ToDataSourceResult(request, ModelState));
         }

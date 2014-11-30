@@ -6,14 +6,14 @@ namespace Mapper21.Business.Interfaces
 {
     public interface IGuidingQuestionManager
     {
-        IList<GridDto> GetSectionGuidingQuestionList(Guid Id);
-        IList<GridDto> GetSubSectionGuidingQuestionList(Guid Id);
-        GridDto FindSectionGuidingQuestion(Guid id);
-        GridDto FindSubSectionGuidingQuestion(Guid id);
-        GridDto SaveOrUpdateSectionGuidingQuestion(GridDto x);
-        GridDto SaveOrUpdateSubSectionGuidingQuestion(GridDto x);
-        bool DeleteSectionGuidingQuestion(Guid id);
-        bool DeleteSubSectionGuidingQuestion(Guid id);
+        IList<GridDto> GetSectionList(Guid Id);
+        IList<GridDto> GetSubSectionList(Guid Id);
+        GridDto FindSection(Guid id);
+        GridDto FindSubSection(Guid id);
+        GridDto SaveOrUpdateSection(GridDto x);
+        GridDto SaveOrUpdateSubSection(GridDto x);
+        bool DeleteSection(Guid id);
+        bool DeleteSubSection(Guid id);
         void Dispose();
     }
 }

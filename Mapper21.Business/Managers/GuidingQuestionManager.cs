@@ -25,33 +25,33 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSectionGuidingQuestionList(Guid id)
+        public IList<GridDto> GetSectionList(Guid id)
         {
             IList<SectionGuidingQuestion> _list;
             _list = _sectionGuidingQuestionRepo.GetList(s => s.SectionId == id).ToList<SectionGuidingQuestion>();
             return Mapper.Map<IList<SectionGuidingQuestion>, IList<GridDto>>(_list);
         }
 
-        public IList<GridDto> GetSubSectionGuidingQuestionList(Guid id)
+        public IList<GridDto> GetSubSectionList(Guid id)
         {
             IList<SubSectionGuidingQuestion> _list;
             _list = _subSectionGuidingQuestionRepo.GetList(s => s.SubSectionId == id).ToList<SubSectionGuidingQuestion>();
             return Mapper.Map<IList<SubSectionGuidingQuestion>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSectionGuidingQuestion(Guid id)
+        public GridDto FindSection(Guid id)
         {
             SectionGuidingQuestion guidingQuestion = _sectionGuidingQuestionRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(guidingQuestion);
         }
 
-        public GridDto FindSubSectionGuidingQuestion(Guid id)
+        public GridDto FindSubSection(Guid id)
         {
             SubSectionGuidingQuestion guidingQuestion = _subSectionGuidingQuestionRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(guidingQuestion);
         }
 
-        public GridDto SaveOrUpdateSectionGuidingQuestion(GridDto x)
+        public GridDto SaveOrUpdateSection(GridDto x)
         {
             SectionGuidingQuestion p = Mapper.Map<SectionGuidingQuestion>(x);
             try
@@ -74,7 +74,7 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public GridDto SaveOrUpdateSubSectionGuidingQuestion(GridDto x)
+        public GridDto SaveOrUpdateSubSection(GridDto x)
         {
             SubSectionGuidingQuestion p = Mapper.Map<SubSectionGuidingQuestion>(x);
             try
@@ -97,11 +97,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSectionGuidingQuestion(Guid id)
+        public bool DeleteSection(Guid id)
         {
             try
             {
-                GridDto guidingQuestion = FindSectionGuidingQuestion(id);
+                GridDto guidingQuestion = FindSection(id);
                 SectionGuidingQuestion p = Mapper.Map<SectionGuidingQuestion>(guidingQuestion);
                 _sectionGuidingQuestionRepo.Remove(p);
                 return true;
@@ -112,11 +112,11 @@ namespace Mapper21.Business.Managers
             }
         }
 
-        public bool DeleteSubSectionGuidingQuestion(Guid id)
+        public bool DeleteSubSection(Guid id)
         {
             try
             {
-                GridDto guidingQuestion = FindSectionGuidingQuestion(id);
+                GridDto guidingQuestion = FindSection(id);
                 SubSectionGuidingQuestion p = Mapper.Map<SubSectionGuidingQuestion>(guidingQuestion);
                 _subSectionGuidingQuestionRepo.Remove(p);
                 return true;

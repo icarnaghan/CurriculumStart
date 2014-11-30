@@ -20,7 +20,7 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult ShortTermTarget_Read(Guid subSectionStaId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> shortTermTarget = _shortTermTargetManager.GetSubSectionShortTermTargetList(subSectionStaId);
+            IList<GridDto> shortTermTarget = _shortTermTargetManager.GetList(subSectionStaId);
             return Json(shortTermTarget.ToDataSourceResult(request));
         }
 
@@ -29,7 +29,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newShortTermTarget = _shortTermTargetManager.SaveOrUpdateSubSectionShortTermTarget(shortTermTarget);
+                var newShortTermTarget = _shortTermTargetManager.SaveOrUpdate(shortTermTarget);
 
                 shortTermTarget.Id = newShortTermTarget.Id;
             }
@@ -40,7 +40,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _shortTermTargetManager.SaveOrUpdateSubSectionShortTermTarget(shortTermTarget);
+                _shortTermTargetManager.SaveOrUpdate(shortTermTarget);
             }
             return Json(new[] { shortTermTarget }.ToDataSourceResult(request, ModelState));
         }
@@ -50,7 +50,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _shortTermTargetManager.DeleteSubSectionShortTermTarget(shortTermTarget.Id);
+                _shortTermTargetManager.Delete(shortTermTarget.Id);
             }
             return Json(new[] { shortTermTarget }.ToDataSourceResult(request, ModelState));
         }

@@ -6,10 +6,10 @@ namespace Mapper21.Business.Interfaces
 {
     public interface IServiceLearningManager
     {
-        IList<GridDto> GetSubSectionServiceLearningList(Guid Id);
-        GridDto FindSubSectionServiceLearning(Guid id);
-        GridDto SaveOrUpdateSubSectionServiceLearning(GridDto x);
-        bool DeleteSubSectionServiceLearning(Guid id);
+        IList<GridDto> GetList(Guid Id);
+        GridDto Find(Guid id);
+        GridDto SaveOrUpdate(GridDto x);
+        bool Delete(Guid id);
         void Dispose();
     }
 }

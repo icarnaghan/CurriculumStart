@@ -25,33 +25,33 @@ namespace Mapper21.Business.Managers
             AutoMapperConfig.Init();
         }
 
-        public IList<GridDto> GetSectionOtherBigIdeaList(Guid id)
+        public IList<GridDto> GetSectionList(Guid id)
         {
             IList<SectionOtherBigIdea> _list;
             _list = _sectionOtherBigIdeaRepo.GetList(s => s.SectionId == id).ToList<SectionOtherBigIdea>();
             return Mapper.Map<IList<SectionOtherBigIdea>, IList<GridDto>>(_list);
         }
 
-        public IList<GridDto> GetSubSectionOtherBigIdeaList(Guid id)
+        public IList<GridDto> GetSubSectionList(Guid id)
         {
             IList<SubSectionOtherBigIdea> _list;
             _list = _subSectionOtherBigIdeaRepo.GetList(s => s.SubSectionId == id).ToList<SubSectionOtherBigIdea>();
             return Mapper.Map<IList<SubSectionOtherBigIdea>, IList<GridDto>>(_list);
         }
 
-        public GridDto FindSectionOtherBigIdea(Guid id)
+        public GridDto FindSection(Guid id)
         {
             SectionOtherBigIdea otherBigIdea = _sectionOtherBigIdeaRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(otherBigIdea);
         }
 
-        public GridDto FindSubSectionOtherBigIdea(Guid id)
+        public GridDto FindSubSection(Guid id)
         {
             SubSectionOtherBigIdea otherBigIdea = _subSectionOtherBigIdeaRepo.GetSingle(x => x.Id == id);
             return Mapper.Map<GridDto>(otherBigIdea);
         }
 
-        public GridDto SaveOrUpdateSectionOtherBigIdea(GridDto x)
+        public GridDto SaveOrUpdateSection(GridDto x)
         {
             SectionOtherBigIdea p = Mapper.Map<SectionOtherBigIdea>(x);
             try
@@ -74,7 +74,7 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public GridDto SaveOrUpdateSubSectionOtherBigIdea(GridDto x)
+        public GridDto SaveOrUpdateSubSection(GridDto x)
         {
             SubSectionOtherBigIdea p = Mapper.Map<SubSectionOtherBigIdea>(x);
             try
@@ -97,11 +97,11 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(p);
         }
 
-        public bool DeleteSectionOtherBigIdea(Guid id)
+        public bool DeleteSection(Guid id)
         {
             try
             {
-                GridDto otherBigIdea = FindSectionOtherBigIdea(id);
+                GridDto otherBigIdea = FindSection(id);
                 SectionOtherBigIdea p = Mapper.Map<SectionOtherBigIdea>(otherBigIdea);
                 _sectionOtherBigIdeaRepo.Remove(p);
                 return true;
@@ -112,11 +112,11 @@ namespace Mapper21.Business.Managers
             }
         }
 
-        public bool DeleteSubSectionOtherBigIdea(Guid id)
+        public bool DeleteSubSection(Guid id)
         {
             try
             {
-                GridDto otherBigIdea = FindSubSectionOtherBigIdea(id);
+                GridDto otherBigIdea = FindSubSection(id);
                 SubSectionOtherBigIdea p = Mapper.Map<SubSectionOtherBigIdea>(otherBigIdea);
                 _subSectionOtherBigIdeaRepo.Remove(p);
                 return true;

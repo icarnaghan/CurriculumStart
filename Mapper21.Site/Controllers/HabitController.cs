@@ -19,13 +19,13 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult Section_Habit_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> habits = _habitManager.GetSectionHabitList(sectionId);
+            IList<GridDto> habits = _habitManager.GetSectionList(sectionId);
             return Json(habits.ToDataSourceResult(request));
         }
 
         public ActionResult SubSection_Habit_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> habits = _habitManager.GetSubSectionHabitList(subSectionId);
+            IList<GridDto> habits = _habitManager.GetSubSectionList(subSectionId);
             return Json(habits.ToDataSourceResult(request));
         }
 
@@ -48,7 +48,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newHabit = _habitManager.SaveOrUpdateSubSectionHabit(habit);
+                var newHabit = _habitManager.SaveOrUpdateSubSection(habit);
 
                 habit.Id = newHabit.Id;
             }
@@ -70,7 +70,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _habitManager.SaveOrUpdateSubSectionHabit(updateHabit);
+                _habitManager.SaveOrUpdateSubSection(updateHabit);
             }
             return Json(new[] { updateHabit }.ToDataSourceResult(request, ModelState));
         }
@@ -80,7 +80,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _habitManager.DeleteSectionHabit(deleteHabit.Id);
+                _habitManager.DeleteSection(deleteHabit.Id);
             }
             return Json(new[] { deleteHabit }.ToDataSourceResult(request, ModelState));
         }
@@ -90,7 +90,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _habitManager.DeleteSubSectionHabit(deleteHabit.Id);
+                _habitManager.DeleteSubSection(deleteHabit.Id);
             }
             return Json(new[] { deleteHabit }.ToDataSourceResult(request, ModelState));
         }

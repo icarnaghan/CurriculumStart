@@ -6,14 +6,14 @@ namespace Mapper21.Business.Interfaces
 {
     public interface IOtherBigIdeaManager
     {
-        IList<GridDto> GetSectionOtherBigIdeaList(Guid Id);
-        IList<GridDto> GetSubSectionOtherBigIdeaList(Guid Id);
-        GridDto FindSectionOtherBigIdea(Guid id);
-        GridDto FindSubSectionOtherBigIdea(Guid id);
-        GridDto SaveOrUpdateSectionOtherBigIdea(GridDto x);
-        GridDto SaveOrUpdateSubSectionOtherBigIdea(GridDto x);
-        bool DeleteSectionOtherBigIdea(Guid id);
-        bool DeleteSubSectionOtherBigIdea(Guid id);
+        IList<GridDto> GetSectionList(Guid Id);
+        IList<GridDto> GetSubSectionList(Guid Id);
+        GridDto FindSection(Guid id);
+        GridDto FindSubSection(Guid id);
+        GridDto SaveOrUpdateSection(GridDto x);
+        GridDto SaveOrUpdateSubSection(GridDto x);
+        bool DeleteSection(Guid id);
+        bool DeleteSubSection(Guid id);
         void Dispose();
     }
 }

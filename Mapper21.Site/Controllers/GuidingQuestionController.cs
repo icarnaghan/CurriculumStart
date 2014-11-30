@@ -20,13 +20,13 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult Section_GuidingQuestion_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> guidingQuestions = _guidingQuestionManager.GetSectionGuidingQuestionList(sectionId);
+            IList<GridDto> guidingQuestions = _guidingQuestionManager.GetSectionList(sectionId);
             return Json(guidingQuestions.ToDataSourceResult(request));
         }
 
         public ActionResult SubSection_GuidingQuestion_Read(Guid subSectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> guidingQuestions = _guidingQuestionManager.GetSubSectionGuidingQuestionList(subSectionId);
+            IList<GridDto> guidingQuestions = _guidingQuestionManager.GetSubSectionList(subSectionId);
             return Json(guidingQuestions.ToDataSourceResult(request));
         }
 
@@ -36,7 +36,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newGuidingQuestion = _guidingQuestionManager.SaveOrUpdateSectionGuidingQuestion(guidingQuestion);
+                var newGuidingQuestion = _guidingQuestionManager.SaveOrUpdateSection(guidingQuestion);
 
                 guidingQuestion.Id = newGuidingQuestion.Id;
             }
@@ -49,7 +49,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newGuidingQuestion = _guidingQuestionManager.SaveOrUpdateSubSectionGuidingQuestion(guidingQuestion);
+                var newGuidingQuestion = _guidingQuestionManager.SaveOrUpdateSubSection(guidingQuestion);
 
                 guidingQuestion.Id = newGuidingQuestion.Id;
             }
@@ -62,7 +62,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _guidingQuestionManager.SaveOrUpdateSectionGuidingQuestion(guidingQuestion);
+                _guidingQuestionManager.SaveOrUpdateSection(guidingQuestion);
             }
             return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
         }
@@ -72,7 +72,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _guidingQuestionManager.SaveOrUpdateSubSectionGuidingQuestion(guidingQuestion);
+                _guidingQuestionManager.SaveOrUpdateSubSection(guidingQuestion);
             }
             return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
         }
@@ -82,7 +82,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _guidingQuestionManager.DeleteSectionGuidingQuestion(guidingQuestion.Id);
+                _guidingQuestionManager.DeleteSection(guidingQuestion.Id);
             }
             return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
         }
@@ -92,7 +92,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _guidingQuestionManager.DeleteSubSectionGuidingQuestion(guidingQuestion.Id);
+                _guidingQuestionManager.DeleteSubSection(guidingQuestion.Id);
             }
             return Json(new[] { guidingQuestion }.ToDataSourceResult(request, ModelState));
         }

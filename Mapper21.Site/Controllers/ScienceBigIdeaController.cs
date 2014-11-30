@@ -20,7 +20,7 @@ namespace Mapper21.Site.Controllers
 
         public ActionResult ScienceBigIdea_Read(Guid sectionId, [DataSourceRequest] DataSourceRequest request)
         {
-            IList<GridDto> scienceBigIdeas = _scienceBigIdeaManager.GetSectionScienceBigIdeaList(sectionId);
+            IList<GridDto> scienceBigIdeas = _scienceBigIdeaManager.GetList(sectionId);
             return Json(scienceBigIdeas.ToDataSourceResult(request));
         }
 
@@ -30,7 +30,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newScienceBigIdea = _scienceBigIdeaManager.SaveOrUpdateSectionScienceBigIdea(scienceBigIdea);
+                var newScienceBigIdea = _scienceBigIdeaManager.SaveOrUpdate(scienceBigIdea);
 
                 scienceBigIdea.Id = newScienceBigIdea.Id;
             }
@@ -42,7 +42,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _scienceBigIdeaManager.SaveOrUpdateSectionScienceBigIdea(scienceBigIdea);
+                _scienceBigIdeaManager.SaveOrUpdate(scienceBigIdea);
             }
             return Json(new[] { scienceBigIdea }.ToDataSourceResult(request, ModelState));
         }
@@ -52,7 +52,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _scienceBigIdeaManager.DeleteSectionScienceBigIdea(scienceBigIdea.Id);
+                _scienceBigIdeaManager.Delete(scienceBigIdea.Id);
             }
             return Json(new[] { scienceBigIdea }.ToDataSourceResult(request, ModelState));
         }
