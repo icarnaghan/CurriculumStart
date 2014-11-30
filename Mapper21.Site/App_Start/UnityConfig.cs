@@ -69,6 +69,7 @@ namespace Mapper21.Site
             container.RegisterType<IGenericDataRepository<SubSectionServiceLearning>, GenericDataRepository<SubSectionServiceLearning>>();
             container.RegisterType<IGenericDataRepository<SubSectionAssessment>, GenericDataRepository<SubSectionAssessment>>();
             container.RegisterType<IGenericDataRepository<SubSectionLongTermTarget>, GenericDataRepository<SubSectionLongTermTarget>>();
+            container.RegisterType<IGenericDataRepository<SubSectionShortTermTarget>, GenericDataRepository<SubSectionShortTermTarget>>();
 
             container.RegisterType<IGenericDataRepository<SectionHabit>, GenericDataRepository<SectionHabit>>();
             container.RegisterType<IGenericDataRepository<SectionScienceBigIdea>, GenericDataRepository<SectionScienceBigIdea>>();
@@ -93,6 +94,7 @@ namespace Mapper21.Site
             container.RegisterType<IServiceLearningManager, ServiceLearningManager>();
             container.RegisterType<IAssessmentManager, AssessmentManager>();
             container.RegisterType<ILongTermTargetManager, LongTermTargetManager>();
+            container.RegisterType<IShortTermTargetManager, ShortTermTargetManager>();
         }
     }
 }
