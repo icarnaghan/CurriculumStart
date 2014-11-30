@@ -91,6 +91,7 @@
     <Compile Include="Dto\SubSectionDto.cs" />
     <Compile Include="Dto\StaDto.cs" />
     <Compile Include="Interfaces\IAssessmentManager.cs" />
+    <Compile Include="Interfaces\IStandardManager.cs" />
     <Compile Include="Interfaces\IShortTermTargetManager.cs" />
     <Compile Include="Interfaces\ILongTermTargetManager.cs" />
     <Compile Include="Interfaces\IServiceLearningManager.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Interfaces\IStaManager.cs" />
     <Compile Include="Interfaces\ISubSectionManager.cs" />
     <Compile Include="Managers\AssessmentManager.cs" />
+    <Compile Include="Managers\StandardManager.cs" />
     <Compile Include="Managers\ShortTermTargetManager.cs" />
     <Compile Include="Managers\LongTermTargetManager.cs" />
     <Compile Include="Managers\ServiceLearningManager.cs" />
