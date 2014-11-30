@@ -51,7 +51,7 @@ namespace Mapper21.Business.Managers
             return Mapper.Map<GridDto>(habit);
         }
 
-        public GridDto SaveOrUpdateSectionHabit(GridDto x)
+        public GridDto SaveOrUpdateSection(GridDto x)
         {
             SectionHabit p = Mapper.Map<SectionHabit>(x);
             try

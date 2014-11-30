@@ -35,7 +35,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newHabit = _habitManager.SaveOrUpdateSectionHabit(habit);
+                var newHabit = _habitManager.SaveOrUpdateSection(habit);
 
                 habit.Id = newHabit.Id;
             }
@@ -60,7 +60,7 @@ namespace Mapper21.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                _habitManager.SaveOrUpdateSectionHabit(updateHabit);
+                _habitManager.SaveOrUpdateSection(updateHabit);
             }
             return Json(new[] { updateHabit }.ToDataSourceResult(request, ModelState));
         }
