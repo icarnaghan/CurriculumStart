@@ -9,7 +9,7 @@ namespace Mapper21.Business.Interfaces
     {
         IList<SubSectionDto> GetAll();
         IList<SubSectionDto> GetAllBySection(Guid id);
-        SubSectionDto SaveOrUpdate(SubSectionDto subSection);
+        SubSectionDto SaveOrUpdate(SubSectionDto x);
         SubSectionDto Find(Guid id);
         bool Delete(Guid id);
     }

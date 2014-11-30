@@ -8,7 +8,7 @@ namespace Mapper21.Business.Interfaces
     {
         IList<GridDto> GetSubSectionAssessmentList(Guid Id);
         GridDto FindSubSectionAssessment(Guid id);
-        GridDto SaveOrUpdateSubSectionAssessment(GridDto subSection);
+        GridDto SaveOrUpdateSubSectionAssessment(GridDto x);
         bool DeleteSubSectionAssessment(Guid id);
         void Dispose();
     }

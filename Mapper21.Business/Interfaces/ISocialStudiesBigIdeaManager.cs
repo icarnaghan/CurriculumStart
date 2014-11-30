@@ -8,7 +8,7 @@ namespace Mapper21.Business.Interfaces
     {
         IList<GridDto> GetSectionSocialStudiesBigIdeaList(Guid Id);
         GridDto FindSectionSocialStudiesBigIdea(Guid id);
-        GridDto SaveOrUpdateSectionSocialStudiesBigIdea(GridDto section);
+        GridDto SaveOrUpdateSectionSocialStudiesBigIdea(GridDto x);
         bool DeleteSectionSocialStudiesBigIdea(Guid id);
         void Dispose();
     }

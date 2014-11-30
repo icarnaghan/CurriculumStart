@@ -9,7 +9,7 @@ namespace Mapper21.Business.Interfaces
         IList<SectionDto> GetAll();
         SectionDto Find(Guid id);
         SectionDto GetSection(string gradeLevel, string year, string sectionType);
-        SectionDto SaveOrUpdate(SectionDto section);
+        SectionDto SaveOrUpdate(SectionDto x);
         bool Delete(Guid id);
         void Dispose();
     }

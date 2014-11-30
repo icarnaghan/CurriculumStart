@@ -14,29 +14,21 @@ namespace Mapper21.Business.Managers
     public class LongTermTargetManager : ILongTermTargetManager
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        IGenericDataRepository<SubSectionLongTermTarget> _repo;
+        readonly IGenericDataRepository<SubSectionLongTermTarget> _subSectionLongTermTargetRepo;
 
-        //Initialize manager, inject repository instance and configure automapper
-        public LongTermTargetManager(IGenericDataRepository<SubSectionLongTermTarget> repo)
+        public LongTermTargetManager(IGenericDataRepository<SubSectionLongTermTarget> subSectionLongTermTargetRepo)
         {
-            this._repo = repo;
+            this._subSectionLongTermTargetRepo = subSectionLongTermTargetRepo;
             AutoMapperConfig.Init();
         }
 
-        //Return a list of objects.  Intentional return of IList vs. IQueryable to 
-        //more cleanly keep application layers clean.  
-        //Developer may apply Linq Expressions as parameters to "GetAll" method to return child objects
-        //or filter results to a subset of the list
-        public IList<LongTermTargetDto> GetAll()
+        public GridDto FindSubSectionLongTermTarget(Guid id)
         {
-            IList<SubSectionLongTermTarget> _list;
-            _list = _repo.GetAll().ToList<SubSectionLongTermTarget>();
-            return Mapper.Map<IList<SubSectionLongTermTarget>, IList<LongTermTargetDto>>(_list);
+            SubSectionLongTermTarget longTermTarget = _subSectionLongTermTargetRepo.GetSingle(x => x.SubSectionStaId == id);
+            return Mapper.Map<GridDto>(longTermTarget);
         }
 
-        //Could be split into two methods.  Based on the database paradigm, an ID will
-        //only exist after the object has been atomically saved once and persisted
-        public LongTermTargetDto SaveOrUpdate(LongTermTargetDto x)
+        public GridDto SaveOrUpdateSubSectionLongTermTarget(GridDto x)
         {
             SubSectionLongTermTarget p = Mapper.Map<SubSectionLongTermTarget>(x);
             try
@@ -44,11 +36,11 @@ namespace Mapper21.Business.Managers
                 if (p.Id == default(Guid))
                 {
                     p.Id = Guid.NewGuid();
-                    _repo.Add(p);
+                    _subSectionLongTermTargetRepo.Add(p);
                 }
                 else
                 {
-                    _repo.Update(p);                 
+                    _subSectionLongTermTargetRepo.Update(p);                 
                 }
 
             }
@@ -56,22 +48,16 @@ namespace Mapper21.Business.Managers
             {
                 log.Error(e);
             }
-            return Mapper.Map<LongTermTargetDto>(p);
+            return Mapper.Map<GridDto>(p);
         }
 
-        public LongTermTargetDto Find(Guid id)
-        {
-            SubSectionLongTermTarget subSectionLongTermTarget = _repo.GetSingle(x => x.Id == id);
-            return Mapper.Map<LongTermTargetDto>(subSectionLongTermTarget);
-        }
-
-        public bool Delete(Guid id)
+        public bool DeleteSubSectionLongTermTarget(Guid id)
         {
             try
             {
-                LongTermTargetDto subSectionLongTermTarget = Find(id);
-                SubSectionLongTermTarget p = Mapper.Map<SubSectionLongTermTarget>(subSectionLongTermTarget);
-                _repo.Remove(p);
+                GridDto longTermTarget = FindSubSectionLongTermTarget(id);
+                SubSectionLongTermTarget p = Mapper.Map<SubSectionLongTermTarget>(longTermTarget);
+                _subSectionLongTermTargetRepo.Remove(p);
                 return true;
             }
             catch (Exception)
@@ -82,7 +68,7 @@ namespace Mapper21.Business.Managers
 
         public void Dispose()
         {
-            _repo.Dispose();
+            _subSectionLongTermTargetRepo.Dispose();
         }
     }
 }

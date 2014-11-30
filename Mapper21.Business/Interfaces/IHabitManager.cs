@@ -10,8 +10,8 @@ namespace Mapper21.Business.Interfaces
         IList<GridDto> GetSubSectionHabitList(Guid Id);
         GridDto FindSectionHabit(Guid id);
         GridDto FindSubSectionHabit(Guid id);
-        GridDto SaveOrUpdateSectionHabit(GridDto section);
-        GridDto SaveOrUpdateSubSectionHabit(GridDto section);
+        GridDto SaveOrUpdateSectionHabit(GridDto x);
+        GridDto SaveOrUpdateSubSectionHabit(GridDto x);
         bool DeleteSectionHabit(Guid id);
         bool DeleteSubSectionHabit(Guid id);
         void Dispose();

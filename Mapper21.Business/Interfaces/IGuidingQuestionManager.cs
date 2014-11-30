@@ -10,8 +10,8 @@ namespace Mapper21.Business.Interfaces
         IList<GridDto> GetSubSectionGuidingQuestionList(Guid Id);
         GridDto FindSectionGuidingQuestion(Guid id);
         GridDto FindSubSectionGuidingQuestion(Guid id);
-        GridDto SaveOrUpdateSectionGuidingQuestion(GridDto section);
-        GridDto SaveOrUpdateSubSectionGuidingQuestion(GridDto section);
+        GridDto SaveOrUpdateSectionGuidingQuestion(GridDto x);
+        GridDto SaveOrUpdateSubSectionGuidingQuestion(GridDto x);
         bool DeleteSectionGuidingQuestion(Guid id);
         bool DeleteSubSectionGuidingQuestion(Guid id);
         void Dispose();

@@ -8,7 +8,7 @@ namespace Mapper21.Business.Interfaces
     {
         IList<GridDto> GetSectionScienceBigIdeaList(Guid Id);
         GridDto FindSectionScienceBigIdea(Guid id);
-        GridDto SaveOrUpdateSectionScienceBigIdea(GridDto section);
+        GridDto SaveOrUpdateSectionScienceBigIdea(GridDto x);
         bool DeleteSectionScienceBigIdea(Guid id);
         void Dispose();
     }

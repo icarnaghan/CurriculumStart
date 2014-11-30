@@ -118,6 +118,10 @@ namespace Mapper21.Business
                     cfg.CreateMap<SubSectionShortTermTarget, GridDto>()
                         .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SubSectionStaId));
 
+                    cfg.CreateMap<GridDto, SubSectionLongTermTarget>()
+                        .ForMember(dest => dest.SubSectionStaId, opt => opt.MapFrom(src => src.ParentId));
+                    cfg.CreateMap<SubSectionLongTermTarget, GridDto>()
+                        .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.SubSectionStaId));
 
                 });
             }

@@ -8,7 +8,7 @@ namespace Mapper21.Business.Interfaces
     {
         IList<GridDto> GetSubSectionServiceLearningList(Guid Id);
         GridDto FindSubSectionServiceLearning(Guid id);
-        GridDto SaveOrUpdateSubSectionServiceLearning(GridDto subSection);
+        GridDto SaveOrUpdateSubSectionServiceLearning(GridDto x);
         bool DeleteSubSectionServiceLearning(Guid id);
         void Dispose();
     }

@@ -8,6 +8,6 @@ namespace Mapper21.Site.Models
         public StaDto Sta { get; set; }
 
         [DisplayName("Long Term Target")]
-        public LongTermTargetDto SubSectionLongTermTarget { get; set; }
+        public GridDto SubSectionLongTermTarget { get; set; }
     }
 }
