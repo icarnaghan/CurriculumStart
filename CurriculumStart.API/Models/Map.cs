@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace CurriculumStart.API.Models
 {
@@ -14,6 +15,6 @@ namespace CurriculumStart.API.Models
         public DateTime EndDate { get; set; }
         public bool Active { get; set; }
         public int Order { get; set; }
-
+        public ICollection<UserMap> UserMaps { get; set; }
     }
 }
