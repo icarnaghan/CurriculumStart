@@ -19,7 +19,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/user.service';
-import { MemberCardComponent } from './members/member-card/member-card/member-card.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 @NgModule({
    declarations: [
