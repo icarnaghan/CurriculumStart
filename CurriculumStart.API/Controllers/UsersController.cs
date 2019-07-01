@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CurriculumStart.API.Data;
 using CurriculumStart.API.Dtos;
+using CurriculumStart.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CurriculumStart.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
