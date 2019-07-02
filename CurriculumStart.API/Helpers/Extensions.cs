@@ -22,7 +22,7 @@ namespace CurriculumStart.API.Helpers
             return age;
         }
 
-        public static void AddPagination(this HttpRequest response, int currentPage, int itemsPerPage, int totalItems, int totalPages)
+        public static void AddPagination(this HttpResponse response, int currentPage, int itemsPerPage, int totalItems, int totalPages)
         {
             var paginationHeader = new PaginationHeader(currentPage, itemsPerPage, totalItems, totalPages);
             response.Headers.Add("Pagination", JsonConvert.SerializeObject(paginationHeader));
