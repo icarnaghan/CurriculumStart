@@ -26,7 +26,7 @@ namespace CurriculumStart.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers(UserParams userParams) 
+        public async Task<IActionResult> GetUsers([FromQuery]UserParams userParams) 
         {
             var users = await _repo.GetUsers(userParams);
 
