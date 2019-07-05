@@ -17,11 +17,25 @@ namespace CurriculumStart.API.Data
                 .HasOne(bc => bc.Maps)
                 .WithMany(c => c.UserMaps)
                 .HasForeignKey(bc => bc.MapId);
+
+            modelBuilder.Entity<UserFollow>()
+                .HasKey(f => new { f.FollowerId, f.FolloweeId });  
+            modelBuilder.Entity<UserFollow>()
+                .HasOne(u => u.Followee)
+                .WithMany(u => u.Followers)
+                .HasForeignKey(u => u.FolloweeId)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<UserFollow>()
+                .HasOne(u => u.Follower)
+                .WithMany(u => u.Followees)
+                .HasForeignKey(u => u.FollowerId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
         public DataContext(DbContextOptions<DataContext> options): base (options) {}
         public DbSet<Value> Values { get; set;}
         public DbSet<User> Users { get; set; }
         public DbSet<Photo> Photos { get; set; }
+        public DbSet<UserFollow> UserFollows { get; set; }
         public DbSet<Map> Maps { get; set; }
         public DbSet<UserMap> UserMaps { get; set; }
         public DbSet<Module> Modules { get; set; }

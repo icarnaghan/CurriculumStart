@@ -21,5 +21,7 @@ namespace CurriculumStart.API.Models
         public string Country { get; set; }
         public ICollection<Photo> Photos { get; set; }
         public ICollection<UserMap> UserMaps { get; set; }
+        public ICollection<UserFollow> Followers { get; set; }
+        public ICollection<UserFollow> Followees { get; set; }
     }
 }
