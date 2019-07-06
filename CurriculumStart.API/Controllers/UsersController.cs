@@ -6,6 +6,7 @@ using AutoMapper;
 using CurriculumStart.API.Data;
 using CurriculumStart.API.Dtos;
 using CurriculumStart.API.Helpers;
+using CurriculumStart.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -69,6 +70,30 @@ namespace CurriculumStart.API.Controllers
             if (await _repo.SaveAll()) return NoContent();
 
             throw new Exception($"Updating user {id} failed on save");
+        }
+
+        [HttpPost("{id}/follow/{recipientId}")]
+        public async Task<IActionResult> FollowUser(int id, int recipientId)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)) return Unauthorized();
+
+            var follow = await _repo.GetFollow(id, recipientId);
+
+            if (follow != null) return BadRequest("You already followed this user");
+
+            if (await _repo.GetUser(recipientId) == null) return NotFound();
+
+            follow = new UserFollow
+            {
+                FollowerId = id,
+                FolloweeId = recipientId
+            };
+
+            _repo.Add<UserFollow>(follow);
+
+            if (await _repo.SaveAll()) return Ok();
+
+            return BadRequest("Failed to follow user");
         }
     }
 }
