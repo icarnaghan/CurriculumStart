@@ -23,5 +23,7 @@ namespace CurriculumStart.API.Models
         public ICollection<UserMap> UserMaps { get; set; }
         public ICollection<UserFollow> Followers { get; set; }
         public ICollection<UserFollow> Followees { get; set; }
+        public ICollection<Message> MessagesSent { get; set; }
+        public ICollection<Message> MessagesReceived { get; set; }
     }
 }
