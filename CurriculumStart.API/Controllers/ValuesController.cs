@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CurriculumStart.API.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -21,7 +20,7 @@ namespace CurriculumStart.API.Controllers
 
         }
         // GET api/values
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
@@ -30,6 +29,7 @@ namespace CurriculumStart.API.Controllers
         }
 
         // GET api/values/5
+        [Authorize(Roles = "Member")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {

@@ -66,6 +66,12 @@ namespace CurriculumStart.API
                 ValidateAudience = false
             });
 
+            services.AddAuthorization(Options => {
+                Options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+                Options.AddPolicy("ModeratePhotoRole", policy => policy.RequireRole("Admin", "Moderator"));
+                Options.AddPolicy("VipOnly ", policy => policy.RequireRole("Admin"));
+            });
+
             services.AddMvc(options =>
                 {
                     var policy = new AuthorizationPolicyBuilder()
