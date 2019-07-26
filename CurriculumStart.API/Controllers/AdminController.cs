@@ -32,7 +32,7 @@ namespace CurriculumStart.API.Controllers
                                     select new
                                     {
                                         ID = user.Id,
-                                        UserNama = user.UserName,
+                                        UserName = user.UserName,
                                         Roles = (from userRole in user.UserRoles
                                                     join role in _context.Roles
                                                     on userRole.RoleId
