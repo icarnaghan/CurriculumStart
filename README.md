@@ -1,4 +1,9 @@
-mapper21
-========
+# CurriculumStart
+CurriculumStart is a curriculum mapping framework for Expeditionary Learning, Project Based Learning, and traditional school curriculum models.
 
-Mapper 21 is a curriculum mapping framework for Expeditionary Learning. The application was designed through a doctoral research project, which focused on current curriculum mapping literature and the development of a user-centered framework.
+Version 2 under development - Dotnet Core, Angular, PostGreSQL
+
+Based on research from An Expeditionary Learning Approach to Effective Curriculum Mapping Formalizing the Process by Exploring a User-Centered Framework
+by Carnaghan, Ian, D.Sc., University of Baltimore, 2014, 143; 3626119
+
+https://pqdtopen.proquest.com/doc/1551497031.html?FMT=ABS
