@@ -1,8 +1,0 @@
-﻿@(Html.Kendo().DropDownList()
-    .Name("CommonCoreStandardId") //Important, must match the column's name
-    .BindTo(ViewData["StandardList"] as SelectList)
-    .OptionLabel("- Select Standard - ")
-    .DataValueField("Value")
-    .DataTextField("Text")
-    .SelectedIndex(0)
-)
