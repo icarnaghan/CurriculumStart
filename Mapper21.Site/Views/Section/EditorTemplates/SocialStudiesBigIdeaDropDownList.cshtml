@@ -1,8 +1,0 @@
-﻿@(Html.Kendo().DropDownList()
-    .Name("BigIdeaForSocialStudiesId") //Important, must match the column's name
-    .BindTo(ViewData["BigIdeaForSocialStudiesList"] as SelectList)
-    .OptionLabel("- Select Big Idea For Social Studies - ")
-    .DataValueField("Value")
-    .DataTextField("Text")
-    .SelectedIndex(0)
-)
